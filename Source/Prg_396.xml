@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="RightsUpdateInToMainProgramVariables" ISN_2="1" LastIsn="1" id="396">
-          <LastModified _date="739573" _time="56421" date="18/11/2025" time="15:40:21"/>
+          <LastModified _date="739582" _time="46646" date="27/11/2025" time="12:57:26"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -29,10 +29,10 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="4"/>
+        <ItemIsn val="7"/>
         <Resource>
-          <DB id="1">
-            <DataObject comp="-1" obj="355"/>
+          <DB id="2">
+            <DataObject comp="-1" obj="360"/>
             <Access val="R"/>
             <Share val="W"/>
             <Open val="N"/>
@@ -46,7 +46,7 @@
             <Column val="1"/>
             <Mode val="N"/>
           </Key>
-          <DB comp="-1" obj="355"/>
+          <DB comp="-1" obj="360"/>
           <Sort>
             <CLS val="A"/>
           </Sort>
@@ -57,7 +57,7 @@
           <InitialMode val="E"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
-          <VarRange LastIsn="2"/>
+          <VarRange LastIsn="4"/>
           <TaskProperties>
             <SelectionTable val="N"/>
             <ConfirmUpdate CNFU="N"/>
@@ -113,7 +113,7 @@
             </Event>
             <LogicLines>
               <LogicLine>
-                <DATAVIEW_SRC FlowIsn="2" IDX="1" Type="M">
+                <DATAVIEW_SRC FlowIsn="2" IDX="2" Type="M">
                   <Condition val="N"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -121,10 +121,11 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="1" FlowIsn="3" id="1">
-                  <Column val="5"/>
+                  <Column val="8"/>
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <Range MAX="537" MIN="537"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="S"/>
@@ -133,7 +134,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="2" FlowIsn="4" id="2">
-                  <Column val="1"/>
+                  <Column val="7"/>
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
@@ -146,23 +147,10 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="3" FlowIsn="5" id="3">
-                  <Column val="2"/>
+                  <Column val="1"/>
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <DIFF_UPDATE val="T"/>
-                  <Condition val="Y"/>
-                  <Modifier val="S"/>
-                  <Direction val="C"/>
-                </Select>
-              </LogicLine>
-              <LogicLine>
-                <Select FieldID="4" FlowIsn="6" id="4">
-                  <Column val="4"/>
-                  <Type val="R"/>
-                  <ExposedToRoute val="N"/>
-                  <IsParameter val="N"/>
-                  <Range MAX="1" MIN="1"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="S"/>
@@ -6661,41 +6649,15 @@
                 <TabOrder id="314" val="3"/>
               </PropertyList>
             </Control>
-            <Control _test_id="8" id="7">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
-                <Text id="19" valUnicode="DeleteFlag:"/>
-                <X id="21" val="4"/>
-                <Y id="22" val="68"/>
-                <Width id="23" val="45"/>
-                <Height id="24" val="9"/>
-                <Style id="63" val="7"/>
-                <_Orientation id="143"/>
-              </PropertyList>
-            </Control>
-            <Control PDOD="192" _test_id="4" id="8">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
-                  <Var FieldID="4"/>
-                </Model>
-                <X id="21" val="53"/>
-                <Y id="22" val="68"/>
-                <Width id="23" val="10"/>
-                <Height id="24" val="12"/>
-                <Data FieldID="4" id="43"/>
-                <ControlName id="46" val="DeleteFlag"/>
-                <ExpansionWindow id="84"/>
-                <TabOrder id="314" val="4"/>
-              </PropertyList>
-            </Control>
           </FormEntry>
         </TaskForms>
         <Expressions>
-          <Expression id="1">
-            <ExpSyntax val="'FALSE'LOG"/>
-            <ExpAttribute val="B"/>
+          <Expression id="537">
+            <ExpSyntax val="{32768,2}"/>
+            <ExpAttribute val="A"/>
           </Expression>
           <Expression id="2">
-            <ExpSyntax val="User(0)"/>
+            <ExpSyntax val="Trim({32768,4})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="3">
@@ -8831,8 +8793,9 @@
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
-        <VarRangeInfo Mode="E" VarRangeVeeIsn="4" id="1"/>
-        <VarRangeInfo Mode="E" VarRangeVeeIsn="2" id="2"/>
+        <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="2"/>
+        <VarRangeInfo Mode="E" VarRangeVeeIsn="1" id="3"/>
+        <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="4"/>
       </Task>
     </Programs>
   </ProgramsRepository>
