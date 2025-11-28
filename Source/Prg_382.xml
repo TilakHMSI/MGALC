@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDB004OR(FVIS PRINT/HSC)" ISN_2="1" LastIsn="3" id="382">
-          <LastModified _date="739577" _time="36895" date="22/11/2025" time="10:14:55"/>
+        <Header Description="VPRDB004ORFVISPRINTHSC" ISN_2="1" LastIsn="3" id="382">
+          <LastModified _date="739583" _time="39420" date="28/11/2025" time="10:57:00"/>
           <Public val="P_67_ Open Sub IO"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -24,8 +24,8 @@
             <ParametersAttributes/>
           </ReturnValue>
           <SqlWhereExist val="N"/>
-          <TaskType val="C"/>
-          <Interactive val="N"/>
+          <TaskType val="W"/>
+          <Interactive val="Y"/>
           <External val="N"/>
           <Offline val="N"/>
           <FormType val="M"/>
@@ -127,9 +127,9 @@
             <CLS val="A"/>
           </Sort>
           <ForceRecordDelete DEL="N"/>
-          <EndTaskCondition val="Y"/>
+          <EndTaskCondition val="N"/>
           <SkipLockedRecords val="N"/>
-          <EvaluateEndCondition val="A"/>
+          <EvaluateEndCondition val="B"/>
           <InitialMode val="M"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
@@ -145,7 +145,7 @@
             <TransactionMode val="D"/>
             <TransactionBegin val="P"/>
             <PreloadView val="N"/>
-            <AllowEmptyDataview val="N"/>
+            <AllowEmptyDataview val="Y"/>
             <KeepCreatedContext val="N"/>
           </TaskProperties>
           <SIDE_WIN>
@@ -159,7 +159,7 @@
             <AllowIndexChange val="Y"/>
             <AllowSorting val="Y"/>
             <AllowIOFiles val="N"/>
-            <TabbingCycle val="R"/>
+            <RecordCycle val="Y"/>
             <AllowEvents val="Y"/>
             <AllowIndexOptimization val="Y"/>
             <AllowLocationInQuery val="Y"/>
@@ -204,7 +204,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -216,7 +216,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -228,7 +228,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -241,7 +241,7 @@
                   <DIFF_UPDATE val="T"/>
                   <PartOfDataview val="Y"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -260,7 +260,7 @@
                   <_DitIndexForToolkit val="6"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -273,7 +273,7 @@
                   <_DitIndexForToolkit val="8"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -286,7 +286,7 @@
                   <_DitIndexForToolkit val="10"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -299,7 +299,7 @@
                   <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -389,9 +389,10 @@
                   </Arguments>
                   <Wait val="Y"/>
                   <SyncData val="N"/>
+                  <IsRoute val="N"/>
                   <RetainFocus val="N"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
@@ -418,6 +419,7 @@
                   <TaskID comp="-1" obj="2"/>
                   <Lock val="Y"/>
                   <SyncData val="N"/>
+                  <IsRoute val="N"/>
                   <RetainFocus val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -429,210 +431,156 @@
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="11" _last_test_id="11" id="1">
-            <PropertyList model="FORM_RICH_CLIENT">
-              <X id="21" val="100"/>
-              <Y id="22" val="110"/>
-              <Width id="23" val="105"/>
-              <Height id="24" val="49"/>
+            <PropertyList model="FORM_WEB_CLIENT">
+              <X id="21"/>
+              <Y id="22"/>
+              <Width id="23" val="356"/>
+              <Height id="24" val="215"/>
+              <FormUnits id="33" val="4"/>
               <GridX id="38" val="1"/>
-              <GridY id="39" val="2"/>
-              <Font id="50" val="18"/>
-              <Color id="51" val="71"/>
+              <GridY id="39" val="3"/>
               <_Comment id="218"/>
-              <FormName id="311" valUnicode="VPRDB004OR(KANKEN SYO/HSC)"/>
+              <FormName id="311" valUnicode="VPRDB004ORKANKENSYOHSC"/>
               <_TabbingOrder id="318" val="1"/>
-              <WindowType id="358" val="6"/>
-              <PersistentFormState id="493"/>
+              <WindowType id="358" val="12"/>
             </PropertyList>
             <Control _test_id="1" id="1">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="PGM=VPRDB006"/>
-                <X id="21" val="55"/>
-                <Y id="22" val="6"/>
-                <Width id="23" val="49"/>
-                <Height id="24" val="7"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="7"/>
+                <X id="21" val="69"/>
+                <Y id="22" val="10"/>
+                <Width id="23" val="61"/>
+                <Height id="24" val="11"/>
+                <ControlName id="46" val="Label1"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="2" id="2">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <X id="21" val="66"/>
-                <Y id="22" val="13"/>
-                <Width id="23" val="39"/>
-                <Height id="24" val="7"/>
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="83"/>
+                <Y id="22" val="21"/>
+                <Width id="23" val="49"/>
+                <Height id="24" val="11"/>
                 <Data Exp="4" id="43"/>
-                <Font id="50" val="18"/>
+                <ControlName id="46" val="Edit2"/>
                 <Visible id="61"/>
                 <Format id="82" valUnicode="DD-MM-YYYY"/>
                 <Attribute id="83" val="68"/>
-                <TabOrder id="314" val="1"/>
-                <Border id="452" val="Y"/>
               </PropertyList>
             </Control>
             <Control _test_id="3" id="3">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="NOW PRINTING ..."/>
-                <Y id="22" val="14"/>
-                <Width id="23" val="63"/>
-                <Height id="24" val="8"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
+                <Y id="22" val="23"/>
+                <Width id="23" val="79"/>
+                <Height id="24" val="13"/>
+                <ControlName id="46" val="Label3"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="4" id="4">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <X id="21" val="71"/>
-                <Y id="22" val="20"/>
-                <Width id="23" val="34"/>
-                <Height id="24" val="7"/>
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="89"/>
+                <Y id="22" val="33"/>
+                <Width id="23" val="43"/>
+                <Height id="24" val="11"/>
                 <Data Exp="5" id="43"/>
-                <Font id="50" val="18"/>
+                <ControlName id="46" val="Edit4"/>
                 <Visible id="61"/>
                 <Format id="82" valUnicode="HH:MM:SS"/>
                 <Attribute id="83" val="84"/>
-                <TabOrder id="314" val="2"/>
-                <Border id="452" val="Y"/>
               </PropertyList>
             </Control>
             <Control _test_id="5" id="5">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="PLAN CODE:"/>
-                <X id="21" val="10"/>
-                <Y id="22" val="26"/>
-                <Width id="23" val="29"/>
-                <Height id="24" val="7"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
+                <X id="21" val="13"/>
+                <Y id="22" val="42"/>
+                <Width id="23" val="36"/>
+                <Height id="24" val="11"/>
+                <ControlName id="46" val="Label5"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control _test_id="6" id="6">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="5"/>
                 </Model>
-                <X id="21" val="44"/>
-                <Y id="22" val="26"/>
-                <Width id="23" val="17"/>
-                <Height id="24" val="7"/>
+                <X id="21" val="55"/>
+                <Y id="22" val="42"/>
+                <Width id="23" val="21"/>
+                <Height id="24" val="11"/>
                 <Data FieldID="5" id="43"/>
                 <ControlName id="46" val="vX2_PLAN_CODE"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
-                <TabOrder id="314" val="3"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
             <Control _test_id="7" id="7">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="PLAN DATE:"/>
-                <X id="21" val="10"/>
-                <Y id="22" val="33"/>
-                <Width id="23" val="29"/>
-                <Height id="24" val="7"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
+                <X id="21" val="13"/>
+                <Y id="22" val="54"/>
+                <Width id="23" val="36"/>
+                <Height id="24" val="11"/>
+                <ControlName id="46" val="Label7"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="8" id="8">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="6"/>
                 </Model>
-                <X id="21" val="44"/>
-                <Y id="22" val="33"/>
-                <Width id="23" val="42"/>
-                <Height id="24" val="7"/>
+                <X id="21" val="55"/>
+                <Y id="22" val="54"/>
+                <Width id="23" val="53"/>
+                <Height id="24" val="11"/>
                 <Data FieldID="6" id="43"/>
                 <ControlName id="46" val="vX2_PLAN_DATE"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
                 <MultiLineEdit id="71"/>
-                <TabOrder id="314" val="4"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
             <Control _test_id="9" id="9">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="PLAN SEQ:"/>
-                <X id="21" val="10"/>
-                <Y id="22" val="40"/>
-                <Width id="23" val="26"/>
-                <Height id="24" val="7"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
+                <X id="21" val="13"/>
+                <Y id="22" val="65"/>
+                <Width id="23" val="33"/>
+                <Height id="24" val="11"/>
+                <ControlName id="46" val="Label9"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control PDOD="1" _test_id="10" id="10">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="7"/>
                 </Model>
-                <X id="21" val="44"/>
-                <Y id="22" val="40"/>
-                <Width id="23" val="9"/>
-                <Height id="24" val="7"/>
+                <X id="21" val="55"/>
+                <Y id="22" val="65"/>
+                <Width id="23" val="11"/>
+                <Height id="24" val="11"/>
                 <Data FieldID="7" id="43"/>
                 <ControlName id="46" val="vX2_PLAN_SEQ"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
                 <MultiLineEdit id="71"/>
-                <TabOrder id="314" val="5"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
             <Control PDOD="1" _test_id="11" id="11">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="8"/>
                 </Model>
-                <X id="21" val="56"/>
-                <Y id="22" val="40"/>
-                <Width id="23" val="3"/>
-                <Height id="24" val="7"/>
+                <X id="21" val="70"/>
+                <Y id="22" val="65"/>
+                <Width id="23" val="4"/>
+                <Height id="24" val="11"/>
                 <Data FieldID="8" id="43"/>
                 <ControlName id="46" val="vX2_PLAN_SEQ_SUFFIX"/>
-                <Font id="50" val="18"/>
-                <Color id="51" val="71"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
                 <MultiLineEdit id="71"/>
-                <TabOrder id="314" val="6"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -660,8 +608,8 @@
           </Expression>
         </Expressions>
         <Task MainProgram="N">
-          <Header Description="VPRDB004OR(KANKEN SYO/HSC)" ISN_2="2" id="382">
-            <LastModified _date="739577" _time="36895" date="22/11/2025" time="10:14:55"/>
+          <Header Description="VPRDB004OR(KANKEN SYO/HSC)" ISN_2="2" LastIsn="3" id="382">
+            <LastModified _date="739582" _time="64332" date="27/11/2025" time="17:52:12"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1226,8 +1174,8 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="GENERATE FRAME NO./PORT" ISN_2="3" id="382">
-              <LastModified _date="739577" _time="33592" date="22/11/2025" time="09:19:52"/>
+            <Header Description="GENERATE FRAME NO./PORT" ISN_2="3" LastIsn="3" id="382">
+              <LastModified _date="739582" _time="64332" date="27/11/2025" time="17:52:12"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
               <SQL val="N"/>

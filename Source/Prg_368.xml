@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDS005(OK/NO)" ISN_2="1" LastIsn="1" id="368">
-          <LastModified _date="739565" _time="51755" date="10/11/2025" time="14:22:35"/>
+        <Header Description="VPRDS005OKNO" ISN_2="1" LastIsn="1" id="368">
+          <LastModified _date="739583" _time="39226" date="28/11/2025" time="10:53:46"/>
           <Public val="RIA121"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -24,7 +24,7 @@
             <ParametersAttributes/>
           </ReturnValue>
           <SqlWhereExist val="N"/>
-          <TaskType val="C"/>
+          <TaskType val="W"/>
           <Interactive val="Y"/>
           <External val="N"/>
           <Offline val="N"/>
@@ -72,6 +72,12 @@
                     <Border id="452" val="Y"/>
                   </PropertyList>
                 </RichClientTable>
+                <WebClient id="702">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClient>
+                <WebClientTable id="703">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClientTable>
               </PropertyList>
             </Column>
             <Column id="3" name="OK_BUTTON">
@@ -116,8 +122,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="O"/>
-            <TransactionBegin val="N"/>
+            <TransactionMode val="D"/>
+            <TransactionBegin val="P"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -133,7 +139,7 @@
             <AllowIndexChange val="Y"/>
             <AllowSorting val="Y"/>
             <AllowIOFiles val="N"/>
-            <TabbingCycle val="R"/>
+            <RecordCycle val="Y"/>
             <AllowEvents val="Y"/>
             <AllowIndexOptimization val="Y"/>
             <AllowLocationInQuery val="Y"/>
@@ -178,7 +184,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -191,7 +197,7 @@
                   <_DitIndexForToolkit val="1"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -217,7 +223,7 @@
                   <_DitIndexForToolkit val="2"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -237,7 +243,7 @@
                   <_DitIndexForToolkit val="3"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -348,7 +354,7 @@
                   <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
-                  <Direction val="B"/>
+                  <Direction val="C"/>
                 </Evaluate>
               </LogicLine>
             </LogicLines>
@@ -356,85 +362,69 @@
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="3" _last_test_id="3" id="1">
-            <PropertyList model="FORM_RICH_CLIENT">
-              <X id="21" val="55"/>
-              <Y id="22" val="67"/>
-              <Width id="23" val="332"/>
-              <Height id="24" val="53"/>
-              <SystemMenu id="27"/>
-              <MinimizeButton id="28"/>
-              <MaximizeButton id="29"/>
+            <PropertyList model="FORM_WEB_CLIENT">
+              <X id="21"/>
+              <Y id="22"/>
+              <Width id="23" val="415"/>
+              <Height id="24" val="86"/>
+              <FormUnits id="33" val="4"/>
               <GridX id="38" val="1"/>
-              <GridY id="39" val="2"/>
-              <Font id="50" val="18"/>
+              <GridY id="39" val="3"/>
               <_Comment id="218"/>
-              <FormName id="311" valUnicode="VPRDS005(OK/NO)"/>
+              <FormName id="311" valUnicode="VPRDS005OKNO"/>
               <_TabbingOrder id="318" val="2"/>
-              <WindowType id="358" val="6"/>
-              <PersistentFormState id="493"/>
+              <WindowType id="358" val="12"/>
             </PropertyList>
             <Control _test_id="1" id="1">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="2"/>
                 </Model>
-                <X id="21" val="4"/>
-                <Y id="22" val="21"/>
-                <Width id="23" val="324"/>
-                <Height id="24" val="8"/>
+                <X id="21" val="5"/>
+                <Y id="22" val="34"/>
+                <Width id="23" val="405"/>
+                <Height id="24" val="13"/>
                 <Data FieldID="2" id="43"/>
-                <Font id="50" val="18"/>
+                <ControlName id="46" val="V_MESSAGE_P"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
-                <HorizontalAlignment id="65" val="2"/>
-                <TabOrder id="314" val="1"/>
-                <AllowParking id="315"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
             <Control _test_id="2" id="2">
-              <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="3"/>
                 </Model>
-                <X id="21" val="85"/>
-                <Y id="22" val="37"/>
-                <Width id="23" val="53"/>
-                <Height id="24" val="11"/>
+                <X id="21" val="106"/>
+                <Y id="22" val="60"/>
+                <Width id="23" val="66"/>
+                <Height id="24" val="18"/>
                 <Data FieldID="3" id="43"/>
                 <ControlName id="46" val="OK_BUTTON"/>
                 <Visible id="61"/>
-                <ImageListFileName id="88" val="Button"/>
+                <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
                   <EventType val="I"/>
                   <InternalEventID val="42"/>
                 </RaiseEvent>
-                <TabOrder id="314" val="2"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
               </PropertyList>
             </Control>
             <Control _test_id="3" id="3">
-              <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="4"/>
                 </Model>
-                <X id="21" val="195"/>
-                <Y id="22" val="37"/>
-                <Width id="23" val="53"/>
-                <Height id="24" val="11"/>
+                <X id="21" val="244"/>
+                <Y id="22" val="60"/>
+                <Width id="23" val="66"/>
+                <Height id="24" val="18"/>
                 <Data FieldID="4" id="43"/>
                 <ControlName id="46" val="CANCEL_BUTTON"/>
                 <Visible id="61"/>
-                <ImageListFileName id="88" val="Button"/>
+                <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
                   <EventType val="I"/>
                   <InternalEventID val="14"/>
                 </RaiseEvent>
-                <TabOrder id="314" val="3"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -442,7 +432,7 @@
         <Expressions>
           <Expression id="1">
             <ExpSyntax val="KbPut ('End Row'EVENT)"/>
-            <ExpAttribute val="B"/>
+            <ExpAttribute val="*"/>
           </Expression>
           <Expression id="2">
             <ExpSyntax val="'OK'"/>
