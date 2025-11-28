@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDS012(WARNING)" ISN_2="1" LastIsn="1" id="369">
-          <LastModified _date="739565" _time="51764" date="10/11/2025" time="14:22:44"/>
+        <Header Description="VPRDS012WARNING" ISN_2="1" LastIsn="1" id="369">
+          <LastModified _date="739583" _time="39240" date="28/11/2025" time="10:54:00"/>
           <Public val="RIA126"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -24,7 +24,7 @@
             <ParametersAttributes/>
           </ReturnValue>
           <SqlWhereExist val="N"/>
-          <TaskType val="C"/>
+          <TaskType val="W"/>
           <Interactive val="Y"/>
           <External val="N"/>
           <Offline val="N"/>
@@ -64,6 +64,12 @@
                     <Border id="452" val="Y"/>
                   </PropertyList>
                 </RichClientTable>
+                <WebClient id="702">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClient>
+                <WebClientTable id="703">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClientTable>
               </PropertyList>
             </Column>
             <Column id="2" name="BUTTON">
@@ -98,6 +104,12 @@
                     <Border id="452" val="Y"/>
                   </PropertyList>
                 </RichClientTable>
+                <WebClient id="702">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClient>
+                <WebClientTable id="703">
+                  <PropertyList model="CTRL_WEB_CLIENT_EDIT"/>
+                </WebClientTable>
               </PropertyList>
             </Column>
           </Columns>
@@ -126,8 +138,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="O"/>
-            <TransactionBegin val="N"/>
+            <TransactionMode val="D"/>
+            <TransactionBegin val="P"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -143,7 +155,7 @@
             <AllowIndexChange val="Y"/>
             <AllowSorting val="Y"/>
             <AllowIOFiles val="N"/>
-            <TabbingCycle val="R"/>
+            <RecordCycle val="Y"/>
             <AllowEvents val="Y"/>
             <AllowIndexOptimization val="Y"/>
             <AllowLocationInQuery val="Y"/>
@@ -189,7 +201,7 @@
                   <_DitIndexForToolkit val="4"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -199,10 +211,10 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="8"/>
+                  <_DitIndexForToolkit val="7"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -259,137 +271,116 @@
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="8" _last_test_id="8" id="1">
-            <PropertyList model="FORM_RICH_CLIENT">
-              <Width id="23" val="454"/>
-              <Height id="24" val="304"/>
+            <PropertyList model="FORM_WEB_CLIENT">
+              <Width id="23" val="568"/>
+              <Height id="24" val="494"/>
               <TitleBar id="26"/>
-              <SystemMenu id="27"/>
-              <MinimizeButton id="28"/>
-              <MaximizeButton id="29"/>
+              <FormUnits id="33" val="4"/>
               <ShowGrid id="37"/>
               <GridX id="38" val="1"/>
-              <GridY id="39" val="1"/>
-              <Font id="50" val="18"/>
-              <BorderStyle id="64" val="3"/>
+              <GridY id="39" val="2"/>
               <_Comment id="218"/>
-              <FormName id="311" valUnicode="VPRDS012(WARNING)"/>
+              <FormName id="311" valUnicode="VPRDS012WARNING"/>
               <_TabbingOrder id="318" val="2"/>
-              <WindowType id="358" val="6"/>
-              <PersistentFormState id="493"/>
+              <WindowType id="358" val="12"/>
             </PropertyList>
             <Control _test_id="1" id="1">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
-                <X id="21" val="90"/>
-                <Y id="22" val="84"/>
-                <Width id="23" val="275"/>
-                <Height id="24" val="137"/>
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <X id="21" val="113"/>
+                <Y id="22" val="137"/>
+                <Width id="23" val="344"/>
+                <Height id="24" val="223"/>
+                <ControlName id="46" val="Label1"/>
                 <Visible id="61"/>
-                <Style id="63" val="2"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
-            <Control PDOD="128" _test_id="2" id="2">
-              <PropertyList model="CTRL_RICH_CLIENT_LINE">
-                <X1 id="21" val="365"/>
-                <Y1 id="22" val="84"/>
-                <X2 id="23"/>
-                <Y2 id="24" val="137"/>
+            <Control _test_id="2" id="2">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="**UnSupported Control**"/>
+                <X id="21" val="456"/>
+                <Y id="22" val="137"/>
+                <Width id="23"/>
+                <Height id="24" val="223"/>
+                <ControlName id="46" val="Label2"/>
                 <Visible id="61"/>
-                <Style id="63" val="1"/>
               </PropertyList>
             </Control>
             <Control ISN_FATHER="1" _test_id="3" id="3">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode=" WARNING"/>
-                <X id="21" val="91"/>
-                <Y id="22" val="86"/>
-                <Width id="23" val="273"/>
-                <Height id="24" val="9"/>
-                <Font id="50" val="7"/>
-                <Color id="51" val="94"/>
+                <X id="21" val="114"/>
+                <Y id="22" val="140"/>
+                <Width id="23" val="341"/>
+                <Height id="24" val="15"/>
+                <ControlName id="46" val="Label3"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
             <Control ISN_FATHER="1" _test_id="4" id="4">
-              <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="1"/>
                 </Model>
-                <X id="21" val="91"/>
-                <Y id="22" val="116"/>
-                <Width id="23" val="272"/>
-                <Height id="24" val="11"/>
+                <X id="21" val="114"/>
+                <Y id="22" val="189"/>
+                <Width id="23" val="340"/>
+                <Height id="24" val="18"/>
                 <Data FieldID="1" id="43"/>
-                <Font id="50" val="28"/>
-                <Color id="51" val="10"/>
+                <ControlName id="46" val="V_MESSAGE_P"/>
                 <MustInput id="52" val="Y"/>
                 <Visible id="61"/>
-                <_Style id="63" val="1"/>
-                <HorizontalAlignment id="65" val="2"/>
-                <VerticalAlignment id="66" val="1"/>
                 <MultiLineEdit id="71" val="Y"/>
-                <TabOrder id="314" val="1"/>
-                <AllowParking id="315"/>
-                <AllowedDirection id="317" val="1"/>
-                <Border id="452"/>
               </PropertyList>
             </Control>
             <Control ISN_FATHER="1" _test_id="5" id="5">
-              <PropertyList model="CTRL_RICH_CLIENT_LABEL">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="Click or press return key to continue!"/>
-                <X id="21" val="180"/>
-                <Y id="22" val="131"/>
-                <Width id="23" val="101"/>
-                <Height id="24" val="7"/>
-                <Color id="51" val="7"/>
+                <X id="21" val="225"/>
+                <Y id="22" val="213"/>
+                <Width id="23" val="126"/>
+                <Height id="24" val="11"/>
+                <ControlName id="46" val="Label5"/>
                 <Visible id="61"/>
-                <Style id="63" val="7"/>
-                <_VerticalScroll id="73"/>
-                <_Orientation id="143"/>
               </PropertyList>
             </Control>
-            <Control ISN_FATHER="1" PDOD="128" _test_id="6" id="6">
-              <PropertyList model="CTRL_RICH_CLIENT_LINE">
-                <X1 id="21" val="180"/>
-                <Y1 id="22" val="141"/>
-                <X2 id="23" val="101"/>
-                <Y2 id="24"/>
+            <Control ISN_FATHER="1" _test_id="6" id="6">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="**UnSupported Control**"/>
+                <X id="21" val="225"/>
+                <Y id="22" val="229"/>
+                <Width id="23" val="126"/>
+                <Height id="24"/>
+                <ControlName id="46" val="Label6"/>
                 <Visible id="61"/>
-                <Style id="63" val="1"/>
-              </PropertyList>
-            </Control>
-            <Control PDOD="128" _test_id="7" id="7">
-              <PropertyList model="CTRL_RICH_CLIENT_LINE">
-                <X1 id="21" val="90"/>
-                <Y1 id="22" val="221"/>
-                <X2 id="23" val="275"/>
-                <Y2 id="24"/>
-                <Visible id="61"/>
-                <Style id="63" val="1"/>
               </PropertyList>
             </Control>
             <Control _test_id="8" id="8">
-              <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                <Model ID="MODEL_RICH_CLIENT" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="2"/>
                 </Model>
-                <X id="21" val="200"/>
-                <Y id="22" val="169"/>
-                <Width id="23" val="55"/>
-                <Height id="24" val="15"/>
+                <X id="21" val="250"/>
+                <Y id="22" val="275"/>
+                <Width id="23" val="69"/>
+                <Height id="24" val="24"/>
                 <Data FieldID="2" id="43"/>
+                <ControlName id="46" val="btn_Close"/>
                 <Visible id="61"/>
                 <RaiseEvent id="234">
                   <EventType val="I"/>
                   <InternalEventID val="13"/>
                 </RaiseEvent>
-                <TabOrder id="314" val="2"/>
-                <AllowParking id="315" val="Y"/>
-                <AllowedDirection id="317" val="1"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="7" id="7">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="**UnSupported Control**"/>
+                <X id="21" val="113"/>
+                <Y id="22" val="359"/>
+                <Width id="23" val="344"/>
+                <Height id="24"/>
+                <ControlName id="46" val="Label7"/>
+                <Visible id="61"/>
               </PropertyList>
             </Control>
           </FormEntry>
