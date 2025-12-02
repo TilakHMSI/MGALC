@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB040STAMPINGMASTERINFO" ISN_2="1" LastIsn="3" id="390">
-          <LastModified _date="739583" _time="39572" date="28/11/2025" time="10:59:32"/>
+          <LastModified _date="739584" _time="53049" date="29/11/2025" time="14:44:09"/>
           <Public val="P_94_Open Sub IO"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -173,7 +173,9 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="3"/>
+                  <INT_DIT_INFO>
+                    <v>3</v>
+                  </INT_DIT_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -295,18 +297,17 @@
                 <Visible id="61"/>
               </PropertyList>
             </Control>
-            <Control PDOD="128" _test_id="3" id="3">
+            <Control _test_id="3" id="3">
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                <Model ID="MODEL_WEB_CLIENT" id="1">
-                  <Var FieldID="3"/>
-                </Model>
+                <Model id="1"/>
                 <X id="21" val="134"/>
                 <Width id="23" val="55"/>
                 <Height id="24" val="13"/>
-                <Data FieldID="3" id="43"/>
+                <Data Exp="7" id="43"/>
                 <ControlName id="46" val="V_PGID"/>
                 <Visible id="61"/>
                 <Format id="82" valUnicode="10"/>
+                <Attribute id="83" val="85"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="4" id="4">
@@ -371,6 +372,10 @@
           </Expression>
           <Expression id="6">
             <ExpSyntax val="'STAMPING MASTER INFORMATION LIST'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="7">
+            <ExpSyntax val="'PGM='&amp;Trim({0,3})"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>

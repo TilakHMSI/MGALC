@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDS002PrintConfirmOkonly" ISN_2="1" LastIsn="1" id="376">
-          <LastModified _date="739583" _time="39400" date="28/11/2025" time="10:56:40"/>
+          <LastModified _date="739583" _time="49159" date="28/11/2025" time="13:39:19"/>
           <Public val="P_118"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -404,6 +404,7 @@
                 <Data FieldID="2" id="43"/>
                 <ControlName id="46" val="V_LOCATE_P"/>
                 <Visible id="61"/>
+                <Enabled Exp="9" id="62"/>
               </PropertyList>
             </Control>
             <Control _test_id="2" id="2">
@@ -451,6 +452,7 @@
                 <Data Exp="5" id="43"/>
                 <ControlName id="46" val="Edit5"/>
                 <Visible id="61"/>
+                <Enabled id="62"/>
                 <MultiLineEdit id="71" val="Y"/>
                 <Format id="82" valUnicode="64"/>
               </PropertyList>
@@ -513,6 +515,18 @@
           <Expression id="6">
             <ExpSyntax val="IF ({0,1}='A','MM-DD-YYYY','DD-MM-YYYY')"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="7">
+            <ExpSyntax val="'Supervisor'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="8">
+            <ExpSyntax val="'ABC'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="'FALSE'LOG"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
       </Task>
