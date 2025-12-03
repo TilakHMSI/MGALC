@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO041DISPAE_OFF_ENTRY" ISN_2="1" LastIsn="20" id="357">
-          <LastModified _date="739586" _time="67451" date="01/12/2025" time="18:44:11"/>
+          <LastModified _date="739587" _time="58830" date="02/12/2025" time="16:20:30"/>
           <Public val="RIA233_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="98"/>
+        <ItemIsn val="99"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="1"/>
@@ -926,7 +926,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="10"/>
+                  <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -955,7 +955,7 @@
                     <v>21</v>
                     <v>22</v>
                   </INT_RCMP_INFO>
-                  <_DitIndexForToolkit val="13"/>
+                  <_DitIndexForToolkit val="14"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1004,7 +1004,7 @@
                     <v>24</v>
                     <v>25</v>
                   </INT_RCMP_INFO>
-                  <_DitIndexForToolkit val="11"/>
+                  <_DitIndexForToolkit val="12"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -3455,7 +3455,7 @@
                     <PublicObject comp="-1" obj="1"/>
                   </Event>
                   <Wait val="89"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="120"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -3482,7 +3482,7 @@
                     <PublicObject comp="-1" obj="1"/>
                   </Event>
                   <Wait val="89"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="121"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -4351,7 +4351,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="14" _last_test_id="14" id="1">
+          <FormEntry _last_isn="15" _last_test_id="15" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="607"/>
               <Height id="24" val="568"/>
@@ -4381,7 +4381,7 @@
             </Control>
             <Control _test_id="2" id="2">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <Text id="19" valUnicode="PGM=VPRDO041"/>
+                <Text Exp="122" id="19" valUnicode="PGM=VPRDO041"/>
                 <X id="21" val="495"/>
                 <Width id="23" val="99"/>
                 <Height id="24" val="13"/>
@@ -4443,6 +4443,20 @@
                 <MultiLineEdit id="71"/>
                 <Format id="82" valUnicode="HH:MM:SS"/>
                 <Attribute id="83" val="84"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="15" id="15">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="520"/>
+                <Y id="22" val="52"/>
+                <Width id="23" val="41"/>
+                <Height id="24" val="22"/>
+                <ControlName id="46" val="btnexit"/>
+                <Format id="82" valUnicode="X"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="13"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="13" id="13">
@@ -5285,6 +5299,18 @@
           <Expression id="119">
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="120">
+            <ExpSyntax val="Trim({0,8})&lt;>''"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="121">
+            <ExpSyntax val="Trim({0,11})>''"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="122">
+            <ExpSyntax val="'PGM=VPRDO041'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
