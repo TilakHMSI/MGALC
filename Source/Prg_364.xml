@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDB036_PROD_INDICATE_HPE" ISN_2="1" LastIsn="36" id="364">
-          <LastModified _date="739587" _time="44025" date="02/12/2025" time="12:13:45"/>
+        <Header Description="VPRDB036_PROD_INDICATE_HPE" ISN_2="1" LastIsn="35" id="364">
+          <LastModified _date="739591" _time="48089" date="06/12/2025" time="13:21:29"/>
           <Public val="RIA92_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -716,7 +716,7 @@
                     <v>17</v>
                     <v>18</v>
                   </INT_DIT_INFO>
-                  <_DitIndexForToolkit val="5"/>
+                  <_DitIndexForToolkit val="6"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -735,7 +735,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="12"/>
+                  <_DitIndexForToolkit val="13"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -754,7 +754,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="13"/>
+                  <_DitIndexForToolkit val="14"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -767,7 +767,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="14"/>
+                  <_DitIndexForToolkit val="15"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -780,7 +780,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="15"/>
+                  <_DitIndexForToolkit val="16"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -793,7 +793,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="16"/>
+                  <_DitIndexForToolkit val="17"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -825,7 +825,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="19"/>
+                  <_DitIndexForToolkit val="20"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -839,7 +839,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="20"/>
+                  <_DitIndexForToolkit val="21"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -2103,7 +2103,6 @@
               <Parent val="32768"/>
               <PublicObject comp="-1" obj="2"/>
             </Event>
-            <TXT val="EXEC_BUTTON"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -2127,8 +2126,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="I"/>
-              <InternalEventID val="393"/>
+              <EventType val="U"/>
+              <PublicObject comp="-1" obj="2"/>
             </Event>
             <ExecuteOn_ val="O"/>
             <LogicLines>
@@ -2213,7 +2212,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="20" _last_test_id="20" id="1">
+          <FormEntry _last_isn="21" _last_test_id="21" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -2251,6 +2250,20 @@
                 <Visible id="61"/>
               </PropertyList>
             </Control>
+            <Control _test_id="21" id="21">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="12"/>
+                <Y id="22" val="11"/>
+                <Width id="23" val="28"/>
+                <Height id="24" val="22"/>
+                <ControlName id="46" val="btn_Close"/>
+                <Format id="82" valUnicode="X"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="13"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
             <Control PDOD="128" _test_id="3" id="3">
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                 <X id="21" val="165"/>
@@ -2285,7 +2298,7 @@
                 <X id="21" val="8"/>
                 <Y id="22" val="39"/>
                 <Width id="23" val="254"/>
-                <Height id="24" val="24"/>
+                <Height id="24" val="26"/>
                 <Data FieldID="7" id="43"/>
                 <ControlName id="46" val="OPT_ISSUEREPRINT_V"/>
                 <Visible id="61"/>
@@ -2495,8 +2508,8 @@
                 <Format id="82" valUnicode="C:Cancel"/>
                 <ImageFile id="88" val="????"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="393"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="2"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -2699,9 +2712,14 @@
             </MODEL>
           </EVENT_PARAMETER>
         </EVNT>
+        <EVNT DESC="Cancel" FORCE_EXIT="N" id="2">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
         <Task MainProgram="N">
-          <Header Description="ERROR" ISN_2="2" LastIsn="36" id="364">
-            <LastModified _date="739587" _time="44018" date="02/12/2025" time="12:13:38"/>
+          <Header Description="ERROR" ISN_2="2" LastIsn="35" id="364">
+            <LastModified _date="739591" _time="47325" date="06/12/2025" time="13:08:45"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -3059,7 +3077,7 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="7" _last_test_id="7" id="1">
+            <FormEntry _last_isn="8" _last_test_id="8" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
@@ -3194,7 +3212,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="CHECK CONTROL" ISN_2="3" LastIsn="36" id="364">
+          <Header Description="CHECK CONTROL" ISN_2="3" LastIsn="35" id="364">
             <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -3686,7 +3704,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="STEP 1" ISN_2="4" LastIsn="36" id="364">
+            <Header Description="STEP 1" ISN_2="4" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -4043,7 +4061,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="PRD010 READ" ISN_2="5" LastIsn="36" id="364">
+              <Header Description="PRD010 READ" ISN_2="5" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -4622,7 +4640,7 @@
               <VarRangeInfo Mode="F" VarRangeVeeIsn="3" id="1"/>
               <VarRangeInfo Mode="T" VarRangeVeeIsn="3" id="2"/>
               <Task MainProgram="N">
-                <Header Description="WORK1 MAKE" ISN_2="6" LastIsn="36" id="364">
+                <Header Description="WORK1 MAKE" ISN_2="6" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="Y"/>
@@ -4835,7 +4853,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 2" ISN_2="7" LastIsn="36" id="364">
+            <Header Description="STEP 2" ISN_2="7" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -5161,7 +5179,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="PRD024 READ" ISN_2="8" LastIsn="36" id="364">
+              <Header Description="PRD024 READ" ISN_2="8" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -5516,7 +5534,7 @@
               <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="1"/>
               <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="2"/>
               <Task MainProgram="N">
-                <Header Description="WORK2 MAKE" ISN_2="9" LastIsn="36" id="364">
+                <Header Description="WORK2 MAKE" ISN_2="9" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="Y"/>
@@ -5763,7 +5781,7 @@
               </Task>
             </Task>
             <Task MainProgram="N">
-              <Header Description="SERCH" ISN_2="10" LastIsn="36" id="364">
+              <Header Description="SERCH" ISN_2="10" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -6161,7 +6179,7 @@
                 </Expression>
               </Expressions>
               <Task MainProgram="N">
-                <Header Description="LOOP" ISN_2="11" LastIsn="36" id="364">
+                <Header Description="LOOP" ISN_2="11" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="N"/>
@@ -6510,7 +6528,7 @@
                   </Expression>
                 </Expressions>
                 <Task MainProgram="N">
-                  <Header Description="WORK2 MAKE" ISN_2="12" LastIsn="36" id="364">
+                  <Header Description="WORK2 MAKE" ISN_2="12" LastIsn="35" id="364">
                     <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                     <ExecutionRight comp="-1"/>
                     <Resident val="Y"/>
@@ -6761,7 +6779,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 3" ISN_2="13" LastIsn="36" id="364">
+            <Header Description="STEP 3" ISN_2="13" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -7062,7 +7080,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="WK1 READ" ISN_2="14" LastIsn="36" id="364">
+              <Header Description="WK1 READ" ISN_2="14" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -7328,7 +7346,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="MASS CHECK" ISN_2="15" LastIsn="36" id="364">
+            <Header Description="MASS CHECK" ISN_2="15" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -7577,7 +7595,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="PRD067 READ" ISN_2="16" LastIsn="36" id="364">
+              <Header Description="PRD067 READ" ISN_2="16" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -7776,7 +7794,7 @@
                 </Expression>
               </Expressions>
               <Task MainProgram="N">
-                <Header Description="PRD024 READ" ISN_2="17" LastIsn="36" id="364">
+                <Header Description="PRD024 READ" ISN_2="17" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="Y"/>
@@ -8089,7 +8107,7 @@
                 <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="1"/>
                 <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="2"/>
                 <Task MainProgram="N">
-                  <Header Description="PRD010 READ" ISN_2="18" LastIsn="36" id="364">
+                  <Header Description="PRD010 READ" ISN_2="18" LastIsn="35" id="364">
                     <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                     <ExecutionRight comp="-1"/>
                     <Resident val="Y"/>
@@ -8495,7 +8513,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 4" ISN_2="19" LastIsn="36" id="364">
+            <Header Description="STEP 4" ISN_2="19" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -8808,7 +8826,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="PRD0004 READ" ISN_2="20" LastIsn="36" id="364">
+              <Header Description="PRD0004 READ" ISN_2="20" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -9507,7 +9525,7 @@
               <VarRangeInfo Mode="F" VarRangeVeeIsn="4" id="3"/>
               <VarRangeInfo Mode="T" VarRangeVeeIsn="4" id="4"/>
               <Task MainProgram="N">
-                <Header Description="WORK3 MAKE" ISN_2="21" LastIsn="36" id="364">
+                <Header Description="WORK3 MAKE" ISN_2="21" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="Y"/>
@@ -9754,7 +9772,7 @@
                 </Expressions>
               </Task>
               <Task MainProgram="N">
-                <Header Description="CREATE PRD052" ISN_2="22" LastIsn="36" id="364">
+                <Header Description="CREATE PRD052" ISN_2="22" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="N"/>
@@ -10422,7 +10440,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 5" ISN_2="23" LastIsn="36" id="364">
+            <Header Description="STEP 5" ISN_2="23" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
@@ -10830,7 +10848,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP5 CHECK" ISN_2="24" LastIsn="36" id="364">
+            <Header Description="STEP5 CHECK" ISN_2="24" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -11156,7 +11174,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 6" ISN_2="25" LastIsn="36" id="364">
+            <Header Description="STEP 6" ISN_2="25" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
@@ -11492,7 +11510,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 6 CHECK" ISN_2="26" LastIsn="36" id="364">
+            <Header Description="STEP 6 CHECK" ISN_2="26" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
@@ -11818,8 +11836,8 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="ERROR" ISN_2="27" LastIsn="36" id="364">
-              <LastModified _date="739587" _time="44025" date="02/12/2025" time="12:13:45"/>
+            <Header Description="ERROR" ISN_2="27" LastIsn="35" id="364">
+              <LastModified _date="739591" _time="47458" date="06/12/2025" time="13:10:58"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -12177,7 +12195,7 @@
               </LogicUnit>
             </TaskLogic>
             <TaskForms>
-              <FormEntry _last_isn="7" _last_test_id="7" id="1">
+              <FormEntry _last_isn="8" _last_test_id="8" id="1">
                 <PropertyList model="FORM_WEB_CLIENT">
                   <X id="21"/>
                   <Y id="22"/>
@@ -12312,7 +12330,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 7" ISN_2="28" LastIsn="36" id="364">
+            <Header Description="STEP 7" ISN_2="28" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -12625,7 +12643,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="PRD0004 READ" ISN_2="29" LastIsn="36" id="364">
+              <Header Description="PRD0004 READ" ISN_2="29" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -13295,7 +13313,7 @@
               <VarRangeInfo Mode="F" VarRangeVeeIsn="4" id="3"/>
               <VarRangeInfo Mode="T" VarRangeVeeIsn="4" id="4"/>
               <Task MainProgram="N">
-                <Header Description="CREATE PRD052" ISN_2="30" LastIsn="36" id="364">
+                <Header Description="CREATE PRD052" ISN_2="30" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="N"/>
@@ -13963,7 +13981,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="STEP 8" ISN_2="31" LastIsn="36" id="364">
+            <Header Description="STEP 8" ISN_2="31" LastIsn="35" id="364">
               <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
@@ -15361,7 +15379,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="CREATE FRAME#" ISN_2="32" LastIsn="36" id="364">
+              <Header Description="CREATE FRAME#" ISN_2="32" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="Y"/>
@@ -15659,7 +15677,7 @@
                 </Expression>
               </Expressions>
               <Task MainProgram="N">
-                <Header Description="INSERT PRD005" ISN_2="33" LastIsn="36" id="364">
+                <Header Description="INSERT PRD005" ISN_2="33" LastIsn="35" id="364">
                   <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                   <ExecutionRight comp="-1"/>
                   <Resident val="Y"/>
@@ -15961,7 +15979,7 @@
               </Task>
             </Task>
             <Task MainProgram="N">
-              <Header Description="CREATE PRD052" ISN_2="34" LastIsn="36" id="364">
+              <Header Description="CREATE PRD052" ISN_2="34" LastIsn="35" id="364">
                 <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -16632,7 +16650,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="SELECT ODRBZ1" ISN_2="35" LastIsn="36" id="364">
+          <Header Description="SELECT ODRBZ1" ISN_2="35" LastIsn="35" id="364">
             <LastModified _date="739587" _time="43431" date="02/12/2025" time="12:03:51"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
