@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="19" id="358">
-          <LastModified _date="739589" _time="44894" date="04/12/2025" time="12:28:14"/>
+          <LastModified _date="739593" _time="45588" date="08/12/2025" time="12:39:48"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -8776,7 +8776,7 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="3658" EndBlockSegment="3658" FlowIsn="3657" Type="I">
+                <BLOCK EndBlock="3658" EndBlockSegment="4066" FlowIsn="3657" Type="I">
                   <Condition Exp="18"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -8808,6 +8808,21 @@
                 <Evaluate FlowIsn="3687">
                   <Expression val="175"/>
                   <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="3658" EndBlockSegment="3658" FlowIsn="4066" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="4067">
+                  <Expression val="186"/>
+                  <Condition Exp="90"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
@@ -10286,6 +10301,10 @@
           </Expression>
           <Expression id="175">
             <ExpSyntax val="CtrlGoto('CHASSIS_NO_V',0,0)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="186">
+            <ExpSyntax val="CtrlGoto('ENGINE_NO_V',0,0)"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="176">
