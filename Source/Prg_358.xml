@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="19" id="358">
-          <LastModified _date="739593" _time="45588" date="08/12/2025" time="12:39:48"/>
+          <LastModified _date="739593" _time="57297" date="08/12/2025" time="15:54:57"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1348,6 +1348,9 @@
                   <INT_DSP_INFO>
                     <v>0</v>
                   </INT_DSP_INFO>
+                  <INT_DIT_INFO>
+                    <v>6</v>
+                  </INT_DIT_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -4674,13 +4677,26 @@
                 <END_BLK FlowIsn="338"/>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="988" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="RP" TitleTxt="Warning" VR_DISP="B">
-                  <AppendToErrorLog val="N"/>
-                  <Disabled val="1"/>
+                <BLOCK EndBlock="4096" EndBlockSegment="4097" FlowIsn="4095" Type="I">
+                  <Condition Exp="187"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="4098">
+                  <Expression val="175"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="4096" EndBlockSegment="4096" FlowIsn="4097" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
               </LogicLine>
               <LogicLine>
                 <Evaluate FlowIsn="760">
@@ -4689,6 +4705,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="4096"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -10308,7 +10327,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="176">
-            <ExpSyntax val="'PGM=VPRDO042'"/>
+            <ExpSyntax val="'PGM=VPRDO042 : ' &amp; IF ({0,3}='2','AF-OFF RESULT ENTRY(ATV COUPON)','AF-OFF RESULT ENTRY')"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="177">
@@ -10337,6 +10356,10 @@
           </Expression>
           <Expression id="185">
             <ExpSyntax val="LastClicked()&lt;>'btnexit'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="187">
+            <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="23" id="361">
-          <LastModified _date="739593" _time="38813" date="08/12/2025" time="10:46:53"/>
+          <LastModified _date="739593" _time="60543" date="08/12/2025" time="16:49:03"/>
           <Public val="RIA217_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -5509,7 +5509,7 @@
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="3889">
-                  <FieldID val="126"/>
+                  <FieldID val="127"/>
                   <WithValue val="19"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
@@ -5639,6 +5639,7 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="155" FlowIsn="487" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="S">
                   <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="3"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -5665,6 +5666,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="164"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -5673,6 +5675,7 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="155" FlowIsn="489" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
                   <AppendToErrorLog val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="164"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -5696,6 +5699,28 @@
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
                   <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="4012">
+                  <FieldID val="127"/>
+                  <WithValue val="155"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="3"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="4011">
+                  <FieldID val="127"/>
+                  <WithValue val="155"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="164"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -5854,7 +5879,7 @@
                     <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="28"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -7402,10 +7427,6 @@
             <ExpSyntax val="Len (Trim ({0,10}))&lt;>17"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="21">
-            <ExpSyntax val="'PLEASE SCAN 17 DIGIT FRAME'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="22">
             <ExpSyntax val="Trim ({0,129})"/>
             <ExpAttribute val="A"/>
@@ -7666,10 +7687,6 @@
             <ExpSyntax val="{0,2}&lt;>'HMS' AND {0,16} AND {0,40}&lt;>0 OR {0,2}&lt;>'HMS' AND {0,54} AND {0,77}&lt;>0"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="89">
-            <ExpSyntax val="{0,2}='HMS' AND {0,16} AND NOT ({0,42}={0,38} AND {0,43}={0,39}) AND {0,42}&lt;>0 OR {0,2}='HMS' AND {0,54} AND NOT ({0,79}={0,75} AND {0,80}={0,76}) AND {0,79}&lt;>0"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="90">
             <ExpSyntax val="{0,2}&lt;>'HMS' AND {0,16} AND {0,42}&lt;>0 OR {0,2}&lt;>'HMS' AND {0,54} AND {0,79}&lt;>0"/>
             <ExpAttribute val="B"/>
@@ -7796,30 +7813,6 @@
           </Expression>
           <Expression id="123">
             <ExpSyntax val="'003'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="126">
-            <ExpSyntax val="'006'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="127">
-            <ExpSyntax val="'007'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="128">
-            <ExpSyntax val="'008'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="129">
-            <ExpSyntax val="'009'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="130">
-            <ExpSyntax val="'010'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="131">
-            <ExpSyntax val="'011'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="132">
@@ -7982,16 +7975,8 @@
             <ExpSyntax val="'YOU ARE NOT ALLOWED TO CANCEL THIS ENTRY, CONTACT ISD'"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="172">
-            <ExpSyntax val="{0,153}"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="173">
             <ExpSyntax val="'PGM=VPRDO066 : ' &amp; IF ({0,3}='2','PDI-OFF RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','PDI-OFF RESULT ENTRY(NON ORDER ALLOCATE)','PDI-OFF RESULT ENTRY'))"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="174">
-            <ExpSyntax val="{0,127}"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
@@ -8001,7 +7986,7 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="LET Verification-4F" ISN_2="2" LastIsn="3" id="361">
+          <Header Description="LET Verification-4F" ISN_2="2" LastIsn="23" id="361">
             <LastModified _date="739589" _time="65908" date="04/12/2025" time="18:18:28"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -8423,7 +8408,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Create LET Log" ISN_2="3" LastIsn="3" id="361">
+            <Header Description="Create LET Log" ISN_2="3" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -8896,7 +8881,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LET Verification-3F" ISN_2="4" LastIsn="5" id="361">
+          <Header Description="LET Verification-3F" ISN_2="4" LastIsn="23" id="361">
             <LastModified _date="739589" _time="65926" date="04/12/2025" time="18:18:46"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -9318,7 +9303,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Create LET Log" ISN_2="5" LastIsn="5" id="361">
+            <Header Description="Create LET Log" ISN_2="5" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -9791,7 +9776,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LET Verification-2F" ISN_2="6" LastIsn="7" id="361">
+          <Header Description="LET Verification-2F" ISN_2="6" LastIsn="23" id="361">
             <LastModified _date="739589" _time="65935" date="04/12/2025" time="18:18:55"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -10213,7 +10198,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Create LET Log" ISN_2="7" LastIsn="7" id="361">
+            <Header Description="Create LET Log" ISN_2="7" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -10686,7 +10671,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Data not available LET Log" ISN_2="8" LastIsn="8" id="361">
+          <Header Description="Data not available LET Log" ISN_2="8" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -11142,7 +11127,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LET Verification-1F" ISN_2="9" LastIsn="10" id="361">
+          <Header Description="LET Verification-1F" ISN_2="9" LastIsn="23" id="361">
             <LastModified _date="739589" _time="65951" date="04/12/2025" time="18:19:11"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -11564,7 +11549,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Create LET Log" ISN_2="10" LastIsn="10" id="361">
+            <Header Description="Create LET Log" ISN_2="10" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -12037,7 +12022,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="PDIOFFRESULTENTRY" ISN_2="11" LastIsn="12" id="361">
+          <Header Description="PDIOFFRESULTENTRY" ISN_2="11" LastIsn="23" id="361">
             <LastModified _date="739590" _time="48200" date="05/12/2025" time="13:23:20"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -12733,7 +12718,7 @@
           <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="3"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="4"/>
           <Task MainProgram="N">
-            <Header Description="EXEC PPRDO066" ISN_2="12" LastIsn="12" id="361">
+            <Header Description="EXEC PPRDO066" ISN_2="12" LastIsn="23" id="361">
               <LastModified _date="739589" _time="65996" date="04/12/2025" time="18:19:56"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -13020,7 +13005,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Update PRD005" ISN_2="13" LastIsn="16" id="361">
+          <Header Description="Update PRD005" ISN_2="13" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -13356,7 +13341,7 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="FLAG =1, ADDITION" ISN_2="14" LastIsn="15" id="361">
+            <Header Description="FLAG =1, ADDITION" ISN_2="14" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64726" date="04/12/2025" time="17:58:46"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -14540,7 +14525,7 @@
             <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="3"/>
             <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="4"/>
             <Task MainProgram="N">
-              <Header Description="Create  DPR record" ISN_2="15" LastIsn="15" id="361">
+              <Header Description="Create  DPR record" ISN_2="15" LastIsn="23" id="361">
                 <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -14996,7 +14981,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="FLAG =1,CANCEL" ISN_2="16" LastIsn="16" id="361">
+            <Header Description="FLAG =1,CANCEL" ISN_2="16" LastIsn="23" id="361">
               <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -15669,7 +15654,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="PRD005_V" ISN_2="17" LastIsn="17" id="361">
+          <Header Description="PRD005_V" ISN_2="17" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16047,7 +16032,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="3" id="6"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LINK1(ISO)" ISN_2="18" LastIsn="18" id="361">
+          <Header Description="LINK1(ISO)" ISN_2="18" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16298,7 +16283,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LINK2(VIN)" ISN_2="19" LastIsn="19" id="361">
+          <Header Description="LINK2(VIN)" ISN_2="19" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64010" date="04/12/2025" time="17:46:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16531,7 +16516,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="ERRORMESSAGE" ISN_2="20" LastIsn="20" id="361">
+          <Header Description="ERRORMESSAGE" ISN_2="20" LastIsn="23" id="361">
             <LastModified _date="739589" _time="66046" date="04/12/2025" time="18:20:46"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16837,7 +16822,7 @@
           </TaskForms>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Month Check" ISN_2="21" LastIsn="21" id="361">
+          <Header Description="Month Check" ISN_2="21" LastIsn="23" id="361">
             <LastModified _date="739590" _time="38413" date="05/12/2025" time="10:40:13"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -17177,7 +17162,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="RE_ERRORMESSAGE" ISN_2="22" LastIsn="22" id="361">
+          <Header Description="RE_ERRORMESSAGE" ISN_2="22" LastIsn="23" id="361">
             <LastModified _date="739589" _time="64616" date="04/12/2025" time="17:56:56"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -17709,7 +17694,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="Confirmation" ISN_2="23" LastIsn="23" id="361">
-            <LastModified _date="739590" _time="61435" date="05/12/2025" time="17:03:55"/>
+            <LastModified _date="739593" _time="60543" date="08/12/2025" time="16:49:03"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -18075,10 +18060,6 @@
             <Expression id="4">
               <ExpSyntax val="{1,10}"/>
               <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="5">
-              <ExpSyntax val="Delay (100)"/>
-              <ExpAttribute val="B"/>
             </Expression>
             <Expression id="6">
               <ExpSyntax val="Trim({1,149})='Pass'"/>

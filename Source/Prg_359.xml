@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739589" _time="45658" date="04/12/2025" time="12:40:58"/>
+          <LastModified _date="739593" _time="57195" date="08/12/2025" time="15:53:15"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1049,6 +1049,12 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_DSP_INFO>
+                    <v>0</v>
+                  </INT_DSP_INFO>
+                  <INT_DIT_INFO>
+                    <v>2</v>
+                  </INT_DIT_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -3110,35 +3116,6 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="206">
-                  <Type val="2"/>
-                  <Text val="Called in Sub form (with Destination in Call Sub Task)"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="207">
-                  <Type val="2"/>
-                  <Text val="Called in Sub form"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="208">
-                  <OperationType val="T"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="2"/>
-                  <Lock val="N"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <DestSubformName val="VQON_RESULT_ENTRY"/>
-                  <RetainFocus val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
                 <CallTask FlowIsn="209">
                   <OperationType val="P"/>
                   <Event>
@@ -3226,13 +3203,22 @@
                 <END_BLK FlowIsn="216"/>
               </LogicLine>
               <LogicLine>
+                <BLOCK EndBlock="1447" EndBlockSegment="1447" FlowIsn="1446" Type="I">
+                  <Condition Exp="117"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <Evaluate FlowIsn="367">
                   <Expression val="111"/>
-                  <Disabled val="1"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="50"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="1447"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -3328,19 +3314,6 @@
             <TXT val="MODE_DSP"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
-              <LogicLine>
-                <RaiseEvent FlowIsn="221">
-                  <Event>
-                    <EventType val="I"/>
-                    <InternalEventID val="63"/>
-                  </Event>
-                  <Wait val="78"/>
-                  <Disabled val="1"/>
-                  <Condition Exp="92"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </RaiseEvent>
-              </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="222">
                   <Type val="2"/>
@@ -3540,35 +3513,6 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="238">
-                  <Type val="2"/>
-                  <Text val="Called in Sub form (with Destination in Call Sub Task)"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="239">
-                  <Type val="2"/>
-                  <Text val="Called in Sub form"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="240">
-                  <OperationType val="T"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="2"/>
-                  <Lock val="Y"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <DestSubformName val="VQON_RESULT_ENTRY"/>
-                  <RetainFocus val="Y"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -5029,6 +4973,14 @@
               <FormName id="311" valUnicode="VQ_ONRESULT_ENTRY"/>
               <_TabbingOrder id="318" val="2"/>
               <WindowType id="358" val="12"/>
+              <CustomProperties id="713">
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name val="FormName"/>
+                    <Expression val="118"/>
+                  </CustomProperty>
+                </CustomProperties>
+              </CustomProperties>
               <ParkFirstOn id="743"/>
             </PropertyList>
             <Control _test_id="1" id="1">
@@ -5104,8 +5056,8 @@
                 <Height id="24" val="267"/>
                 <ControlName id="46" val="VQON_RESULT_ENTRY"/>
                 <Arguments id="126"/>
-                <ConnectTo id="156" val="4"/>
-                <TaskNumber id="183"/>
+                <ConnectTo id="156" val="2"/>
+                <TaskNumber comp="-1" id="183" obj="2"/>
               </PropertyList>
             </Control>
             <Control _test_id="5" id="5">
@@ -5326,6 +5278,7 @@
                 <Height id="24" val="26"/>
                 <Data FieldID="114" id="43"/>
                 <ControlName id="46" val="Edit21"/>
+                <Modifiable id="53"/>
                 <Visible id="61"/>
                 <Enabled id="62"/>
                 <Format id="82" valUnicode="30"/>
@@ -5375,10 +5328,6 @@
           <Expression id="5">
             <ExpSyntax val="Trim ({0,100})"/>
             <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="6">
-            <ExpSyntax val="IF ({0,97},35,1)"/>
-            <ExpAttribute val="N"/>
           </Expression>
           <Expression id="7">
             <ExpSyntax val="Trim ({0,98})"/>
@@ -5492,10 +5441,6 @@
             <ExpSyntax val="{0,95}"/>
             <ExpAttribute val="D"/>
           </Expression>
-          <Expression id="35">
-            <ExpSyntax val="IF ({0,3}='2','VQ-ON RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','VQ-ON RESULT ENTRY(NON ORDER ALLOCATE)','VQ-ON RESULT ENTRY'))"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="36">
             <ExpSyntax val="Trim ({0,100})='' AND Trim ({0,98})='' AND {0,3}='1'"/>
             <ExpAttribute val="B"/>
@@ -5504,16 +5449,16 @@
             <ExpSyntax val="IF ({0,1}='A','MM-DD-YYYY',IF ({0,1}='E','DD-MM-YYYY','YYYY-MM-DD'))"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="118">
+            <ExpSyntax val="IF ({0,3}='2','VQ-ON RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','VQ-ON RESULT ENTRY(NON ORDER ALLOCATE)','VQ-ON RESULT ENTRY'))"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="38">
             <ExpSyntax val="IF (NOT ({0,7}),'ADDITION',{0,8})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="39">
             <ExpSyntax val="'TRUE'LOG"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="40">
-            <ExpSyntax val="NOT ({0,6})"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="41">
@@ -5700,10 +5645,6 @@
             <ExpSyntax val="'008'"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="87">
-            <ExpSyntax val="'009'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="88">
             <ExpSyntax val="'TRUE'LOG"/>
             <ExpAttribute val="B"/>
@@ -5789,33 +5730,25 @@
             <ExpAttribute val="N"/>
           </Expression>
           <Expression id="110">
-            <ExpSyntax val="'PGM=VPRDO065'"/>
+            <ExpSyntax val="'PGM=VPRDO065 : ' &amp;IF ({0,3}='2','VQ-ON RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','VQ-ON RESULT ENTRY(NON ORDER ALLOCATE)','VQ-ON RESULT ENTRY'))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="111">
             <ExpSyntax val="CtrlGoto('CHASSIS_NO_DSP',0,0)"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="112">
-            <ExpSyntax val="{0,98}"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="113">
             <ExpSyntax val="Trim({0,10})&lt;>'' AND (Trim ({0,98})&lt;>'' OR Trim ({0,100})&lt;>'')"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="114">
-            <ExpSyntax val="Trim ({0,100})&lt;>''"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="115">
-            <ExpSyntax val="Trim({0,10})&lt;>'' AND Trim ({0,98})='' AND Trim ({0,100})=''"/>
+          <Expression id="117">
+            <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="VQ_ON_RESULT_ENTRY" ISN_2="2" LastIsn="12" id="359">
-            <LastModified _date="739588" _time="60113" date="03/12/2025" time="16:41:53"/>
+            <LastModified _date="739593" _time="55839" date="08/12/2025" time="15:30:39"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5944,7 +5877,7 @@
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
                     <Range MAX="5" MIN="4"/>
-                    <_DitIndexForToolkit val="3"/>
+                    <_DitIndexForToolkit val="10"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5957,7 +5890,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="4"/>
+                    <_DitIndexForToolkit val="11"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5970,7 +5903,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="5"/>
+                    <_DitIndexForToolkit val="12"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5983,7 +5916,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="6"/>
+                    <_DitIndexForToolkit val="13"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5996,7 +5929,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="7"/>
+                    <_DitIndexForToolkit val="14"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -6014,7 +5947,7 @@
                       <v>15</v>
                       <v>16</v>
                     </INT_DIT_INFO>
-                    <_DitIndexForToolkit val="8"/>
+                    <_DitIndexForToolkit val="15"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -6027,7 +5960,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="9"/>
+                    <_DitIndexForToolkit val="16"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -6088,7 +6021,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="10"/>
+                    <_DitIndexForToolkit val="17"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -6267,6 +6200,69 @@
                   <LastDivider id="260" val="Y"/>
                 </PropertyList>
               </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="2" id="2">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="103"/>
+                  <ControlLayer id="25" val="1"/>
+                  <ControlName id="46" val="Column2"/>
+                  <ColumnTitle id="139" valUnicode="FRAME NO."/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="3" id="3">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="44"/>
+                  <ControlLayer id="25" val="2"/>
+                  <ControlName id="46" val="Column3"/>
+                  <ColumnTitle id="139" valUnicode="KEY NO."/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="4" id="4">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="62"/>
+                  <ControlLayer id="25" val="3"/>
+                  <ControlName id="46" val="Column4"/>
+                  <ColumnTitle id="139" valUnicode="MODEL CODE"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="5" id="5">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="80"/>
+                  <ControlLayer id="25" val="4"/>
+                  <ControlName id="46" val="Column5"/>
+                  <ColumnTitle id="139" valUnicode="COLOR CODE"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="6" id="6">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="75"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="Column6"/>
+                  <ColumnTitle id="139" valUnicode="VQ-ON DATE"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="7" id="7">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="71"/>
+                  <ControlLayer id="25" val="6"/>
+                  <ControlName id="46" val="Column7"/>
+                  <ColumnTitle id="139" valUnicode="VQ-ON TIME"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="8" id="8">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Model comp="-1" id="1" obj="716"/>
+                  <Width id="23" val="93"/>
+                  <ControlLayer id="25" val="7"/>
+                  <ControlName id="46" val="Column8"/>
+                  <ColumnTitle id="139" valUnicode="MODEL NAME"/>
+                </PropertyList>
+              </Control>
               <Control ISN_FATHER="1" _test_id="9" id="9">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="719"/>
@@ -6353,7 +6349,7 @@
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="15" id="15">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="719"/>
                   <X id="21" val="306"/>
                   <Y id="22" val="41"/>
@@ -6364,7 +6360,6 @@
                   <ControlName id="46" val="S5_VQON_DATE"/>
                   <Visible Exp="6" id="61"/>
                   <MultiLineEdit id="71"/>
-                  <Format Exp="1" id="82" valUnicode="DD-MM-YYYY"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="16" id="16">
@@ -6393,69 +6388,6 @@
                   <ControlName id="46" val="S5_MTO_NAME"/>
                   <Visible id="61"/>
                   <Format id="82" valUnicode="U18A"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="2" id="2">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="103"/>
-                  <ControlLayer id="25" val="1"/>
-                  <ControlName id="46" val="Column2"/>
-                  <ColumnTitle id="139" valUnicode="FRAME NO."/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="3" id="3">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="44"/>
-                  <ControlLayer id="25" val="2"/>
-                  <ControlName id="46" val="Column3"/>
-                  <ColumnTitle id="139" valUnicode="KEY NO."/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="4" id="4">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="62"/>
-                  <ControlLayer id="25" val="3"/>
-                  <ControlName id="46" val="Column4"/>
-                  <ColumnTitle id="139" valUnicode="MODEL CODE"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="5" id="5">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="80"/>
-                  <ControlLayer id="25" val="4"/>
-                  <ControlName id="46" val="Column5"/>
-                  <ColumnTitle id="139" valUnicode="COLOR CODE"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="6" id="6">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="75"/>
-                  <ControlLayer id="25" val="5"/>
-                  <ControlName id="46" val="Column6"/>
-                  <ColumnTitle id="139" valUnicode="VQ-ON DATE"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="7" id="7">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="71"/>
-                  <ControlLayer id="25" val="6"/>
-                  <ControlName id="46" val="Column7"/>
-                  <ColumnTitle id="139" valUnicode="VQ-ON TIME"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="8" id="8">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="93"/>
-                  <ControlLayer id="25" val="7"/>
-                  <ControlName id="46" val="Column8"/>
-                  <ColumnTitle id="139" valUnicode="MODEL NAME"/>
                 </PropertyList>
               </Control>
             </FormEntry>
@@ -9553,7 +9485,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="Month check" ISN_2="11" LastIsn="12" id="359">
-            <LastModified _date="739589" _time="43524" date="04/12/2025" time="12:05:24"/>
+            <LastModified _date="739593" _time="55809" date="08/12/2025" time="15:30:09"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -9884,10 +9816,6 @@
             <Expression id="3">
               <ExpSyntax val="{0,1}"/>
               <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="4">
-              <ExpSyntax val="Str({0,3},'10.3')"/>
-              <ExpAttribute val="A"/>
             </Expression>
             <Expression id="5">
               <ExpSyntax val="NOT ISNULL({0,1})"/>
