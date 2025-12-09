@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739593" _time="57195" date="08/12/2025" time="15:53:15"/>
+          <LastModified _date="739594" _time="45128" date="09/12/2025" time="12:32:08"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="114"/>
+        <ItemIsn val="115"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="5"/>
@@ -915,16 +915,6 @@
             <Column id="44" name="V:Export_Frame">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_LOGICAL" id="1"/>
-                <_FieldStyle id="276" val="1"/>
-              </PropertyList>
-            </Column>
-            <Column id="45" name="vCount">
-              <PropertyList model="FIELD">
-                <Model attr_obj="FIELD_NUMERIC" id="1"/>
-                <Picture id="157" valUnicode="5"/>
-                <_Dec id="181"/>
-                <_Whole id="182" val="5"/>
-                <_Negative id="192"/>
                 <_FieldStyle id="276" val="1"/>
               </PropertyList>
             </Column>
@@ -2959,18 +2949,6 @@
               <LogicLine>
                 <END_LINK FlowIsn="196"/>
               </LogicLine>
-              <LogicLine>
-                <Select FieldID="113" FlowIsn="197" id="113">
-                  <Column val="45"/>
-                  <Type val="V"/>
-                  <ExposedToRoute val="N"/>
-                  <IsParameter val="N"/>
-                  <DIFF_UPDATE val="T"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Select>
-              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -3075,17 +3053,6 @@
             </Event>
             <ExecuteOn_ val="O"/>
             <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="202">
-                  <FieldID val="113"/>
-                  <WithValue val="107"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
               <LogicLine>
                 <Update FlowIsn="203">
                   <FieldID val="10"/>
@@ -3212,7 +3179,7 @@
               <LogicLine>
                 <Evaluate FlowIsn="367">
                   <Expression val="111"/>
-                  <Condition Exp="50"/>
+                  <Condition Exp="119"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
@@ -3267,37 +3234,6 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="9" propagate="78">
-            <Level val="C"/>
-            <Type val="V"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="MODE_DSP"/>
-            <Disabled val="1"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Remark FlowIsn="219">
-                  <Type val="2"/>
-                  <Text val="Disabled for Web Client"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Evaluate FlowIsn="220">
-                  <Expression val="91"/>
-                  <Disabled val="1"/>
-                  <Condition Exp="92"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Evaluate>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -3390,17 +3326,6 @@
             <TXT val="CHASSIS_NO_DSP"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="230">
-                  <FieldID val="113"/>
-                  <WithValue val="109"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
               <LogicLine>
                 <Update FlowIsn="231">
                   <FieldID val="7"/>
@@ -5189,8 +5114,8 @@
                 <Attribute id="83" val="68"/>
               </PropertyList>
             </Control>
-            <Control PDOD="128" _test_id="16" id="16">
-              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+            <Control _test_id="16" id="16">
+              <PropertyList FLD_FLAGS="2" model="CTRL_WEB_CLIENT_EDIT">
                 <X id="21" val="379"/>
                 <Y id="22" val="325"/>
                 <Width id="23" val="65"/>
@@ -5199,8 +5124,7 @@
                 <ControlName id="46" val="Edit16"/>
                 <Visible Exp="60" id="61"/>
                 <Enabled Exp="32" id="62"/>
-                <Format id="82" valUnicode="HH:MM:SS"/>
-                <Attribute id="83" val="84"/>
+                <Format id="82" valUnicode="U12"/>
               </PropertyList>
             </Control>
             <Control PDOD="1" _test_id="17" id="17">
@@ -5602,8 +5526,8 @@
             <ExpAttribute val="D"/>
           </Expression>
           <Expression id="76">
-            <ExpSyntax val="IF ({0,16},{0,33},IF ({0,46},{0,62},0))"/>
-            <ExpAttribute val="T"/>
+            <ExpSyntax val="IF ({0,16},TStr({0,33},'HH:MM:SS PM'),IF ({0,46},TStr({0,62},'HH:MM:SS PM'),''))"/>
+            <ExpAttribute val="U"/>
           </Expression>
           <Expression id="77">
             <ExpSyntax val="'VPRDO065'"/>
@@ -5725,10 +5649,6 @@
             <ExpSyntax val="0"/>
             <ExpAttribute val="N"/>
           </Expression>
-          <Expression id="109">
-            <ExpSyntax val="{0,113}+1"/>
-            <ExpAttribute val="N"/>
-          </Expression>
           <Expression id="110">
             <ExpSyntax val="'PGM=VPRDO065 : ' &amp;IF ({0,3}='2','VQ-ON RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','VQ-ON RESULT ENTRY(NON ORDER ALLOCATE)','VQ-ON RESULT ENTRY'))"/>
             <ExpAttribute val="A"/>
@@ -5745,10 +5665,14 @@
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="119">
+            <ExpSyntax val="{0,8}='ADDITION' OR {0,8}='INQUIRY'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="VQ_ON_RESULT_ENTRY" ISN_2="2" LastIsn="12" id="359">
-            <LastModified _date="739593" _time="55839" date="08/12/2025" time="15:30:39"/>
+            <LastModified _date="739594" _time="45128" date="09/12/2025" time="12:32:08"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -6115,6 +6039,32 @@
                     <Text val="/// ADD 1999.11.19"/>
                   </Remark>
                 </LogicLine>
+              </LogicLines>
+            </LogicUnit>
+            <LogicUnit id="5" propagate="78">
+              <Level val="R"/>
+              <Type val="P"/>
+              <Scope val="S"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="S"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <Remark FlowIsn="24">
+                    <Type val="2"/>
+                    <Text val="/// ADD 09.12.2025"/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="23">
+                    <Type val="2"/>
+                    <Text val="Moved Task Suffix logic to RP as Subform task suffix will execute only while closing the task"/>
+                  </Remark>
+                </LogicLine>
                 <LogicLine>
                   <CallTask FlowIsn="21">
                     <OperationType val="T"/>
@@ -6144,18 +6094,6 @@
                   </Update>
                 </LogicLine>
               </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="5" propagate="78">
-              <Level val="R"/>
-              <Type val="P"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <ExecuteOn_ val="O"/>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>

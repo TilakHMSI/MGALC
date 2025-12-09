@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="23" id="361">
-          <LastModified _date="739593" _time="60543" date="08/12/2025" time="16:49:03"/>
+          <LastModified _date="739594" _time="53677" date="09/12/2025" time="14:54:37"/>
           <Public val="RIA217_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4188,7 +4188,15 @@
               <LogicLine>
                 <Evaluate FlowIsn="2357">
                   <Expression val="170"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="166"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="4123">
+                  <Expression val="175"/>
+                  <Condition Exp="84"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
@@ -7261,7 +7269,7 @@
                 <Data FieldID="9" id="43"/>
                 <ControlName id="46" val="PASS_DESC"/>
                 <Visible id="61"/>
-                <Enabled Exp="146" id="62"/>
+                <Enabled Exp="84" id="62"/>
               </PropertyList>
             </Control>
             <Control PDOD="192" _test_id="26" id="26">
@@ -7869,10 +7877,6 @@
           </Expression>
           <Expression id="145">
             <ExpSyntax val="{0,9}=' ' AND {0,8}='ADDITION'"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="146">
-            <ExpSyntax val="{0,8}='ADDITION'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="147">
@@ -12023,7 +12027,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PDIOFFRESULTENTRY" ISN_2="11" LastIsn="23" id="361">
-            <LastModified _date="739590" _time="48200" date="05/12/2025" time="13:23:20"/>
+            <LastModified _date="739594" _time="45418" date="09/12/2025" time="12:36:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -12398,6 +12402,32 @@
                     <Text val="/// ADD 1999.11.19"/>
                   </Remark>
                 </LogicLine>
+              </LogicLines>
+            </LogicUnit>
+            <LogicUnit id="5" propagate="78">
+              <Level val="R"/>
+              <Type val="P"/>
+              <Scope val="S"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="S"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <Remark FlowIsn="23">
+                    <Type val="2"/>
+                    <Text val="/// ADD 09.12.2025"/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="24">
+                    <Type val="2"/>
+                    <Text val="Moved Task Suffix logic to RP as Subform task suffix will execute only while closing the task"/>
+                  </Remark>
+                </LogicLine>
                 <LogicLine>
                   <CallTask FlowIsn="21">
                     <OperationType val="T"/>
@@ -12427,18 +12457,6 @@
                   </Update>
                 </LogicLine>
               </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="5" propagate="78">
-              <Level val="R"/>
-              <Type val="P"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <ExecuteOn_ val="O"/>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>
