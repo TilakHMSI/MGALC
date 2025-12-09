@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB005_LPRDINDICATELIST" ISN_2="1" LastIsn="3" id="375">
-          <LastModified _date="739591" _time="59621" date="06/12/2025" time="16:33:41"/>
+          <LastModified _date="739593" _time="67542" date="08/12/2025" time="18:45:42"/>
           <Public val="P_68_Open_IO"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -440,7 +440,7 @@
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
             <Level val="R"/>
-            <Type val="S"/>
+            <Type val="P"/>
             <Scope val="S"/>
             <EngineDirective val="S"/>
             <ShowMessage val="Y"/>
@@ -573,6 +573,12 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="32">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="22">
@@ -803,6 +809,10 @@
           <Expression id="8">
             <ExpSyntax val="{0,12}"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="'PL-'&amp;Trim({0,7})"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
