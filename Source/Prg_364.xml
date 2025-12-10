@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB036_PROD_INDICATE_HPE" ISN_2="1" LastIsn="35" id="364">
-          <LastModified _date="739593" _time="55692" date="08/12/2025" time="15:28:12"/>
+          <LastModified _date="739595" _time="53003" date="10/12/2025" time="14:43:23"/>
           <Public val="RIA92_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2390,6 +2390,17 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="203">
+                  <FieldID val="16"/>
+                  <WithValue val="46"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="157">
                   <OperationType val="P"/>
                   <Event>
@@ -2460,6 +2471,10 @@
                       <Variable val="2"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2510,6 +2525,17 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="250">
+                  <FieldID val="16"/>
+                  <WithValue val="47"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="28"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="168">
                   <OperationType val="P"/>
                   <Event>
@@ -2528,6 +2554,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="16"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2552,6 +2582,17 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="251">
+                  <FieldID val="16"/>
+                  <WithValue val="48"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="29"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="171">
                   <OperationType val="P"/>
                   <Event>
@@ -2570,6 +2611,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="16"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2655,6 +2700,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2745,6 +2794,10 @@
                       <Variable val="2"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2784,6 +2837,17 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="287">
+                  <FieldID val="16"/>
+                  <WithValue val="49"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="28"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="191">
@@ -2832,6 +2896,10 @@
                       <Variable val="2"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2843,6 +2911,17 @@
               </LogicLine>
               <LogicLine>
                 <END_BLK FlowIsn="193"/>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="300">
+                  <FieldID val="16"/>
+                  <WithValue val="50"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="194">
@@ -2863,6 +2942,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="16"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -3465,6 +3548,26 @@
           <Expression id="45">
             <ExpSyntax val="{0,30}"/>
             <ExpAttribute val="D"/>
+          </Expression>
+          <Expression id="46">
+            <ExpSyntax val="'VPRDB005_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="47">
+            <ExpSyntax val="'VPRDB006_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="48">
+            <ExpSyntax val="'VPRDB004_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="49">
+            <ExpSyntax val="'VPRDB007_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="50">
+            <ExpSyntax val="'VPRDB008_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <EVNT DESC="LocalError" FORCE_EXIT="N" id="1">

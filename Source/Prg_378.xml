@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB060(STAMPING MASTER LIST)" ISN_2="1" LastIsn="2" id="378">
-          <LastModified _date="739582" _time="43227" date="27/11/2025" time="12:00:27"/>
+          <LastModified _date="739595" _time="52876" date="10/12/2025" time="14:41:16"/>
           <Public val="P_103_Batch"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="N"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="3"/>
+        <ItemIsn val="5"/>
         <Resource>
           <Columns>
             <Column id="1" name="DATE_FLAG_P">
@@ -49,12 +49,30 @@
                 <Definition id="175" val="2"/>
               </PropertyList>
             </Column>
+            <Column id="5" name="OPT_ISSUE/REPRINT_V">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="8"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="8"/>
+                <_Flip id="194"/>
+              </PropertyList>
+            </Column>
             <Column id="3" name="PG-ID_V">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_ALPHA" comp="-1" id="1" obj="260"/>
                 <CharSet id="172" val="1"/>
                 <StoredAs id="173" val="1"/>
                 <Definition id="175" val="2"/>
+              </PropertyList>
+            </Column>
+            <Column id="4" name="vFILENAME">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="255"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="255"/>
+                <_Flip id="194"/>
               </PropertyList>
             </Column>
           </Columns>
@@ -165,6 +183,18 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="5" FlowIsn="14" id="5">
+                  <Column val="5"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Select FieldID="3" FlowIsn="5" id="3">
                   <ASS val="4"/>
                   <Column val="3"/>
@@ -172,6 +202,18 @@
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
                   <_DitIndexForToolkit val="3"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="4" FlowIsn="8" id="4">
+                  <Column val="4"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="S"/>
@@ -190,6 +232,19 @@
             <Event>
               <EventType val="S"/>
             </Event>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="10">
+                  <FieldID val="4"/>
+                  <WithValue val="7"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
           <LogicUnit id="4" propagate="78">
             <Level val="T"/>
@@ -233,6 +288,17 @@
                 </Evaluate>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="9">
+                  <FieldID val="4"/>
+                  <WithValue val="6"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="7">
                   <OperationType val="T"/>
                   <Event>
@@ -244,6 +310,44 @@
                   <RetainFocus val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="15">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="407"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="8"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="4"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="4"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="5"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="9"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
@@ -400,10 +504,26 @@
             <ExpSyntax val="Delay (3)"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="6">
+            <ExpSyntax val="'VPRDB060_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="7">
+            <ExpSyntax val="''"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="8">
+            <ExpSyntax val="Trim({32768,4})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="'PR1/Usual/Landscape'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="SELECT PRD003" ISN_2="2" LastIsn="2" id="378">
-            <LastModified _date="739565" _time="58916" date="10/11/2025" time="16:21:56"/>
+            <LastModified _date="739595" _time="43178" date="10/12/2025" time="11:59:38"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -429,6 +549,7 @@
             </DB>
             <IO id="1">
               <Description val="PRINTER"/>
+              <IOExpression val="35"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -438,7 +559,7 @@
               <Copies val="1"/>
               <Orientation val="L"/>
               <PrintPreview val="N"/>
-              <PDF val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -2684,6 +2805,10 @@
             </Expression>
             <Expression id="34">
               <ExpSyntax val="'003'"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="35">
+              <ExpSyntax val="Translate('%HVND%')&amp;Trim({1,4})"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>

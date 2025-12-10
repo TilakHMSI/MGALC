@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB003_PROD_INDICATE" ISN_2="1" LastIsn="14" id="363">
-          <LastModified _date="739594" _time="56201" date="09/12/2025" time="15:36:41"/>
+          <LastModified _date="739595" _time="44842" date="10/12/2025" time="12:27:22"/>
           <Public val="RIA66_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2069,6 +2069,7 @@
                   <WithValue val="9"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2195,6 +2196,17 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="302">
+                  <FieldID val="11"/>
+                  <WithValue val="38"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="243">
                   <OperationType val="P"/>
                   <Event>
@@ -2315,6 +2327,17 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="362">
+                  <FieldID val="11"/>
+                  <WithValue val="39"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="24"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="254">
                   <OperationType val="P"/>
                   <Event>
@@ -2355,6 +2378,17 @@
                   <Type val="2"/>
                   <Text val="/// FIVS_BARCODE TYPE='O'"/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="363">
+                  <FieldID val="11"/>
+                  <WithValue val="40"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="26"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="257">
@@ -2403,6 +2437,17 @@
                   <Type val="2"/>
                   <Text val="/// FIVS_BARCODE TYPE='G'"/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="364">
+                  <FieldID val="11"/>
+                  <WithValue val="41"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="27"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="261">
@@ -2645,6 +2690,17 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="413">
+                  <FieldID val="11"/>
+                  <WithValue val="42"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="25"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="282">
                   <OperationType val="P"/>
                   <Event>
@@ -2708,6 +2764,17 @@
                   <Type val="2"/>
                   <Text val=" "/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="414">
+                  <FieldID val="11"/>
+                  <WithValue val="43"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="17"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="286">
@@ -3291,6 +3358,30 @@
           <Expression id="37">
             <ExpSyntax val="{0,22}='FALSE'LOG"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="38">
+            <ExpSyntax val="'VPRDB005_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="39">
+            <ExpSyntax val="'VPRDB006_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="40">
+            <ExpSyntax val="'VPRDB004_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="41">
+            <ExpSyntax val="'VPRDB066_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="42">
+            <ExpSyntax val="'VPRDB007_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="43">
+            <ExpSyntax val="'VPRDB008_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Exit" FORCE_EXIT="N" id="1">

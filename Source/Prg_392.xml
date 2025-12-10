@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB008_LFRAMESEALPRINT" ISN_2="1" LastIsn="3" id="392">
-          <LastModified _date="739593" _time="66891" date="08/12/2025" time="18:34:51"/>
+          <LastModified _date="739595" _time="47325" date="10/12/2025" time="13:08:45"/>
           <Public val="P_71_Open IO"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="9"/>
+        <ItemIsn val="10"/>
         <Resource>
           <Columns>
             <Column id="1" name="DATE_FLAG_P">
@@ -70,6 +70,16 @@
                 <Size id="174" val="128"/>
                 <Definition id="175" val="2"/>
                 <_Flip id="194"/>
+              </PropertyList>
+            </Column>
+            <Column id="10" name="OPT_ISSUE/REPRINT_V">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="8"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="8"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449" val="Y"/>
               </PropertyList>
             </Column>
             <Column id="4" name="vX2_PLAN_CODE">
@@ -242,6 +252,19 @@
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="10" FlowIsn="26" id="10">
+                  <Column val="10"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -457,8 +480,47 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="8"/>
                   <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="27">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="407"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="9"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="10"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="10"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="11"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="8"/>
+                  <Modifier val="S"/>
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
@@ -694,16 +756,37 @@
             <ExpSyntax val="'FALSE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="8">
+            <ExpSyntax val="{0,8}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="Trim({32768,4})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="10">
+            <ExpSyntax val="'VPRDB008'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="11">
+            <ExpSyntax val="'PR1/Usual/Landscape'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="VPRDB008_L(FRAME SEAL PRINT) Batch" ISN_2="2" LastIsn="3" id="392">
-            <LastModified _date="739582" _time="64592" date="27/11/2025" time="17:56:32"/>
+            <LastModified _date="739595" _time="43770" date="10/12/2025" time="12:09:30"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
             <ReturnValue>
               <ReturnValueAttr/>
-              <ParametersAttributes/>
+              <TSK_PARAMS val="3"/>
+              <ParametersAttributes>
+                <Attr MgAttr="A"/>
+                <Attr MgAttr="A"/>
+                <Attr MgAttr="A"/>
+              </ParametersAttributes>
             </ReturnValue>
             <SqlWhereExist val="N"/>
             <TaskType val="B"/>
@@ -723,6 +806,7 @@
             </DB>
             <IO id="1">
               <Description val="Printer"/>
+              <IOExpression val="9"/>
               <OpenPrintDialog val="N"/>
               <Bottom val="70"/>
               <PaperSize val="68"/>
@@ -733,7 +817,7 @@
               <Copies val="1"/>
               <Orientation val="L"/>
               <PrintPreview val="N"/>
-              <PDF val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -871,7 +955,7 @@
                     <Column val="1"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
-                    <IsParameter val="N"/>
+                    <IsParameter val="Y"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -883,7 +967,7 @@
                     <Column val="2"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
-                    <IsParameter val="N"/>
+                    <IsParameter val="Y"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -895,7 +979,7 @@
                     <Column val="3"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
-                    <IsParameter val="N"/>
+                    <IsParameter val="Y"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1528,6 +1612,10 @@
             <Expression id="8">
               <ExpSyntax val="{0,8}"/>
               <ExpAttribute val="N"/>
+            </Expression>
+            <Expression id="9">
+              <ExpSyntax val="Translate('%HVND%')&amp;Trim({1,3})"/>
+              <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
           <Task MainProgram="N">
