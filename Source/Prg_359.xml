@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739594" _time="45128" date="09/12/2025" time="12:32:08"/>
+          <LastModified _date="739596" _time="38924" date="11/12/2025" time="10:48:44"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3327,6 +3327,20 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
+                <BLOCK EndBlock="1597" EndBlockSegment="1598" FlowIsn="1596" Type="I">
+                  <Condition Exp="120"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="1597" EndBlockSegment="1597" FlowIsn="1598" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="231">
                   <FieldID val="7"/>
                   <WithValue val="41"/>
@@ -4849,28 +4863,6 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="1303" EndBlockSegment="1303" FlowIsn="1302" Type="I">
-                  <Disabled val="1"/>
-                  <Condition Exp="113"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <Evaluate FlowIsn="1305">
-                  <Expression val="111"/>
-                  <Disabled val="1"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Evaluate>
-              </LogicLine>
-              <LogicLine>
-                <END_BLK FlowIsn="1303">
-                  <Disabled val="1"/>
-                </END_BLK>
-              </LogicLine>
-              <LogicLine>
                 <RaiseEvent FlowIsn="1032">
                   <Event>
                     <EventType val="I"/>
@@ -4881,6 +4873,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="1597"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -5667,6 +5662,10 @@
           </Expression>
           <Expression id="119">
             <ExpSyntax val="{0,8}='ADDITION' OR {0,8}='INQUIRY'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="120">
+            <ExpSyntax val="LastClicked()='btnexit' OR LastClicked()='btn_exit'"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>

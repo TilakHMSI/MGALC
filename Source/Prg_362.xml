@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFF_ENTRY" ISN_2="1" LastIsn="24" id="362">
-          <LastModified _date="739594" _time="54350" date="09/12/2025" time="15:05:50"/>
+          <LastModified _date="739596" _time="39620" date="11/12/2025" time="11:00:20"/>
           <Public val="RIA333_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4634,6 +4634,20 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
+                <BLOCK EndBlock="3214" EndBlockSegment="3215" FlowIsn="3213" Type="I">
+                  <Condition Exp="192"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="3214" EndBlockSegment="3214" FlowIsn="3215" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="2622">
                   <FieldID val="126"/>
                   <WithValue val="79"/>
@@ -4705,6 +4719,9 @@
                   <Direction val="C"/>
                 </RaiseEvent>
               </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="3214"/>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="14" propagate="78">
@@ -4725,6 +4742,16 @@
                   <Type val="2"/>
                   <Text val="/// 2001/03/29  MODIFY  ///   ISO/VIN  DABURI  CHECK"/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="3217" EndBlockSegment="3217" FlowIsn="3216" Type="I">
+                  <Condition Exp="192"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="3217"/>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="364">
@@ -8642,6 +8669,10 @@
           </Expression>
           <Expression id="191">
             <ExpSyntax val="CtrlGoto('CHASSIS_NO_DSP',0,0)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="192">
+            <ExpSyntax val="LastClicked()='btnexit' OR LastClicked()='btn_exit'"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>

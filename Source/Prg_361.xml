@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="23" id="361">
-          <LastModified _date="739594" _time="53677" date="09/12/2025" time="14:54:37"/>
+          <LastModified _date="739596" _time="39138" date="11/12/2025" time="10:52:18"/>
           <Public val="RIA217_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4536,6 +4536,20 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
+                <BLOCK EndBlock="4355" EndBlockSegment="4356" FlowIsn="4354" Type="I">
+                  <Condition Exp="176"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="4355" EndBlockSegment="4355" FlowIsn="4356" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="3319">
                   <FieldID val="127"/>
                   <WithValue val="63"/>
@@ -4623,6 +4637,9 @@
                   <Direction val="C"/>
                 </RaiseEvent>
               </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="4355"/>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="14" propagate="78">
@@ -4643,6 +4660,20 @@
                   <Type val="2"/>
                   <Text val="/// 2001/03/29  MODIFY  ///   ISO/VIN  DABURI  CHECK"/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="4358" EndBlockSegment="4359" FlowIsn="4357" Type="I">
+                  <Condition Exp="176"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="4358" EndBlockSegment="4358" FlowIsn="4359" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="344">
@@ -5891,6 +5922,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="4358"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -7982,6 +8016,10 @@
           <Expression id="173">
             <ExpSyntax val="'PGM=VPRDO066 : ' &amp; IF ({0,3}='2','PDI-OFF RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','PDI-OFF RESULT ENTRY(NON ORDER ALLOCATE)','PDI-OFF RESULT ENTRY'))"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="176">
+            <ExpSyntax val="LastClicked()='btnexit' OR LastClicked()='btn_exit'"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
