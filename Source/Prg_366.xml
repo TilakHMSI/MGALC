@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB039_PROD_INDICATE_GR" ISN_2="1" LastIsn="21" id="366">
-          <LastModified _date="739595" _time="47221" date="10/12/2025" time="13:07:01"/>
+          <LastModified _date="739596" _time="38540" date="11/12/2025" time="10:42:20"/>
           <Public val="RIA238_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3747,6 +3747,23 @@
               <LogicLine>
                 <END_BLK FlowIsn="232"/>
               </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="791">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="408"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="4"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="10" propagate="78">
@@ -4273,10 +4290,6 @@
             <ExpSyntax val="{0,49}"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="44">
-            <ExpSyntax val="Trim({0,11})"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="51">
             <ExpSyntax val="'VPRDB007_'&amp;Trim({32768,4})&amp;DStr(Date(),'DDMMYYYY')&amp;TStr(Time(),'HHMMSS')&amp;'.pdf'"/>
             <ExpAttribute val="A"/>
@@ -4770,7 +4783,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="EXISTPRD010Open" ISN_2="3" LastIsn="21" id="366">
-            <LastModified _date="739594" _time="56816" date="09/12/2025" time="15:46:56"/>
+            <LastModified _date="739596" _time="38540" date="11/12/2025" time="10:42:20"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -5449,10 +5462,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="NOT ({1,12}) OR NOT ({1,23}) OR NOT ({1,24}) OR NOT ({1,25}) OR {1,19}='FALSE'LOG"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="3">
               <ExpSyntax val="'TRUE'LOG"/>
               <ExpAttribute val="B"/>
@@ -7191,7 +7200,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="SELECTPRD010Open" ISN_2="5" LastIsn="21" id="366">
-            <LastModified _date="739594" _time="56838" date="09/12/2025" time="15:47:18"/>
+            <LastModified _date="739596" _time="38540" date="11/12/2025" time="10:42:20"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -7935,10 +7944,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="NOT ({1,12}) OR NOT ({1,13}) OR {1,19}='FALSE'LOG"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="3">
               <ExpSyntax val="'TRUE'LOG"/>
               <ExpAttribute val="B"/>

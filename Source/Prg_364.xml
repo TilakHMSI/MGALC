@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB036_PROD_INDICATE_HPE" ISN_2="1" LastIsn="35" id="364">
-          <LastModified _date="739595" _time="53003" date="10/12/2025" time="14:43:23"/>
+          <LastModified _date="739596" _time="38495" date="11/12/2025" time="10:41:35"/>
           <Public val="RIA92_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2969,6 +2969,23 @@
               <LogicLine>
                 <END_BLK FlowIsn="198"/>
               </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="310">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="408"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="3"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="14" propagate="89">
@@ -3373,10 +3390,6 @@
             <ExpSyntax val="Date ()"/>
             <ExpAttribute val="D"/>
           </Expression>
-          <Expression id="2">
-            <ExpSyntax val="'PRODUCTION INDICATE'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="3">
             <ExpSyntax val="{0,13}"/>
             <ExpAttribute val="B"/>
@@ -3400,10 +3413,6 @@
           <Expression id="8">
             <ExpSyntax val="'&amp;C:Cancel'"/>
             <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="9">
-            <ExpSyntax val="NOT ({0,13})"/>
-            <ExpAttribute val="B"/>
           </Expression>
           <Expression id="10">
             <ExpSyntax val="'%DATA%PRD052.'&amp;Str (Term (),'3P0Z0')"/>
@@ -3536,10 +3545,6 @@
           <Expression id="42">
             <ExpSyntax val="'00/00/0000'DATE"/>
             <ExpAttribute val="D"/>
-          </Expression>
-          <Expression id="43">
-            <ExpSyntax val="ExpCalc('16'EXP)"/>
-            <ExpAttribute val="B"/>
           </Expression>
           <Expression id="44">
             <ExpSyntax val="{0,29}"/>
