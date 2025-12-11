@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB003_PROD_INDICATE" ISN_2="1" LastIsn="14" id="363">
-          <LastModified _date="739595" _time="44842" date="10/12/2025" time="12:27:22"/>
+          <LastModified _date="739596" _time="38472" date="11/12/2025" time="10:41:12"/>
           <Public val="RIA66_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2277,6 +2277,10 @@
                       <Variable val="2"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2358,6 +2362,10 @@
                       <Variable val="11"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2409,6 +2417,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="11"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2468,6 +2480,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="11"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2553,6 +2569,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2641,6 +2661,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2747,6 +2771,10 @@
                       <Variable val="2"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2797,6 +2825,10 @@
                       <Variable val="11"/>
                       <Skip val="N"/>
                     </Argument>
+                    <Argument>
+                      <Variable val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
                   </Arguments>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
@@ -2840,6 +2872,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="3"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -2893,6 +2929,23 @@
               </LogicLine>
               <LogicLine>
                 <END_BLK FlowIsn="298"/>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="435">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="408"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="3"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
               </LogicLine>
               <LogicLine>
                 <RaiseEvent FlowIsn="123">
@@ -3873,7 +3926,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="SELECT  PRD010" ISN_2="3" LastIsn="14" id="363">
-            <LastModified _date="739594" _time="56201" date="09/12/2025" time="15:36:41"/>
+            <LastModified _date="739596" _time="38472" date="11/12/2025" time="10:41:12"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -4584,10 +4637,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="NOT ({1,12}) OR NOT ({1,13}) OR {1,19}='FALSE'LOG"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="2">
               <ExpSyntax val="'NOW SELECTING ...'"/>
               <ExpAttribute val="A"/>

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB038_PROD_INDICATE_HMSI" ISN_2="1" LastIsn="17" id="365">
-          <LastModified _date="739595" _time="47913" date="10/12/2025" time="13:18:33"/>
+          <LastModified _date="739596" _time="38518" date="11/12/2025" time="10:41:58"/>
           <Public val="RIA93_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3129,6 +3129,23 @@
                   <Direction val="C"/>
                 </RaiseEvent>
               </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="387">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="408"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="3"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="10" propagate="78">
@@ -3446,10 +3463,6 @@
             <ExpSyntax val="Date ()"/>
             <ExpAttribute val="D"/>
           </Expression>
-          <Expression id="2">
-            <ExpSyntax val="'VPRDB038(PROD.INDICATE) , FLEX.STAMPING'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="3">
             <ExpSyntax val="{0,8}"/>
             <ExpAttribute val="B"/>
@@ -3469,10 +3482,6 @@
           <Expression id="7">
             <ExpSyntax val="'&amp;C:Cancel'"/>
             <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="8">
-            <ExpSyntax val="NOT ({0,8})"/>
-            <ExpAttribute val="B"/>
           </Expression>
           <Expression id="9">
             <ExpSyntax val="'%HVND%PRD052.'&amp;Str (Term (),'3P0Z0')"/>
@@ -3596,10 +3605,6 @@
           </Expression>
           <Expression id="39">
             <ExpSyntax val="{0,22}='FALSE'LOG"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="40">
-            <ExpSyntax val="ExpCalc('13'EXP)"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="41">
@@ -4106,7 +4111,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="EXIST  PRD010" ISN_2="3" LastIsn="17" id="365">
-            <LastModified _date="739594" _time="56078" date="09/12/2025" time="15:34:38"/>
+            <LastModified _date="739596" _time="38518" date="11/12/2025" time="10:41:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -4757,10 +4762,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="NOT ({1,12}) OR NOT ({1,23}) OR NOT ({1,24}) OR {1,19}='FALSE'LOG"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="2">
               <ExpSyntax val="'NOW SELECTING ...'"/>
               <ExpAttribute val="A"/>
@@ -6308,7 +6309,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="SELECT  PRD010" ISN_2="5" LastIsn="17" id="365">
-            <LastModified _date="739594" _time="56145" date="09/12/2025" time="15:35:45"/>
+            <LastModified _date="739596" _time="38518" date="11/12/2025" time="10:41:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -7019,10 +7020,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="NOT ({1,12}) OR NOT ({1,13}) OR {1,19}='FALSE'LOG"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="2">
               <ExpSyntax val="'NOW SELECTING ...'"/>
               <ExpAttribute val="A"/>
@@ -10887,7 +10884,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="ERROR" ISN_2="14" LastIsn="17" id="365">
-            <LastModified _date="739591" _time="43786" date="06/12/2025" time="12:09:46"/>
+            <LastModified _date="739596" _time="38518" date="11/12/2025" time="10:41:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -11326,15 +11323,11 @@
               <ExpSyntax val="IF ({1,1}='A','MM-DD-YYYY',IF ({1,1}='E','DD-MM-YYYY','YYYY-MM-DD'))"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="5">
-              <ExpSyntax val="'Test'&amp;Trim({1,20})"/>
-              <ExpAttribute val="A"/>
-            </Expression>
           </Expressions>
         </Task>
         <Task MainProgram="N">
           <Header Description="CONFIRM" ISN_2="15" LastIsn="17" id="365">
-            <LastModified _date="739591" _time="48048" date="06/12/2025" time="13:20:48"/>
+            <LastModified _date="739596" _time="38518" date="11/12/2025" time="10:41:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -11789,18 +11782,6 @@
             <Expression id="3">
               <ExpSyntax val="'FALSE'LOG"/>
               <ExpAttribute val="B"/>
-            </Expression>
-            <Expression id="4">
-              <ExpSyntax val="'Test'&amp;Trim({1,30})"/>
-              <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="5">
-              <ExpSyntax val="'Test'&amp;Trim({1,31})"/>
-              <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="6">
-              <ExpSyntax val="'10'&amp;Trim({1,32})"/>
-              <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
         </Task>
