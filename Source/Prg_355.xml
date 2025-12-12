@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VMNUO001_GENERAL_MENU" ISN_2="1" LastIsn="4" id="355">
-          <LastModified _date="739587" _time="58990" date="02/12/2025" time="16:23:10"/>
+          <LastModified _date="739597" _time="45065" date="12/12/2025" time="12:31:05"/>
           <Public val="RIA2"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1281,7 +1281,7 @@
             </Control>
             <Control _test_id="9" id="9">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <Text id="19" valUnicode="LAST UPDATED DATE:29/03/2011&#xD;&#xA;&#xD;&#xA;"/>
+                <Text Exp="20" id="19" valUnicode="LAST UPDATED DATE:29/03/2011&#xD;&#xA;&#xD;&#xA;"/>
                 <X id="21" val="95"/>
                 <Y id="22" val="28"/>
                 <Width id="23" val="78"/>
@@ -1681,6 +1681,10 @@
           <Expression id="1">
             <ExpSyntax val="Term ()"/>
             <ExpAttribute val="N"/>
+          </Expression>
+          <Expression id="20">
+            <ExpSyntax val="'LAST UPDATED DATE:'&amp;DStr(Date(),'DD/MM/YYYY')"/>
+            <ExpAttribute val="A"/>
           </Expression>
           <Expression id="2">
             <ExpSyntax val="IF ({0,1}='A','MM-DD-YYYY',IF ({0,1}='E','DD-MM-YYYY','YYYY-MM-DD'))"/>
