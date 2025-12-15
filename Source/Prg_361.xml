@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="23" id="361">
-          <LastModified _date="739600" _time="51914" date="15/12/2025" time="14:25:14"/>
+          <LastModified _date="739600" _time="68139" date="15/12/2025" time="18:55:39"/>
           <Public val="RIA217_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4232,8 +4232,48 @@
                 <END_BLK FlowIsn="306"/>
               </LogicLine>
               <LogicLine>
+                <BLOCK EndBlock="5274" EndBlockSegment="5274" FlowIsn="5273" Type="I">
+                  <Condition Exp="183"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="5524">
+                  <FieldID val="9"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="5275">
+                  <FieldID val="10"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="5276">
+                  <FieldID val="102"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Evaluate FlowIsn="2357">
-                  <Expression val="170"/>
+                  <Expression val="168"/>
                   <Condition Exp="166"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4246,6 +4286,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="5274"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -6079,7 +6122,7 @@
                     <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
-                  <Condition Exp="28"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -8205,6 +8248,10 @@
           <Expression id="182">
             <ExpSyntax val="Trim({0,154})"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="183">
+            <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
@@ -17935,7 +17982,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="Confirmation" ISN_2="23" LastIsn="23" id="361">
-            <LastModified _date="739593" _time="60543" date="08/12/2025" time="16:49:03"/>
+            <LastModified _date="739600" _time="68139" date="15/12/2025" time="18:55:39"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -18107,7 +18154,7 @@
               <Condition val="89"/>
               <Event>
                 <EventType val="T"/>
-                <Time val="5"/>
+                <Time val="3"/>
               </Event>
               <ExecuteOn_ val="O"/>
               <LogicLines>
