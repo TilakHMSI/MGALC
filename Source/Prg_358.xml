@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="19" id="358">
-          <LastModified _date="739597" _time="65057" date="12/12/2025" time="18:04:17"/>
+          <LastModified _date="739598" _time="67613" date="13/12/2025" time="18:46:53"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4723,7 +4723,7 @@
                 <END_BLK FlowIsn="338"/>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="4096" EndBlockSegment="4097" FlowIsn="4095" Type="I">
+                <BLOCK EndBlock="4096" EndBlockSegment="7636" FlowIsn="4095" Type="I">
                   <Condition Exp="187"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4738,14 +4738,14 @@
                 </Evaluate>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="4096" EndBlockSegment="4096" FlowIsn="4097" Type="E">
+                <BLOCK EndBlock="4096" EndBlockSegment="4096" FlowIsn="7636" Type="E">
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
               </LogicLine>
               <LogicLine>
-                <Evaluate FlowIsn="760">
+                <Evaluate FlowIsn="7637">
                   <Expression val="179"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -4780,6 +4780,7 @@
               <EventType val="E"/>
               <Exp val="2"/>
             </Event>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -4794,6 +4795,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="AFOFF_RESULT_ENTRY"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -9682,6 +9684,7 @@
                 <Data Exp="17" id="43"/>
                 <ControlName id="46" val="Edit10"/>
                 <Visible Exp="16" id="61"/>
+                <Enabled Exp="56" id="62"/>
                 <Format id="82" valUnicode="12"/>
               </PropertyList>
             </Control>
@@ -9690,8 +9693,8 @@
                 <Model ID="MODEL_WEB_CLIENT" id="1">
                   <Var FieldID="9"/>
                 </Model>
-                <X id="21" val="4"/>
-                <Y id="22" val="397"/>
+                <X id="21" val="1"/>
+                <Y id="22" val="392"/>
                 <Width id="23" val="68"/>
                 <Height id="24" val="68"/>
                 <Data FieldID="9" id="43"/>
@@ -10550,6 +10553,14 @@
             <ExpSyntax val="Trim({0,81})"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="196">
+            <ExpSyntax val="'Clicked'&amp;Trim({0,164})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="197">
+            <ExpSyntax val="'parkd'&amp;Trim({0,163})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
           <Event>
@@ -10563,7 +10574,7 @@
         </EVNT>
         <Task MainProgram="N">
           <Header Description="AF_OFF_RESULT_ENTRY1" ISN_2="2" LastIsn="19" id="358">
-            <LastModified _date="739597" _time="62625" date="12/12/2025" time="17:23:45"/>
+            <LastModified _date="739598" _time="67266" date="13/12/2025" time="18:41:06"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -10609,7 +10620,7 @@
             <VarRange LastIsn="4"/>
             <TaskProperties>
               <SelectionTable val="N"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
@@ -18319,7 +18330,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="AF_OFF_RESULT_ENTRY2" ISN_2="14" LastIsn="19" id="358">
-            <LastModified _date="739587" _time="44405" date="02/12/2025" time="12:20:05"/>
+            <LastModified _date="739598" _time="67223" date="13/12/2025" time="18:40:23"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -18422,7 +18433,7 @@
             <VarRange LastIsn="4"/>
             <TaskProperties>
               <SelectionTable val="N"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
