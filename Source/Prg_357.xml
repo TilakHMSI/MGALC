@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO041DISPAE_OFF_ENTRY" ISN_2="1" LastIsn="20" id="357">
-          <LastModified _date="739600" _time="68454" date="15/12/2025" time="19:00:54"/>
+          <LastModified _date="739601" _time="61137" date="16/12/2025" time="16:58:57"/>
           <Public val="RIA233_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2642,6 +2642,18 @@
             <ExecuteOn_ val="S"/>
             <LogicLines>
               <LogicLine>
+                <Update FlowIsn="4335">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="84"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="189">
                   <Parent val="32768"/>
                   <FieldID val="1"/>
@@ -4507,6 +4519,18 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="4553">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="139"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="14"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="284">
                   <Type val="2"/>
                   <Text val="//// INSPECTION SHEET ISSUE"/>
@@ -4979,10 +5003,10 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="15" _last_test_id="15" id="1">
+          <FormEntry _last_isn="16" _last_test_id="16" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="607"/>
-              <Height id="24" val="568"/>
+              <Height id="24" val="627"/>
               <FormUnits id="33" val="4"/>
               <ShowGrid id="37"/>
               <GridX id="38" val="1"/>
@@ -5188,6 +5212,20 @@
                 <ItemsList Exp="40" id="45" valUnicode="ADDITION,CANCEL,INQUIRY"/>
                 <ControlName id="46" val="MODE_DSP"/>
                 <Visible Exp="36" id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="16" id="16">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="162"/>
+                <Y id="22" val="592"/>
+                <Width id="23" val="169"/>
+                <Height id="24" val="24"/>
+                <Data Exp="138" id="43"/>
+                <ControlName id="46" val="LastScanned"/>
+                <Visible id="61"/>
+                <Enabled Exp="39" id="62"/>
+                <Format id="82" valUnicode="U100"/>
+                <Attribute id="83" val="85"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -5939,6 +5977,18 @@
           </Expression>
           <Expression id="128">
             <ExpSyntax val="'MODE_DSP'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="138">
+            <ExpSyntax val="Trim({32768,540})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="139">
+            <ExpSyntax val="'LAST ENGINE NO SCANNED : '&amp; Trim({0,8})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="140">
+            <ExpSyntax val="'GVAR: '&amp;{32768,540}"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>

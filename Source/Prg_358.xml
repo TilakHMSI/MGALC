@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="24" id="358">
-          <LastModified _date="739601" _time="52226" date="16/12/2025" time="14:30:26"/>
+          <LastModified _date="739601" _time="62543" date="16/12/2025" time="17:22:23"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4355,6 +4355,18 @@
             <ExecuteOn_ val="S"/>
             <LogicLines>
               <LogicLine>
+                <Update FlowIsn="8777">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="110"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="308">
                   <Parent val="32768"/>
                   <FieldID val="1"/>
@@ -6920,17 +6932,23 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="523" EndBlockSegment="523" FlowIsn="512" Type="I">
+                <Remark FlowIsn="524">
+                  <Type val="2"/>
+                  <Text val="//// 'ADDITION'"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="525">
+                  <Type val="2"/>
+                  <Text val="2nd start again"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="542" EndBlockSegment="542" FlowIsn="526" Type="I">
                   <Condition Exp="122"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="513">
-                  <Type val="2"/>
-                  <Text val="//// Error Message Changed - AT 2012/11/10"/>
-                </Remark>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="514">
@@ -7019,34 +7037,6 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="522">
-                  <Type val="2"/>
-                  <Text val="2nd close again"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <END_BLK FlowIsn="523"/>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="524">
-                  <Type val="2"/>
-                  <Text val="//// 'ADDITION'"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="525">
-                  <Type val="2"/>
-                  <Text val="2nd start again"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <BLOCK EndBlock="542" EndBlockSegment="542" FlowIsn="526" Type="I">
-                  <Condition Exp="122"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </BLOCK>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="527">
@@ -7322,6 +7312,18 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="8725">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="200"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="20"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="541">
@@ -8077,7 +8079,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="37" _last_test_id="37" id="1">
+          <FormEntry _last_isn="38" _last_test_id="38" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -8543,6 +8545,20 @@
                   <EventType val="I"/>
                   <InternalEventID val="13"/>
                 </RaiseEvent>
+              </PropertyList>
+            </Control>
+            <Control _test_id="38" id="38">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="157"/>
+                <Y id="22" val="465"/>
+                <Width id="23" val="189"/>
+                <Height id="24" val="24"/>
+                <Data Exp="201" id="43"/>
+                <ControlName id="46" val="LastScanned"/>
+                <Visible id="61"/>
+                <Enabled Exp="56" id="62"/>
+                <Format id="82" valUnicode="U100"/>
+                <Attribute id="83" val="85"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -9282,6 +9298,14 @@
           </Expression>
           <Expression id="198">
             <ExpSyntax val="{0,8}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="200">
+            <ExpSyntax val="'LAST FRAME NO | ENGINE NO SCANNED : '&amp; Trim({0,11}) &amp;' | '&amp;Trim({0,81})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="201">
+            <ExpSyntax val="Trim({32768,540})"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
