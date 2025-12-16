@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="23" id="361">
-          <LastModified _date="739600" _time="68139" date="15/12/2025" time="18:55:39"/>
+          <LastModified _date="739601" _time="50335" date="16/12/2025" time="13:58:55"/>
           <Public val="RIA217_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4232,22 +4232,11 @@
                 <END_BLK FlowIsn="306"/>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="5274" EndBlockSegment="5274" FlowIsn="5273" Type="I">
+                <BLOCK EndBlock="5274" EndBlockSegment="5770" FlowIsn="5273" Type="I">
                   <Condition Exp="183"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="5524">
-                  <FieldID val="9"/>
-                  <WithValue val="63"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="5275">
@@ -4255,7 +4244,7 @@
                   <WithValue val="63"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="84"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -4266,7 +4255,7 @@
                   <WithValue val="63"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="84"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -4280,9 +4269,35 @@
                 </Evaluate>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="5524">
+                  <FieldID val="9"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Evaluate FlowIsn="4123">
                   <Expression val="175"/>
                   <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="5274" EndBlockSegment="5274" FlowIsn="5770" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="5771">
+                  <Expression val="175"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
@@ -6110,10 +6125,55 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="3890">
-                  <Type val="2"/>
-                  <Text val=" "/>
-                </Remark>
+                <BLOCK EndBlock="6017" EndBlockSegment="6017" FlowIsn="6016" Type="I">
+                  <Condition Exp="61"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="6018">
+                  <FieldID val="10"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="6019">
+                  <FieldID val="102"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="6021">
+                  <FieldID val="9"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="6122">
+                  <Expression val="175"/>
+                  <Condition Exp="84"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="6017"/>
               </LogicLine>
               <LogicLine>
                 <RaiseEvent FlowIsn="676">
@@ -7245,7 +7305,7 @@
                   </CustomProperty>
                 </CustomProperties>
               </CustomProperties>
-              <ParkFirstOn id="743" valUnicode="MODE_DSP"/>
+              <ParkFirstOn id="743"/>
             </PropertyList>
             <Control _test_id="1" id="1">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -8252,6 +8312,10 @@
           <Expression id="183">
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="184">
+            <ExpSyntax val="IF({0,8}='ADDITION','PASS_DESC','CHASSIS_NO_DSP')"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
