@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739602" _time="42137" date="17/12/2025" time="11:42:17"/>
+          <LastModified _date="739602" _time="52871" date="17/12/2025" time="14:41:11"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3148,7 +3148,7 @@
                   <DestSubformName val="VQON_RESULT_ENTRY"/>
                   <RetainFocus val="Y"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
@@ -3180,13 +3180,11 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="131" FlowIsn="2737" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
-                  <AppendToErrorLog val="N"/>
-                  <Disabled val="1"/>
-                  <Condition val="Y"/>
+                <BLOCK EndBlock="3068" EndBlockSegment="3068" FlowIsn="3067" Type="I">
+                  <Condition Exp="135"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </BLOCK>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="2902">
@@ -3199,6 +3197,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="3068"/>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="2209">
@@ -5904,8 +5905,20 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="132">
-            <ExpSyntax val="Trim({32768,540})&amp; ' | ' &amp;Trim({0,114})"/>
+            <ExpSyntax val="IF(InStr(Trim({0,114}),'00000')>0,'', Trim({32768,540})&amp; ' | ' &amp;Trim({0,114}))"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="133">
+            <ExpSyntax val=""/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="134">
+            <ExpSyntax val="Trim ({0,98})&lt;>'' OR Trim ({0,100})&lt;>''"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="135">
+            <ExpSyntax val="Trim ({0,98})='' AND Trim ({0,100})=''"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
@@ -9359,7 +9372,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="ERRORMESSAGE" ISN_2="10" LastIsn="12" id="359">
-            <LastModified _date="739588" _time="60118" date="03/12/2025" time="16:41:58"/>
+            <LastModified _date="739602" _time="52053" date="17/12/2025" time="14:27:33"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -9500,7 +9513,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="6"/>
+                    <_DitIndexForToolkit val="5"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -9576,6 +9589,7 @@
                 <FormName id="311" valUnicode="ERRORMESSAGE"/>
                 <_TabbingOrder id="318" val="2"/>
                 <WindowType id="358" val="12"/>
+                <ParkFirstOn id="743" valUnicode="btn_Exit"/>
               </PropertyList>
               <Control _test_id="1" id="1">
                 <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -9632,6 +9646,7 @@
                   <Y id="22" val="169"/>
                   <Width id="23" val="96"/>
                   <Height id="24" val="23"/>
+                  <Data FieldID="2" id="43"/>
                   <ControlName id="46" val="btn_Exit"/>
                   <Visible id="61"/>
                   <Format id="82" valUnicode="OK"/>
@@ -10001,7 +10016,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="RE_ERRORMESSAGE" ISN_2="12" LastIsn="12" id="359">
-            <LastModified _date="739589" _time="37410" date="04/12/2025" time="10:23:30"/>
+            <LastModified _date="739602" _time="52093" date="17/12/2025" time="14:28:13"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -10243,7 +10258,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="15"/>
+                    <_DitIndexForToolkit val="14"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -10319,6 +10334,7 @@
                 <FormName id="311" valUnicode="ERRORMESSAGE"/>
                 <_TabbingOrder id="318" val="2"/>
                 <WindowType id="358" val="12"/>
+                <ParkFirstOn id="743" valUnicode="btn_Exit"/>
               </PropertyList>
               <Control _test_id="1" id="1">
                 <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -10490,6 +10506,7 @@
                   <Y id="22" val="169"/>
                   <Width id="23" val="96"/>
                   <Height id="24" val="23"/>
+                  <Data FieldID="6" id="43"/>
                   <ControlName id="46" val="btn_Exit"/>
                   <Visible id="61"/>
                   <Format id="82" valUnicode="OK"/>

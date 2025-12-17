@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="24" id="358">
-          <LastModified _date="739601" _time="62543" date="16/12/2025" time="17:22:23"/>
+        <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="19" id="358">
+          <LastModified _date="739602" _time="72358" date="17/12/2025" time="20:05:58"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4816,7 +4816,7 @@
             <Condition val="89"/>
             <Event>
               <EventType val="E"/>
-              <Exp val="199"/>
+              <Exp val="2"/>
             </Event>
             <ExecuteOn_ val="O"/>
             <LogicLines>
@@ -9320,8 +9320,8 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="AF_OFF_RESULT_ENTRY1" ISN_2="2" LastIsn="24" id="358">
-            <LastModified _date="739600" _time="70440" date="15/12/2025" time="19:34:00"/>
+          <Header Description="AF_OFF_RESULT_ENTRY1" ISN_2="2" LastIsn="19" id="358">
+            <LastModified _date="739602" _time="62897" date="17/12/2025" time="17:28:17"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -9790,6 +9790,12 @@
                   </Remark>
                 </LogicLine>
                 <LogicLine>
+                  <Remark FlowIsn="37">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
                   <CallTask FlowIsn="30">
                     <OperationType val="T"/>
                     <Event>
@@ -10139,8 +10145,8 @@
           <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="3"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="4"/>
           <Task MainProgram="N">
-            <Header Description="EXEC PPRDO042" ISN_2="5" LastIsn="24" id="358">
-              <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
+            <Header Description="EXEC PPRDO042" ISN_2="5" LastIsn="19" id="358">
+              <LastModified _date="739602" _time="72358" date="17/12/2025" time="20:05:58"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="Y"/>
@@ -10350,6 +10356,17 @@
                 <Event>
                   <EventType val="S"/>
                 </Event>
+                <LogicLines>
+                  <LogicLine>
+                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="9" FlowIsn="12" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                      <AppendToErrorLog val="N"/>
+                      <Disabled val="1"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </STP>
+                  </LogicLine>
+                </LogicLines>
               </LogicUnit>
               <LogicUnit id="4" propagate="78">
                 <Level val="T"/>
@@ -10587,11 +10604,27 @@
                 <ExpSyntax val="IF ({1,21},RTrim ({1,46}),IF ({1,48},RTrim ({1,73}),''))"/>
                 <ExpAttribute val="A"/>
               </Expression>
+              <Expression id="6">
+                <ExpSyntax val="'Count'&amp;Str({1,107},'10')"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="7">
+                <ExpSyntax val="'BBW'&amp;Str({0,1},'')"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="8">
+                <ExpSyntax val="'BBx'&amp;Str({0,2},'')"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="9">
+                <ExpSyntax val="'PARA1 = '&amp;Trim({1,112})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA2 = '&amp;Trim({1,115})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA3 = '&amp;IF ({1,21},RTrim ({1,45}),IF ({1,48},RTrim ({1,72}),''))&amp;&#xD;&#xA;'PARA4 = '&amp;IF ({1,21},RTrim ({1,31}),IF ({1,48},RTrim ({1,58}),''))&amp;&#xD;&#xA;'PARA5 = '&amp;IF ({1,21},RTrim ({1,46}),IF ({1,48},RTrim ({1,73}),''))"/>
+                <ExpAttribute val="A"/>
+              </Expression>
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="EXEC PPRDO042" ISN_2="6" LastIsn="24" id="358">
-              <LastModified _date="739600" _time="70440" date="15/12/2025" time="19:34:00"/>
+            <Header Description="EXEC PPRDO042" ISN_2="6" LastIsn="19" id="358">
+              <LastModified _date="739602" _time="62289" date="17/12/2025" time="17:18:09"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="Y"/>
@@ -10805,6 +10838,16 @@
                 <Event>
                   <EventType val="S"/>
                 </Event>
+                <LogicLines>
+                  <LogicLine>
+                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="9" FlowIsn="9" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                      <AppendToErrorLog val="N"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </STP>
+                  </LogicLine>
+                </LogicLines>
               </LogicUnit>
               <LogicUnit id="4" propagate="78">
                 <Level val="T"/>
@@ -10840,12 +10883,6 @@
                       <Modifier val="B"/>
                       <Direction val="C"/>
                     </Update>
-                  </LogicLine>
-                  <LogicLine>
-                    <Remark FlowIsn="7">
-                      <Type val="2"/>
-                      <Text val=" "/>
-                    </Remark>
                   </LogicLine>
                   <LogicLine>
                     <CallTask FlowIsn="8">
@@ -11005,9 +11042,13 @@
                 <ExpSyntax val="IF ({1,21},RTrim ({1,46}),IF ({1,48},RTrim ({1,73}),''))"/>
                 <ExpAttribute val="A"/>
               </Expression>
+              <Expression id="9">
+                <ExpSyntax val="'PARA1 = '&amp;Trim({1,112})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA2 = '&amp;Trim({1,115})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA3 = '&amp;IF ({1,21},RTrim ({1,45}),IF ({1,48},RTrim ({1,72}),''))&amp;&#xD;&#xA;'PARA4 = '&amp;IF ({1,21},RTrim ({1,31}),IF ({1,48},RTrim ({1,58}),''))&amp;&#xD;&#xA;'PARA5 = '&amp;IF ({1,21},RTrim ({1,46}),IF ({1,48},RTrim ({1,73}),''))"/>
+                <ExpAttribute val="A"/>
+              </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="Export - ShiftTimesLine TEST" ISN_2="7" LastIsn="24" id="358">
+              <Header Description="Export - ShiftTimesLine TEST" ISN_2="7" LastIsn="19" id="358">
                 <LastModified _date="739600" _time="70440" date="15/12/2025" time="19:34:00"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -13596,7 +13637,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="UPDATE PRD005(FRM_DATA)" ISN_2="8" LastIsn="24" id="358">
+          <Header Description="UPDATE PRD005(FRM_DATA)" ISN_2="8" LastIsn="19" id="358">
             <LastModified _date="739597" _time="64698" date="12/12/2025" time="17:58:18"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -14912,7 +14953,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="11" id="4"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="UPDATE PRD005(ENG_DATA)" ISN_2="9" LastIsn="24" id="358">
+          <Header Description="UPDATE PRD005(ENG_DATA)" ISN_2="9" LastIsn="19" id="358">
             <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -15827,7 +15868,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="7" id="4"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="PRD005_V" ISN_2="10" LastIsn="24" id="358">
+          <Header Description="PRD005_V" ISN_2="10" LastIsn="19" id="358">
             <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16211,7 +16252,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="3" id="6"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LINK1(ISO)" ISN_2="11" LastIsn="24" id="358">
+          <Header Description="LINK1(ISO)" ISN_2="11" LastIsn="19" id="358">
             <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16438,7 +16479,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="LINK2(VIN)" ISN_2="12" LastIsn="24" id="358">
+          <Header Description="LINK2(VIN)" ISN_2="12" LastIsn="19" id="358">
             <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -16647,8 +16688,8 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="ERRORMESSAGE" ISN_2="13" LastIsn="24" id="358">
-            <LastModified _date="739587" _time="42108" date="02/12/2025" time="11:41:48"/>
+          <Header Description="ERRORMESSAGE" ISN_2="13" LastIsn="19" id="358">
+            <LastModified _date="739602" _time="51953" date="17/12/2025" time="14:25:53"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -16813,7 +16854,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="5"/>
+                    <_DitIndexForToolkit val="4"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -16889,6 +16930,7 @@
                 <FormName id="311" valUnicode="ERRORMESSAGE"/>
                 <_TabbingOrder id="318" val="2"/>
                 <WindowType id="358" val="12"/>
+                <ParkFirstOn id="743" valUnicode="btn_Exit"/>
               </PropertyList>
               <Control _test_id="1" id="1">
                 <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -16933,6 +16975,7 @@
                   <Y id="22" val="169"/>
                   <Width id="23" val="96"/>
                   <Height id="24" val="23"/>
+                  <Data FieldID="3" id="43"/>
                   <ControlName id="46" val="btn_Exit"/>
                   <Visible id="61"/>
                   <Format id="82" valUnicode="OK"/>
@@ -16959,124 +17002,10 @@
               </Control>
             </FormEntry>
           </TaskForms>
-          <TaskForms>
-            <FormEntry _last_isn="5" _last_test_id="5" id="2">
-              <PropertyList model="FORM_RICH_CLIENT">
-                <X id="21" val="278"/>
-                <Y id="22" val="661"/>
-                <Width id="23" val="1454"/>
-                <Height id="24" val="550"/>
-                <TitleBar id="26"/>
-                <SystemMenu id="27"/>
-                <MinimizeButton id="28"/>
-                <MaximizeButton id="29"/>
-                <FormUnits id="33" val="2"/>
-                <VerticalFactor id="34" val="100"/>
-                <HorizontalFactor id="35" val="100"/>
-                <ShowGrid id="37"/>
-                <GridX id="38" val="5"/>
-                <GridY id="39" val="5"/>
-                <BorderStyle id="64" val="3"/>
-                <_Comment id="218"/>
-                <FormName id="311" valUnicode="ERROR MESSAGE"/>
-                <_TabbingOrder id="318" val="2"/>
-                <WindowType id="358" val="6"/>
-                <PersistentFormState id="493"/>
-              </PropertyList>
-              <Control _test_id="1" id="1">
-                <PropertyList model="CTRL_RICH_CLIENT_LABEL">
-                  <X id="21" val="3"/>
-                  <Y id="22" val="15"/>
-                  <Width id="23" val="1440"/>
-                  <Height id="24" val="524"/>
-                  <Color id="51" val="73"/>
-                  <Visible id="61"/>
-                  <Style id="63" val="1"/>
-                  <_VerticalScroll id="73"/>
-                  <_Orientation id="143"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="2" id="2">
-                <PropertyList model="CTRL_RICH_CLIENT_LABEL">
-                  <Text id="19" valUnicode="WARNING"/>
-                  <X id="21" val="4"/>
-                  <Y id="22" val="18"/>
-                  <Width id="23" val="1435"/>
-                  <Height id="24" val="69"/>
-                  <Font id="50" val="45"/>
-                  <Color id="51" val="54"/>
-                  <Visible id="61"/>
-                  <Style id="63" val="5"/>
-                  <HorizontalAlignment id="65" val="2"/>
-                  <_VerticalScroll id="73"/>
-                  <_Orientation id="143"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="3" id="3">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="1"/>
-                  </Model>
-                  <X id="21" val="468"/>
-                  <Y id="22" val="153"/>
-                  <Width id="23" val="958"/>
-                  <Height id="24" val="122"/>
-                  <Data FieldID="1" id="43"/>
-                  <Font id="50" val="99"/>
-                  <Color id="51" val="73"/>
-                  <Modifiable id="53"/>
-                  <Visible id="61"/>
-                  <_Style id="63" val="1"/>
-                  <HorizontalAlignment id="65" val="2"/>
-                  <VerticalAlignment id="66" val="1"/>
-                  <MultiLineEdit id="71" val="Y"/>
-                  <VerticalScroll id="73"/>
-                  <AllowCRInData id="74" val="Y"/>
-                  <TabOrder id="314" val="1"/>
-                  <AllowParking id="315"/>
-                  <AllowedDirection id="317" val="1"/>
-                  <Border id="452"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="4" id="4">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="3"/>
-                  </Model>
-                  <X id="21" val="886"/>
-                  <Y id="22" val="447"/>
-                  <Width id="23" val="13"/>
-                  <Height id="24" val="43"/>
-                  <Data FieldID="3" id="43"/>
-                  <Modifiable id="53"/>
-                  <Visible id="61"/>
-                  <TabOrder id="314" val="2"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
-                </PropertyList>
-              </Control>
-              <Control PDOD="128" _test_id="5" id="5">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <X id="21" val="794"/>
-                  <Y id="22" val="447"/>
-                  <Width id="23" val="255"/>
-                  <Height id="24" val="60"/>
-                  <Font id="50" val="43"/>
-                  <Visible id="61"/>
-                  <Format id="82" valUnicode="&amp;OK"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="14"/>
-                  </RaiseEvent>
-                  <TabOrder id="314" val="3"/>
-                </PropertyList>
-              </Control>
-            </FormEntry>
-          </TaskForms>
         </Task>
         <Task MainProgram="N">
-          <Header Description="AF_OFF_RESULT_ENTRY2" ISN_2="14" LastIsn="24" id="358">
-            <LastModified _date="739600" _time="68661" date="15/12/2025" time="19:04:21"/>
+          <Header Description="AF_OFF_RESULT_ENTRY2" ISN_2="14" LastIsn="19" id="358">
+            <LastModified _date="739602" _time="61970" date="17/12/2025" time="17:12:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -17176,7 +17105,7 @@
             <InitialMode val="E"/>
             <Locate Direction="A"/>
             <Range Direction="A"/>
-            <VarRange LastIsn="4"/>
+            <VarRange LastIsn="5"/>
             <TaskProperties>
               <SelectionTable val="N"/>
               <ConfirmUpdate CNFU="N"/>
@@ -17758,6 +17687,20 @@
                     <Text val="/// ADD 1999.11.19"/>
                   </Remark>
                 </LogicLine>
+              </LogicLines>
+            </LogicUnit>
+            <LogicUnit id="5" propagate="78">
+              <Level val="R"/>
+              <Type val="P"/>
+              <Scope val="S"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="S"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
                 <LogicLine>
                   <Update FlowIsn="44">
                     <FieldID val="34"/>
@@ -17781,10 +17724,22 @@
                   </Update>
                 </LogicLine>
                 <LogicLine>
-                  <Remark FlowIsn="46">
-                    <Type val="2"/>
-                    <Text val=" "/>
-                  </Remark>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="9" FlowIsn="46" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                    <AppendToErrorLog val="N"/>
+                    <Disabled val="1"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </STP>
+                </LogicLine>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="15" FlowIsn="48" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                    <AppendToErrorLog val="N"/>
+                    <Disabled val="1"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </STP>
                 </LogicLine>
                 <LogicLine>
                   <CallTask FlowIsn="47">
@@ -17803,18 +17758,6 @@
                   </CallTask>
                 </LogicLine>
               </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="5" propagate="78">
-              <Level val="R"/>
-              <Type val="P"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <ExecuteOn_ val="O"/>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>
@@ -18170,13 +18113,18 @@
               <ExpSyntax val="IF ({0,30}='V',Rep ({0,11},{0,31},9,1),{0,11})"/>
               <ExpAttribute val="A"/>
             </Expression>
+            <Expression id="15">
+              <ExpSyntax val="Str({1,133},'7')"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
           <VarRangeInfo Mode="F" VarRangeVeeIsn="11" id="1"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="11" id="2"/>
           <VarRangeInfo Mode="F" VarRangeVeeIsn="12" id="3"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="12" id="4"/>
+          <VarRangeInfo Mode="F" id="5"/>
           <Task MainProgram="N">
-            <Header Description="EXEC PPRDO042 new" ISN_2="15" LastIsn="24" id="358">
+            <Header Description="EXEC PPRDO042 new" ISN_2="15" LastIsn="19" id="358">
               <LastModified _date="739600" _time="68661" date="15/12/2025" time="19:04:21"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -18658,7 +18606,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="Export - ShiftTimesLine TEST" ISN_2="16" LastIsn="24" id="358">
+              <Header Description="Export - ShiftTimesLine TEST" ISN_2="16" LastIsn="19" id="358">
                 <LastModified _date="739600" _time="68727" date="15/12/2025" time="19:05:27"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -20983,7 +20931,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="CONFIRMATIONMESSAGE" ISN_2="17" LastIsn="24" id="358">
+          <Header Description="CONFIRMATIONMESSAGE" ISN_2="17" LastIsn="19" id="358">
             <LastModified _date="739600" _time="68679" date="15/12/2025" time="19:04:39"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -21622,7 +21570,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="CONFIRMATION MESSAGE back" ISN_2="18" LastIsn="24" id="358">
+          <Header Description="CONFIRMATION MESSAGE back" ISN_2="18" LastIsn="19" id="358">
             <LastModified _date="739597" _time="61238" date="12/12/2025" time="17:00:38"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -22087,8 +22035,8 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="FrameEngineMessage" ISN_2="19" LastIsn="24" id="358">
-            <LastModified _date="739587" _time="44635" date="02/12/2025" time="12:23:55"/>
+          <Header Description="FrameEngineMessage" ISN_2="19" LastIsn="19" id="358">
+            <LastModified _date="739602" _time="52018" date="17/12/2025" time="14:26:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -22226,6 +22174,7 @@
                 <_Comment id="218"/>
                 <FormName id="311" valUnicode="FrameEngineMessage"/>
                 <WindowType id="358" val="12"/>
+                <ParkFirstOn id="743" valUnicode="VOK_0001"/>
               </PropertyList>
               <Control ISN_FATHER="4" _test_id="1" id="1">
                 <PropertyList model="CTRL_WEB_CLIENT_LABEL">
