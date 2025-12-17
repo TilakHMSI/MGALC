@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739601" _time="65844" date="16/12/2025" time="18:17:24"/>
+          <LastModified _date="739602" _time="42137" date="17/12/2025" time="11:42:17"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3180,6 +3180,27 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="131" FlowIsn="2737" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="2902">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="132"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="50"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="2209">
                   <FieldID val="10"/>
                   <WithValue val="65"/>
@@ -5876,6 +5897,14 @@
           </Expression>
           <Expression id="130">
             <ExpSyntax val="Trim({32768,540})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="131">
+            <ExpSyntax val="{0,114}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="132">
+            <ExpSyntax val="Trim({32768,540})&amp; ' | ' &amp;Trim({0,114})"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
