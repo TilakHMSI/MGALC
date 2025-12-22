@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="25" id="358">
-          <LastModified _date="739604" _time="57178" date="19/12/2025" time="15:52:58"/>
+          <LastModified _date="739607" _time="41279" date="22/12/2025" time="11:27:59"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -13190,7 +13190,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="UPDATE PRD005(FRM_DATA)" ISN_2="8" LastIsn="25" id="358">
-            <LastModified _date="739604" _time="45063" date="19/12/2025" time="12:31:03"/>
+            <LastModified _date="739605" _time="50020" date="20/12/2025" time="13:53:40"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -14271,6 +14271,7 @@
                     <WithValue val="4"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="3"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -14282,6 +14283,7 @@
                     <WithValue val="5"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="3"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -14581,7 +14583,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="11" id="4"/>
           <Task MainProgram="N">
             <Header Description="EXEC PPRDO042" ISN_2="25" LastIsn="25" id="358">
-              <LastModified _date="739604" _time="45060" date="19/12/2025" time="12:31:00"/>
+              <LastModified _date="739607" _time="39930" date="22/12/2025" time="11:05:30"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="Y"/>
@@ -14714,8 +14716,12 @@
               <SQL_STMT_U val="EXEC PPRDO042.MAIN(':1',':2',':3',':4',':5',,)"/>
               <INARG>
                 <Arguments>
-                  <Argument Parent="1" Variable="112"/>
-                  <Argument Parent="1" Variable="115"/>
+                  <Argument>
+                    <Exp val="10"/>
+                  </Argument>
+                  <Argument>
+                    <Exp val="11"/>
+                  </Argument>
                   <Argument>
                     <Exp val="3"/>
                   </Argument>
@@ -15029,6 +15035,10 @@
                 <ExpSyntax val="{0,2}"/>
                 <ExpAttribute val="N"/>
               </Expression>
+              <Expression id="10">
+                <ExpSyntax val="Left (Trim ({1,112}),8)&amp;TStr ({1,158},'HHMMSS')"/>
+                <ExpAttribute val="A"/>
+              </Expression>
               <Expression id="3">
                 <ExpSyntax val="IF ({1,21},RTrim ({1,45}),IF ({1,48},RTrim ({1,72}),''))"/>
                 <ExpAttribute val="A"/>
@@ -15043,6 +15053,10 @@
               </Expression>
               <Expression id="9">
                 <ExpSyntax val="'PARA1 = '&amp;Trim({1,112})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA2 = '&amp;Trim({1,115})&amp;ASCIIChr(13)&amp;&#xD;&#xA;'PARA3 = '&amp;IF ({1,21},RTrim ({1,45}),IF ({1,48},RTrim ({1,72}),''))&amp;&#xD;&#xA;'PARA4 = '&amp;IF ({1,21},RTrim ({1,31}),IF ({1,48},RTrim ({1,58}),''))&amp;&#xD;&#xA;'PARA5 = '&amp;IF ({1,21},RTrim ({1,46}),IF ({1,48},RTrim ({1,73}),''))"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="11">
+                <ExpSyntax val="IF ({1,147}&lt;>'C',Left (Trim ({1,112}),8)&amp;TStr ({1,159},'HHMMSS'),Left (Trim ({1,115}),8)&amp;TStr ({1,159},'HHMMSS'))"/>
                 <ExpAttribute val="A"/>
               </Expression>
             </Expressions>
@@ -23647,7 +23661,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="CONFIRMATIONMESSAGE" ISN_2="17" LastIsn="25" id="358">
-            <LastModified _date="739604" _time="51934" date="19/12/2025" time="14:25:34"/>
+            <LastModified _date="739607" _time="41279" date="22/12/2025" time="11:27:59"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -23924,7 +23938,7 @@
               <Condition val="89"/>
               <Event>
                 <EventType val="T"/>
-                <Time val="8"/>
+                <Time val="6"/>
               </Event>
               <ExecuteOn_ val="O"/>
               <LogicLines>
