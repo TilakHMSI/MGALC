@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFF_ENTRY" ISN_2="1" LastIsn="24" id="362">
-          <LastModified _date="739607" _time="41949" date="22/12/2025" time="11:39:09"/>
+          <LastModified _date="739608" _time="60772" date="23/12/2025" time="16:52:52"/>
           <Public val="RIA333_Test_SQLError"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1344,7 +1344,6 @@
                   <INT_DIT_INFO>
                     <v>20</v>
                     <v>22</v>
-                    <v>23</v>
                     <v>24</v>
                   </INT_DIT_INFO>
                   <_DitIndexForToolkit val="22"/>
@@ -1384,10 +1383,6 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <INT_DIT_INFO>
-                    <v>23</v>
-                    <v>24</v>
-                  </INT_DIT_INFO>
                   <_DitIndexForToolkit val="21"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
@@ -1435,9 +1430,6 @@
                     <v>31</v>
                     <v>33</v>
                   </INT_RCMP_INFO>
-                  <INT_DIT_INFO>
-                    <v>24</v>
-                  </INT_DIT_INFO>
                   <_DitIndexForToolkit val="25"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
@@ -4412,6 +4404,7 @@
               <EventType val="S"/>
               <KeyCombinationID val="120"/>
             </Event>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -4431,6 +4424,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4455,6 +4449,7 @@
               <EventType val="S"/>
             </Event>
             <TXT val="MODE_DSP"/>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -4463,6 +4458,7 @@
                   <WithValue val="80"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4474,6 +4470,7 @@
                   <WithValue val="79"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4485,6 +4482,7 @@
                   <WithValue val="183"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="82"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4508,6 +4506,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="77"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4519,6 +4518,7 @@
                   <WithValue val="193"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4532,6 +4532,32 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="24" propagate="78">
+            <Level val="C"/>
+            <Type val="P"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <TXT val="PASS_DESC"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="5398">
+                  <FieldID val="155"/>
+                  <WithValue val="194"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -4550,7 +4576,7 @@
             <LogicLines>
               <LogicLine>
                 <BLOCK EndBlock="4286" EndBlockSegment="4016" FlowIsn="336" Type="I">
-                  <Condition Exp="197"/>
+                  <Condition Exp="203"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
@@ -6443,7 +6469,7 @@
                     <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
-                  <Condition Exp="44"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -7574,6 +7600,7 @@
                 <Data Exp="130" id="43"/>
                 <ControlName id="46" val="Edit12"/>
                 <Visible id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <Format id="82" valUnicode="U11A"/>
               </PropertyList>
             </Control>
@@ -7586,6 +7613,7 @@
                 <Data Exp="131" id="43"/>
                 <ControlName id="46" val="Edit13"/>
                 <Visible id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <MultiLineEdit id="71"/>
                 <Format Exp="129" id="82" valUnicode="7P0Z"/>
                 <Attribute id="83" val="78"/>
@@ -7600,6 +7628,7 @@
                 <Data Exp="132" id="43"/>
                 <ControlName id="46" val="Edit14"/>
                 <Visible id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <Format id="82" valUnicode="U11A"/>
               </PropertyList>
             </Control>
@@ -7612,6 +7641,7 @@
                 <Data Exp="133" id="43"/>
                 <ControlName id="46" val="Edit15"/>
                 <Visible Exp="114" id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <MultiLineEdit id="71"/>
                 <Format Exp="85" id="82" valUnicode="DD-MM-YYYY"/>
                 <Attribute id="83" val="68"/>
@@ -7626,6 +7656,7 @@
                 <Data Exp="134" id="43"/>
                 <ControlName id="46" val="Edit16"/>
                 <Visible Exp="114" id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <MultiLineEdit id="71"/>
                 <Format id="82" valUnicode="HH:MM:SS"/>
                 <Attribute id="83" val="84"/>
@@ -7643,6 +7674,7 @@
                 <Data FieldID="105" id="43"/>
                 <ControlName id="46" val="V_PROGRESS"/>
                 <Visible id="61"/>
+                <Enabled Exp="80" id="62"/>
                 <MultiLineEdit id="71"/>
               </PropertyList>
             </Control>
@@ -7730,7 +7762,7 @@
                 <Data FieldID="10" id="43"/>
                 <ControlName id="46" val="CHASSIS_NO_DSP"/>
                 <Visible id="61"/>
-                <Enabled Exp="184" id="62"/>
+                <Enabled id="62"/>
                 <Format id="82" valUnicode="U18"/>
               </PropertyList>
             </Control>
@@ -7746,7 +7778,7 @@
                 <Data FieldID="101" id="43"/>
                 <ControlName id="46" val="ENGINE_NODISP"/>
                 <Visible Exp="28" id="61"/>
-                <Enabled Exp="185" id="62"/>
+                <Enabled id="62"/>
                 <Format id="82" valUnicode="U18"/>
               </PropertyList>
             </Control>
@@ -8473,6 +8505,10 @@
           </Expression>
           <Expression id="197">
             <ExpSyntax val="Trim({0,155})='btnexit' OR (Trim({0,156})='MODE_DSP' AND Trim({0,9})='') OR LastClicked()='btnexit'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="203">
+            <ExpSyntax val="Trim({0,155})='btnexit' OR ((LastClicked()='MODE_DSP' OR Trim({0,156})='MODE_DSP') AND Trim({0,9})='') OR LastClicked()='btnexit'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="196">
