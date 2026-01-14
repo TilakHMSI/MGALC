@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739628" _time="64569" date="12/01/2026" time="17:56:09"/>
+          <LastModified _date="739630" _time="56750" date="14/01/2026" time="15:45:50"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -3056,6 +3056,18 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="3450">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="31"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="198">
                   <Parent val="32768"/>
                   <FieldID val="1"/>
@@ -3221,9 +3233,9 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
-                <Update FlowIsn="2902">
+                <Update FlowIsn="3451">
                   <Parent val="32768"/>
-                  <FieldID val="540"/>
+                  <FieldID val="541"/>
                   <WithValue val="132"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
@@ -5093,7 +5105,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="27" _last_test_id="27" id="1">
+          <FormEntry _last_isn="28" _last_test_id="28" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="560"/>
               <Height id="24" val="481"/>
@@ -5444,18 +5456,35 @@
                 <Visible id="61"/>
               </PropertyList>
             </Control>
-            <Control _test_id="27" id="27">
+            <Control PDOD="128" _test_id="27" id="27">
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="540" Parent="32768"/>
+                </Model>
                 <X id="21" val="221"/>
                 <Y id="22" val="432"/>
-                <Width id="23" val="190"/>
+                <Width id="23" val="92"/>
                 <Height id="24" val="26"/>
-                <Data Exp="130" id="43"/>
+                <Data FieldID="540" Parent="32768" id="43"/>
                 <ControlName id="46" val="LastScanned"/>
                 <Visible id="61"/>
                 <Enabled Exp="32" id="62"/>
                 <Format id="82" valUnicode="U100"/>
-                <Attribute id="83" val="85"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="28" id="28">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="541" Parent="32768"/>
+                </Model>
+                <X id="21" val="319"/>
+                <Y id="22" val="432"/>
+                <Width id="23" val="92"/>
+                <Height id="24" val="26"/>
+                <Data FieldID="541" Parent="32768" id="43"/>
+                <ControlName id="46" val="LastScannedEngine"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="U100"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -5473,10 +5502,6 @@
             <ExpSyntax val="Trim ({0,100})='' AND ({0,16} AND {0,32}&lt;>0 OR {0,46} AND {0,61}&lt;>0)"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="4">
-            <ExpSyntax val="Trim ({0,100})&lt;>''"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="126">
             <ExpSyntax val="Trim ({0,100})&lt;>'' AND Trim({0,10})&lt;>''"/>
             <ExpAttribute val="B"/>
@@ -5491,10 +5516,6 @@
           </Expression>
           <Expression id="8">
             <ExpSyntax val="{0,3}='1'"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="9">
-            <ExpSyntax val="Trim ({0,98})&lt;>''"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="125">
@@ -5697,10 +5718,6 @@
             <ExpSyntax val="MID ({0,10},9,1)&lt;>{0,15}"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="60">
-            <ExpSyntax val="{0,16} AND {0,32}&lt;>'00/00/0000'DATE OR {0,46} AND {0,61}&lt;>'00/00/0000'DATE"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="61">
             <ExpSyntax val="{0,16} AND {0,35}&lt;>0 OR {0,46} AND {0,64}&lt;>0"/>
             <ExpAttribute val="B"/>
@@ -5721,10 +5738,6 @@
             <ExpSyntax val="''"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="66">
-            <ExpSyntax val="Flow ('C')"/>
-            <ExpAttribute val="*"/>
-          </Expression>
           <Expression id="67">
             <ExpSyntax val="'4'"/>
             <ExpAttribute val="A"/>
@@ -5740,30 +5753,6 @@
           <Expression id="70">
             <ExpSyntax val="{0,96}"/>
             <ExpAttribute val="T"/>
-          </Expression>
-          <Expression id="71">
-            <ExpSyntax val="IF ({0,16} AND {0,25}='I' OR {0,46} AND {0,55}='V','6P0Z','7P0Z')"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="72">
-            <ExpSyntax val="IF ({0,46} AND {0,25}='V',Rep ({0,23},{0,26},9,1),IF ({0,16} AND {0,25}&lt;>'V',{0,23},IF ({0,46} AND {0,55}='V',Rep ({0,53},{0,56},9,1),{0,53})))"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="73">
-            <ExpSyntax val="IF ({0,16},{0,24},IF ({0,46},{0,54},0))"/>
-            <ExpAttribute val="N"/>
-          </Expression>
-          <Expression id="74">
-            <ExpSyntax val="IF ({0,16},{0,44},IF ({0,46},{0,73},''))"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="75">
-            <ExpSyntax val="IF ({0,16},{0,32},IF ({0,46},{0,61},0))"/>
-            <ExpAttribute val="D"/>
-          </Expression>
-          <Expression id="76">
-            <ExpSyntax val="IF ({0,16},TStr({0,33},'HH:MM:SS PM'),IF ({0,46},TStr({0,62},'HH:MM:SS PM'),''))"/>
-            <ExpAttribute val="U"/>
           </Expression>
           <Expression id="77">
             <ExpSyntax val="'VPRDO065'"/>
@@ -5815,14 +5804,6 @@
           </Expression>
           <Expression id="90">
             <ExpSyntax val="{0,89} AND {0,90} AND Right ({0,10},1)=''"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="91">
-            <ExpSyntax val="KbPut (Fill ('Tab'KBD,1))"/>
-            <ExpAttribute val="*"/>
-          </Expression>
-          <Expression id="92">
-            <ExpSyntax val="{0,4}&lt;>'Y' AND {0,8}='ADDITION'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="93">
@@ -5881,10 +5862,6 @@
             <ExpSyntax val="{32768,1}"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="107">
-            <ExpSyntax val="0"/>
-            <ExpAttribute val="N"/>
-          </Expression>
           <Expression id="110">
             <ExpSyntax val="'PGM=VPRDO065 : ' &amp;IF ({0,3}='2','VQ-ON RESULT ENTRY(AUTO ORDER ALLOCATE)',IF ({0,3}='3','VQ-ON RESULT ENTRY(NON ORDER ALLOCATE)','VQ-ON RESULT ENTRY'))"/>
             <ExpAttribute val="A"/>
@@ -5893,24 +5870,8 @@
             <ExpSyntax val="CtrlGoto('CHASSIS_NO_DSP',0,0)"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="113">
-            <ExpSyntax val="Trim({0,10})&lt;>'' AND (Trim ({0,98})&lt;>'' OR Trim ({0,100})&lt;>'')"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="117">
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="119">
-            <ExpSyntax val="{0,8}='ADDITION' OR {0,8}='INQUIRY'"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="120">
-            <ExpSyntax val="LastClicked()='btnexit' OR LastClicked()='btn_exit'"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="122">
-            <ExpSyntax val="Trim({0,116})='btnexit' OR Trim({0,116})='btn_Exit' OR (Trim({0,117})='MODE_DSP' AND Trim({0,10})='') OR LastClicked()='btnexit'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="127">
@@ -5925,37 +5886,13 @@
             <ExpSyntax val="LastClicked()"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="124">
-            <ExpSyntax val="Trim({0,116})"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="128">
-            <ExpSyntax val="'LAST SCANNED - '&amp;Trim({0,10})"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="129">
-            <ExpSyntax val="Trim({0,98})='' AND Trim({0,98})=''"/>
-            <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="130">
-            <ExpSyntax val="Trim({32768,540})"/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="131">
-            <ExpSyntax val="{0,114}"/>
+            <ExpSyntax val="Trim({0,10})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="132">
-            <ExpSyntax val="IF(InStr(Trim({0,114}),'00000')>0,'', Trim({32768,540})&amp; ' |   | ' &amp;Trim({0,114}))"/>
+            <ExpSyntax val="IF(InStr(Trim({0,114}),'00000')>0,'', Trim({0,114}))"/>
             <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="133">
-            <ExpSyntax val=""/>
-            <ExpAttribute val="A"/>
-          </Expression>
-          <Expression id="134">
-            <ExpSyntax val="Trim ({0,98})&lt;>'' OR Trim ({0,100})&lt;>''"/>
-            <ExpAttribute val="B"/>
           </Expression>
           <Expression id="135">
             <ExpSyntax val="Trim ({0,98})='' AND Trim ({0,100})=''"/>
@@ -5972,7 +5909,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="VQ_ON_RESULT_ENTRY" ISN_2="2" LastIsn="12" id="359">
-            <LastModified _date="739594" _time="45128" date="09/12/2025" time="12:32:08"/>
+            <LastModified _date="739630" _time="56750" date="14/01/2026" time="15:45:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -6631,10 +6568,6 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="IF ({1,1}='E','DD-MM-YYYY','MM-DD-YYYY')"/>
-              <ExpAttribute val="A"/>
-            </Expression>
             <Expression id="2">
               <ExpSyntax val="{1,88}"/>
               <ExpAttribute val="B"/>

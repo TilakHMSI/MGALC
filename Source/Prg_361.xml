@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="47" id="361">
-          <LastModified _date="739628" _time="69235" date="12/01/2026" time="19:13:55"/>
+          <LastModified _date="739630" _time="56671" date="14/01/2026" time="15:44:31"/>
           <Public val="RIA217"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4047,6 +4047,18 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="7693">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="63"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="288">
                   <Parent val="32768"/>
                   <FieldID val="1"/>
@@ -6006,6 +6018,18 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="7584">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="195"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="28"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="499"/>
               </LogicLine>
               <LogicLine>
@@ -7242,7 +7266,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="28" _last_test_id="28" id="1">
+          <FormEntry _last_isn="29" _last_test_id="29" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -7601,14 +7625,29 @@
             </Control>
             <Control _test_id="28" id="28">
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                <X id="21" val="157"/>
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="540" Parent="32768"/>
+                </Model>
+                <X id="21" val="105"/>
                 <Y id="22" val="474"/>
-                <Width id="23" val="190"/>
+                <Width id="23" val="138"/>
                 <Height id="24" val="26"/>
-                <Data Exp="186" id="43"/>
+                <Data FieldID="540" Parent="32768" id="43"/>
                 <ControlName id="46" val="LastScanned"/>
-                <Format id="82" valUnicode="U200"/>
-                <Attribute id="83" val="85"/>
+                <Format id="82" valUnicode="50"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="29" id="29">
+              <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="541" Parent="32768"/>
+                </Model>
+                <X id="21" val="259"/>
+                <Y id="22" val="474"/>
+                <Width id="23" val="138"/>
+                <Height id="24" val="26"/>
+                <Data FieldID="541" Parent="32768" id="43"/>
+                <ControlName id="46" val="LastScannedEngine"/>
               </PropertyList>
             </Control>
             <Control _test_id="27" id="27">
@@ -8233,7 +8272,11 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="187">
-            <ExpSyntax val="'LAST SCANNED - '&amp;Trim({0,9}) &amp;' |  | '&amp;Trim({0,10}) &amp;' |  | '&amp;Trim({0,102})"/>
+            <ExpSyntax val="Trim({0,9}) &amp;' |  | '&amp;Trim({0,10})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="195">
+            <ExpSyntax val="Trim({0,102})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="188">

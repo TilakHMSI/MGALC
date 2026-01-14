@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFF_ENTRY" ISN_2="1" LastIsn="41" id="362">
-          <LastModified _date="739628" _time="68550" date="12/01/2026" time="19:02:30"/>
+          <LastModified _date="739630" _time="56721" date="14/01/2026" time="15:45:21"/>
           <Public val="RIA333"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4129,6 +4129,30 @@
             <ExecuteOn_ val="S"/>
             <LogicLines>
               <LogicLine>
+                <Update FlowIsn="6649">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="79"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="6650">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="79"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="301">
                   <Parent val="32768"/>
                   <FieldID val="1"/>
@@ -6542,6 +6566,18 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="6559">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="210"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="44"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="543"/>
               </LogicLine>
               <LogicLine>
@@ -7601,7 +7637,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="28" _last_test_id="28" id="1">
+          <FormEntry _last_isn="29" _last_test_id="29" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -7960,15 +7996,29 @@
               </PropertyList>
             </Control>
             <Control _test_id="28" id="28">
-              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                <X id="21" val="146"/>
+              <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="540" Parent="32768"/>
+                </Model>
+                <X id="21" val="105"/>
                 <Y id="22" val="474"/>
-                <Width id="23" val="190"/>
+                <Width id="23" val="112"/>
                 <Height id="24" val="26"/>
-                <Data Exp="201" id="43"/>
+                <Data FieldID="540" Parent="32768" id="43"/>
                 <ControlName id="46" val="LastScanned"/>
-                <Format id="82" valUnicode="U200"/>
-                <Attribute id="83" val="85"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="29" id="29">
+              <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="541" Parent="32768"/>
+                </Model>
+                <X id="21" val="223"/>
+                <Y id="22" val="474"/>
+                <Width id="23" val="72"/>
+                <Height id="24" val="26"/>
+                <Data FieldID="541" Parent="32768" id="43"/>
+                <ControlName id="46" val="LastScannedEngine"/>
               </PropertyList>
             </Control>
             <Control _test_id="27" id="27">
@@ -8673,7 +8723,11 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="202">
-            <ExpSyntax val="'LAST SCANNED - '&amp;Trim({0,9}) &amp;' |  | '&amp;Trim({0,10}) &amp;' |  | '&amp;Trim({0,101})"/>
+            <ExpSyntax val="Trim({0,9}) &amp;' |  | '&amp;Trim({0,10})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="210">
+            <ExpSyntax val="Trim({0,101})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="204">
