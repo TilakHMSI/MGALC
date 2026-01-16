@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="LoginScreen" ISN_2="1" LastIsn="5" id="422">
-          <LastModified _date="739604" _time="62196" date="19/12/2025" time="17:16:36"/>
+        <Header Description="LoginScreen" ISN_2="1" LastIsn="4" id="422">
+          <LastModified _date="739632" _time="54948" date="16/01/2026" time="15:15:48"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -719,6 +719,52 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="6" propagate="78">
+            <Level val="T"/>
+            <Type val="P"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <ExecuteOn_ val="S"/>
+            <LogicLines>
+              <LogicLine>
+                <BLOCK EndBlock="97" EndBlockSegment="97" FlowIsn="96" Type="I">
+                  <Condition Exp="20"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="98">
+                  <FieldID val="2"/>
+                  <WithValue val="23"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="99">
+                  <FieldID val="3"/>
+                  <WithValue val="22"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="97"/>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="5" _last_test_id="8" id="1">
@@ -888,6 +934,18 @@
             <ExpSyntax val="'1'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="20">
+            <ExpSyntax val="INIGet('[MAGIC_LOGICAL_NAMES]DEV')='D'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="22">
+            <ExpSyntax val="'Pass@123'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="23">
+            <ExpSyntax val="'SUPERVISOR'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="Task:Login" FORCE_EXIT="N" id="1">
           <Event>
@@ -895,7 +953,7 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="CheckIsUserDeactived" ISN_2="3" LastIsn="5" id="422">
+          <Header Description="CheckIsUserDeactived" ISN_2="3" LastIsn="3" id="422">
             <LastModified _date="739574" _time="59013" date="19/11/2025" time="16:23:33"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -1080,7 +1138,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="AuthonticateUser" ISN_2="4" LastIsn="5" id="422">
+          <Header Description="AuthonticateUser" ISN_2="4" LastIsn="4" id="422">
             <LastModified _date="739595" _time="60490" date="10/12/2025" time="16:48:10"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
