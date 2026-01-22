@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO020_MTOC_TABLE_INQUIRY_14" ISN_2="1" LastIsn="4" id="484">
-          <LastModified _date="739636" _time="46112" date="20/01/2026" time="12:48:32"/>
+          <LastModified _date="739637" _time="38073" date="21/01/2026" time="10:34:33"/>
           <Public val="Prg_14"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -409,6 +409,24 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="23">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="14"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="8" propagate="78">
@@ -452,6 +470,24 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="24">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="14"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="9" propagate="78">
@@ -465,6 +501,7 @@
               <EventType val="S"/>
             </Event>
             <TXT val="BOM_CODE_V"/>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -479,6 +516,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="InqSub"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -497,6 +535,7 @@
               <EventType val="S"/>
             </Event>
             <TXT val="MTO_CODE_V"/>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -511,6 +550,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="InqSub"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -751,19 +791,26 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="13">
-            <ExpSyntax val="'PGM=VPRDO020'"/>
+            <ExpSyntax val="'MTOC TABLE INQUIRY - PGM=VPRDO020'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="14">
+            <ExpSyntax val="'InqSub'"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="PRD001_INQUIRY" ISN_2="2" LastIsn="4" id="484">
-            <LastModified _date="739635" _time="68988" date="19/01/2026" time="19:09:48"/>
+            <LastModified _date="739637" _time="37962" date="21/01/2026" time="10:32:42"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
             <ReturnValue>
               <ReturnValueAttr/>
-              <ParametersAttributes/>
+              <TSK_PARAMS val="1"/>
+              <ParametersAttributes>
+                <Attr MgAttr="A"/>
+              </ParametersAttributes>
             </ReturnValue>
             <SqlWhereExist val="N"/>
             <TaskType val="W"/>
@@ -772,7 +819,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="51"/>
+          <ItemIsn val="52"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="1"/>
@@ -799,6 +846,16 @@
               <IdentifyRowModifications val="84"/>
             </DB>
             <Columns>
+              <Column id="2" name="pMTO CODE">
+                <PropertyList model="FIELD">
+                  <Model attr_obj="FIELD_ALPHA" comp="-1" id="1" obj="9"/>
+                  <StoredAs id="173" val="1"/>
+                  <DbColumnName id="178"/>
+                  <Type id="179"/>
+                  <UserType id="180"/>
+                  <PartOfDataview id="449"/>
+                </PropertyList>
+              </Column>
               <Column id="1" name="TASK_END_V">
                 <PropertyList model="FIELD">
                   <Model attr_obj="FIELD_LOGICAL" id="1"/>
@@ -898,6 +955,19 @@
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </DATAVIEW_SRC>
+                </LogicLine>
+                <LogicLine>
+                  <Select FieldID="52" FlowIsn="89" id="52">
+                    <Column val="2"/>
+                    <Type val="V"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="Y"/>
+                    <DIFF_UPDATE val="T"/>
+                    <PartOfDataview val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="1" FlowIsn="3" id="1">
@@ -1297,7 +1367,7 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="39" Key="1" Mode="R" SortType="43" VIEW="27" VIEWS="3">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="39" Key="1" Mode="R" SortType="43" VIEW="28" VIEWS="3">
                     <DB comp="-1" obj="33"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1681,7 +1751,7 @@
                   </Remark>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="75" Mode="R" SortType="77" VIEW="51" VIEWS="1">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="75" Mode="R" SortType="77" VIEW="52" VIEWS="1">
                     <DB comp="-1" obj="65"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -3172,7 +3242,7 @@
             </Event>
           </EVNT>
           <Task MainProgram="N">
-            <Header Description="PRD002_INQUIRY" ISN_2="3" LastIsn="4" id="484">
+            <Header Description="PRD002_INQUIRY" ISN_2="3" LastIsn="3" id="484">
               <LastModified _date="739635" _time="68979" date="19/01/2026" time="19:09:39"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>

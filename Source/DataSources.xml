@@ -8,7 +8,7 @@
 
   <Exe comp="-1"/>
 
-  <LastIsn val="364"/>
+  <LastIsn val="365"/>
 
   <LastIsnFolder val="0"/>
 
@@ -17,7 +17,7 @@
 <DataRepositoryProperties/>
  <DataSourceRepository>
   <DataObjects>
- 
+  
  
  
 <DataObject PhysicalName="PRD001" Resident="N" UniqueISNConvState="12" data_source="PRD" id="1" name="PRD001">
@@ -122652,6 +122652,88 @@
         <Segment>
           <Size val="8"/>
           <Column val="10"/>
+          <Order val="A"/>
+        </Segment>
+      </Segments>
+    </Index>
+  </Indexes>
+
+  <ForeignKeys/>
+
+  <WebS/>
+
+</DataObject> 
+<DataObject PhysicalName="LET_HTTP_MASTER" Resident="N" UniqueISNConvState="12" data_source="PRD" id="365" name="LET_HTTP_MASTER">
+
+  <Encrypt val="N"/>
+
+  <Cache val="D"/>
+
+  <IdentifyRowModifications val="U"/>
+
+  <HasHint val="Y"/>
+
+  <Cursor val="D"/>
+
+  <CheckExistence val="D"/>
+
+  <ObjectType val="T"/>
+
+  <Position val="D"/>
+
+  <PositionIndex val="-2"/>
+
+  <IndexesLastIsn val="1"/>
+
+  <MetaTreeRTIndex val="-1"/>
+
+  <Columns>
+    <Column id="1" name="IPAddress">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Picture id="157" valUnicode="30"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="30"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="IPAddress"/>
+        <_Flip id="194"/>
+        <_FieldPhysical Name="IPAddress" PIC_U="30" Size="30" allowed_null="N" attribute="A" context_cookies="Y" database_definition="2" id="231" storage="3" translate="1"/>
+      </PropertyList>
+    </Column>
+    <Column id="2" name="FLAG">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Picture id="157" valUnicode="U"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="1"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="FLAG"/>
+        <_Flip id="194"/>
+        <_FieldPhysical Name="FLAG" PIC_U="U" Size="1" allowed_null="N" attribute="A" context_cookies="Y" database_definition="2" id="231" storage="3" translate="1"/>
+      </PropertyList>
+    </Column>
+  </Columns>
+
+  <Indexes>
+    <Index id="1" name="LET_HTTP_MASTERK1">
+      <Mode val="S"/>
+      <Order val="T"/>
+      <Range val="Q"/>
+      <IndexType val="R"/>
+      <PhysicalName val="LET_HTTP_MASTERK1"/>
+      <HasHint val="Y"/>
+      <Clustered val="N"/>
+      <DropOnReindex val="N"/>
+      <Primary val="N"/>
+      <Segments>
+        <Segment>
+          <Size val="30"/>
+          <Column val="1"/>
+          <Order val="A"/>
+        </Segment>
+        <Segment>
+          <Size val="1"/>
+          <Column val="2"/>
           <Order val="A"/>
         </Segment>
       </Segments>

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="47" id="361">
-          <LastModified _date="739630" _time="56671" date="14/01/2026" time="15:44:31"/>
+          <LastModified _date="739638" _time="59222" date="22/01/2026" time="16:27:02"/>
           <Public val="RIA217"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="160"/>
+        <ItemIsn val="163"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="1"/>
@@ -75,6 +75,14 @@
           </DB>
           <DB id="6">
             <DataObject comp="-1" obj="342"/>
+            <Access val="R"/>
+            <Share val="W"/>
+            <Open val="N"/>
+            <Cache val="Y"/>
+            <IdentifyRowModifications val="84"/>
+          </DB>
+          <DB id="7">
+            <DataObject comp="-1" obj="365"/>
             <Access val="R"/>
             <Share val="W"/>
             <Open val="N"/>
@@ -1139,6 +1147,17 @@
             <Column id="68" name="vPDIOFFTIME">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_TIME" id="1"/>
+                <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="69" name="vVINVerify">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                <Picture id="157" valUnicode="2"/>
+                <_Dec id="181"/>
+                <_Whole id="182" val="2"/>
+                <_Negative id="192"/>
                 <_FieldStyle id="276" val="1"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
@@ -4020,6 +4039,54 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="161" FlowIsn="7963" id="161">
+                  <Column val="69"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <LNK Direction="A" EVL_CND="R" FlowIsn="8237" Key="1" Mode="R" SortType="8238" VIEW="162" VIEWS="2">
+                  <DB comp="-1" obj="365"/>
+                  <Condition val="Y"/>
+                </LNK>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="163" FlowIsn="8240" id="163">
+                  <Column val="1"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="N"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="162" FlowIsn="8239" id="162">
+                  <Column val="2"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="N"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <END_LINK FlowIsn="8238"/>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -5673,30 +5740,82 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
-                <CallTask FlowIsn="481">
+                <Remark FlowIsn="7959">
+                  <Type val="2"/>
+                  <Text val="API Program Called by Magic Team 22-012026"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="7960">
+                  <Type val="2"/>
+                  <Text val="This Will Work for All Factories"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="7961">
+                  <Type val="2"/>
+                  <Text val="Information will be fetched from the underlying DB of the Factory"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="8242" EndBlockSegment="8243" FlowIsn="8241" Type="I">
+                  <Condition Exp="199"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="7962">
+                  <FieldID val="161"/>
+                  <WithValue val="196"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="7964">
                   <OperationType val="P"/>
                   <Event>
                     <EventType val="N"/>
                   </Event>
-                  <TaskID comp="-1" obj="374"/>
+                  <TaskID comp="-1" obj="493"/>
                   <Lock val="N"/>
                   <Arguments>
                     <Argument>
-                      <Expression val="155"/>
+                      <Expression val="197"/>
                       <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Skip val="Y"/>
                     </Argument>
                   </Arguments>
                   <Wait val="Y"/>
                   <SyncData val="N"/>
+                  <ReturnValue val="161"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
-                  <Condition val="N"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="7965">
+                  <FieldID val="149"/>
+                  <WithValue val="198"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="8242" EndBlockSegment="8242" FlowIsn="8243" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="482">
@@ -5765,6 +5884,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="8242"/>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="486">
@@ -8267,10 +8389,6 @@
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="186">
-            <ExpSyntax val="Trim({32768,540})"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="187">
             <ExpSyntax val="Trim({0,9}) &amp;' |  | '&amp;Trim({0,10})"/>
             <ExpAttribute val="A"/>
@@ -8301,6 +8419,22 @@
           </Expression>
           <Expression id="194">
             <ExpSyntax val="Trim({0,156})=''"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="196">
+            <ExpSyntax val="10"/>
+            <ExpAttribute val="N"/>
+          </Expression>
+          <Expression id="197">
+            <ExpSyntax val="Trim({0,10})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="198">
+            <ExpSyntax val="CASE({0,161},0,'Pass',1,'Fail',9,'','')"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="199">
+            <ExpSyntax val="{0,162}='Y'"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
