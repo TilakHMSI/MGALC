@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="Y">
-        <Header Description="Main Program" ISN_2="1" LastIsn="1" id="1">
-          <LastModified _date="739630" _time="55352" date="14/01/2026" time="15:22:32"/>
+        <Header Description="Main Program" ISN_2="1" LastIsn="4" id="1">
+          <LastModified _date="739649" _time="57612" date="02/02/2026" time="16:00:12"/>
           <Resident val="N"/>
           <SQL val="N"/>
           <ReturnValue>
@@ -30,7 +30,7 @@
           <FormType val="N"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="541"/>
+        <ItemIsn val="549"/>
         <Resource>
           <Columns>
             <Column id="1" name="gvExitEventTriggered">
@@ -3830,6 +3830,30 @@
                 <Picture id="157" valUnicode="U30"/>
                 <StoredAs id="173" val="1"/>
                 <Size id="174" val="30"/>
+                <_Flip id="194"/>
+              </PropertyList>
+            </Column>
+            <Column id="545" name="pStringToValidate">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="100"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="100"/>
+                <_Flip id="194"/>
+              </PropertyList>
+            </Column>
+            <Column id="547" name="vIsValidString">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_LOGICAL" id="1"/>
+                <_FieldStyle id="276" val="1"/>
+              </PropertyList>
+            </Column>
+            <Column id="548" name="vSingleChar">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="1"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="1"/>
                 <_Flip id="194"/>
               </PropertyList>
             </Column>
@@ -10486,6 +10510,89 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="5" propagate="78">
+            <Level val="F"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="F"/>
+            </Event>
+            <TXT val="NoSpecialChar"/>
+            <ReturnValueExpression val="11"/>
+            <LogicLines>
+              <LogicLine>
+                <Select FieldID="545" FlowIsn="558" id="545">
+                  <Column val="545"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="547" FlowIsn="560" id="547">
+                  <ASS val="10"/>
+                  <Column val="547"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="548" FlowIsn="564" id="548">
+                  <Column val="548"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="562" EndBlockSegment="562" FlowIsn="561" Type="L">
+                  <Condition Exp="6"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="563">
+                  <FieldID val="548"/>
+                  <WithValue val="7"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="565">
+                  <FieldID val="547"/>
+                  <WithValue val="8"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="9"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="562"/>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry id="1">
@@ -10548,6 +10655,30 @@
             <ExpSyntax val="''''"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="6">
+            <ExpSyntax val="LoopCounter()&lt;=Len(Trim({0,545})) AND NOT ({0,547})"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="7">
+            <ExpSyntax val="MID(Trim({0,545}),LoopCounter(),1)"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="8">
+            <ExpSyntax val="'TRUE'LOG"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="ASCIIVal({0,548})&lt;>32 AND (ASCIIVal({0,548})&lt;65 OR &#xD;&#xA;ASCIIVal({0,548})>90) AND (ASCIIVal({0,548})&lt;97 OR &#xD;&#xA;ASCIIVal({0,548})>122) AND (ASCIIVal({0,548})&lt;48 OR &#xD;&#xA;ASCIIVal({0,548})>57)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="10">
+            <ExpSyntax val="'FALSE'LOG"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="11">
+            <ExpSyntax val="{0,547}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="gZoom" FORCE_EXIT="E" id="1">
           <Event>
@@ -10566,6 +10697,11 @@
           </Event>
         </EVNT>
         <EVNT DESC="GMainExit" FORCE_EXIT="N" id="4">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
+        <EVNT DESC="GAddNew" FORCE_EXIT="N" id="5">
           <Event>
             <EventType val="N"/>
           </Event>
