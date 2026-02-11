@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="37" id="358">
-          <LastModified _date="739651" _time="44395" date="04/02/2026" time="12:19:55"/>
+          <LastModified _date="739658" _time="42448" date="11/02/2026" time="11:47:28"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -5671,6 +5671,28 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="14264">
+                  <FieldID val="120"/>
+                  <WithValue val="41"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="223"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="14265">
+                  <FieldID val="121"/>
+                  <WithValue val="224"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="223"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="411"/>
               </LogicLine>
               <LogicLine>
@@ -9106,6 +9128,14 @@
           <Expression id="222">
             <ExpSyntax val="Trim({0,81})&lt;>'' AND Trim ({0,121})=''"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="223">
+            <ExpSyntax val="Len (Trim ({0,11}))&lt;>17"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="224">
+            <ExpSyntax val="'PLEASE SCAN 17 DIGIT FRAME'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
