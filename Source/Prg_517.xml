@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG1_PCU_OFF_ENTRY" ISN_2="1" LastIsn="17" id="517">
-          <LastModified _date="739656" _time="40479" date="09/02/2026" time="11:14:39"/>
+          <LastModified _date="739658" _time="65620" date="11/02/2026" time="18:13:40"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -3195,36 +3195,6 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <Update FlowIsn="253">
-                  <FieldID val="62"/>
-                  <WithValue val="29"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="5"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="254">
-                  <FieldID val="63"/>
-                  <WithValue val="6"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="5"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="6" FlowIsn="255" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
-                  <Condition Exp="5"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </STP>
-              </LogicLine>
-              <LogicLine>
                 <Update FlowIsn="256">
                   <FieldID val="62"/>
                   <WithValue val="29"/>
@@ -3247,14 +3217,6 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="4" FlowIsn="258" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
-                  <Condition Exp="3"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </STP>
-              </LogicLine>
-              <LogicLine>
                 <Remark FlowIsn="262">
                   <Type val="2"/>
                   <Text val="/// MODE='ADDITION' 1999.04.23 MODIFY UNLOCK VER."/>
@@ -3265,36 +3227,6 @@
                   <Type val="2"/>
                   <Text val="/// 1999.11.19 MODIFY TIME PARA"/>
                 </Remark>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="264">
-                  <OperationType val="T"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="11"/>
-                  <Lock val="Y"/>
-                  <Arguments>
-                    <Argument>
-                      <Expression val="61"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="63"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="48"/>
-                      <Skip val="N"/>
-                    </Argument>
-                  </Arguments>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Condition val="N"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="265">
@@ -3360,6 +3292,30 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="643">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="98"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="644">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="99"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="267">
@@ -4065,7 +4021,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="3">
-            <ExpSyntax val="{0,16}='' OR ISNULL({0,16})"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,16}='' OR ISNULL({0,16})"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="4">
@@ -4073,7 +4029,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="5">
-            <ExpSyntax val="Len (Trim ({0,8}))&lt;>17"/>
+            <ExpSyntax val="Trim ({0,63})='' AND Len (Trim ({0,8}))&lt;>17"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="6">
@@ -4081,7 +4037,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="7">
-            <ExpSyntax val="{0,88}='FALSE'LOG"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,88}='FALSE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="8">
@@ -4089,7 +4045,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="9">
-            <ExpSyntax val="{0,16}='' OR ISNULL({0,16})"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,16}='' OR ISNULL({0,16})"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="10">
@@ -4101,7 +4057,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="12">
-            <ExpSyntax val="{0,82}='TRUE'LOG"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,82}='TRUE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="13">
@@ -4385,7 +4341,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="84">
-            <ExpSyntax val="{0,73}='TRUE'LOG"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,73}='TRUE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="85">
@@ -4405,7 +4361,7 @@
             <ExpAttribute val="N"/>
           </Expression>
           <Expression id="89">
-            <ExpSyntax val="{0,76}='FALSE'LOG"/>
+            <ExpSyntax val="Trim ({0,63})='' AND {0,76}='FALSE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="90">
@@ -4439,6 +4395,14 @@
           <Expression id="96">
             <ExpSyntax val="IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="98">
+            <ExpSyntax val="{0,8}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="99">
+            <ExpSyntax val="{0,16}"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
