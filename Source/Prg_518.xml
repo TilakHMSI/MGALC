@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG2_IVI_OFF_ENTRY" ISN_2="1" LastIsn="13" id="518">
-          <LastModified _date="739656" _time="57105" date="09/02/2026" time="15:51:45"/>
+          <LastModified _date="739658" _time="62376" date="11/02/2026" time="17:19:36"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -2263,6 +2263,30 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="703">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="75"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="704">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="75"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="4" propagate="78">
@@ -3239,6 +3263,30 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="701">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="110"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="21"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="702">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="111"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="21"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="277">
@@ -4704,6 +4752,14 @@
           <Expression id="109">
             <ExpSyntax val="LastClicked()='btnexit' OR Trim({0,16})=''"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="110">
+            <ExpSyntax val="{0,8}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="111">
+            <ExpSyntax val="{0,16}"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">

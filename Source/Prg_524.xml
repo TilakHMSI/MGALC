@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG7_BATTERY_SCANNING_ENTRY" ISN_2="1" LastIsn="14" id="524">
-          <LastModified _date="739657" _time="46107" date="10/02/2026" time="12:48:27"/>
+          <LastModified _date="739659" _time="65197" date="12/02/2026" time="18:06:37"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -2197,6 +2197,30 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="560">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="67"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="561">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="67"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="4" propagate="78">
@@ -3167,6 +3191,30 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="562">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="96"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="563">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="97"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="267">
                   <Type val="2"/>
                   <Text val="//// INSPECTION SHEET ISSUE"/>
@@ -3709,7 +3757,7 @@
             </Control>
             <Control _test_id="2" id="2">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <Text id="19" valUnicode="PGM=VPRDO041"/>
+                <Text Exp="98" id="19" valUnicode="PGM=VPRDO041"/>
                 <X id="21" val="495"/>
                 <Width id="23" val="60"/>
                 <Height id="24" val="13"/>
@@ -4252,6 +4300,18 @@
           <Expression id="94">
             <ExpSyntax val="CtrlGoto('FRAME_NO_DSP',0,0)"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="96">
+            <ExpSyntax val="{0,8}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="97">
+            <ExpSyntax val="{0,16}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="98">
+            <ExpSyntax val="'BATTERY OFF RESULT ENTRY : PGM=VPRDO041'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
