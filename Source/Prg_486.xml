@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO001_PLAN_TABLE_MAINTE" ISN_2="3" LastIsn="8" id="486">
-          <LastModified _date="739638" _time="39248" date="22/01/2026" time="10:54:08"/>
+          <LastModified _date="739664" _time="70749" date="17/02/2026" time="19:39:09"/>
           <Public val="Prg_5"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -244,7 +244,7 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="9"/>
+                  <_DitIndexForToolkit val="10"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -266,7 +266,7 @@
                   <INT_RCMP_INFO>
                     <v>7</v>
                   </INT_RCMP_INFO>
-                  <_DitIndexForToolkit val="10"/>
+                  <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -410,7 +410,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="15"/>
+                  <_DitIndexForToolkit val="16"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -430,7 +430,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="16"/>
+                  <_DitIndexForToolkit val="17"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1011,9 +1011,78 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="13" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="U"/>
+              <Parent val="32768"/>
+              <PublicObject comp="-1" obj="5"/>
+            </Event>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <BLOCK EndBlock="134" EndBlockSegment="137" FlowIsn="133" Type="I">
+                  <Condition Exp="29"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="136">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="31"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="134" EndBlockSegment="134" FlowIsn="137" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="138">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="73"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="139">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="37"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="134"/>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="16" _last_test_id="16" id="1">
+          <FormEntry _last_isn="17" _last_test_id="17" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="560"/>
               <Height id="24" val="481"/>
@@ -1048,6 +1117,23 @@
                 <Data FieldID="16" id="43"/>
                 <ControlName id="46" val="pLOCATE_P"/>
                 <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="17" id="17">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="51"/>
+                <Y id="22" val="4"/>
+                <Width id="23" val="90"/>
+                <Height id="24" val="31"/>
+                <ControlName id="46" val="btnadd"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="Add"/>
+                <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="U"/>
+                  <Parent val="32768"/>
+                  <PublicObject comp="-1" obj="5"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="3" id="3">
@@ -1348,6 +1434,10 @@
           <Expression id="28">
             <ExpSyntax val="'PLAN TABLE MAINTENANCE : PGM=VPRDO001'"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="29">
+            <ExpSyntax val="EmptyDataview(0)"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
