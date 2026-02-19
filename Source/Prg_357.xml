@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO041DISPAE_OFF_ENTRY" ISN_2="1" LastIsn="37" id="357">
-          <LastModified _date="739665" _time="44539" date="18/02/2026" time="12:22:19"/>
+          <LastModified _date="739666" _time="38915" date="19/02/2026" time="10:48:35"/>
           <Public val="RIA233_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="105"/>
+        <ItemIsn val="106"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="1"/>
@@ -752,6 +752,17 @@
                 <PartOfDataview id="449"/>
               </PropertyList>
             </Column>
+            <Column id="48" name="Ok/Cancel">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                <Picture id="157" valUnicode="1"/>
+                <_Dec id="181"/>
+                <_Whole id="182" val="1"/>
+                <_Negative id="192"/>
+                <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
           </Columns>
         </Resource>
         <Information>
@@ -763,9 +774,9 @@
             <CLS val="A"/>
           </Sort>
           <ForceRecordDelete DEL="N"/>
-          <EndTaskCondition Exp="109"/>
+          <EndTaskCondition val="N"/>
           <SkipLockedRecords val="N"/>
-          <EvaluateEndCondition val="I"/>
+          <EvaluateEndCondition val="B"/>
           <InitialMode val="M"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
@@ -781,7 +792,7 @@
             <TransactionMode val="D"/>
             <TransactionBegin val="P"/>
             <PreloadView val="N"/>
-            <AllowEmptyDataview val="N"/>
+            <AllowEmptyDataview val="Y"/>
             <KeepCreatedContext val="N"/>
           </TaskProperties>
           <SIDE_WIN>
@@ -2749,18 +2760,6 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <Update FlowIsn="189">
-                  <Parent val="32768"/>
-                  <FieldID val="1"/>
-                  <WithValue val="39"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
                 <CallTask FlowIsn="190">
                   <OperationType val="T"/>
                   <Event>
@@ -2775,59 +2774,6 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="4" propagate="78">
-            <Level val="T"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="191">
-                  <Parent val="32768"/>
-                  <FieldID val="1"/>
-                  <WithValue val="39"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="5" propagate="89">
-            <Level val="H"/>
-            <Type val="U"/>
-            <Scope val="T"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="I"/>
-              <InternalEventID val="14"/>
-            </Event>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="192">
-                  <Parent val="32768"/>
-                  <FieldID val="1"/>
-                  <WithValue val="38"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -3107,6 +3053,14 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Remark FlowIsn="5397">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
           <LogicUnit id="8" propagate="78">
             <Level val="H"/>
@@ -3813,6 +3767,7 @@
                   <WithValue val="126"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -3877,15 +3832,6 @@
             </Event>
             <ExecuteOn_ val="O"/>
             <LogicLines>
-              <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="4878" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="In Process" TitleTxt="Warning" VR_DISP="B">
-                  <AppendToErrorLog val="N"/>
-                  <Disabled val="1"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </STP>
-              </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="253">
                   <Type val="2"/>
@@ -4792,10 +4738,57 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="S"/>
-              <KeyCombinationID val="162"/>
+              <EventType val="U"/>
+              <PublicObject comp="-1" obj="2"/>
             </Event>
             <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Select FieldID="106" FlowIsn="5392" id="106">
+                  <ASS val="147"/>
+                  <Column val="48"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="K" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="5390" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="Y" TXT="Are you sure to exit?" TitleTxt="Exit Trigger" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <RetValVar val="106"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="5394" EndBlockSegment="5394" FlowIsn="5393" Type="I">
+                  <Condition Exp="146"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="5395">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="13"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="5394"/>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
@@ -4902,8 +4895,8 @@
                 <ControlName id="46" val="btnexit"/>
                 <Format id="82" valUnicode="X"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="13"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="2"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -5431,10 +5424,6 @@
             <ExpSyntax val="{0,2}&lt;>'HMS'"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="109">
-            <ExpSyntax val="{32768,1}"/>
-            <ExpAttribute val="B"/>
-          </Expression>
           <Expression id="118">
             <ExpSyntax val="CtrlGoto('ENGINE_NO_DSP',0,0)"/>
             <ExpAttribute val="B"/>
@@ -5495,8 +5484,21 @@
             <ExpSyntax val="IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="146">
+            <ExpSyntax val="{0,106}=1"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="147">
+            <ExpSyntax val="0"/>
+            <ExpAttribute val="N"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
+        <EVNT DESC="GExit" FORCE_EXIT="N" id="2">
           <Event>
             <EventType val="N"/>
           </Event>
@@ -21195,7 +21197,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="CONFIRMATION_MESSAGE" ISN_2="20" LastIsn="37" id="357">
-            <LastModified _date="739608" _time="52010" date="23/12/2025" time="14:26:50"/>
+            <LastModified _date="739666" _time="37247" date="19/02/2026" time="10:20:47"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -21363,30 +21365,6 @@
               </Event>
               <ExecuteOn_ val="O"/>
             </LogicUnit>
-            <LogicUnit id="6" propagate="78">
-              <Level val="R"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <Disabled val="1"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <Evaluate FlowIsn="5">
-                    <Expression val="4"/>
-                    <Disabled val="1"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </Evaluate>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
             <LogicUnit id="7" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
@@ -21546,10 +21524,6 @@
             <Expression id="3">
               <ExpSyntax val="{1,8}"/>
               <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="4">
-              <ExpSyntax val="Delay (80)"/>
-              <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
         </Task>
