@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO041DISPAE_OFF_ENTRY" ISN_2="1" LastIsn="37" id="357">
-          <LastModified _date="739666" _time="40579" date="19/02/2026" time="11:16:19"/>
+          <LastModified _date="739666" _time="44353" date="19/02/2026" time="12:19:13"/>
           <Public val="RIA233_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4778,7 +4778,7 @@
                 </STP>
               </LogicLine>
               <LogicLine>
-                <BLOCK EndBlock="5394" EndBlockSegment="5394" FlowIsn="5393" Type="I">
+                <BLOCK EndBlock="5394" EndBlockSegment="5640" FlowIsn="5393" Type="I">
                   <Condition Exp="146"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -4789,6 +4789,25 @@
                   <Event>
                     <EventType val="I"/>
                     <InternalEventID val="13"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="5394" EndBlockSegment="5394" FlowIsn="5640" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="5646">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
                   <Condition val="Y"/>
