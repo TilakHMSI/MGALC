@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO181_MONTHLY_SCHD_ENTRY" ISN_2="1" LastIsn="19" id="477">
-          <LastModified _date="739671" _time="56769" date="24/02/2026" time="15:46:09"/>
+          <LastModified _date="739672" _time="66521" date="25/02/2026" time="18:28:41"/>
           <Public val="Prg_348"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1618,6 +1618,14 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="173">
+                  <Expression val="34"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="8" propagate="78">
@@ -2261,6 +2269,7 @@
                 <Data FieldID="2" id="43"/>
                 <ControlName id="46" val="V_LOCATE_P"/>
                 <Visible id="61"/>
+                <Enabled Exp="23" id="62"/>
               </PropertyList>
             </Control>
             <Control _test_id="5" id="5">
@@ -2283,6 +2292,7 @@
                 <Data Exp="7" id="43"/>
                 <ControlName id="46" val="Edit6"/>
                 <Visible id="61"/>
+                <Enabled Exp="23" id="62"/>
                 <MultiLineEdit id="71"/>
                 <Format Exp="18" id="82" valUnicode="DD-MM-YYYY"/>
                 <Attribute id="83" val="68"/>
@@ -2297,6 +2307,7 @@
                 <Data Exp="8" id="43"/>
                 <ControlName id="46" val="Edit7"/>
                 <Visible id="61"/>
+                <Enabled Exp="23" id="62"/>
                 <MultiLineEdit id="71"/>
                 <Format id="82" valUnicode="HH:MM:SS"/>
                 <Attribute id="83" val="84"/>
@@ -2466,6 +2477,10 @@
             <ExpSyntax val="BOM(Date())"/>
             <ExpAttribute val="D"/>
           </Expression>
+          <Expression id="34">
+            <ExpSyntax val="CtrlGoto('PLAN_CODE_V',0,0)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="CreateMemory" FORCE_EXIT="N" id="1">
           <Event>
@@ -2509,7 +2524,7 @@
         </EVNT>
         <Task MainProgram="N">
           <Header Description="MODE_GET" ISN_2="2" LastIsn="19" id="477">
-            <LastModified _date="739671" _time="45099" date="24/02/2026" time="12:31:39"/>
+            <LastModified _date="739672" _time="66374" date="25/02/2026" time="18:26:14"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -3024,6 +3039,19 @@
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
+                  <RaiseEvent FlowIsn="116">
+                    <Event>
+                      <EventType val="U"/>
+                      <Parent val="1"/>
+                      <PublicObject comp="-1" obj="2"/>
+                    </Event>
+                    <Wait val="89"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
                   <Update FlowIsn="89">
                     <FieldID val="13"/>
                     <WithValue val="13"/>
@@ -3096,6 +3124,7 @@
                       <PublicObject comp="-1" obj="2"/>
                     </Event>
                     <Wait val="89"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -5483,7 +5512,7 @@
           </Task>
           <Task MainProgram="N">
             <Header Description="DeleteMemory" ISN_2="5" LastIsn="19" id="477">
-              <LastModified _date="739660" _time="41819" date="13/02/2026" time="11:36:59"/>
+              <LastModified _date="739672" _time="66319" date="25/02/2026" time="18:25:19"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -5497,6 +5526,7 @@
               <FormType val="N"/>
               <DotNetObjectExists val="N"/>
             </Header>
+            <ItemIsn val="1"/>
             <Resource>
               <DB id="1">
                 <DataObject comp="-1" obj="364"/>
@@ -5533,7 +5563,7 @@
                 <LockingStrategy val="M"/>
                 <CacheStrategy val="T"/>
                 <ForceRecordSuffix val="N"/>
-                <TransactionMode val="P"/>
+                <TransactionMode val="W"/>
                 <TransactionBegin val="T"/>
                 <PreloadView val="N"/>
                 <AllowEmptyDataview val="N"/>
@@ -5585,6 +5615,18 @@
                       <Modifier val="B"/>
                       <Direction val="C"/>
                     </DATAVIEW_SRC>
+                  </LogicLine>
+                  <LogicLine>
+                    <Select FieldID="1" FlowIsn="3" id="1">
+                      <Column val="4"/>
+                      <Type val="R"/>
+                      <ExposedToRoute val="N"/>
+                      <IsParameter val="N"/>
+                      <DIFF_UPDATE val="T"/>
+                      <Condition val="Y"/>
+                      <Modifier val="S"/>
+                      <Direction val="C"/>
+                    </Select>
                   </LogicLine>
                 </LogicLines>
               </LogicUnit>
@@ -16349,7 +16391,7 @@
           </Task>
           <Task MainProgram="N">
             <Header Description="PRODUCTIONSCHEDULEMAINTE" ISN_2="11" LastIsn="19" id="477">
-              <LastModified _date="739671" _time="56769" date="24/02/2026" time="15:46:09"/>
+              <LastModified _date="739672" _time="66494" date="25/02/2026" time="18:28:14"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -24865,6 +24907,7 @@
                     <Data FieldID="56" id="43"/>
                     <ControlName id="46" val="SA_DAY_OF_THE_WEEK1"/>
                     <Visible id="61"/>
+                    <Enabled Exp="106" id="62"/>
                   </PropertyList>
                 </Control>
                 <Control ISN_FATHER="37" PDOD="1" _test_id="40" id="40">
@@ -25217,10 +25260,6 @@
               </Expression>
               <Expression id="9">
                 <ExpSyntax val="{0,1}"/>
-                <ExpAttribute val="A"/>
-              </Expression>
-              <Expression id="10">
-                <ExpSyntax val="IF ({0,44}='V' OR {0,44}='I','6P0Z','7P0Z')"/>
                 <ExpAttribute val="A"/>
               </Expression>
               <Expression id="11">

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG2_IVI_OFF_ENTRY" ISN_2="1" LastIsn="13" id="518">
-          <LastModified _date="739658" _time="62376" date="11/02/2026" time="17:19:36"/>
+          <LastModified _date="739673" _time="43462" date="26/02/2026" time="12:04:22"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -3357,240 +3357,9 @@
                 <END_BLK FlowIsn="281"/>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="282">
+                <Remark FlowIsn="868">
                   <Type val="2"/>
-                  <Text val="*** CANCEL***"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <BLOCK EndBlock="313" EndBlockSegment="313" FlowIsn="283" Type="I">
-                  <Condition Exp="69"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="287">
-                  <Type val="2"/>
-                  <Text val="//Block Not Required, for &lt;>HMS  - AT 2012/11/10"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <BLOCK EndBlock="292" EndBlockSegment="292" FlowIsn="288" Type="I">
-                  <Condition Exp="96"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="289">
-                  <OperationType val="T"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="9"/>
-                  <Lock val="Y"/>
-                  <Wait val="Y"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="290">
-                  <OperationType val="P"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="154"/>
-                  <Lock val="N"/>
-                  <Arguments>
-                    <Argument>
-                      <Expression val="91"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="92"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Variable val="3"/>
-                      <Skip val="N"/>
-                    </Argument>
-                  </Arguments>
-                  <Wait val="Y"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Condition Exp="93"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="94" FlowIsn="291" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
-                  <AppendToErrorLog val="Y"/>
-                  <Condition Exp="93"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </STP>
-              </LogicLine>
-              <LogicLine>
-                <END_BLK FlowIsn="292"/>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="301">
-                  <Type val="2"/>
-                  <Text val="/// ADD 1999.06.28      /// MODIFY 2001.09.20  LOCATE&lt;>'HSC'"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <BLOCK EndBlock="305" EndBlockSegment="305" FlowIsn="302" Type="I">
-                  <Condition Exp="83"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </BLOCK>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="303">
-                  <FieldID val="62"/>
-                  <WithValue val="34"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="76"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="304">
-                  <FieldID val="63"/>
-                  <WithValue val="28"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="25"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <END_BLK FlowIsn="305"/>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="306">
-                  <Type val="2"/>
-                  <Text val="/// ADD 2001.09.18"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="307">
-                  <Type val="2"/>
-                  <Text val="////Not required - for HSC -  AT 2012/11/10"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="308">
-                  <FieldID val="62"/>
-                  <WithValue val="34"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="64"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <Update FlowIsn="309">
-                  <FieldID val="63"/>
-                  <WithValue val="27"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="24"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="310">
-                  <Type val="2"/>
-                  <Text val="/// MODE='CANCEL' 1999.04.23 MODIFY UNLOCK VER."/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="311">
-                  <OperationType val="T"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="7"/>
-                  <Lock val="Y"/>
-                  <Arguments>
-                    <Argument>
-                      <Expression val="73"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="74"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="52"/>
-                      <Skip val="N"/>
-                    </Argument>
-                  </Arguments>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Condition Exp="21"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
-                <CallTask FlowIsn="312">
-                  <OperationType val="P"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="526"/>
-                  <Lock val="N"/>
-                  <Arguments>
-                    <Argument>
-                      <Variable val="16"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Expression val="106"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Variable val="65"/>
-                      <Skip val="N"/>
-                    </Argument>
-                    <Argument>
-                      <Variable val="7"/>
-                      <Skip val="N"/>
-                    </Argument>
-                  </Arguments>
-                  <Wait val="Y"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Condition Exp="21"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-              <LogicLine>
-                <END_BLK FlowIsn="313"/>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="314">
-                  <Type val="2"/>
-                  <Text val="//// Error Message Display -  AT 2012/11/10"/>
+                  <Text val=" "/>
                 </Remark>
               </LogicLine>
               <LogicLine>
@@ -3640,15 +3409,9 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="317">
+                <Remark FlowIsn="869">
                   <Type val="2"/>
-                  <Text val="// MOD  2005/10/26  ADD LOCATE='HV4'"/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
-                <Remark FlowIsn="318">
-                  <Type val="2"/>
-                  <Text val="//// Not Required, for HMB/HTW -  AT 2012/11/10"/>
+                  <Text val=" "/>
                 </Remark>
               </LogicLine>
               <LogicLine>
@@ -4062,12 +3825,95 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Remark FlowIsn="866">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="311">
+                  <OperationType val="T"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="7"/>
+                  <Lock val="Y"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="73"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="74"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="52"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="21"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="312">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="526"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="16"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="106"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="65"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="21"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="867">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="295"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="553"/>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="554">
+                <Remark FlowIsn="865">
                   <Type val="2"/>
-                  <Text val="//// Error Message Display -  AT 2012/11/10"/>
+                  <Text val=" "/>
                 </Remark>
               </LogicLine>
               <LogicLine>
@@ -5286,7 +5132,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="AEOFFRESULTENTRYHMSI" ISN_2="4" LastIsn="13" id="518">
-            <LastModified _date="739656" _time="54362" date="09/02/2026" time="15:06:02"/>
+            <LastModified _date="739673" _time="43462" date="26/02/2026" time="12:04:22"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5541,9 +5387,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_DIT_INFO>
-                      <v>9</v>
-                    </INT_DIT_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5881,8 +5724,8 @@
                   <Visible id="61"/>
                 </PropertyList>
               </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="9" id="9">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+              <Control ISN_FATHER="1" PDOD="1" _test_id="9" id="9">
+                <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
                   <X id="21" val="134"/>
                   <Y id="22" val="34"/>
@@ -5893,7 +5736,6 @@
                   <ControlName id="46" val="S5_CHASSIS_NO"/>
                   <Visible Exp="8" id="61"/>
                   <MultiLineEdit id="71"/>
-                  <Format Exp="7" id="82" valUnicode="7P0Z"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" _test_id="10" id="10">
@@ -7013,7 +6855,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="UPDATE Stagging Table" ISN_2="7" LastIsn="13" id="518">
-            <LastModified _date="739649" _time="56585" date="02/02/2026" time="15:43:05"/>
+            <LastModified _date="739672" _time="42598" date="25/02/2026" time="11:49:58"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -7821,6 +7663,9 @@
                         <Variable val="18"/>
                         <Skip val="N"/>
                       </Argument>
+                      <Argument>
+                        <Skip val="Y"/>
+                      </Argument>
                     </Arguments>
                     <Wait val="Y"/>
                     <SyncData val="N"/>
@@ -7881,6 +7726,9 @@
                         <Parent val="1"/>
                         <Variable val="18"/>
                         <Skip val="N"/>
+                      </Argument>
+                      <Argument>
+                        <Skip val="Y"/>
                       </Argument>
                     </Arguments>
                     <Wait val="Y"/>

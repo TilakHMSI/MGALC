@@ -14,13 +14,13 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG5(Write Component Table)" ISN_2="1" LastIsn="8" id="321">
-          <LastModified _date="739649" _time="62229" date="02/02/2026" time="17:17:09"/>
+          <LastModified _date="739672" _time="42056" date="25/02/2026" time="11:40:56"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
           <ReturnValue>
             <ReturnValueAttr/>
-            <TSK_PARAMS val="10"/>
+            <TSK_PARAMS val="11"/>
             <ParametersAttributes>
               <Attr MgAttr="A"/>
               <Attr MgAttr="A"/>
@@ -32,6 +32,7 @@
               <Attr MgAttr="T"/>
               <Attr MgAttr="A"/>
               <Attr MgAttr="A"/>
+              <Attr MgAttr="A"/>
             </ParametersAttributes>
           </ReturnValue>
           <SqlWhereExist val="N"/>
@@ -41,7 +42,7 @@
           <FormType val="N"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="13"/>
+        <ItemIsn val="14"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="104"/>
@@ -130,6 +131,15 @@
                 <Picture id="157" valUnicode="50"/>
                 <StoredAs id="173" val="1"/>
                 <Size id="174" val="50"/>
+                <_Flip id="194"/>
+              </PropertyList>
+            </Column>
+            <Column id="12" name="Prm_BATTERY2_KEY">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="40"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="40"/>
                 <_Flip id="194"/>
               </PropertyList>
             </Column>
@@ -347,6 +357,18 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="14" FlowIsn="30" id="14">
+                  <Column val="12"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Select FieldID="11" FlowIsn="13" id="11">
                   <Column val="11"/>
                   <Type val="V"/>
@@ -360,7 +382,7 @@
                 </Select>
               </LogicLine>
               <LogicLine>
-                <LNK Direction="A" EVL_CND="R" FlowIsn="14" Key="1" Mode="R" SortType="17" VIEW="12" VIEWS="2">
+                <LNK Direction="A" EVL_CND="R" FlowIsn="14" Key="1" Mode="R" SortType="17" VIEW="13" VIEWS="2">
                   <DB comp="-1" obj="104"/>
                   <Condition val="Y"/>
                 </LNK>
@@ -958,7 +980,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="BATTERY OFF" ISN_2="2" LastIsn="8" id="321">
-            <LastModified _date="739649" _time="62204" date="02/02/2026" time="17:16:44"/>
+            <LastModified _date="739672" _time="41984" date="25/02/2026" time="11:39:44"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -972,7 +994,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="10"/>
+          <ItemIsn val="11"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="343"/>
@@ -1062,7 +1084,7 @@
                   </DATAVIEW_SRC>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="3" Key="7" Mode="W" SortType="14" VIEW="1" VIEWS="10">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="3" Key="7" Mode="W" SortType="14" VIEW="1" VIEWS="11">
                     <DB comp="-1" obj="343"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1209,6 +1231,19 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
+                  <Select FieldID="11" FlowIsn="24" id="11">
+                    <ASS val="11"/>
+                    <Column val="66"/>
+                    <Type val="R"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="N"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
                   <END_LINK FlowIsn="14"/>
                 </LogicLine>
               </LogicLines>
@@ -1316,6 +1351,17 @@
                   <Update FlowIsn="23">
                     <FieldID val="10"/>
                     <WithValue val="10"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="25">
+                    <FieldID val="11"/>
+                    <WithValue val="11"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
                     <Condition val="Y"/>
@@ -1658,11 +1704,15 @@
               <ExpSyntax val="Trim({1,10})"/>
               <ExpAttribute val="A"/>
             </Expression>
+            <Expression id="11">
+              <ExpSyntax val="Trim({1,14})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
         </Task>
         <Task MainProgram="N">
           <Header Description="CHARGER OFF" ISN_2="3" LastIsn="8" id="321">
-            <LastModified _date="739649" _time="62208" date="02/02/2026" time="17:16:48"/>
+            <LastModified _date="739672" _time="42056" date="25/02/2026" time="11:40:56"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1676,7 +1726,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="10"/>
+          <ItemIsn val="12"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="343"/>
@@ -1766,7 +1816,7 @@
                   </DATAVIEW_SRC>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="3" Key="7" Mode="W" SortType="14" VIEW="1" VIEWS="10">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="3" Key="7" Mode="W" SortType="14" VIEW="1" VIEWS="11">
                     <DB comp="-1" obj="343"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1847,7 +1897,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="12"/>
+                    <_DitIndexForToolkit val="11"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="N"/>
                     <Modifier val="S"/>
@@ -1861,7 +1911,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="14"/>
+                    <_DitIndexForToolkit val="13"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="N"/>
                     <Modifier val="S"/>
@@ -1875,7 +1925,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="16"/>
+                    <_DitIndexForToolkit val="15"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="N"/>
                     <Modifier val="S"/>
@@ -1899,6 +1949,19 @@
                   <Select FieldID="10" FlowIsn="13" id="10">
                     <ASS val="10"/>
                     <Column val="60"/>
+                    <Type val="R"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="N"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
+                  <Select FieldID="11" FlowIsn="24" id="11">
+                    <ASS val="11"/>
+                    <Column val="67"/>
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
@@ -2016,6 +2079,17 @@
                   <Update FlowIsn="23">
                     <FieldID val="10"/>
                     <WithValue val="10"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="26">
+                    <FieldID val="11"/>
+                    <WithValue val="11"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
                     <Condition val="Y"/>
@@ -2159,19 +2233,6 @@
                   <_Orientation id="143"/>
                 </PropertyList>
               </Control>
-              <Control PDOD="128" _test_id="49" id="10">
-                <PropertyList model="CTRL_GUI0_EDIT">
-                  <X id="21" val="145"/>
-                  <Y id="22" val="80"/>
-                  <Width id="23" val="48"/>
-                  <Height id="24" val="10"/>
-                  <Data id="43"/>
-                  <ControlName id="46" val="IVI_CREATE_DATE_TIME_time"/>
-                  <_Orientation id="143"/>
-                  <TabOrder id="314" val="5"/>
-                  <AllowParking id="315"/>
-                </PropertyList>
-              </Control>
               <Control _test_id="58" id="11">
                 <PropertyList model="CTRL_GUI0_STATIC">
                   <Text id="19" valUnicode="PROD_LINE:"/>
@@ -2196,7 +2257,7 @@
                   <Data FieldID="6" id="43"/>
                   <ControlName id="46" val="PROD_LINE"/>
                   <_Orientation id="143"/>
-                  <TabOrder id="314" val="6"/>
+                  <TabOrder id="314" val="5"/>
                   <AllowParking id="315"/>
                 </PropertyList>
               </Control>
@@ -2224,7 +2285,7 @@
                   <Data FieldID="7" id="43"/>
                   <ControlName id="46" val="IVI_USER_ID"/>
                   <_Orientation id="143"/>
-                  <TabOrder id="314" val="7"/>
+                  <TabOrder id="314" val="6"/>
                   <AllowParking id="315"/>
                 </PropertyList>
               </Control>
@@ -2252,7 +2313,7 @@
                   <Data FieldID="8" id="43"/>
                   <ControlName id="46" val="IVI_ACTIVE"/>
                   <_Orientation id="143"/>
-                  <TabOrder id="314" val="8"/>
+                  <TabOrder id="314" val="7"/>
                   <AllowParking id="315"/>
                 </PropertyList>
               </Control>
@@ -2297,6 +2358,10 @@
             </Expression>
             <Expression id="10">
               <ExpSyntax val="Trim({1,10})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="11">
+              <ExpSyntax val="Trim({1,14})"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>

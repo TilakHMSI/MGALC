@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="PU_OFF_RESULT_ENTRY" ISN_2="1" LastIsn="12" id="522">
-          <LastModified _date="739658" _time="45890" date="11/02/2026" time="12:44:50"/>
+          <LastModified _date="739673" _time="43500" date="26/02/2026" time="12:05:00"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -1929,6 +1929,14 @@
                   <Type val="2"/>
                   <Text val="///  2010/06/25   ADD HMSI VERSION"/>
                 </Remark>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="119" FlowIsn="1286" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="143">
@@ -4152,6 +4160,12 @@
                 <END_BLK FlowIsn="647"/>
               </LogicLine>
               <LogicLine>
+                <Remark FlowIsn="1272">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="648"/>
               </LogicLine>
               <LogicLine>
@@ -4934,6 +4948,10 @@
             <ExpSyntax val="IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="119">
+            <ExpSyntax val="{0,2}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="SELECT ODRBZ1(GET FLD42)" ISN_2="2" LastIsn="12" id="522">
@@ -5156,7 +5174,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PUOFFRESULTENTRYHMSI" ISN_2="3" LastIsn="12" id="522">
-            <LastModified _date="739652" _time="42154" date="05/02/2026" time="11:42:34"/>
+            <LastModified _date="739673" _time="43500" date="26/02/2026" time="12:05:00"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5403,9 +5421,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_DIT_INFO>
-                      <v>11</v>
-                    </INT_DIT_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -5767,8 +5782,8 @@
                   <Visible id="61"/>
                 </PropertyList>
               </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="11" id="11">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+              <Control ISN_FATHER="1" PDOD="1" _test_id="11" id="11">
+                <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
                   <X id="21" val="70"/>
                   <Y id="22" val="34"/>
@@ -5779,7 +5794,6 @@
                   <ControlName id="46" val="S5_CHASSIS_NO"/>
                   <Visible id="61"/>
                   <MultiLineEdit id="71"/>
-                  <Format Exp="8" id="82" valUnicode="7P0Z"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" _test_id="12" id="12">
