@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO012_MODEL_TABLE_MAINTE" ISN_2="1" LastIsn="7" id="530">
-          <LastModified _date="739660" _time="51742" date="13/02/2026" time="14:22:22"/>
+          <LastModified _date="739680" _time="45173" date="05/03/2026" time="12:32:53"/>
           <Public val="Prg_9"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -367,6 +367,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="Sub1"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -810,7 +811,7 @@
                 <Format id="82" valUnicode="X"/>
                 <RaiseEvent id="234">
                   <EventType val="I"/>
-                  <InternalEventID val="14"/>
+                  <InternalEventID val="393"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -879,7 +880,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="PRD001_MAITENANCE" ISN_2="2" LastIsn="7" id="530">
-            <LastModified _date="739658" _time="59371" date="11/02/2026" time="16:29:31"/>
+            <LastModified _date="739680" _time="45131" date="05/03/2026" time="12:32:11"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -899,7 +900,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="76"/>
+          <ItemIsn val="77"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="1"/>
@@ -1158,6 +1159,16 @@
                   <CharSet id="172" val="1"/>
                   <StoredAs id="173" val="1"/>
                   <Definition id="175" val="2"/>
+                </PropertyList>
+              </Column>
+              <Column id="17" name="vErrormsg">
+                <PropertyList model="FIELD">
+                  <Model attr_obj="FIELD_ALPHA" id="1"/>
+                  <Picture id="157" valUnicode="1000"/>
+                  <StoredAs id="173" val="1"/>
+                  <Size id="174" val="1000"/>
+                  <_Flip id="194"/>
+                  <PartOfDataview id="449"/>
                 </PropertyList>
               </Column>
             </Columns>
@@ -2465,6 +2476,19 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
+                  <Select FieldID="77" FlowIsn="348" id="77">
+                    <Column val="17"/>
+                    <Type val="V"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <PartOfDataview val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
                   <Remark FlowIsn="117">
                     <Type val="2"/>
                     <Text val=" "/>
@@ -2620,10 +2644,12 @@
               <Event>
                 <EventType val="S"/>
               </Event>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
                   <BLOCK EndBlock="132" EndBlockSegment="132" FlowIsn="127" Type="I">
+                    <Disabled val="1"/>
                     <Condition Exp="51"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2632,6 +2658,7 @@
                 <LogicLine>
                   <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="80" FlowIsn="128" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="52"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2640,6 +2667,7 @@
                 <LogicLine>
                   <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="81" FlowIsn="129" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="53"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2648,6 +2676,7 @@
                 <LogicLine>
                   <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="82" FlowIsn="130" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="54"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2656,13 +2685,16 @@
                 <LogicLine>
                   <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="83" FlowIsn="131" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="55"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </STP>
                 </LogicLine>
                 <LogicLine>
-                  <END_BLK FlowIsn="132"/>
+                  <END_BLK FlowIsn="132">
+                    <Disabled val="1"/>
+                  </END_BLK>
                 </LogicLine>
                 <LogicLine>
                   <Remark FlowIsn="133">
@@ -2672,6 +2704,7 @@
                 </LogicLine>
                 <LogicLine>
                   <BLOCK EndBlock="138" EndBlockSegment="138" FlowIsn="134" Type="I">
+                    <Disabled val="1"/>
                     <Condition Exp="92"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2683,6 +2716,7 @@
                     <WithValue val="94"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2694,6 +2728,7 @@
                     <WithValue val="95"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2705,13 +2740,16 @@
                     <WithValue val="99"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </Update>
                 </LogicLine>
                 <LogicLine>
-                  <END_BLK FlowIsn="138"/>
+                  <END_BLK FlowIsn="138">
+                    <Disabled val="1"/>
+                  </END_BLK>
                 </LogicLine>
                 <LogicLine>
                   <Remark FlowIsn="139">
@@ -2721,6 +2759,7 @@
                 </LogicLine>
                 <LogicLine>
                   <BLOCK EndBlock="144" EndBlockSegment="144" FlowIsn="140" Type="I">
+                    <Disabled val="1"/>
                     <Condition Exp="93"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2732,6 +2771,7 @@
                     <WithValue val="94"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2743,6 +2783,7 @@
                     <WithValue val="95"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2754,13 +2795,16 @@
                     <WithValue val="100"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </Update>
                 </LogicLine>
                 <LogicLine>
-                  <END_BLK FlowIsn="144"/>
+                  <END_BLK FlowIsn="144">
+                    <Disabled val="1"/>
+                  </END_BLK>
                 </LogicLine>
                 <LogicLine>
                   <Remark FlowIsn="145">
@@ -2774,6 +2818,7 @@
                     <WithValue val="96"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2785,6 +2830,7 @@
                     <WithValue val="97"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2808,6 +2854,7 @@
                     <IsRoute val="N"/>
                     <DestSubformName val="Sub2"/>
                     <RetainFocus val="Y"/>
+                    <Disabled val="1"/>
                     <Condition Exp="98"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2826,10 +2873,11 @@
                 <EventType val="I"/>
                 <InternalEventID val="33"/>
               </Event>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
-                  <CallTask FlowIsn="150">
+                  <CallTask FlowIsn="217">
                     <OperationType val="T"/>
                     <Event>
                       <EventType val="N"/>
@@ -2839,6 +2887,7 @@
                     <SyncData val="N"/>
                     <IsRoute val="N"/>
                     <RetainFocus val="N"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2846,158 +2895,567 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
-            <LogicUnit id="8" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
+            <LogicUnit id="39" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
               <Scope val="S"/>
               <EngineDirective val="S"/>
               <ShowMessage val="Y"/>
               <Condition val="89"/>
               <Event>
-                <EventType val="S"/>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="1"/>
               </Event>
-              <TXT val="S1_MTO_CODE"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="56" FlowIsn="151" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="17"/>
+                  <RaiseEvent FlowIsn="216">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="393"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition val="Y"/>
                     <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
+                    <Direction val="C"/>
+                  </RaiseEvent>
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
-            <LogicUnit id="9" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
+            <LogicUnit id="38" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
               <Scope val="S"/>
               <EngineDirective val="S"/>
               <ShowMessage val="Y"/>
               <Condition val="89"/>
               <Event>
-                <EventType val="S"/>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="2"/>
               </Event>
-              <TXT val="S1_EFM"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="56" FlowIsn="152" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                  <Update FlowIsn="362">
+                    <FieldID val="77"/>
+                    <WithValue val="124"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="349">
+                    <FieldID val="77"/>
+                    <WithValue val="56"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="111"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="350">
+                    <FieldID val="77"/>
+                    <WithValue val="57"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="112"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="351">
+                    <FieldID val="77"/>
+                    <WithValue val="58"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="113"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="352">
+                    <FieldID val="77"/>
+                    <WithValue val="59"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="114"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="353">
+                    <FieldID val="77"/>
+                    <WithValue val="60"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="115"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="354">
+                    <FieldID val="77"/>
+                    <WithValue val="62"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="116"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="355">
+                    <FieldID val="77"/>
+                    <WithValue val="63"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="117"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="356">
+                    <FieldID val="77"/>
+                    <WithValue val="91"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="118"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="357">
+                    <FieldID val="77"/>
+                    <WithValue val="105"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="119"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="358">
+                    <FieldID val="77"/>
+                    <WithValue val="61"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="120"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="359">
+                    <FieldID val="77"/>
+                    <WithValue val="64"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="123"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="360">
+                    <FieldID val="77"/>
+                    <WithValue val="65"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="121"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="361">
+                    <FieldID val="77"/>
+                    <WithValue val="66"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="122"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="248" EndBlockSegment="248" FlowIsn="244" Type="I">
+                    <Condition val="N"/>
+                    <Modifier val="B"/>
+                    <Direction val="B"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="71" FlowIsn="245" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
-                    <Condition Exp="17"/>
+                    <Condition Exp="32"/>
                     <Modifier val="B"/>
                     <Direction val="B"/>
                   </STP>
                 </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="10" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="MTO_NAMEO_V"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="57" FlowIsn="153" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="70" FlowIsn="246" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
-                    <Condition Exp="21"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="11" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PARTS_MTO_CODE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="57" FlowIsn="154" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="21"/>
+                    <Condition Exp="31"/>
                     <Modifier val="B"/>
                     <Direction val="B"/>
                   </STP>
                 </LogicLine>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="58" FlowIsn="155" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="69" FlowIsn="247" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                     <AppendToErrorLog val="Y"/>
-                    <Condition Exp="22"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="59" FlowIsn="156" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="23"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="60" FlowIsn="157" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="24"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="12" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_24G"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="60" FlowIsn="158" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="24"/>
+                    <Condition Exp="30"/>
                     <Modifier val="B"/>
                     <Direction val="B"/>
                   </STP>
                 </LogicLine>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="59" FlowIsn="159" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="23"/>
+                  <END_BLK FlowIsn="248"/>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="364">
+                    <FieldID val="77"/>
+                    <WithValue val="72"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="125"/>
                     <Modifier val="B"/>
-                    <Direction val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="365">
+                    <FieldID val="77"/>
+                    <WithValue val="73"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="126"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="366">
+                    <FieldID val="77"/>
+                    <WithValue val="74"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="127"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="367">
+                    <FieldID val="77"/>
+                    <WithValue val="75"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="128"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="368">
+                    <FieldID val="77"/>
+                    <WithValue val="76"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="129"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="369">
+                    <FieldID val="77"/>
+                    <WithValue val="77"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="130"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="370">
+                    <FieldID val="77"/>
+                    <WithValue val="78"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="131"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="371">
+                    <FieldID val="77"/>
+                    <WithValue val="79"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="132"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="270" EndBlockSegment="270" FlowIsn="265" Type="I">
+                    <Condition Exp="51"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="377">
+                    <FieldID val="77"/>
+                    <WithValue val="80"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="133"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="378">
+                    <FieldID val="77"/>
+                    <WithValue val="81"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="134"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="379">
+                    <FieldID val="77"/>
+                    <WithValue val="82"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="135"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="380">
+                    <FieldID val="77"/>
+                    <WithValue val="83"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="136"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <END_BLK FlowIsn="270"/>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="271">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="276" EndBlockSegment="276" FlowIsn="272" Type="I">
+                    <Condition Exp="92"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="273">
+                    <FieldID val="9"/>
+                    <WithValue val="94"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="274">
+                    <FieldID val="10"/>
+                    <WithValue val="95"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="275">
+                    <FieldID val="15"/>
+                    <WithValue val="99"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <END_BLK FlowIsn="276"/>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="277">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="282" EndBlockSegment="282" FlowIsn="278" Type="I">
+                    <Condition Exp="93"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="279">
+                    <FieldID val="11"/>
+                    <WithValue val="94"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="280">
+                    <FieldID val="12"/>
+                    <WithValue val="95"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="281">
+                    <FieldID val="15"/>
+                    <WithValue val="100"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <END_BLK FlowIsn="282"/>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="283">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="284">
+                    <FieldID val="13"/>
+                    <WithValue val="96"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="285">
+                    <FieldID val="14"/>
+                    <WithValue val="97"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="286">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="506" EndBlockSegment="497" FlowIsn="494" Type="I">
+                    <Condition Exp="137"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <CallTask FlowIsn="495">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="369"/>
+                    <Lock val="N"/>
+                    <Arguments>
+                      <Argument>
+                        <Variable val="77"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="496" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                    <AppendToErrorLog val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
                   </STP>
                 </LogicLine>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="58" FlowIsn="160" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="22"/>
+                  <BLOCK EndBlock="506" EndBlockSegment="506" FlowIsn="497" Type="E">
+                    <Condition val="Y"/>
                     <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <RaiseEvent FlowIsn="264">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="13"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
+                  <END_BLK FlowIsn="506"/>
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
@@ -3056,114 +3514,6 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
-            <LogicUnit id="14" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_ENGFRMTYPE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="62" FlowIsn="163" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="27"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="15" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PROD1ST_CHASSIS_NO"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="62" FlowIsn="164" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="27"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="63" FlowIsn="165" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="28"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="16" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_BASIC_MTO_CODE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="63" FlowIsn="166" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="28"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="91" FlowIsn="167" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="90"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="17" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_COOL"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="91" FlowIsn="168" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="90"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
             <LogicUnit id="18" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
@@ -3219,304 +3569,6 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
-            <LogicUnit id="19" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_USE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="105" FlowIsn="171" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="106"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="20" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_CC"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="105" FlowIsn="172" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="106"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="61" FlowIsn="173" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="25"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="21" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_CATEGORY"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="61" FlowIsn="174" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="25"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="22" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PRODLINEMAIN"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="64" FlowIsn="175" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="29"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="23" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PRODLINESUB"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="64" FlowIsn="176" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="29"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="24" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PACKING_LOT"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="65" FlowIsn="177" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="67"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="25" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_KD_PACKING_LOT"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="65" FlowIsn="178" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="67"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <Remark FlowIsn="179">
-                    <Type val="2"/>
-                    <Text val="&lt;&lt;KD LOT SIZE CHECK ERROR>>"/>
-                  </Remark>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="66" FlowIsn="180" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="68"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="26" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_TRIAL_PARTS_TBL_CREDATE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <Remark FlowIsn="181">
-                    <Type val="2"/>
-                    <Text val="&lt;&lt;KD LOT SIZE CHECK ERROR>>"/>
-                  </Remark>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="66" FlowIsn="182" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="68"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="28" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PRODCLOSE_DATE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <Remark FlowIsn="187">
-                    <Type val="2"/>
-                    <Text val="/////   MODIFY   ERROR NOT USE  2000/10/17"/>
-                  </Remark>
-                </LogicLine>
-                <LogicLine>
-                  <BLOCK EndBlock="192" EndBlockSegment="192" FlowIsn="188" Type="I">
-                    <Condition val="N"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </BLOCK>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="71" FlowIsn="189" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="32"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="70" FlowIsn="190" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="31"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="69" FlowIsn="191" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="30"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <END_BLK FlowIsn="192"/>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="72" FlowIsn="193" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="33"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="29" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_DUMMY_MODEL_TYPE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="72" FlowIsn="194" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="33"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
             <LogicUnit id="30" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
@@ -3540,6 +3592,12 @@
                     </Event>
                     <TaskID comp="-1" obj="534"/>
                     <Lock val="N"/>
+                    <Arguments>
+                      <Argument>
+                        <Variable val="57"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
                     <SyncData val="N"/>
                     <IsRoute val="N"/>
                     <RetainFocus val="N"/>
@@ -3559,220 +3617,6 @@
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </RaiseEvent>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="31" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_ENGMTO_CODE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="73" FlowIsn="197" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="36"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="74" FlowIsn="198" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="37"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="75" FlowIsn="199" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="38"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="76" FlowIsn="200" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="39"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="32" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_ENGEFM"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="76" FlowIsn="201" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="39"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="75" FlowIsn="202" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="38"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="74" FlowIsn="203" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="37"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="73" FlowIsn="204" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="36"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="33" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="-110"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_ATM_MTO_CODE"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="77" FlowIsn="205" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="41"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="78" FlowIsn="206" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="42"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="34" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="-110"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_ATM_EFM"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="78" FlowIsn="207" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="42"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="77" FlowIsn="208" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="41"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="35" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_KD_MOTHER_FACTORY"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <Remark FlowIsn="209">
-                    <Type val="2"/>
-                    <Text val="&lt;&lt;KD MOTHER FACTORY INPUT CHECK>>"/>
-                  </Remark>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="79" FlowIsn="210" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="43"/>
-                    <Modifier val="B"/>
-                    <Direction val="F"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
-            </LogicUnit>
-            <LogicUnit id="36" propagate="78">
-              <Level val="C"/>
-              <Type val="S"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <TXT val="S1_PORTPRODLEAD_TIME"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <Remark FlowIsn="211">
-                    <Type val="2"/>
-                    <Text val="&lt;&lt;KD MOTHER FACTORY INPUT CHECK>>"/>
-                  </Remark>
-                </LogicLine>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="79" FlowIsn="212" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                    <AppendToErrorLog val="Y"/>
-                    <Condition Exp="43"/>
-                    <Modifier val="B"/>
-                    <Direction val="B"/>
-                  </STP>
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
@@ -3810,7 +3654,7 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="99" _last_test_id="99" id="1">
+            <FormEntry _last_isn="101" _last_test_id="101" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
@@ -5048,6 +4892,32 @@
                   <Data FieldID="76" id="43"/>
                   <ControlName id="46" val="S1_VARIANT_NO"/>
                   <Visible id="61"/>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="100" id="100">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="18"/>
+                  <Y id="22" val="297"/>
+                  <Width id="23" val="41"/>
+                  <Height id="24" val="22"/>
+                  <ControlName id="46" val="Btn_Save"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="2"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="101" id="101">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="71"/>
+                  <Y id="22" val="297"/>
+                  <Width id="23" val="41"/>
+                  <Height id="24" val="22"/>
+                  <ControlName id="46" val="Btn_Cancel"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="1"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control PDOD="128" _test_id="99" id="99">
@@ -6825,10 +6695,6 @@
               <ExpSyntax val="{0,1}&lt;>'INQUIRY'"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="7">
-              <ExpSyntax val="{0,5}"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="8">
               <ExpSyntax val="'TRUE'LOG"/>
               <ExpAttribute val="B"/>
@@ -6861,12 +6727,8 @@
               <ExpSyntax val="Level (1)='RP'"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="16">
-              <ExpSyntax val="{1,5}"/>
-              <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="17">
-              <ExpSyntax val="{0,16}=''"/>
+            <Expression id="111">
+              <ExpSyntax val="{0,77}='' AND {0,16}=''"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="18">
@@ -6881,40 +6743,40 @@
               <ExpSyntax val="'A'"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="21">
-              <ExpSyntax val="{0,21}=''"/>
+            <Expression id="112">
+              <ExpSyntax val="{0,77}='' AND {0,21}=''"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="22">
-              <ExpSyntax val="{0,22}=''"/>
+            <Expression id="113">
+              <ExpSyntax val="{0,77}='' AND {0,22}=''"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="23">
-              <ExpSyntax val="NOT (Range (MID ({0,22},5,1),'1','2'))"/>
+            <Expression id="114">
+              <ExpSyntax val="{0,77}='' AND NOT (Range (MID ({0,22},5,1),'1','2'))"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="24">
-              <ExpSyntax val="NOT (Range (MID ({0,22},8,1),'0','9'))"/>
+            <Expression id="115">
+              <ExpSyntax val="{0,77}='' AND NOT (Range (MID ({0,22},8,1),'0','9'))"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="25">
-              <ExpSyntax val="{0,41}=0"/>
+            <Expression id="120">
+              <ExpSyntax val="{0,77}='' AND {0,41}=0"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="26">
               <ExpSyntax val="'2'"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="27">
-              <ExpSyntax val="MID ({0,24},9,1)&lt;>'' AND {0,30}='V'"/>
+            <Expression id="116">
+              <ExpSyntax val="{0,77}='' AND MID ({0,24},9,1)&lt;>'' AND {0,30}='V'"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="28">
-              <ExpSyntax val="NOT ({0,26}) AND ({0,24}&lt;>'' OR {0,25}&lt;>0)"/>
+            <Expression id="117">
+              <ExpSyntax val="{0,77}='' AND NOT ({0,26}) AND ({0,24}&lt;>'' OR {0,25}&lt;>0)"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="29">
-              <ExpSyntax val="{0,44}=''"/>
+            <Expression id="123">
+              <ExpSyntax val="{0,77}='' AND {0,44}=''"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="30">
@@ -6929,8 +6791,8 @@
               <ExpSyntax val="{0,53}='00/00/0000'DATE"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="33">
-              <ExpSyntax val="{0,54}='00/00/0000'DATE"/>
+            <Expression id="125">
+              <ExpSyntax val="{0,77}='' AND {0,54}='00/00/0000'DATE"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="34">
@@ -6941,36 +6803,32 @@
               <ExpSyntax val="'Y'"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="36">
-              <ExpSyntax val="{0,57}='' AND {0,17}='F'"/>
+            <Expression id="126">
+              <ExpSyntax val="{0,77}='' AND {0,57}='' AND {0,17}='F'"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="37">
-              <ExpSyntax val="NOT ({0,58}) AND {0,57}&lt;>''"/>
+            <Expression id="127">
+              <ExpSyntax val="{0,77}='' AND NOT ({0,58}) AND {0,57}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="38">
-              <ExpSyntax val="{0,60}&lt;>'E' AND {0,57}&lt;>''"/>
+            <Expression id="128">
+              <ExpSyntax val="{0,77}='' AND {0,60}&lt;>'E' AND {0,57}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="39">
-              <ExpSyntax val="{0,61}='X' AND {0,57}&lt;>''"/>
+            <Expression id="129">
+              <ExpSyntax val="{0,77}='' AND {0,61}='X' AND {0,57}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="40">
-              <ExpSyntax val="({0,17}='F' OR {0,17}='E') AND {0,63}&lt;>''"/>
+            <Expression id="130">
+              <ExpSyntax val="{0,77}='' AND NOT ({0,64})"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="41">
-              <ExpSyntax val="NOT ({0,64})"/>
+            <Expression id="131">
+              <ExpSyntax val="{0,77}='' AND {0,66}&lt;>'M'"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="42">
-              <ExpSyntax val="{0,66}&lt;>'M'"/>
-              <ExpAttribute val="B"/>
-            </Expression>
-            <Expression id="43">
-              <ExpSyntax val="{0,71}='Y' AND Len (Trim ({0,70}))&lt;>5"/>
+            <Expression id="132">
+              <ExpSyntax val="{0,77}='' AND {0,71}='Y' AND Len (Trim ({0,70}))&lt;>5"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="44">
@@ -7009,16 +6867,32 @@
               <ExpSyntax val="{0,4}"/>
               <ExpAttribute val="B"/>
             </Expression>
+            <Expression id="133">
+              <ExpSyntax val="{0,77}='' AND {0,4}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
             <Expression id="53">
               <ExpSyntax val="{0,52}&lt;=Date ()"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="134">
+              <ExpSyntax val="{0,77}='' AND {0,52}&lt;=Date ()"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="54">
               <ExpSyntax val="{0,53}&lt;=Date ()"/>
               <ExpAttribute val="B"/>
             </Expression>
+            <Expression id="135">
+              <ExpSyntax val="{0,77}='' AND {0,53}&lt;=Date ()"/>
+              <ExpAttribute val="B"/>
+            </Expression>
             <Expression id="55">
               <ExpSyntax val="{0,54}&lt;=Date ()"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="136">
+              <ExpSyntax val="{0,77}='' AND {0,54}&lt;=Date ()"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="56">
@@ -7065,12 +6939,12 @@
               <ExpSyntax val="'PLEASE INPUT KD PACKING LOT.'"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="67">
-              <ExpSyntax val="{1,2}='HEP' AND {0,48}=0"/>
+            <Expression id="121">
+              <ExpSyntax val="{0,77}='' AND {1,2}='HEP' AND {0,48}=0"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="68">
-              <ExpSyntax val="{0,50}='Y' AND {0,49}=0"/>
+            <Expression id="122">
+              <ExpSyntax val="{0,77}='' AND {0,50}='Y' AND {0,49}=0"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="69">
@@ -7157,8 +7031,8 @@
               <ExpSyntax val="{0,31}"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="90">
-              <ExpSyntax val="NOT ({0,32}) AND {0,31}&lt;>''"/>
+            <Expression id="118">
+              <ExpSyntax val="{0,77}='' AND NOT ({0,32}) AND {0,31}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="91">
@@ -7221,8 +7095,8 @@
               <ExpSyntax val="'USE does not exist.'"/>
               <ExpAttribute val="A"/>
             </Expression>
-            <Expression id="106">
-              <ExpSyntax val="{0,37}='FALSE'LOG"/>
+            <Expression id="119">
+              <ExpSyntax val="{0,77}='' AND {0,37}='FALSE'LOG"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="107">
@@ -7237,16 +7111,30 @@
               <ExpSyntax val="ExpCalc('107'EXP)"/>
               <ExpAttribute val="B"/>
             </Expression>
-            <Expression id="110">
-              <ExpSyntax val="ExpCalc('40'EXP)"/>
+            <Expression id="124">
+              <ExpSyntax val="''"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="137">
+              <ExpSyntax val="{0,77}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
+          <EVNT DESC="Btn_Cancel" FORCE_EXIT="N" id="1">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="Btn_Save" FORCE_EXIT="N" id="2">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
           <VarRangeInfo Mode="E" VarRangeVeeIsn="16" id="1"/>
           <VarRangeInfo Mode="E" VarRangeVeeIsn="22" id="2"/>
           <Task MainProgram="N">
             <Header Description="PRD002_MAITENANCE" ISN_2="3" LastIsn="7" id="530">
-              <LastModified _date="739658" _time="58146" date="11/02/2026" time="16:09:06"/>
+              <LastModified _date="739680" _time="45173" date="05/03/2026" time="12:32:53"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -7261,7 +7149,7 @@
               <FormType val="N"/>
               <DotNetObjectExists val="N"/>
             </Header>
-            <ItemIsn val="18"/>
+            <ItemIsn val="19"/>
             <Resource>
               <DB id="1">
                 <DataObject comp="-1" obj="2"/>
@@ -7286,6 +7174,16 @@
                     <CharSet id="172" val="1"/>
                     <StoredAs id="173" val="1"/>
                     <Definition id="175" val="2"/>
+                  </PropertyList>
+                </Column>
+                <Column id="2" name="vErrormsg">
+                  <PropertyList model="FIELD">
+                    <Model attr_obj="FIELD_ALPHA" id="1"/>
+                    <Picture id="157" valUnicode="1000"/>
+                    <StoredAs id="173" val="1"/>
+                    <Size id="174" val="1000"/>
+                    <_Flip id="194"/>
+                    <PartOfDataview id="449"/>
                   </PropertyList>
                 </Column>
               </Columns>
@@ -7656,6 +7554,19 @@
                       <Direction val="C"/>
                     </Select>
                   </LogicLine>
+                  <LogicLine>
+                    <Select FieldID="19" FlowIsn="106" id="19">
+                      <Column val="2"/>
+                      <Type val="V"/>
+                      <ExposedToRoute val="N"/>
+                      <IsParameter val="N"/>
+                      <DIFF_UPDATE val="T"/>
+                      <PartOfDataview val="N"/>
+                      <Condition val="Y"/>
+                      <Modifier val="S"/>
+                      <Direction val="C"/>
+                    </Select>
+                  </LogicLine>
                 </LogicLines>
               </LogicUnit>
               <LogicUnit id="3" propagate="78">
@@ -7722,10 +7633,12 @@
                 <Event>
                   <EventType val="S"/>
                 </Event>
+                <Disabled val="1"/>
                 <ExecuteOn_ val="O"/>
                 <LogicLines>
                   <LogicLine>
                     <BLOCK EndBlock="35" EndBlockSegment="35" FlowIsn="32" Type="I">
+                      <Disabled val="1"/>
                       <Condition Exp="8"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7734,6 +7647,7 @@
                   <LogicLine>
                     <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="11" FlowIsn="33" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                       <AppendToErrorLog val="Y"/>
+                      <Disabled val="1"/>
                       <Condition Exp="9"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7742,13 +7656,16 @@
                   <LogicLine>
                     <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="12" FlowIsn="34" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                       <AppendToErrorLog val="Y"/>
+                      <Disabled val="1"/>
                       <Condition Exp="10"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
                     </STP>
                   </LogicLine>
                   <LogicLine>
-                    <END_BLK FlowIsn="35"/>
+                    <END_BLK FlowIsn="35">
+                      <Disabled val="1"/>
+                    </END_BLK>
                   </LogicLine>
                   <LogicLine>
                     <Remark FlowIsn="36">
@@ -7758,6 +7675,7 @@
                   </LogicLine>
                   <LogicLine>
                     <BLOCK EndBlock="42" EndBlockSegment="42" FlowIsn="37" Type="I">
+                      <Disabled val="1"/>
                       <Condition Exp="16"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7769,6 +7687,7 @@
                       <WithValue val="18"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7780,6 +7699,7 @@
                       <WithValue val="19"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7791,6 +7711,7 @@
                       <WithValue val="20"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7802,13 +7723,16 @@
                       <WithValue val="27"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
                     </Update>
                   </LogicLine>
                   <LogicLine>
-                    <END_BLK FlowIsn="42"/>
+                    <END_BLK FlowIsn="42">
+                      <Disabled val="1"/>
+                    </END_BLK>
                   </LogicLine>
                   <LogicLine>
                     <Remark FlowIsn="43">
@@ -7818,6 +7742,7 @@
                   </LogicLine>
                   <LogicLine>
                     <BLOCK EndBlock="48" EndBlockSegment="48" FlowIsn="44" Type="I">
+                      <Disabled val="1"/>
                       <Condition Exp="17"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7829,6 +7754,7 @@
                       <WithValue val="21"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7840,6 +7766,7 @@
                       <WithValue val="22"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7851,13 +7778,16 @@
                       <WithValue val="23"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
                     </Update>
                   </LogicLine>
                   <LogicLine>
-                    <END_BLK FlowIsn="48"/>
+                    <END_BLK FlowIsn="48">
+                      <Disabled val="1"/>
+                    </END_BLK>
                   </LogicLine>
                   <LogicLine>
                     <Remark FlowIsn="49">
@@ -7871,6 +7801,7 @@
                       <WithValue val="24"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7882,6 +7813,7 @@
                       <WithValue val="25"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
+                      <Disabled val="1"/>
                       <Condition val="Y"/>
                       <Modifier val="B"/>
                       <Direction val="C"/>
@@ -7945,11 +7877,13 @@
                   <EventType val="S"/>
                 </Event>
                 <TXT val="S2_COLOR_CODE"/>
+                <Disabled val="1"/>
                 <ExecuteOn_ val="O"/>
                 <LogicLines>
                   <LogicLine>
                     <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="7" FlowIsn="54" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                       <AppendToErrorLog val="Y"/>
+                      <Disabled val="1"/>
                       <Condition Exp="6"/>
                       <Modifier val="B"/>
                       <Direction val="F"/>
@@ -7968,11 +7902,13 @@
                   <EventType val="S"/>
                 </Event>
                 <TXT val="S2_COLOR_CODEINSIDE"/>
+                <Disabled val="1"/>
                 <ExecuteOn_ val="O"/>
                 <LogicLines>
                   <LogicLine>
                     <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="7" FlowIsn="55" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                       <AppendToErrorLog val="Y"/>
+                      <Disabled val="1"/>
                       <Condition Exp="6"/>
                       <Modifier val="B"/>
                       <Direction val="B"/>
@@ -8025,95 +7961,297 @@
                   </LogicLine>
                 </LogicLines>
               </LogicUnit>
-              <LogicUnit id="11" propagate="78">
-                <Level val="C"/>
-                <Type val="S"/>
+              <LogicUnit id="15" propagate="78">
+                <Level val="H"/>
+                <Type val="U"/>
                 <Scope val="S"/>
                 <EngineDirective val="S"/>
                 <ShowMessage val="Y"/>
                 <Condition val="89"/>
                 <Event>
-                  <EventType val="S"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="1"/>
                 </Event>
-                <TXT val="S2_SALES_MTOC_CODE"/>
                 <ExecuteOn_ val="O"/>
                 <LogicLines>
                   <LogicLine>
-                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="29" FlowIsn="58" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                      <AppendToErrorLog val="Y"/>
-                      <Condition Exp="30"/>
+                    <Update FlowIsn="107">
+                      <FieldID val="19"/>
+                      <WithValue val="33"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
                       <Modifier val="B"/>
-                      <Direction val="F"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="108">
+                      <FieldID val="19"/>
+                      <WithValue val="7"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition Exp="34"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="109">
+                      <FieldID val="19"/>
+                      <WithValue val="29"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition Exp="35"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="110">
+                      <FieldID val="19"/>
+                      <WithValue val="15"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition Exp="36"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <BLOCK EndBlock="65" EndBlockSegment="65" FlowIsn="62" Type="I">
+                      <Condition Exp="8"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </BLOCK>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="111">
+                      <FieldID val="19"/>
+                      <WithValue val="11"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition Exp="37"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="112">
+                      <FieldID val="19"/>
+                      <WithValue val="12"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition Exp="38"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <END_BLK FlowIsn="65"/>
+                  </LogicLine>
+                  <LogicLine>
+                    <Remark FlowIsn="66">
+                      <Type val="2"/>
+                      <Text val=" "/>
+                    </Remark>
+                  </LogicLine>
+                  <LogicLine>
+                    <BLOCK EndBlock="72" EndBlockSegment="72" FlowIsn="67" Type="I">
+                      <Condition Exp="16"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </BLOCK>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="68">
+                      <FieldID val="1"/>
+                      <WithValue val="18"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="69">
+                      <FieldID val="2"/>
+                      <WithValue val="19"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="70">
+                      <FieldID val="7"/>
+                      <WithValue val="20"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="71">
+                      <FieldID val="18"/>
+                      <WithValue val="27"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <END_BLK FlowIsn="72"/>
+                  </LogicLine>
+                  <LogicLine>
+                    <Remark FlowIsn="73">
+                      <Type val="2"/>
+                      <Text val=" "/>
+                    </Remark>
+                  </LogicLine>
+                  <LogicLine>
+                    <BLOCK EndBlock="78" EndBlockSegment="78" FlowIsn="74" Type="I">
+                      <Condition Exp="17"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </BLOCK>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="75">
+                      <FieldID val="3"/>
+                      <WithValue val="21"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="76">
+                      <FieldID val="4"/>
+                      <WithValue val="22"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="77">
+                      <FieldID val="7"/>
+                      <WithValue val="23"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <END_BLK FlowIsn="78"/>
+                  </LogicLine>
+                  <LogicLine>
+                    <Remark FlowIsn="79">
+                      <Type val="2"/>
+                      <Text val=" "/>
+                    </Remark>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="80">
+                      <FieldID val="5"/>
+                      <WithValue val="24"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <Update FlowIsn="81">
+                      <FieldID val="6"/>
+                      <WithValue val="25"/>
+                      <Incremental val="N"/>
+                      <ForcedUpdate val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </Update>
+                  </LogicLine>
+                  <LogicLine>
+                    <BLOCK EndBlock="117" EndBlockSegment="114" FlowIsn="113" Type="I">
+                      <Condition Exp="39"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </BLOCK>
+                  </LogicLine>
+                  <LogicLine>
+                    <CallTask FlowIsn="115">
+                      <OperationType val="P"/>
+                      <Event>
+                        <EventType val="N"/>
+                      </Event>
+                      <TaskID comp="-1" obj="369"/>
+                      <Lock val="N"/>
+                      <Arguments>
+                        <Argument>
+                          <Variable val="19"/>
+                          <Skip val="N"/>
+                        </Argument>
+                      </Arguments>
+                      <Wait val="Y"/>
+                      <SyncData val="N"/>
+                      <IsRoute val="N"/>
+                      <RetainFocus val="N"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </CallTask>
+                  </LogicLine>
+                  <LogicLine>
+                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="116" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                      <AppendToErrorLog val="Y"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
                     </STP>
                   </LogicLine>
-                </LogicLines>
-              </LogicUnit>
-              <LogicUnit id="12" propagate="78">
-                <Level val="C"/>
-                <Type val="S"/>
-                <Scope val="S"/>
-                <EngineDirective val="S"/>
-                <ShowMessage val="Y"/>
-                <Condition val="89"/>
-                <Event>
-                  <EventType val="S"/>
-                </Event>
-                <TXT val="S2_START_DATE"/>
-                <ExecuteOn_ val="O"/>
-                <LogicLines>
                   <LogicLine>
-                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="29" FlowIsn="59" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                      <AppendToErrorLog val="Y"/>
-                      <Condition Exp="30"/>
+                    <BLOCK EndBlock="117" EndBlockSegment="117" FlowIsn="114" Type="E">
+                      <Condition val="Y"/>
                       <Modifier val="B"/>
-                      <Direction val="B"/>
-                    </STP>
+                      <Direction val="C"/>
+                    </BLOCK>
                   </LogicLine>
-                </LogicLines>
-              </LogicUnit>
-              <LogicUnit id="13" propagate="78">
-                <Level val="C"/>
-                <Type val="S"/>
-                <Scope val="S"/>
-                <EngineDirective val="S"/>
-                <ShowMessage val="Y"/>
-                <Condition val="89"/>
-                <Event>
-                  <EventType val="S"/>
-                </Event>
-                <TXT val="S2_ABOLITION_DATE"/>
-                <ExecuteOn_ val="O"/>
-                <LogicLines>
                   <LogicLine>
-                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="15" FlowIsn="60" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                      <AppendToErrorLog val="Y"/>
-                      <Condition Exp="14"/>
+                    <RaiseEvent FlowIsn="85">
+                      <Event>
+                        <EventType val="I"/>
+                        <InternalEventID val="293"/>
+                      </Event>
+                      <Wait val="78"/>
+                      <Arguments>
+                        <Argument>
+                          <Expression val="32"/>
+                          <Skip val="N"/>
+                        </Argument>
+                      </Arguments>
+                      <Condition val="Y"/>
                       <Modifier val="B"/>
-                      <Direction val="F"/>
-                    </STP>
+                      <Direction val="C"/>
+                    </RaiseEvent>
                   </LogicLine>
-                </LogicLines>
-              </LogicUnit>
-              <LogicUnit id="14" propagate="78">
-                <Level val="C"/>
-                <Type val="S"/>
-                <Scope val="S"/>
-                <EngineDirective val="S"/>
-                <ShowMessage val="Y"/>
-                <Condition val="89"/>
-                <Event>
-                  <EventType val="S"/>
-                </Event>
-                <TXT val="COLOR_DRAWING_NO"/>
-                <ExecuteOn_ val="O"/>
-                <LogicLines>
                   <LogicLine>
-                    <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="15" FlowIsn="61" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
-                      <AppendToErrorLog val="Y"/>
-                      <Condition Exp="14"/>
-                      <Modifier val="B"/>
-                      <Direction val="B"/>
-                    </STP>
+                    <END_BLK FlowIsn="117"/>
                   </LogicLine>
                 </LogicLines>
               </LogicUnit>
@@ -8323,17 +8461,10 @@
                     <ControlLayer id="25" val="7"/>
                     <ControlName id="46" val="SaveRowEditing"/>
                     <Format id="82" valUnicode="Save"/>
-                    <Arguments id="126">
-                      <Arguments>
-                        <Argument>
-                          <Expression val="32"/>
-                          <Skip val="N"/>
-                        </Argument>
-                      </Arguments>
-                    </Arguments>
+                    <Arguments id="126"/>
                     <RaiseEvent id="234">
-                      <EventType val="I"/>
-                      <InternalEventID val="293"/>
+                      <EventType val="U"/>
+                      <PublicObject comp="-1" obj="1"/>
                     </RaiseEvent>
                   </PropertyList>
                 </Control>
@@ -8591,14 +8722,6 @@
                 <ExpSyntax val="IF ({2,17}='F',73,72)"/>
                 <ExpAttribute val="N"/>
               </Expression>
-              <Expression id="2">
-                <ExpSyntax val="IF ({1,3}='INQUIRY','Q','M')"/>
-                <ExpAttribute val="A"/>
-              </Expression>
-              <Expression id="3">
-                <ExpSyntax val="Level (1)='RP'"/>
-                <ExpAttribute val="B"/>
-              </Expression>
               <Expression id="4">
                 <ExpSyntax val="{2,16}"/>
                 <ExpAttribute val="A"/>
@@ -8609,6 +8732,10 @@
               </Expression>
               <Expression id="6">
                 <ExpSyntax val="NOT ({0,10})"/>
+                <ExpAttribute val="B"/>
+              </Expression>
+              <Expression id="34">
+                <ExpSyntax val="{0,19}='' AND NOT ({0,10})"/>
                 <ExpAttribute val="B"/>
               </Expression>
               <Expression id="7">
@@ -8623,8 +8750,16 @@
                 <ExpSyntax val="{0,14}&lt;=Date ()"/>
                 <ExpAttribute val="B"/>
               </Expression>
+              <Expression id="37">
+                <ExpSyntax val="{0,19}='' AND {0,14}&lt;=Date ()"/>
+                <ExpAttribute val="B"/>
+              </Expression>
               <Expression id="10">
                 <ExpSyntax val="{0,15}&lt;=Date ()"/>
+                <ExpAttribute val="B"/>
+              </Expression>
+              <Expression id="38">
+                <ExpSyntax val="{0,19}='' AND {0,15}&lt;=Date ()"/>
                 <ExpAttribute val="B"/>
               </Expression>
               <Expression id="11">
@@ -8639,8 +8774,8 @@
                 <ExpSyntax val="'00/00/0000'DATE"/>
                 <ExpAttribute val="D"/>
               </Expression>
-              <Expression id="14">
-                <ExpSyntax val="{0,14}>{0,15}"/>
+              <Expression id="36">
+                <ExpSyntax val="{0,19}='' AND {0,14}>{0,15}"/>
                 <ExpAttribute val="B"/>
               </Expression>
               <Expression id="15">
@@ -8703,8 +8838,8 @@
                 <ExpSyntax val="'PLEASE INPUT SALES MODEL CODE'"/>
                 <ExpAttribute val="A"/>
               </Expression>
-              <Expression id="30">
-                <ExpSyntax val="{1,2}='HEP' AND {0,13}=''"/>
+              <Expression id="35">
+                <ExpSyntax val="{0,19}='' AND {1,2}='HEP' AND {0,13}=''"/>
                 <ExpAttribute val="B"/>
               </Expression>
               <Expression id="31">
@@ -8715,7 +8850,20 @@
                 <ExpSyntax val="'FALSE'LOG"/>
                 <ExpAttribute val="B"/>
               </Expression>
+              <Expression id="33">
+                <ExpSyntax val="''"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="39">
+                <ExpSyntax val="{0,19}&lt;>''"/>
+                <ExpAttribute val="B"/>
+              </Expression>
             </Expressions>
+            <EVNT DESC="Save" FORCE_EXIT="N" id="1">
+              <Event>
+                <EventType val="N"/>
+              </Event>
+            </EVNT>
             <VarRangeInfo Mode="F" VarRangeVeeIsn="8" id="1"/>
             <VarRangeInfo Mode="T" VarRangeVeeIsn="8" id="2"/>
             <Task MainProgram="N">
