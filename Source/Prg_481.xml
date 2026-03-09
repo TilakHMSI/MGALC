@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDG004_PRD009_GUIDE" ISN_2="3" LastIsn="3" id="481">
-          <LastModified _date="739680" _time="36239" date="05/03/2026" time="10:03:59"/>
+          <LastModified _date="739681" _time="42160" date="06/03/2026" time="11:42:40"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -165,7 +165,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="1"/>
+                  <_DitIndexForToolkit val="2"/>
                   <DIFF_UPDATE val="T"/>
                   <PartOfDataview val="N"/>
                   <Condition val="Y"/>
@@ -259,12 +259,25 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="3" _last_test_id="3" id="1">
+          <FormEntry _last_isn="4" _last_test_id="4" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <_Comment id="218"/>
               <FormName id="311" valUnicode="VPRDG004_PRD009_GUIDE"/>
               <WindowType id="358" val="12"/>
             </PropertyList>
+            <Control PDOD="128" _test_id="4" id="4">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="301"/>
+                <Y id="22" val="29"/>
+                <Width id="23" val="41"/>
+                <Height id="24" val="22"/>
+                <ControlName id="46" val="btnexit"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="14"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
             <Control _test_id="1" id="1">
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                 <Model ID="MODEL_WEB_CLIENT" id="1">
@@ -318,7 +331,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="2">
-            <ExpSyntax val="'(COL_CD like '&amp;{32768,3}&amp;'%'&amp;Trim({0,2})&amp;'%'&amp;{32768,3}&amp;' OR '&amp;'COL_NAM like '&amp;{32768,3}&amp;'%'&amp;Trim({0,2})&amp;'%'&amp;{32768,3}&amp;')'"/>
+            <ExpSyntax val="'(COL_CD like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,2}))&amp;'%'&amp;{32768,3}&amp;' OR '&amp;'COL_NAM like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,2}))&amp;'%'&amp;{32768,3}&amp;')'"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
