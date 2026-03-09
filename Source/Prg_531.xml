@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO019_MODEL_TABLE_MAINTE" ISN_2="1" LastIsn="30" id="531">
-          <LastModified _date="739680" _time="45778" date="05/03/2026" time="12:42:58"/>
+          <LastModified _date="739684" _time="52408" date="09/03/2026" time="14:33:28"/>
           <Public val="Prg_202"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1466,12 +1466,6 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
-                <Remark FlowIsn="68">
-                  <Type val="2"/>
-                  <Text val=" "/>
-                </Remark>
-              </LogicLine>
-              <LogicLine>
                 <RaiseEvent FlowIsn="69">
                   <Event>
                     <EventType val="I"/>
@@ -1488,6 +1482,12 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="106">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -5240,7 +5240,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PRD001_MAITENANCE" ISN_2="5" LastIsn="30" id="531">
-            <LastModified _date="739680" _time="44894" date="05/03/2026" time="12:28:14"/>
+            <LastModified _date="739684" _time="52408" date="09/03/2026" time="14:33:28"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5907,6 +5907,7 @@
                     <INT_DIT_INFO>
                       <v>91</v>
                       <v>93</v>
+                      <v>94</v>
                     </INT_DIT_INFO>
                     <_DitIndexForToolkit val="7"/>
                     <DIFF_UPDATE val="T"/>
@@ -12145,7 +12146,8 @@
                   <Data FieldID="80" id="43"/>
                   <ItemsList id="45" valUnicode="1,2"/>
                   <ControlName id="46" val="Tab43"/>
-                  <DisplayList id="303" valUnicode="STAMP,COLOR"/>
+                  <Enabled Exp="111" id="62"/>
+                  <DisplayList id="303" valUnicode="COLOR,STAMP"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="94" PDOD="128" _test_id="95" id="95">
@@ -12910,7 +12912,7 @@
           <VarRangeInfo Mode="E" VarRangeVeeIsn="23" id="2"/>
           <Task MainProgram="N">
             <Header Description="PRD002_MAITENANCE" ISN_2="6" LastIsn="30" id="531">
-              <LastModified _date="739678" _time="44534" date="03/03/2026" time="12:22:14"/>
+              <LastModified _date="739681" _time="41555" date="06/03/2026" time="11:32:35"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -13591,12 +13593,18 @@
                 <LogicLines>
                   <LogicLine>
                     <CallTask FlowIsn="52">
-                      <OperationType val="T"/>
+                      <OperationType val="P"/>
                       <Event>
                         <EventType val="N"/>
                       </Event>
-                      <TaskID comp="-1" obj="8"/>
-                      <Lock val="Y"/>
+                      <TaskID comp="-1" obj="481"/>
+                      <Lock val="N"/>
+                      <Arguments>
+                        <Argument>
+                          <Variable val="9"/>
+                          <Skip val="N"/>
+                        </Argument>
+                      </Arguments>
                       <SyncData val="N"/>
                       <IsRoute val="N"/>
                       <RetainFocus val="N"/>
@@ -15240,7 +15248,7 @@
             </Task>
             <Task MainProgram="N">
               <Header Description="SALESMTOENTRY" ISN_2="9" LastIsn="30" id="531">
-                <LastModified _date="739661" _time="46838" date="14/02/2026" time="13:00:38"/>
+                <LastModified _date="739681" _time="55350" date="06/03/2026" time="15:22:30"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
                 <SQL val="N"/>
@@ -16090,10 +16098,10 @@
                   <LockingStrategy val="M"/>
                   <CacheStrategy val="D"/>
                   <ForceRecordSuffix val="N"/>
-                  <TransactionMode val="D"/>
-                  <TransactionBegin val="P"/>
+                  <TransactionMode val="O"/>
+                  <TransactionBegin val="N"/>
                   <PreloadView val="N"/>
-                  <AllowEmptyDataview val="N"/>
+                  <AllowEmptyDataview val="Y"/>
                   <KeepCreatedContext val="N"/>
                 </TaskProperties>
                 <SIDE_WIN>
@@ -17211,6 +17219,7 @@
                     <EventType val="S"/>
                   </Event>
                   <TXT val="SALES_MTO_2_32_V"/>
+                  <Disabled val="1"/>
                   <ExecuteOn_ val="O"/>
                   <LogicLines>
                     <LogicLine>
@@ -17229,6 +17238,7 @@
                           <InternalEventID val="14"/>
                         </Event>
                         <Wait val="78"/>
+                        <Disabled val="1"/>
                         <Condition Exp="44"/>
                         <Modifier val="B"/>
                         <Direction val="C"/>
@@ -17247,6 +17257,7 @@
                     <EventType val="I"/>
                     <InternalEventID val="14"/>
                   </Event>
+                  <Disabled val="1"/>
                   <ExecuteOn_ val="O"/>
                   <LogicLines>
                     <LogicLine>
@@ -17255,6 +17266,7 @@
                         <WithValue val="40"/>
                         <Incremental val="N"/>
                         <ForcedUpdate val="Y"/>
+                        <Disabled val="1"/>
                         <Condition val="Y"/>
                         <Modifier val="B"/>
                         <Direction val="C"/>
@@ -17264,12 +17276,12 @@
                 </LogicUnit>
               </TaskLogic>
               <TaskForms>
-                <FormEntry _last_isn="44" _last_test_id="44" id="1">
+                <FormEntry _last_isn="48" _last_test_id="48" id="1">
                   <PropertyList model="FORM_WEB_CLIENT">
                     <X id="21"/>
                     <Y id="22"/>
                     <Width id="23" val="361"/>
-                    <Height id="24" val="133"/>
+                    <Height id="24" val="165"/>
                     <FormUnits id="33" val="4"/>
                     <GridX id="38" val="1"/>
                     <GridY id="39" val="3"/>
@@ -17288,7 +17300,7 @@
                       <Width id="23" val="14"/>
                       <Height id="24" val="91"/>
                       <Data FieldID="1" id="43"/>
-                      <ItemsList id="45" valUnicode="False,True"/>
+                      <ItemsList id="45" valUnicode="True,False"/>
                       <ControlName id="46" val="ENTRY_MODE_V"/>
                       <Visible id="61"/>
                     </PropertyList>
@@ -17910,6 +17922,32 @@
                       <ControlName id="46" val="SALES_MTO_2_32_V"/>
                       <Visible id="61"/>
                       <Enabled Exp="38" id="62"/>
+                    </PropertyList>
+                  </Control>
+                  <Control PDOD="128" _test_id="47" id="47">
+                    <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                      <X id="21" val="27"/>
+                      <Y id="22" val="128"/>
+                      <Width id="23" val="41"/>
+                      <Height id="24" val="22"/>
+                      <ControlName id="46" val="Btn_Save"/>
+                      <RaiseEvent id="234">
+                        <EventType val="I"/>
+                        <InternalEventID val="13"/>
+                      </RaiseEvent>
+                    </PropertyList>
+                  </Control>
+                  <Control PDOD="128" _test_id="48" id="48">
+                    <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                      <X id="21" val="93"/>
+                      <Y id="22" val="129"/>
+                      <Width id="23" val="41"/>
+                      <Height id="24" val="22"/>
+                      <ControlName id="46" val="Btn_Cancel"/>
+                      <RaiseEvent id="234">
+                        <EventType val="I"/>
+                        <InternalEventID val="393"/>
+                      </RaiseEvent>
                     </PropertyList>
                   </Control>
                 </FormEntry>
@@ -18952,7 +18990,7 @@
           </Task>
           <Task MainProgram="N">
             <Header Description="PRD026_MAITENANCE" ISN_2="10" LastIsn="30" id="531">
-              <LastModified _date="739680" _time="44905" date="05/03/2026" time="12:28:25"/>
+              <LastModified _date="739681" _time="42123" date="06/03/2026" time="11:42:03"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -21623,7 +21661,7 @@
                 <Control _test_id="1" id="1">
                   <PropertyList model="CTRL_WEB_CLIENT_TABLE">
                     <X id="21" val="6"/>
-                    <Width id="23" val="694"/>
+                    <Width id="23" val="704"/>
                     <Height id="24" val="171"/>
                     <ControlName id="46" val="Table1"/>
                     <Visible id="61"/>
@@ -21637,7 +21675,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="2" id="2">
                   <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                    <Width id="23" val="70"/>
+                    <Width id="23" val="92"/>
                     <ControlLayer id="25" val="1"/>
                     <ControlName id="46" val="Column2"/>
                     <ColumnTitle id="139" valUnicode="STAMPING HEAD"/>
@@ -21732,7 +21770,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="12" id="12">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="83"/>
+                    <X id="21" val="105"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="40"/>
                     <Height id="24" val="13"/>
@@ -21746,7 +21784,7 @@
                 </Control>
                 <Control ISN_FATHER="1" _test_id="13" id="13">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="146"/>
+                    <X id="21" val="168"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="93"/>
                     <Height id="24" val="15"/>
@@ -21760,7 +21798,7 @@
                 </Control>
                 <Control ISN_FATHER="1" _test_id="14" id="14">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="246"/>
+                    <X id="21" val="268"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="40"/>
                     <Height id="24" val="13"/>
@@ -21773,7 +21811,7 @@
                 </Control>
                 <Control ISN_FATHER="1" _test_id="15" id="15">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="295"/>
+                    <X id="21" val="317"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="40"/>
                     <Height id="24" val="13"/>
@@ -21786,7 +21824,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="16" id="16">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="343"/>
+                    <X id="21" val="365"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="55"/>
                     <Height id="24" val="13"/>
@@ -21800,7 +21838,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="17" id="17">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="405"/>
+                    <X id="21" val="427"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="55"/>
                     <Height id="24" val="13"/>
@@ -21814,7 +21852,7 @@
                 </Control>
                 <Control ISN_FATHER="1" _test_id="18" id="18">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="485"/>
+                    <X id="21" val="507"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="25"/>
                     <Height id="24" val="13"/>
@@ -21827,7 +21865,7 @@
                 </Control>
                 <Control ISN_FATHER="1" _test_id="19" id="19">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                    <X id="21" val="524"/>
+                    <X id="21" val="546"/>
                     <Y id="22" val="21"/>
                     <Width id="23" val="105"/>
                     <Height id="24" val="13"/>
@@ -21840,7 +21878,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="21" id="21">
                   <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                    <X id="21" val="639"/>
+                    <X id="21" val="661"/>
                     <Y id="22" val="22"/>
                     <Width id="23" val="41"/>
                     <Height id="24" val="22"/>
@@ -21855,7 +21893,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="22" id="22">
                   <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                    <X id="21" val="639"/>
+                    <X id="21" val="661"/>
                     <Y id="22" val="48"/>
                     <Width id="23" val="41"/>
                     <Height id="24" val="22"/>
@@ -21871,7 +21909,7 @@
                 </Control>
                 <Control ISN_FATHER="1" PDOD="128" _test_id="23" id="23">
                   <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                    <X id="21" val="639"/>
+                    <X id="21" val="661"/>
                     <Y id="22" val="74"/>
                     <Width id="23" val="41"/>
                     <Height id="24" val="22"/>
