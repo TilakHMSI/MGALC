@@ -14,15 +14,16 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VBOMG003_PRD010_GUIDE2_133" ISN_2="2" LastIsn="3" id="475">
-          <LastModified _date="739684" _time="57932" date="09/03/2026" time="16:05:32"/>
+          <LastModified _date="739685" _time="50549" date="10/03/2026" time="14:02:29"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
           <ReturnValue>
             <ReturnValueAttr/>
-            <TSK_PARAMS val="1"/>
+            <TSK_PARAMS val="2"/>
             <ParametersAttributes>
               <Attr MgAttr="A"/>
+              <Attr MgAttr="D"/>
             </ParametersAttributes>
           </ReturnValue>
           <SqlWhereExist val="N"/>
@@ -33,7 +34,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="3"/>
+        <ItemIsn val="4"/>
         <Resource>
           <Columns>
             <Column id="1" name="vSearch">
@@ -63,6 +64,14 @@
                 <StoredAs id="173" val="1"/>
                 <Size id="174" val="6"/>
                 <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="4" name="pMM-YYYY_V">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_DATE" id="1"/>
+                <Picture id="157" valUnicode="MM-YYYY"/>
+                <_FieldStyle id="276" val="1"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
             </Column>
@@ -176,6 +185,19 @@
               <LogicLine>
                 <Select FieldID="3" FlowIsn="7" id="3">
                   <Column val="3"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="4" FlowIsn="11" id="4">
+                  <Column val="4"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="Y"/>
@@ -337,7 +359,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="List" ISN_2="1" LastIsn="3" id="475">
-            <LastModified _date="739684" _time="57928" date="09/03/2026" time="16:05:28"/>
+            <LastModified _date="739685" _time="50549" date="10/03/2026" time="14:02:29"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -410,7 +432,7 @@
             <InitialMode val="E"/>
             <Locate Direction="A"/>
             <Range Direction="A"/>
-            <VarRange LastIsn="1"/>
+            <VarRange LastIsn="2"/>
             <TaskProperties>
               <SelectionTable val="Y"/>
               <ConfirmUpdate CNFU="N"/>
@@ -681,7 +703,7 @@
           </TaskForms>
           <Expressions>
             <Expression id="1">
-              <ExpSyntax val="BOM ({0,2})"/>
+              <ExpSyntax val="BOM ({2,4})"/>
               <ExpAttribute val="D"/>
             </Expression>
             <Expression id="2">
@@ -689,7 +711,7 @@
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
-          <VarRangeInfo Mode="E" VarRangeVeeIsn="4" id="1"/>
+          <VarRangeInfo Mode="E" VarRangeVeeIsn="4" id="2"/>
         </Task>
       </Task>
     </Programs>
