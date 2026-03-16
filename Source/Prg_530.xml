@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO012_MODEL_TABLE_MAINTE" ISN_2="1" LastIsn="7" id="530">
-          <LastModified _date="739684" _time="55047" date="09/03/2026" time="15:17:27"/>
+          <LastModified _date="739688" _time="42356" date="13/03/2026" time="11:45:56"/>
           <Public val="Prg_9"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -880,7 +880,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="PRD001_MAITENANCE" ISN_2="2" LastIsn="7" id="530">
-            <LastModified _date="739684" _time="54416" date="09/03/2026" time="15:06:56"/>
+            <LastModified _date="739688" _time="40527" date="13/03/2026" time="11:15:27"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -6728,7 +6728,7 @@
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="111">
-              <ExpSyntax val="{0,77}='' AND {0,16}=''"/>
+              <ExpSyntax val="{0,16}=''"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="18">
@@ -7134,7 +7134,7 @@
           <VarRangeInfo Mode="E" VarRangeVeeIsn="22" id="2"/>
           <Task MainProgram="N">
             <Header Description="PRD002_MAITENANCE" ISN_2="3" LastIsn="7" id="530">
-              <LastModified _date="739684" _time="54416" date="09/03/2026" time="15:06:56"/>
+              <LastModified _date="739688" _time="42356" date="13/03/2026" time="11:45:56"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -8261,14 +8261,53 @@
                   </LogicLine>
                 </LogicLines>
               </LogicUnit>
+              <LogicUnit id="16" propagate="78">
+                <Level val="H"/>
+                <Type val="U"/>
+                <Scope val="S"/>
+                <EngineDirective val="S"/>
+                <ShowMessage val="Y"/>
+                <Condition val="89"/>
+                <Event>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="2"/>
+                </Event>
+                <ExecuteOn_ val="O"/>
+                <LogicLines>
+                  <LogicLine>
+                    <RaiseEvent FlowIsn="164">
+                      <Event>
+                        <EventType val="I"/>
+                        <InternalEventID val="73"/>
+                      </Event>
+                      <Wait val="78"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </RaiseEvent>
+                  </LogicLine>
+                  <LogicLine>
+                    <RaiseEvent FlowIsn="165">
+                      <Event>
+                        <EventType val="I"/>
+                        <InternalEventID val="37"/>
+                      </Event>
+                      <Wait val="78"/>
+                      <Condition val="Y"/>
+                      <Modifier val="B"/>
+                      <Direction val="C"/>
+                    </RaiseEvent>
+                  </LogicLine>
+                </LogicLines>
+              </LogicUnit>
             </TaskLogic>
             <TaskForms>
-              <FormEntry _last_isn="18" _last_test_id="18" id="1">
+              <FormEntry _last_isn="20" _last_test_id="20" id="1">
                 <PropertyList model="FORM_WEB_CLIENT">
                   <X id="21"/>
                   <Y id="22"/>
                   <Width id="23" val="633"/>
-                  <Height id="24" val="188"/>
+                  <Height id="24" val="216"/>
                   <TitleBar id="26"/>
                   <FormUnits id="33" val="4"/>
                   <GridX id="38" val="1"/>
@@ -8287,7 +8326,7 @@
                     <Visible id="61"/>
                     <LineDivider id="78" val="Y"/>
                     <TitleHeight id="79" val="20"/>
-                    <RowHeight id="80" val="78"/>
+                    <RowHeight id="80" val="104"/>
                     <Elements id="81" val="7"/>
                     <_WindowWidth id="241" val="584"/>
                     <LastDivider id="260" val="Y"/>
@@ -8486,6 +8525,33 @@
                     <RaiseEvent id="234">
                       <EventType val="I"/>
                       <InternalEventID val="33"/>
+                    </RaiseEvent>
+                  </PropertyList>
+                </Control>
+                <Control ISN_FATHER="1" PDOD="128" _test_id="19" id="19">
+                  <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                    <X id="21" val="542"/>
+                    <Y id="22" val="102"/>
+                    <Width id="23" val="41"/>
+                    <Height id="24" val="22"/>
+                    <ControlLayer id="25" val="7"/>
+                    <ControlName id="46" val="Btn_Delete"/>
+                    <RaiseEvent id="234">
+                      <EventType val="I"/>
+                      <InternalEventID val="36"/>
+                    </RaiseEvent>
+                  </PropertyList>
+                </Control>
+                <Control PDOD="128" _test_id="20" id="20">
+                  <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                    <X id="21" val="81"/>
+                    <Y id="22" val="192"/>
+                    <Width id="23" val="41"/>
+                    <Height id="24" val="22"/>
+                    <ControlName id="46" val="Btn_Add"/>
+                    <RaiseEvent id="234">
+                      <EventType val="U"/>
+                      <PublicObject comp="-1" obj="2"/>
                     </RaiseEvent>
                   </PropertyList>
                 </Control>
@@ -8866,6 +8932,11 @@
               </Expression>
             </Expressions>
             <EVNT DESC="Save" FORCE_EXIT="N" id="1">
+              <Event>
+                <EventType val="N"/>
+              </Event>
+            </EVNT>
+            <EVNT DESC="Btn_Add" FORCE_EXIT="N" id="2">
               <Event>
                 <EventType val="N"/>
               </Event>
