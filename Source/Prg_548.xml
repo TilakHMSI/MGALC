@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VHMSOMNU7659" ISN_2="1" LastIsn="2" id="548">
-          <LastModified _date="739699" _time="64520" date="24/03/2026" time="17:55:20"/>
+          <LastModified _date="739700" _time="43323" date="25/03/2026" time="12:02:03"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -237,6 +237,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="5" FlowIsn="9" id="5">
+                  <ASS val="8"/>
                   <Column val="5"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -324,9 +325,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="VehicleQualityInformationSystem"/>
             <ExecuteOn_ val="O"/>
@@ -456,6 +456,10 @@
                 <ControlName id="46" val="VehicleQualityInformationSystem"/>
                 <Visible Exp="1" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -487,6 +491,10 @@
           </Expression>
           <Expression id="7">
             <ExpSyntax val="'PGM=VHMSOMNU7659'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="8">
+            <ExpSyntax val="'Vehicle &amp; Quality Information System'"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>

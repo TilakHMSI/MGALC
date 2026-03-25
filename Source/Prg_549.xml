@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VQMS010_VQMS_MENU" ISN_2="1" LastIsn="2" id="549">
-          <LastModified _date="739699" _time="64548" date="24/03/2026" time="17:55:48"/>
+          <LastModified _date="739700" _time="43432" date="25/03/2026" time="12:03:52"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -273,6 +273,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="5" FlowIsn="9" id="5">
+                  <ASS val="11"/>
                   <Column val="5"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -292,6 +293,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="6" FlowIsn="11" id="6">
+                  <ASS val="12"/>
                   <Column val="6"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -311,6 +313,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="7" FlowIsn="13" id="7">
+                  <ASS val="13"/>
                   <Column val="7"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -330,6 +333,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="8" FlowIsn="15" id="8">
+                  <ASS val="14"/>
                   <Column val="8"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -349,6 +353,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="9" FlowIsn="17" id="9">
+                  <ASS val="15"/>
                   <Column val="9"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -436,9 +441,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="Defect_Entry_Menu"/>
             <ExecuteOn_ val="O"/>
@@ -469,9 +473,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="Defect_Master_Entry"/>
             <ExecuteOn_ val="O"/>
@@ -502,9 +505,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="Code_Type_Master"/>
             <ExecuteOn_ val="O"/>
@@ -535,9 +537,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="Reports"/>
             <ExecuteOn_ val="O"/>
@@ -568,9 +569,8 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
             </Event>
             <TXT val="Passtype_Correction_Entry"/>
             <ExecuteOn_ val="O"/>
@@ -680,6 +680,10 @@
                 <ControlName id="46" val="Defect_Entry_Menu"/>
                 <Visible Exp="5" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="12" id="12">
@@ -709,6 +713,10 @@
                 <ControlName id="46" val="Defect_Master_Entry"/>
                 <Visible Exp="4" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control _test_id="9" id="9">
@@ -724,6 +732,10 @@
                 <ControlName id="46" val="Code_Type_Master"/>
                 <Visible Exp="3" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control _test_id="10" id="10">
@@ -739,6 +751,10 @@
                 <ControlName id="46" val="Reports"/>
                 <Visible Exp="2" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control _test_id="11" id="11">
@@ -754,6 +770,10 @@
                 <ControlName id="46" val="Passtype_Correction_Entry"/>
                 <Visible Exp="1" id="61"/>
                 <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -797,6 +817,26 @@
           </Expression>
           <Expression id="10">
             <ExpSyntax val="'PGM=VQMS010'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="11">
+            <ExpSyntax val="'Defect Entry Menu'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="12">
+            <ExpSyntax val="'Defect Master Entry'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="13">
+            <ExpSyntax val="'Code Type Master'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="14">
+            <ExpSyntax val="'Reports'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="15">
+            <ExpSyntax val="'Passtype Correction Entry'"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
