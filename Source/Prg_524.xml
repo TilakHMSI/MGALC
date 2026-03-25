@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG7_BATTERY_SCANNING_ENTRY" ISN_2="1" LastIsn="14" id="524">
-          <LastModified _date="739673" _time="43517" date="26/02/2026" time="12:05:17"/>
+          <LastModified _date="739700" _time="57758" date="25/03/2026" time="16:02:38"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="93"/>
+        <ItemIsn val="94"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="1"/>
@@ -2100,7 +2100,7 @@
                 </Select>
               </LogicLine>
               <LogicLine>
-                <LNK Direction="A" EVL_CND="R" FieldID="89" FlowIsn="154" Key="1" Mode="R" SortType="160" VIEW="85" VIEWS="5">
+                <LNK Direction="A" EVL_CND="R" FieldID="89" FlowIsn="154" Key="1" Mode="R" SortType="160" VIEW="85" VIEWS="6">
                   <DB comp="-1" obj="344"/>
                   <Condition val="Y"/>
                 </LNK>
@@ -2167,6 +2167,22 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="94" FlowIsn="1387" id="94">
+                  <Column val="9"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <INT_DIT_INFO>
+                    <v>17</v>
+                  </INT_DIT_INFO>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="N"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <END_LINK FlowIsn="160"/>
               </LogicLine>
               <LogicLine>
@@ -2194,7 +2210,7 @@
                 </Select>
               </LogicLine>
               <LogicLine>
-                <LNK Direction="A" EVL_CND="R" FieldID="93" FlowIsn="1073" Mode="R" SortType="1074" VIEW="92" VIEWS="2">
+                <LNK Direction="A" EVL_CND="R" FieldID="93" FlowIsn="1073" Mode="R" SortType="1074" VIEW="93" VIEWS="2">
                   <DB comp="-1" obj="343"/>
                   <Condition val="Y"/>
                 </LNK>
@@ -3916,6 +3932,105 @@
                 <END_BLK FlowIsn="405"/>
               </LogicLine>
               <LogicLine>
+                <BLOCK EndBlock="1555" EndBlockSegment="1555" FlowIsn="1554" Type="I">
+                  <Condition Exp="109"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="1556">
+                  <OperationType val="T"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="8"/>
+                  <Lock val="Y"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="61"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="62"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="48"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="1557">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="526"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="16"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Expression val="91"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="65"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="1558">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="96"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="1559">
+                  <Parent val="32768"/>
+                  <FieldID val="541"/>
+                  <WithValue val="97"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="1555"/>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="1234">
                   <Type val="2"/>
                   <Text val=" "/>
@@ -4116,6 +4231,17 @@
                 </Remark>
               </LogicLine>
             </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="15" propagate="78">
+            <Level val="K"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <ExecuteOn_ val="O"/>
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
@@ -4324,7 +4450,7 @@
                 <Height id="24" val="24"/>
                 <Data FieldID="90" id="43"/>
                 <ControlName id="46" val="BATTERY2"/>
-                <Visible id="61"/>
+                <Visible Exp="108" id="61"/>
                 <Format id="82" valUnicode="U40"/>
               </PropertyList>
             </Control>
@@ -4688,7 +4814,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="84">
-            <ExpSyntax val="'THE PCU Number ALREADY UNITED FOR OTHER FRAME.'"/>
+            <ExpSyntax val="'THE BATTERY Number ALREADY UNITED FOR OTHER FRAME.'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="102">
@@ -4720,7 +4846,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="91">
-            <ExpSyntax val="'PCU NUMBER-'"/>
+            <ExpSyntax val="'BATTERY NUMBER-'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="92">
@@ -4761,6 +4887,14 @@
           </Expression>
           <Expression id="107">
             <ExpSyntax val="{0,7}='ADDITION' OR {0,7}='CANCEL'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="108">
+            <ExpSyntax val="{0,94}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="109">
+            <ExpSyntax val="{0,7}='ADDITION' AND NOT {0,94}"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
@@ -5288,7 +5422,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="MOTOROFFRESULTENTRYHMSI" ISN_2="5" LastIsn="14" id="524">
-            <LastModified _date="739673" _time="43517" date="26/02/2026" time="12:05:17"/>
+            <LastModified _date="739700" _time="55200" date="25/03/2026" time="15:20:00"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5819,7 +5953,7 @@
                   <Width id="23" val="98"/>
                   <ControlLayer id="25" val="1"/>
                   <ControlName id="46" val="Column2"/>
-                  <ColumnTitle id="139" valUnicode="PU Number"/>
+                  <ColumnTitle id="139" valUnicode="BATTERY Number"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="3" id="3">
@@ -5846,7 +5980,7 @@
                   <Width id="23" val="60"/>
                   <ControlLayer id="25" val="4"/>
                   <ControlName id="46" val="Column5"/>
-                  <ColumnTitle id="139" valUnicode="PCU-OFF DATE"/>
+                  <ColumnTitle id="139" valUnicode="BATTERY-OFF DATE"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="6" id="6">
@@ -5855,7 +5989,7 @@
                   <Width id="23" val="64"/>
                   <ControlLayer id="25" val="5"/>
                   <ControlName id="46" val="Column6"/>
-                  <ColumnTitle id="139" valUnicode="PCU-OFF TIME"/>
+                  <ColumnTitle id="139" valUnicode="BATTERY-OFF TIME"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="7" id="7">
@@ -5997,10 +6131,6 @@
             </Expression>
             <Expression id="6">
               <ExpSyntax val="IF ({0,18}='X' AND {0,19}='X','OEM,REP',IF ({0,18}='X','OEM',IF ({0,19}='X','REP','')))"/>
-              <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="7">
-              <ExpSyntax val="IF ({0,10}='V','6P0Z','7P0Z')"/>
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="8">
@@ -7034,7 +7164,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="UPDATE Stagging Table" ISN_2="8" LastIsn="14" id="524">
-            <LastModified _date="739672" _time="42398" date="25/02/2026" time="11:46:38"/>
+            <LastModified _date="739700" _time="57758" date="25/03/2026" time="16:02:38"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -8147,7 +8277,7 @@
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="3">
-              <ExpSyntax val="'MOTOROFF'"/>
+              <ExpSyntax val="'BATTERYOFF'"/>
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="4">
