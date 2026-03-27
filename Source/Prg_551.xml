@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VQMS003_DefectEntryScreen" ISN_2="1" LastIsn="11" id="551">
-          <LastModified _date="739699" _time="69501" date="24/03/2026" time="19:18:21"/>
+          <LastModified _date="739701" _time="62297" date="26/03/2026" time="17:18:17"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="32"/>
+        <ItemIsn val="33"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="5"/>
@@ -173,6 +173,16 @@
                 <_FieldStyle id="276" val="1"/>
               </PropertyList>
             </Column>
+            <Column id="11" name="vERROR_MESSAGE">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="100"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="100"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
           </Columns>
         </Resource>
         <Information>
@@ -283,7 +293,7 @@
                     <v>19</v>
                     <v>28</v>
                   </INT_RCMP_INFO>
-                  <_DitIndexForToolkit val="14"/>
+                  <_DitIndexForToolkit val="15"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -567,7 +577,7 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="16"/>
+                  <_DitIndexForToolkit val="17"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -859,6 +869,19 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="33" FlowIsn="86" id="33">
+                  <Column val="11"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="70">
                   <Type val="2"/>
                   <Text val=" "/>
@@ -889,6 +912,25 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <CallTask FlowIsn="123">
+                  <OperationType val="T"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="7"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
           <LogicUnit id="5" propagate="78">
             <Level val="R"/>
@@ -981,41 +1023,112 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="74" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="'Please enter a valid Frame Number..!!'" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
+                <BLOCK EndBlock="106" EndBlockSegment="107" FlowIsn="105" Type="I">
+                  <Condition Exp="26"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="106" EndBlockSegment="106" FlowIsn="107" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="87">
+                  <FieldID val="33"/>
+                  <WithValue val="18"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="88">
+                  <FieldID val="33"/>
+                  <WithValue val="19"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
                   <Condition Exp="6"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="75" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="'Please enter the Frame Number..!!" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
+                <Update FlowIsn="89">
+                  <FieldID val="33"/>
+                  <WithValue val="20"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
                   <Condition Exp="5"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="76" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="'Please check..This frame is not from this line..!!" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
+                <Update FlowIsn="90">
+                  <FieldID val="33"/>
+                  <WithValue val="21"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
                   <Condition Exp="8"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="77" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="Vin Code Not Match" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
+                <Update FlowIsn="91">
+                  <FieldID val="33"/>
+                  <WithValue val="22"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
                   <Condition Exp="16"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </STP>
+                </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="78" IMG_DEF_CHG="Y" Image="I" Mode="W" TTL_DEF_CHG="Y" TXT="No Defects exists..!!This Frame number is DirectPass..!!" TitleTxt="Information" VR_DISP="B">
-                  <AppendToErrorLog val="N"/>
+                <Update FlowIsn="92">
+                  <FieldID val="33"/>
+                  <WithValue val="24"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
                   <Condition Exp="1"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="93">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="369"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="33"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="25"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="94" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                  <AppendToErrorLog val="Y"/>
+                  <Condition Exp="25"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
@@ -1123,31 +1236,8 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="8" propagate="89">
-            <Level val="H"/>
-            <Type val="U"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="I"/>
-              <InternalEventID val="14"/>
-            </Event>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
               <LogicLine>
-                <Update FlowIsn="85">
-                  <FieldID val="32"/>
-                  <WithValue val="17"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
+                <END_BLK FlowIsn="106"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -1156,7 +1246,7 @@
           <FormEntry _last_isn="22" _last_test_id="22" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="560"/>
-              <Height id="24" val="481"/>
+              <Height id="24" val="465"/>
               <FormUnits id="33" val="4"/>
               <ShowGrid id="37"/>
               <GridX id="38" val="1"/>
@@ -1165,6 +1255,7 @@
               <FormName id="311" valUnicode="DEFECTENTRYSCREEN"/>
               <_TabbingOrder id="318" val="2"/>
               <WindowType id="358" val="12"/>
+              <ParkFirstOn id="743" valUnicode="v_FRAME_NO"/>
             </PropertyList>
             <Control _test_id="1" id="1">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -1228,8 +1319,8 @@
               <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                 <X id="21" val="113"/>
                 <Y id="22" val="33"/>
-                <Width id="23" val="55"/>
-                <Height id="24" val="16"/>
+                <Width id="23" val="80"/>
+                <Height id="24" val="18"/>
                 <Data Exp="7" id="43"/>
                 <ControlName id="46" val="Edit6"/>
                 <Visible id="61"/>
@@ -1312,6 +1403,20 @@
                 <Visible id="61"/>
               </PropertyList>
             </Control>
+            <Control PDOD="128" _test_id="22" id="22">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="268"/>
+                <Y id="22" val="58"/>
+                <Width id="23" val="41"/>
+                <Height id="24" val="22"/>
+                <ControlName id="46" val="btnexit"/>
+                <Format id="82" valUnicode="Back"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="14"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
             <Control _test_id="13" id="13">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <Text id="19" valUnicode="FRAME NUMBER :"/>
@@ -1360,20 +1465,6 @@
                 <Data FieldID="17" id="43"/>
                 <ControlName id="46" val="ModelWiseMapping_MTOMAPCODE"/>
                 <Visible id="61"/>
-              </PropertyList>
-            </Control>
-            <Control PDOD="128" _test_id="22" id="22">
-              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                <X id="21" val="268"/>
-                <Y id="22" val="65"/>
-                <Width id="23" val="41"/>
-                <Height id="24" val="22"/>
-                <ControlName id="46" val="btnexit"/>
-                <Format id="82" valUnicode="Back"/>
-                <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="14"/>
-                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control _test_id="17" id="17">
@@ -1510,10 +1601,42 @@
             <ExpSyntax val="'TRUE'LOG"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="18">
+            <ExpSyntax val="''"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="19">
+            <ExpSyntax val="'Please enter a valid Frame Number..!!'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="20">
+            <ExpSyntax val="'Please enter the Frame Number..!!'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="21">
+            <ExpSyntax val="'Please check..This frame is not from this line..!!'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="22">
+            <ExpSyntax val="'Vin Code Not Match'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="24">
+            <ExpSyntax val="'NO Defects exists..!!This Frame number is DirectPass..!!'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="25">
+            <ExpSyntax val="Trim({0,33})&lt;>''"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="26">
+            <ExpSyntax val="LastClicked() ='btnexit'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="DEFECTENTRYSCREEN" ISN_2="2" LastIsn="11" id="551">
-            <LastModified _date="739699" _time="69494" date="24/03/2026" time="19:18:14"/>
+            <LastModified _date="739701" _time="61493" date="26/03/2026" time="17:04:53"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1604,13 +1727,13 @@
             <EndTaskCondition val="N"/>
             <SkipLockedRecords val="N"/>
             <EvaluateEndCondition val="B"/>
-            <InitialMode Exp="12"/>
+            <InitialMode val="M"/>
             <Locate Direction="A"/>
             <Range Direction="A"/>
             <VarRange/>
             <TaskProperties>
               <SelectionTable val="N"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
@@ -1618,7 +1741,7 @@
               <ForceRecordSuffix val="N"/>
               <TransactionMode val="D"/>
               <TransactionBegin val="P"/>
-              <PreloadView val="N"/>
+              <PreloadView val="Y"/>
               <AllowEmptyDataview val="N"/>
               <KeepCreatedContext val="N"/>
             </TaskProperties>
@@ -1719,7 +1842,7 @@
                       <v>9</v>
                       <v>20</v>
                     </INT_RCMP_INFO>
-                    <_DitIndexForToolkit val="3"/>
+                    <_DitIndexForToolkit val="8"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1779,7 +1902,7 @@
                     <INT_RCMP_INFO>
                       <v>32</v>
                     </INT_RCMP_INFO>
-                    <_DitIndexForToolkit val="4"/>
+                    <_DitIndexForToolkit val="9"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1795,7 +1918,7 @@
                     <INT_RCMP_INFO>
                       <v>33</v>
                     </INT_RCMP_INFO>
-                    <_DitIndexForToolkit val="5"/>
+                    <_DitIndexForToolkit val="10"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1811,7 +1934,7 @@
                     <INT_RCMP_INFO>
                       <v>34</v>
                     </INT_RCMP_INFO>
-                    <_DitIndexForToolkit val="6"/>
+                    <_DitIndexForToolkit val="11"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1942,6 +2065,9 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
+                    <INT_DIT_INFO>
+                      <v>16</v>
+                    </INT_DIT_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2102,7 +2228,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="11"/>
+                    <_DitIndexForToolkit val="15"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2122,7 +2248,6 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="12"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2394,36 +2519,70 @@
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="62" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="Defect Code not found" TitleTxt="Error" VR_DISP="S">
+                  <CallTask FlowIsn="86">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="369"/>
+                    <Lock val="N"/>
+                    <Arguments>
+                      <Argument>
+                        <Expression val="23"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition Exp="24"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+                <LogicLine>
+                  <CallTask FlowIsn="71">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="369"/>
+                    <Lock val="N"/>
+                    <Arguments>
+                      <Argument>
+                        <Expression val="20"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition Exp="19"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+                <LogicLine>
+                  <RaiseEvent FlowIsn="87">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="33"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition Exp="24"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="62" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
                     <AppendToErrorLog val="Y"/>
                     <Condition Exp="19"/>
-                    <Modifier val="S"/>
+                    <Modifier val="B"/>
                     <Direction val="F"/>
                   </STP>
-                </LogicLine>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="63">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="63"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition Exp="16"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
-                </LogicLine>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="64">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="63"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition Exp="16"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
                 </LogicLine>
                 <LogicLine>
                   <RaiseEvent FlowIsn="65">
@@ -2432,6 +2591,7 @@
                       <InternalEventID val="37"/>
                     </Event>
                     <Wait val="78"/>
+                    <Disabled val="1"/>
                     <Condition Exp="16"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2447,9 +2607,8 @@
               <ShowMessage val="Y"/>
               <Condition val="89"/>
               <Event>
-                <EventType val="U"/>
-                <Parent val="32768"/>
-                <PublicObject comp="-1" obj="1"/>
+                <EventType val="I"/>
+                <InternalEventID val="34"/>
               </Event>
               <TXT val="b_save"/>
               <ExecuteOn_ val="O"/>
@@ -2471,18 +2630,6 @@
                     <Direction val="C"/>
                   </CallTask>
                 </LogicLine>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="67">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="63"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
-                </LogicLine>
               </LogicLines>
             </LogicUnit>
             <LogicUnit id="10" propagate="78">
@@ -2496,6 +2643,7 @@
                 <EventType val="S"/>
               </Event>
               <TXT val="b_save"/>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
@@ -2505,6 +2653,7 @@
                       <InternalEventID val="37"/>
                     </Event>
                     <Wait val="78"/>
+                    <Disabled val="1"/>
                     <Condition Exp="16"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2517,6 +2666,7 @@
                       <InternalEventID val="63"/>
                     </Event>
                     <Wait val="78"/>
+                    <Disabled val="1"/>
                     <Condition Exp="16"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2529,6 +2679,7 @@
                       <InternalEventID val="63"/>
                     </Event>
                     <Wait val="78"/>
+                    <Disabled val="1"/>
                     <Condition Exp="16"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2536,14 +2687,83 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
+            <LogicUnit id="11" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
+              <Scope val="T"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="U"/>
+                <Parent val="32768"/>
+                <PublicObject comp="-1" obj="5"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <BLOCK EndBlock="81" EndBlockSegment="82" FlowIsn="80" Type="I">
+                    <Condition Exp="22"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <RaiseEvent FlowIsn="73">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="73"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
+                  <RaiseEvent FlowIsn="72">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="37"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
+                  <BLOCK EndBlock="81" EndBlockSegment="81" FlowIsn="82" Type="E">
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </BLOCK>
+                </LogicLine>
+                <LogicLine>
+                  <RaiseEvent FlowIsn="83">
+                    <Event>
+                      <EventType val="I"/>
+                      <InternalEventID val="31"/>
+                    </Event>
+                    <Wait val="78"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </RaiseEvent>
+                </LogicLine>
+                <LogicLine>
+                  <END_BLK FlowIsn="81"/>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="12" _last_test_id="12" id="1">
+            <FormEntry _last_isn="17" _last_test_id="17" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
-                <Width id="23" val="780"/>
-                <Height id="24" val="437"/>
+                <Width id="23" val="612"/>
+                <Height id="24" val="442"/>
                 <TitleBar id="26"/>
                 <FormUnits id="33" val="4"/>
                 <GridX id="38" val="3"/>
@@ -2553,79 +2773,34 @@
                 <_TabbingOrder id="318" val="2"/>
                 <WindowType id="358" val="12"/>
               </PropertyList>
-              <Control _test_id="1" id="1">
-                <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                  <Text id="19" valUnicode="**UnSupported Control**"/>
-                  <X id="21" val="3"/>
-                  <Y id="22" val="7"/>
-                  <Width id="23" val="773"/>
-                  <Height id="24"/>
-                  <ControlName id="46" val="Label1"/>
-                  <Visible id="61"/>
+              <Control PDOD="128" _test_id="13" id="13">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="5"/>
+                  <Y id="22" val="10"/>
+                  <Width id="23" val="78"/>
+                  <Height id="24" val="32"/>
+                  <ControlName id="46" val="btnAdd"/>
+                  <Format id="82" valUnicode="Add"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <Parent val="32768"/>
+                    <PublicObject comp="-1" obj="5"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control _test_id="2" id="2">
                 <PropertyList model="CTRL_WEB_CLIENT_TABLE">
                   <X id="21" val="3"/>
-                  <Y id="22" val="13"/>
-                  <Width id="23" val="773"/>
-                  <Height id="24" val="390"/>
+                  <Y id="22" val="71"/>
+                  <Width id="23" val="598"/>
+                  <Height id="24" val="332"/>
                   <ControlName id="46" val="Table2"/>
                   <Visible id="61"/>
                   <TitleHeight id="79" val="20"/>
-                  <RowHeight id="80" val="23"/>
-                  <Elements id="81" val="4"/>
-                  <_WindowWidth id="241" val="773"/>
+                  <RowHeight id="80" val="78"/>
+                  <Elements id="81" val="5"/>
+                  <_WindowWidth id="241" val="598"/>
                   <LastDivider id="260" val="Y"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" _test_id="7" id="7">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                  <X id="21" val="6"/>
-                  <Y id="22" val="36"/>
-                  <Width id="23" val="78"/>
-                  <Height id="24" val="16"/>
-                  <ControlLayer id="25" val="1"/>
-                  <Data FieldID="4" id="43"/>
-                  <ControlName id="46" val="DEFECTCODE"/>
-                  <Visible id="61"/>
-                  <ShowZoomButton id="718" val="Y"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" _test_id="8" id="8">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                  <X id="21" val="98"/>
-                  <Y id="22" val="36"/>
-                  <Width id="23" val="398"/>
-                  <Height id="24" val="16"/>
-                  <ControlLayer id="25" val="2"/>
-                  <Data FieldID="7" id="43"/>
-                  <ControlName id="46" val="DEFECTMASTER_DEFECTDESCRIPTION"/>
-                  <Visible id="61"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" _test_id="9" id="9">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                  <X id="21" val="503"/>
-                  <Y id="22" val="36"/>
-                  <Width id="23" val="23"/>
-                  <Height id="24" val="16"/>
-                  <ControlLayer id="25" val="3"/>
-                  <Data FieldID="8" id="43"/>
-                  <ControlName id="46" val="DEFECTMASTER_DEFECTCATEGORY"/>
-                  <Visible id="61"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" _test_id="10" id="10">
-                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
-                  <X id="21" val="595"/>
-                  <Y id="22" val="36"/>
-                  <Width id="23" val="23"/>
-                  <Height id="24" val="16"/>
-                  <ControlLayer id="25" val="4"/>
-                  <Data FieldID="9" id="43"/>
-                  <ControlName id="46" val="DEFECTMASTER_DEFECTSECTION"/>
-                  <Visible id="61"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="2" PDOD="128" _test_id="3" id="3">
@@ -2638,7 +2813,7 @@
               </Control>
               <Control ISN_FATHER="2" PDOD="128" _test_id="4" id="4">
                 <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="409"/>
+                  <Width id="23" val="265"/>
                   <ControlLayer id="25" val="2"/>
                   <ControlName id="46" val="Column4"/>
                   <ColumnTitle id="139" valUnicode="DEFECT DESCRIPTION"/>
@@ -2654,241 +2829,140 @@
               </Control>
               <Control ISN_FATHER="2" PDOD="128" _test_id="6" id="6">
                 <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="163"/>
+                  <Width id="23" val="79"/>
                   <ControlLayer id="25" val="4"/>
                   <ControlName id="46" val="Column6"/>
                   <ColumnTitle id="139" valUnicode="SECTION"/>
                 </PropertyList>
               </Control>
-              <Control _test_id="11" id="11">
-                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                  <Model ID="MODEL_WEB_CLIENT" id="1">
-                    <Var FieldID="27"/>
-                  </Model>
-                  <X id="21" val="575"/>
-                  <Y id="22" val="411"/>
-                  <Width id="23" val="96"/>
-                  <Height id="24" val="23"/>
-                  <Data FieldID="27" id="43"/>
-                  <ControlName id="46" val="b_save"/>
-                  <Visible id="61"/>
-                  <ImageFile id="88" val="Button"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
-                  </RaiseEvent>
-                </PropertyList>
-              </Control>
-              <Control _test_id="12" id="12">
-                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                  <Model ID="MODEL_WEB_CLIENT" id="1">
-                    <Var FieldID="28"/>
-                  </Model>
-                  <X id="21" val="678"/>
-                  <Y id="22" val="411"/>
-                  <Width id="23" val="96"/>
-                  <Height id="24" val="23"/>
-                  <Data FieldID="28" id="43"/>
-                  <ControlName id="46" val="b_exit"/>
-                  <Visible id="61"/>
-                  <ImageFile id="88" val="Button"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="14"/>
-                  </RaiseEvent>
-                </PropertyList>
-              </Control>
-            </FormEntry>
-          </TaskForms>
-          <TaskForms>
-            <FormEntry _last_isn="12" _last_test_id="12" id="2">
-              <PropertyList model="FORM_RICH_CLIENT">
-                <X id="21" val="6"/>
-                <Y id="22" val="90"/>
-                <Width id="23" val="624"/>
-                <Height id="24" val="269"/>
-                <TitleBar id="26"/>
-                <SystemMenu id="27"/>
-                <MinimizeButton id="28"/>
-                <MaximizeButton id="29"/>
-                <GridX id="38" val="2"/>
-                <GridY id="39" val="4"/>
-                <BorderStyle id="64" val="3"/>
-                <_Comment id="218"/>
-                <FormName id="311" valUnicode="DEFECT ENTRY SCREEN"/>
-                <_TabbingOrder id="318" val="2"/>
-                <WindowType id="358" val="6"/>
-                <PersistentFormState id="493"/>
-              </PropertyList>
-              <Control PDOD="128" _test_id="1" id="1">
-                <PropertyList model="CTRL_RICH_CLIENT_LINE">
-                  <X1 id="21" val="2"/>
-                  <Y1 id="22" val="4"/>
-                  <X2 id="23" val="618"/>
-                  <Y2 id="24"/>
-                  <Visible id="61"/>
-                  <Style id="63" val="1"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="2" id="2">
-                <PropertyList model="CTRL_RICH_CLIENT_TABLE">
-                  <X id="21" val="2"/>
-                  <Y id="22" val="8"/>
-                  <Width id="23" val="618"/>
-                  <Height id="24" val="240"/>
-                  <Visible id="61"/>
-                  <_TitleHeight id="79" val="12"/>
-                  <RowHeight id="80" val="14"/>
-                  <Elements id="81" val="4"/>
-                  <_WindowWidth id="241" val="618"/>
-                  <_LastDivider id="260" val="Y"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" PDOD="128" _test_id="3" id="3">
-                <PropertyList model="CTRL_RICH_CLIENT_COLUMN">
-                  <Width id="23" val="70"/>
-                  <ControlLayer id="25" val="1"/>
-                  <ColumnTitle id="139" valUnicode="CODE"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" PDOD="128" _test_id="4" id="4">
-                <PropertyList model="CTRL_RICH_CLIENT_COLUMN">
-                  <Width id="23" val="327"/>
-                  <ControlLayer id="25" val="2"/>
-                  <ColumnTitle id="139" valUnicode="DEFECT DESCRIPTION"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" PDOD="128" _test_id="5" id="5">
-                <PropertyList model="CTRL_RICH_CLIENT_COLUMN">
-                  <Width id="23" val="73"/>
-                  <ControlLayer id="25" val="3"/>
-                  <ColumnTitle id="139" valUnicode="CATEGORY"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="2" PDOD="128" _test_id="6" id="6">
-                <PropertyList model="CTRL_RICH_CLIENT_COLUMN">
-                  <Width id="23" val="130"/>
-                  <ControlLayer id="25" val="4"/>
-                  <ColumnTitle id="139" valUnicode="SECTION"/>
+              <Control ISN_FATHER="2" PDOD="128" _test_id="14" id="14">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="51"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="Column14"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="2" _test_id="7" id="7">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <X id="21" val="5"/>
-                  <Y id="22" val="22"/>
-                  <Width id="23" val="62"/>
-                  <Height id="24" val="10"/>
+                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                  <X id="21" val="6"/>
+                  <Y id="22" val="94"/>
+                  <Width id="23" val="78"/>
+                  <Height id="24" val="16"/>
                   <ControlLayer id="25" val="1"/>
                   <Data FieldID="4" id="43"/>
                   <ControlName id="46" val="DEFECTCODE"/>
-                  <Font id="50" val="18"/>
-                  <Color id="51" val="72"/>
                   <Visible id="61"/>
-                  <_Style id="63" val="1"/>
-                  <TabOrder id="314" val="1"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
-                  <Border id="452"/>
+                  <ShowZoomButton id="718" val="Y"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="2" _test_id="8" id="8">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <X id="21" val="78"/>
-                  <Y id="22" val="22"/>
-                  <Width id="23" val="318"/>
-                  <Height id="24" val="10"/>
+                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                  <X id="21" val="98"/>
+                  <Y id="22" val="94"/>
+                  <Width id="23" val="256"/>
+                  <Height id="24" val="16"/>
                   <ControlLayer id="25" val="2"/>
                   <Data FieldID="7" id="43"/>
-                  <Font id="50" val="18"/>
-                  <Color id="51" val="72"/>
+                  <ControlName id="46" val="DEFECTMASTER_DEFECTDESCRIPTION"/>
                   <Visible id="61"/>
-                  <_Style id="63" val="1"/>
-                  <TabOrder id="314" val="2"/>
-                  <AllowParking id="315"/>
-                  <AllowedDirection id="317" val="1"/>
-                  <Border id="452"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="2" _test_id="9" id="9">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <X id="21" val="402"/>
-                  <Y id="22" val="22"/>
-                  <Width id="23" val="18"/>
-                  <Height id="24" val="10"/>
+                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                  <X id="21" val="359"/>
+                  <Y id="22" val="94"/>
+                  <Width id="23" val="67"/>
+                  <Height id="24" val="16"/>
                   <ControlLayer id="25" val="3"/>
                   <Data FieldID="8" id="43"/>
-                  <Font id="50" val="18"/>
-                  <Color id="51" val="72"/>
+                  <ControlName id="46" val="DEFECTMASTER_DEFECTCATEGORY"/>
                   <Visible id="61"/>
-                  <_Style id="63" val="1"/>
-                  <TabOrder id="314" val="3"/>
-                  <AllowParking id="315"/>
-                  <AllowedDirection id="317" val="1"/>
-                  <Border id="452"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="2" _test_id="10" id="10">
-                <PropertyList model="CTRL_RICH_CLIENT_EDIT">
-                  <X id="21" val="476"/>
-                  <Y id="22" val="22"/>
-                  <Width id="23" val="18"/>
-                  <Height id="24" val="10"/>
+                <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                  <X id="21" val="451"/>
+                  <Y id="22" val="94"/>
+                  <Width id="23" val="67"/>
+                  <Height id="24" val="16"/>
                   <ControlLayer id="25" val="4"/>
                   <Data FieldID="9" id="43"/>
-                  <Font id="50" val="18"/>
-                  <Color id="51" val="72"/>
+                  <ControlName id="46" val="DEFECTMASTER_DEFECTSECTION"/>
                   <Visible id="61"/>
-                  <_Style id="63" val="1"/>
-                  <TabOrder id="314" val="4"/>
-                  <AllowParking id="315"/>
-                  <AllowedDirection id="317" val="1"/>
-                  <Border id="452"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="2" PDOD="128" _test_id="15" id="15">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="530"/>
+                  <Y id="22" val="95"/>
+                  <Width id="23" val="28"/>
+                  <Height id="24" val="22"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="EnterRowEditing"/>
+                  <Visible Exp="22" id="61"/>
+                  <Format id="82" valUnicode="Edit"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="595"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="2" PDOD="128" _test_id="16" id="16">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="530"/>
+                  <Y id="22" val="121"/>
+                  <Width id="23" val="35"/>
+                  <Height id="24" val="22"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="SaveRowEditing"/>
+                  <Visible Exp="25" id="61"/>
+                  <Format id="82" valUnicode="Save"/>
+                  <Arguments id="126">
+                    <Arguments>
+                      <Argument>
+                        <Expression val="21"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
+                  </Arguments>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="293"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="2" PDOD="128" _test_id="17" id="17">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="530"/>
+                  <Y id="22" val="147"/>
+                  <Width id="23" val="43"/>
+                  <Height id="24" val="22"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="CancelRowEditing"/>
+                  <Format id="82" valUnicode="Cancel"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="33"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control _test_id="11" id="11">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <Model ID="MODEL_WEB_CLIENT" id="1">
                     <Var FieldID="27"/>
                   </Model>
-                  <X id="21" val="460"/>
-                  <Y id="22" val="253"/>
-                  <Width id="23" val="77"/>
-                  <Height id="24" val="14"/>
+                  <X id="21" val="505"/>
+                  <Y id="22" val="409"/>
+                  <Width id="23" val="96"/>
+                  <Height id="24" val="23"/>
                   <Data FieldID="27" id="43"/>
                   <ControlName id="46" val="b_save"/>
-                  <Font id="50" val="18"/>
                   <Visible id="61"/>
-                  <ImageListFileName id="88" val="Button"/>
+                  <ImageFile id="88" val="Button"/>
                   <RaiseEvent id="234">
                     <EventType val="I"/>
                     <InternalEventID val="34"/>
                   </RaiseEvent>
-                  <TabOrder id="314" val="5"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="12" id="12">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="28"/>
-                  </Model>
-                  <X id="21" val="542"/>
-                  <Y id="22" val="253"/>
-                  <Width id="23" val="77"/>
-                  <Height id="24" val="14"/>
-                  <Data FieldID="28" id="43"/>
-                  <ControlName id="46" val="b_exit"/>
-                  <Font id="50" val="18"/>
-                  <Visible id="61"/>
-                  <ImageListFileName id="88" val="Button"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="14"/>
-                  </RaiseEvent>
-                  <TabOrder id="314" val="6"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
                 </PropertyList>
               </Control>
             </FormEntry>
@@ -2968,6 +3042,30 @@
             </Expression>
             <Expression id="19">
               <ExpSyntax val="NOT ({0,10})"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="20">
+              <ExpSyntax val="'Defect Code not found'"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="21">
+              <ExpSyntax val="'FALSE'LOG"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="22">
+              <ExpSyntax val="NOT EmptyDataview(0)"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="23">
+              <ExpSyntax val="'Duplicate defect found'"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="24">
+              <ExpSyntax val="{0,17}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="25">
+              <ExpSyntax val="NOT ({0,17})"/>
               <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
@@ -6416,7 +6514,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="Delete work table" ISN_2="7" LastIsn="11" id="551">
-            <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
+            <LastModified _date="739701" _time="59065" date="26/03/2026" time="16:24:25"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -6430,6 +6528,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
+          <ItemIsn val="1"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="111"/>
@@ -6518,6 +6617,18 @@
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </DATAVIEW_SRC>
+                </LogicLine>
+                <LogicLine>
+                  <Select FieldID="1" FlowIsn="3" id="1">
+                    <Column val="1"/>
+                    <Type val="R"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
