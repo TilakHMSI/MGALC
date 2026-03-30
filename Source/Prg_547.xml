@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="PICKLISTMTOCODE" ISN_2="7" LastIsn="27" id="547">
-          <LastModified _date="739701" _time="68640" date="26/03/2026" time="19:04:00"/>
+          <LastModified _date="739705" _time="63831" date="30/03/2026" time="17:43:51"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -86,28 +86,28 @@
           <EndTaskCondition val="N"/>
           <SkipLockedRecords val="N"/>
           <EvaluateEndCondition val="B"/>
-          <InitialMode val="E"/>
+          <InitialMode val="M"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
           <VarRange/>
           <TaskProperties>
             <SelectionTable val="Y"/>
-            <ConfirmUpdate CNFU="Y"/>
+            <ConfirmUpdate CNFU="N"/>
             <ConfirmCancel val="N"/>
             <ErrorStrategy val="A"/>
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="D"/>
-            <TransactionBegin val="P"/>
+            <TransactionMode val="O"/>
+            <TransactionBegin val="N"/>
             <PreloadView val="N"/>
-            <AllowEmptyDataview val="N"/>
+            <AllowEmptyDataview val="Y"/>
             <KeepCreatedContext val="N"/>
           </TaskProperties>
           <SIDE_WIN>
             <AllowOptions val="Y"/>
             <AllowQuery val="Y"/>
-            <AllowModify val="N"/>
+            <AllowModify val="Y"/>
             <AllowCreate val="N"/>
             <AllowDelete val="N"/>
             <AllowLocate val="Y"/>
@@ -268,6 +268,24 @@
                   <Direction val="C"/>
                 </Update>
               </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="14">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
         </TaskLogic>
@@ -366,7 +384,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="List" ISN_2="27" LastIsn="27" id="547">
-            <LastModified _date="739701" _time="68640" date="26/03/2026" time="19:04:00"/>
+            <LastModified _date="739705" _time="61109" date="30/03/2026" time="16:58:29"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -445,16 +463,16 @@
             <VarRange/>
             <TaskProperties>
               <SelectionTable val="Y"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
               <CacheStrategy val="D"/>
               <ForceRecordSuffix val="N"/>
-              <TransactionMode val="D"/>
-              <TransactionBegin val="P"/>
+              <TransactionMode val="O"/>
+              <TransactionBegin val="N"/>
               <PreloadView val="N"/>
-              <AllowEmptyDataview val="N"/>
+              <AllowEmptyDataview val="Y"/>
               <KeepCreatedContext val="N"/>
             </TaskProperties>
             <SIDE_WIN>
@@ -489,7 +507,9 @@
             <SQL_STMT_U val="select distinct mtomapcode from modelwisemapping where mtomapcode like ':1'"/>
             <INARG>
               <Arguments>
-                <Argument Variable="1"/>
+                <Argument>
+                  <Exp val="3"/>
+                </Argument>
               </Arguments>
             </INARG>
             <OUTARG>
@@ -681,6 +701,10 @@
             </Expression>
             <Expression id="2">
               <ExpSyntax val="{0,3}"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="3">
+              <ExpSyntax val="Trim({0,1})"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
