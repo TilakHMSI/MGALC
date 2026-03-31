@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="43" id="358">
-          <LastModified _date="739700" _time="58221" date="25/03/2026" time="16:10:21"/>
+          <LastModified _date="739706" _time="58602" date="31/03/2026" time="16:16:42"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1589,7 +1589,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="28"/>
+                  <_DitIndexForToolkit val="29"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1614,7 +1614,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="33"/>
+                  <_DitIndexForToolkit val="34"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1639,7 +1639,7 @@
                     <v>32</v>
                     <v>16368</v>
                   </INT_RCMP_INFO>
-                  <_DitIndexForToolkit val="32"/>
+                  <_DitIndexForToolkit val="33"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -2719,6 +2719,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <_DitIndexForToolkit val="26"/>
                   <DIFF_UPDATE val="T"/>
                   <PartOfDataview val="N"/>
                   <Condition val="Y"/>
@@ -2906,7 +2907,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="34"/>
+                  <_DitIndexForToolkit val="35"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -8025,7 +8026,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="40" _last_test_id="40" id="1">
+          <FormEntry _last_isn="41" _last_test_id="41" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -8375,6 +8376,20 @@
                 <Format id="82" valUnicode="HH:MM:SS"/>
               </PropertyList>
             </Control>
+            <Control PDOD="192" _test_id="41" id="41">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="180"/>
+                </Model>
+                <X id="21" val="96"/>
+                <Y id="22" val="382"/>
+                <Width id="23" val="34"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="180" id="43"/>
+                <ControlName id="46" val="JP_MODEL"/>
+                <MultiLineEdit id="71"/>
+              </PropertyList>
+            </Control>
             <Control _test_id="9" id="9">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                 <X id="21" val="1"/>
@@ -8685,7 +8700,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="40">
-            <ExpSyntax val="Trim ({0,121})='' AND ({0,15} AND {0,16} AND Right ({0,11},1)='')"/>
+            <ExpSyntax val="Trim ({0,121})='' AND ({0,15} AND {0,16} AND Right (Trim({0,11}),1)='')"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="41">
@@ -8821,7 +8836,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="79">
-            <ExpSyntax val="IF(Len(Trim({0,11}))=12,'',Rep ({0,12},' ',9,1))"/>
+            <ExpSyntax val="IF(Len(Trim({0,11}))=12,Left ({0,11},4),Rep ({0,12},' ',9,1))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="80">
@@ -8989,7 +9004,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="122">
-            <ExpSyntax val="{0,9}='ADDITION' AND NOT ({0,120})"/>
+            <ExpSyntax val="{0,9}='ADDITION'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="124">
@@ -10549,7 +10564,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="AF_OFF_RESULT_ENTRY1" ISN_2="2" LastIsn="43" id="358">
-            <LastModified _date="739681" _time="56684" date="06/03/2026" time="15:44:44"/>
+            <LastModified _date="739706" _time="58602" date="31/03/2026" time="16:16:42"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -10564,7 +10579,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="21"/>
+          <ItemIsn val="22"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="5"/>
@@ -10574,7 +10589,18 @@
               <Cache val="N"/>
               <IdentifyRowModifications val="84"/>
             </DB>
-            <Columns/>
+            <Columns>
+              <Column id="1" name="JPMODULE">
+                <PropertyList model="FIELD">
+                  <Model attr_obj="FIELD_ALPHA" id="1"/>
+                  <Picture id="157" valUnicode="U"/>
+                  <StoredAs id="173" val="1"/>
+                  <Size id="174" val="1"/>
+                  <_Flip id="194"/>
+                  <PartOfDataview id="449"/>
+                </PropertyList>
+              </Column>
+            </Columns>
           </Resource>
           <Information>
             <Key>
@@ -10936,6 +10962,21 @@
                     <Direction val="C"/>
                   </Select>
                 </LogicLine>
+                <LogicLine>
+                  <Select FieldID="22" FlowIsn="40" id="22">
+                    <ASS val="9"/>
+                    <Column val="1"/>
+                    <Type val="V"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <_DitIndexForToolkit val="23"/>
+                    <DIFF_UPDATE val="T"/>
+                    <PartOfDataview val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
               </LogicLines>
             </LogicUnit>
             <LogicUnit id="3" propagate="78">
@@ -11038,11 +11079,11 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="22" _last_test_id="22" id="1">
+            <FormEntry _last_isn="23" _last_test_id="23" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <Y id="22"/>
-                <Width id="23" val="560"/>
-                <Height id="24" val="260"/>
+                <Width id="23" val="721"/>
+                <Height id="24" val="265"/>
                 <TitleBar id="26"/>
                 <FormUnits id="33" val="4"/>
                 <GridX id="38" val="1"/>
@@ -11056,21 +11097,21 @@
                 <PropertyList model="CTRL_WEB_CLIENT_TABLE">
                   <Model comp="-1" id="1" obj="713"/>
                   <Y id="22" val="3"/>
-                  <Width id="23" val="561"/>
+                  <Width id="23" val="606"/>
                   <Height id="24" val="254"/>
                   <ControlName id="46" val="Table1"/>
                   <Visible id="61"/>
                   <TitleHeight id="79" val="36"/>
-                  <RowHeight id="80" val="21"/>
+                  <RowHeight id="80" val="44"/>
                   <Elements id="81" val="9"/>
-                  <_WindowWidth id="241" val="560"/>
+                  <_WindowWidth id="241" val="606"/>
                   <LastDivider id="260" val="Y"/>
                 </PropertyList>
               </Control>
               <Control ISN_FATHER="1" PDOD="128" _test_id="2" id="2">
                 <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
                   <Model comp="-1" id="1" obj="716"/>
-                  <Width id="23" val="101"/>
+                  <Width id="23" val="99"/>
                   <ControlLayer id="25" val="1"/>
                   <ControlName id="46" val="Column2"/>
                   <ColumnTitle id="139" valUnicode="FRAME NO.&#xD;&#xA;"/>
@@ -11179,7 +11220,7 @@
               <Control ISN_FATHER="1" _test_id="13" id="13">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="104"/>
+                  <X id="21" val="102"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="35"/>
                   <Height id="24" val="13"/>
@@ -11193,7 +11234,7 @@
               <Control ISN_FATHER="1" PDOD="1" _test_id="14" id="14">
                 <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="141"/>
+                  <X id="21" val="139"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="35"/>
                   <Height id="24" val="13"/>
@@ -11207,7 +11248,7 @@
               <Control ISN_FATHER="1" _test_id="15" id="15">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="718"/>
-                  <X id="21" val="180"/>
+                  <X id="21" val="178"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="35"/>
                   <Height id="24" val="13"/>
@@ -11221,7 +11262,7 @@
               <Control ISN_FATHER="1" _test_id="16" id="16">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="219"/>
+                  <X id="21" val="217"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="55"/>
                   <Height id="24" val="13"/>
@@ -11235,7 +11276,7 @@
               <Control ISN_FATHER="1" _test_id="17" id="17">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="279"/>
+                  <X id="21" val="277"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="50"/>
                   <Height id="24" val="13"/>
@@ -11249,7 +11290,7 @@
               <Control ISN_FATHER="1" _test_id="18" id="18">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="331"/>
+                  <X id="21" val="329"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="13"/>
                   <Height id="24" val="13"/>
@@ -11263,7 +11304,7 @@
               <Control ISN_FATHER="1" _test_id="19" id="19">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="349"/>
+                  <X id="21" val="347"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="13"/>
                   <Height id="24" val="13"/>
@@ -11277,7 +11318,7 @@
               <Control ISN_FATHER="1" PDOD="128" _test_id="20" id="20">
                 <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="718"/>
-                  <X id="21" val="374"/>
+                  <X id="21" val="372"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="30"/>
                   <Height id="24" val="13"/>
@@ -11291,7 +11332,7 @@
               <Control ISN_FATHER="1" PDOD="128" _test_id="21" id="21">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="718"/>
-                  <X id="21" val="409"/>
+                  <X id="21" val="407"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="40"/>
                   <Height id="24" val="13"/>
@@ -11305,7 +11346,7 @@
               <Control ISN_FATHER="1" _test_id="22" id="22">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model comp="-1" id="1" obj="717"/>
-                  <X id="21" val="453"/>
+                  <X id="21" val="451"/>
                   <Y id="22" val="46"/>
                   <Width id="23" val="91"/>
                   <Height id="24" val="13"/>
@@ -11314,6 +11355,21 @@
                   <ControlName id="46" val="S5_MTO_NAME"/>
                   <Visible id="61"/>
                   <Format id="82" valUnicode="U18A"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="1" _test_id="23" id="23">
+                <PropertyList FLD_FLAGS="1" model="CTRL_WEB_CLIENT_EDIT">
+                  <Model ID="MODEL_WEB_CLIENT" id="1">
+                    <Var FieldID="22"/>
+                  </Model>
+                  <X id="21" val="4"/>
+                  <Y id="22" val="63"/>
+                  <Width id="23" val="34"/>
+                  <Height id="24" val="20"/>
+                  <ControlLayer id="25" val="1"/>
+                  <Data FieldID="22" id="43"/>
+                  <ControlName id="46" val="JP_MODULE"/>
+                  <MultiLineEdit id="71"/>
                 </PropertyList>
               </Control>
             </FormEntry>
@@ -11340,7 +11396,7 @@
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="9">
-              <ExpSyntax val="IF({1,180},'True','False')"/>
+              <ExpSyntax val="IF({1,180},'T','F')"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
