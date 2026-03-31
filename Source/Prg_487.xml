@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDG001_PRD001_GUIDE2" ISN_2="1" LastIsn="4" id="487">
-          <LastModified _date="739679" _time="57602" date="04/03/2026" time="16:00:02"/>
+          <LastModified _date="739706" _time="45520" date="31/03/2026" time="12:38:40"/>
           <Public val="Prg_52"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -285,6 +285,51 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="7" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+              <KeyCombinationID val="162"/>
+            </Event>
+            <TXT val="vSearch"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="14">
+                  <FieldID val="6"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="15">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="5"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="11" _last_test_id="11" id="1">
@@ -321,6 +366,7 @@
                 <Height id="24" val="22"/>
                 <Data FieldID="5" id="43"/>
                 <ControlName id="46" val="vSearch"/>
+                <BindingLevel id="733" val="2"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="11" id="11">

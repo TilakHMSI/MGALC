@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="ENGINELIST_GUIDE" ISN_2="7" LastIsn="8" id="534">
-          <LastModified _date="739681" _time="38924" date="06/03/2026" time="10:48:44"/>
+        <Header Description="ENGINELIST_GUIDE" ISN_2="7" LastIsn="26" id="534">
+          <LastModified _date="739706" _time="46342" date="31/03/2026" time="12:52:22"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -257,6 +257,51 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="5" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+              <KeyCombinationID val="162"/>
+            </Event>
+            <TXT val="vSearch"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="12">
+                  <FieldID val="2"/>
+                  <WithValue val="1"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="13">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="4" _last_test_id="4" id="1">
@@ -277,6 +322,7 @@
                 <Height id="24" val="32"/>
                 <Data FieldID="1" id="43"/>
                 <ControlName id="46" val="vSearch"/>
+                <BindingLevel id="733" val="2"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="4" id="4">
@@ -338,7 +384,7 @@
           </Expression>
         </Expressions>
         <Task MainProgram="N">
-          <Header Description="LIST" ISN_2="6" LastIsn="8" id="534">
+          <Header Description="LIST" ISN_2="6" LastIsn="26" id="534">
             <LastModified _date="739679" _time="56782" date="04/03/2026" time="15:46:22"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>

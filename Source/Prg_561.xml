@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="PRD003GroupGuide" ISN_2="4" LastIsn="7" id="561">
-          <LastModified _date="739705" _time="43852" date="30/03/2026" time="12:10:52"/>
+          <LastModified _date="739706" _time="45766" date="31/03/2026" time="12:42:46"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -296,6 +296,51 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="7" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+              <KeyCombinationID val="162"/>
+            </Event>
+            <TXT val="vSearch"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="13">
+                  <FieldID val="5"/>
+                  <WithValue val="2"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="14">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="3"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="9" _last_test_id="9" id="1">
@@ -395,7 +440,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="List" ISN_2="7" LastIsn="7" id="561">
-            <LastModified _date="739705" _time="43852" date="30/03/2026" time="12:10:52"/>
+            <LastModified _date="739706" _time="45766" date="31/03/2026" time="12:42:46"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -466,7 +511,7 @@
             <Range Direction="A"/>
             <VarRange/>
             <TaskProperties>
-              <SelectionTable val="N"/>
+              <SelectionTable val="Y"/>
               <ConfirmUpdate CNFU="Y"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="R"/>
