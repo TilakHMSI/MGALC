@@ -14,18 +14,19 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="CONFIRMATION_MESSAGE_AF" ISN_2="4" LastIsn="25" id="511">
-          <LastModified _date="739644" _time="63407" date="28/01/2026" time="17:36:47"/>
+          <LastModified _date="739707" _time="43655" date="01/04/2026" time="12:07:35"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
           <ReturnValue>
             <ReturnValueAttr/>
-            <TSK_PARAMS val="4"/>
+            <TSK_PARAMS val="5"/>
             <ParametersAttributes>
               <Attr MgAttr="A"/>
               <Attr MgAttr="A"/>
               <Attr MgAttr="A"/>
               <Attr MgAttr="N"/>
+              <Attr MgAttr="A"/>
             </ParametersAttributes>
           </ReturnValue>
           <SqlWhereExist val="N"/>
@@ -36,7 +37,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="11"/>
+        <ItemIsn val="12"/>
         <Resource>
           <Columns>
             <Column id="2" name="pENGINE_NO">
@@ -77,6 +78,16 @@
                 <_Whole id="182" val="7"/>
                 <_Negative id="192"/>
                 <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="12" name="pColorDesc">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="50"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="50"/>
+                <_Flip id="194"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
             </Column>
@@ -269,6 +280,20 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="12" FlowIsn="27" id="12">
+                  <Column val="12"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <_DitIndexForToolkit val="9"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Select FieldID="1" FlowIsn="4" id="1">
                   <ASS val="4"/>
                   <Column val="1"/>
@@ -404,7 +429,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="13" _last_test_id="13" id="1">
+          <FormEntry _last_isn="15" _last_test_id="15" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -441,8 +466,7 @@
             </Control>
             <Control ISN_FATHER="1" _test_id="3" id="3">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <X id="21" val="10"/>
-                <Y id="22" val="43"/>
+                <Y id="22" val="54"/>
                 <Width id="23" val="531"/>
                 <Height id="24" val="104"/>
                 <ControlName id="46" val="Label3"/>
@@ -496,6 +520,29 @@
                 <Visible id="61"/>
                 <Format id="82" valUnicode="30"/>
                 <Attribute id="83" val="85"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="15" id="15">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="pColorDesc"/>
+                <X id="21" val="50"/>
+                <Y id="22" val="132"/>
+                <Width id="23" val="57"/>
+                <Height id="24" val="15"/>
+                <ControlName id="46" val="L_pColorDesc"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="14" id="14">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="12"/>
+                </Model>
+                <X id="21" val="175"/>
+                <Y id="22" val="132"/>
+                <Width id="23" val="208"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="12" id="43"/>
+                <ControlName id="46" val="ColorDesc"/>
               </PropertyList>
             </Control>
             <Control _test_id="7" id="7">
