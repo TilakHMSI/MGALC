@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO019_MODEL_TABLE_MAINTE" ISN_2="1" LastIsn="30" id="531">
-          <LastModified _date="739708" _time="40396" date="02/04/2026" time="11:13:16"/>
+          <LastModified _date="739708" _time="51923" date="02/04/2026" time="14:25:23"/>
           <Public val="Prg_202"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -287,8 +287,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="N"/>
-            <TransactionBegin val="P"/>
+            <TransactionMode val="O"/>
+            <TransactionBegin val="N"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -5002,7 +5002,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PRD001_MAITENANCE" ISN_2="5" LastIsn="30" id="531">
-            <LastModified _date="739705" _time="50715" date="30/03/2026" time="14:05:15"/>
+            <LastModified _date="739708" _time="51652" date="02/04/2026" time="14:20:52"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5372,7 +5372,7 @@
               <LockingStrategy val="M"/>
               <CacheStrategy val="D"/>
               <ForceRecordSuffix val="N"/>
-              <TransactionMode val="D"/>
+              <TransactionMode val="N"/>
               <TransactionBegin val="P"/>
               <PreloadView val="N"/>
               <AllowEmptyDataview val="N"/>
@@ -7805,7 +7805,7 @@
             <LogicUnit id="57" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
-              <Scope val="S"/>
+              <Scope val="T"/>
               <EngineDirective val="S"/>
               <ShowMessage val="Y"/>
               <Condition val="89"/>
@@ -7832,7 +7832,7 @@
             <LogicUnit id="58" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
-              <Scope val="S"/>
+              <Scope val="T"/>
               <EngineDirective val="S"/>
               <ShowMessage val="Y"/>
               <Condition val="89"/>
@@ -7865,6 +7865,14 @@
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </Update>
+                </LogicLine>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="2422" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Save" TitleTxt="Warning" VR_DISP="B">
+                    <AppendToErrorLog val="N"/>
+                    <Condition Exp="224"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </STP>
                 </LogicLine>
                 <LogicLine>
                   <Remark FlowIsn="709">
@@ -12616,6 +12624,10 @@
             <Expression id="210">
               <ExpSyntax val="'PLEASE INPUT MODEL CODE'"/>
               <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="224">
+              <ExpSyntax val="INIGet('[MAGIC_LOGICAL_NAMES]DEV')='D'"/>
+              <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
           <EVNT DESC="USRACTION19" FORCE_EXIT="N" id="1">
@@ -18778,7 +18790,7 @@
           </Task>
           <Task MainProgram="N">
             <Header Description="PRD026_MAITENANCE" ISN_2="10" LastIsn="30" id="531">
-              <LastModified _date="739705" _time="51271" date="30/03/2026" time="14:14:31"/>
+              <LastModified _date="739708" _time="51923" date="02/04/2026" time="14:25:23"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -20403,7 +20415,7 @@
               <LogicUnit id="10" propagate="78">
                 <Level val="H"/>
                 <Type val="U"/>
-                <Scope val="S"/>
+                <Scope val="T"/>
                 <EngineDirective val="S"/>
                 <ShowMessage val="Y"/>
                 <Condition val="89"/>
@@ -21378,7 +21390,7 @@
                       <Lock val="N"/>
                       <Arguments>
                         <Argument>
-                          <Variable val="31"/>
+                          <Expression val="64"/>
                           <Skip val="N"/>
                         </Argument>
                       </Arguments>
@@ -22038,6 +22050,10 @@
               <Expression id="63">
                 <ExpSyntax val="EmptyDataview(0)"/>
                 <ExpAttribute val="B"/>
+              </Expression>
+              <Expression id="64">
+                <ExpSyntax val="Trim({1,8})&amp; ' : ' &amp; Trim({0,31})"/>
+                <ExpAttribute val="A"/>
               </Expression>
             </Expressions>
             <EVNT DESC="btn_Save" FORCE_EXIT="N" id="1">
