@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="FRAMERANGE_UNHOLD_ENTRY" ISN_2="1" LastIsn="7" id="580">
-          <LastModified _date="739699" _time="68532" date="24/03/2026" time="19:02:12"/>
+          <LastModified _date="739709" _time="39794" date="03/04/2026" time="11:03:14"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="6"/>
+        <ItemIsn val="7"/>
         <Resource>
           <Columns>
             <Column id="1" name="V_FrameFrm">
@@ -84,6 +84,16 @@
                 <_Flip id="194"/>
               </PropertyList>
             </Column>
+            <Column id="7" name="v_SuccessMsg">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="255"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="255"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
           </Columns>
         </Resource>
         <Information>
@@ -110,7 +120,7 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="D"/>
+            <TransactionMode val="N"/>
             <TransactionBegin val="P"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="Y"/>
@@ -240,6 +250,19 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="7" FlowIsn="94" id="7">
+                  <Column val="7"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -289,6 +312,7 @@
               <EventType val="S"/>
             </Event>
             <TXT val="V_Frame_To_0001"/>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -306,6 +330,7 @@
                   <WithValue val="4"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -317,6 +342,7 @@
                   <WithValue val="2"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -324,6 +350,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="38" EndBlockSegment="36" FlowIsn="15" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="6"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -351,6 +378,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -358,6 +386,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="34" EndBlockSegment="34" FlowIsn="17" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="16"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -369,6 +398,7 @@
                   <WithValue val="12"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="14"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -380,6 +410,7 @@
                   <WithValue val="13"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="14"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -397,6 +428,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="15"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -410,6 +442,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="32" EndBlockSegment="29" FlowIsn="22" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="5"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -433,6 +466,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -444,6 +478,7 @@
                   <WithValue val="2"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -455,6 +490,7 @@
                   <WithValue val="2"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -463,6 +499,7 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="1" FlowIsn="27" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -475,6 +512,7 @@
                     <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -482,6 +520,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="32" EndBlockSegment="32" FlowIsn="29" Type="E">
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -496,13 +535,16 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="7" FlowIsn="31" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="32"/>
+                <END_BLK FlowIsn="32">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="33">
@@ -511,7 +553,9 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="34"/>
+                <END_BLK FlowIsn="34">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="35">
@@ -521,6 +565,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="38" EndBlockSegment="38" FlowIsn="36" Type="E">
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -529,13 +574,16 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="37" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Please enter correct VIN number" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="38"/>
+                <END_BLK FlowIsn="38">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -798,10 +846,9 @@
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="I"/>
-              <InternalEventID val="34"/>
+              <EventType val="U"/>
+              <PublicObject comp="-1" obj="1"/>
             </Event>
-            <TXT val="b_Submit"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -812,6 +859,17 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="183">
+                  <FieldID val="7"/>
+                  <WithValue val="2"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="66">
@@ -974,7 +1032,44 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="1" FlowIsn="80" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                <Update FlowIsn="95">
+                  <FieldID val="7"/>
+                  <WithValue val="1"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="96">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="368"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Skip val="Y"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="7"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="80" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1007,7 +1102,30 @@
                 </Remark>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="7" FlowIsn="84" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                <CallTask FlowIsn="97">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="369"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="4"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="84" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1040,7 +1158,41 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="90" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Please enter correct VIN number" TitleTxt="Warning" VR_DISP="B">
+                <Update FlowIsn="98">
+                  <FieldID val="4"/>
+                  <WithValue val="22"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="99">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="369"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="4"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="90" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1245,8 +1397,8 @@
                 <ControlName id="46" val="b_Submit"/>
                 <Format id="82" valUnicode="Submit"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="34"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="1"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -1329,7 +1481,16 @@
             <ExpSyntax val="'Are you sure you want to unlock?'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="22">
+            <ExpSyntax val="'Please enter correct VIN number'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
+        <EVNT DESC="Task_Submit" FORCE_EXIT="N" id="1">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
         <Task MainProgram="N">
           <Header Description="Create in dispatch Stop" ISN_2="3" LastIsn="7" id="580">
             <LastModified _date="739699" _time="67363" date="24/03/2026" time="18:42:43"/>
