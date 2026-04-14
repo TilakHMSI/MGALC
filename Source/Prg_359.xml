@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739706" _time="58878" date="31/03/2026" time="16:21:18"/>
+          <LastModified _date="739720" _time="57496" date="14/04/2026" time="15:58:16"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1798,6 +1798,9 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_RCMP_INFO>
+                    <v>686</v>
+                  </INT_RCMP_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -1805,7 +1808,7 @@
                 </Select>
               </LogicLine>
               <LogicLine>
-                <LNK Direction="A" EVL_CND="R" FlowIsn="68" Key="1" Mode="R" SortType="99" VIEW="49" VIEWS="30">
+                <LNK Direction="A" EVL_CND="R" FieldID="46" FlowIsn="68" Key="1" Mode="R" SortType="99" VIEW="49" VIEWS="30">
                   <DB comp="-1" obj="5"/>
                   <Condition val="Y"/>
                 </LNK>
@@ -2154,6 +2157,9 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_RCMP_INFO>
+                    <v>686</v>
+                  </INT_RCMP_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="N"/>
                   <Modifier val="B"/>
@@ -2166,6 +2172,9 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_RCMP_INFO>
+                    <v>686</v>
+                  </INT_RCMP_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="N"/>
                   <Modifier val="B"/>
@@ -5080,7 +5089,7 @@
         </TaskForms>
         <Expressions>
           <Expression id="1">
-            <ExpSyntax val="IF({0,10}&lt;>' ',IF(Len(Trim({0,10}))=12,Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7')),&#xD;&#xA;Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7P0'))),' ')"/>
+            <ExpSyntax val="IF({0,10}&lt;>' ',IF(Len(Trim({0,10}))=12,Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7')),&#xD;&#xA;IF({0,46},Trim ({0,75})&amp;' '&amp;Trim (Str ({0,76},'7P0')),Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7P0')))),' ')"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="2">

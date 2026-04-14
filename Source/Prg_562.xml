@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="STOCK_IN_PROCESS" ISN_2="1" LastIsn="26" id="562">
-          <LastModified _date="739716" _time="65333" date="10/04/2026" time="18:08:53"/>
+          <LastModified _date="739720" _time="64419" date="14/04/2026" time="17:53:39"/>
           <Public val="Prg_246"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -510,7 +510,7 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="D"/>
+            <TransactionMode val="N"/>
             <TransactionBegin val="P"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
@@ -2322,6 +2322,18 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="687">
+                  <FieldID val="1"/>
+                  <WithValue val="59"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="2"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="208" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="2"/>
@@ -2360,6 +2372,18 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="688">
+                  <FieldID val="1"/>
+                  <WithValue val="59"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="4"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="211" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
@@ -2461,6 +2485,38 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <RaiseEvent FlowIsn="775">
+                  <Event>
+                    <EventType val="S"/>
+                    <KeyCombinationID val="8"/>
+                  </Event>
+                  <Wait val="89"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="6"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="852">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="689">
+                  <FieldID val="1"/>
+                  <WithValue val="59"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="6"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="218" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="6"/>
@@ -2521,6 +2577,15 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="80" FlowIsn="597" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="223">
                   <OperationType val="P"/>
                   <Event>
@@ -2545,6 +2610,18 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="690">
+                  <FieldID val="1"/>
+                  <WithValue val="59"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="20"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="224" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
@@ -2822,6 +2899,18 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="691">
+                  <FieldID val="1"/>
+                  <WithValue val="59"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="44"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="549" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
@@ -3231,6 +3320,18 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="661">
+                  <Parent val="32768"/>
+                  <FieldID val="540"/>
+                  <WithValue val="81"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <RaiseEvent FlowIsn="204">
                   <Event>
                     <EventType val="I"/>
@@ -3434,6 +3535,13 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
+                <BLOCK EndBlock="683" EndBlockSegment="683" FlowIsn="682" Type="I">
+                  <Condition Exp="83"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="256">
                   <FieldID val="1"/>
                   <WithValue val="59"/>
@@ -3443,6 +3551,17 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="683"/>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="681">
+                  <Expression val="82"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -3473,7 +3592,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="76" _last_test_id="76" id="1">
+          <FormEntry _last_isn="77" _last_test_id="77" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <Width id="23" val="882"/>
               <Height id="24" val="488"/>
@@ -3488,7 +3607,7 @@
               <FormName id="311" valUnicode="IN_PROCESS"/>
               <_TabbingOrder id="318" val="2"/>
               <WindowType id="358" val="12"/>
-              <ParkFirstOn id="743" valUnicode="CHASSIS_NOFrame"/>
+              <ParkFirstOn id="743"/>
             </PropertyList>
             <Control _test_id="1" id="1">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
@@ -4099,6 +4218,19 @@
                 <ControlName id="46" val="CHASSIS_NOFrame"/>
               </PropertyList>
             </Control>
+            <Control _test_id="77" id="77">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="540" Parent="32768"/>
+                </Model>
+                <X id="21" val="668"/>
+                <Y id="22" val="446"/>
+                <Width id="23" val="121"/>
+                <Height id="24" val="28"/>
+                <Data FieldID="540" Parent="32768" id="43"/>
+                <ControlName id="46" val="LastScanned"/>
+              </PropertyList>
+            </Control>
           </FormEntry>
         </TaskForms>
         <Expressions>
@@ -4168,6 +4300,10 @@
           </Expression>
           <Expression id="21">
             <ExpSyntax val="{0,95}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="80">
+            <ExpSyntax val="'ID ERROR : - '&amp;{0,95}"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="22">
@@ -4392,6 +4528,18 @@
           </Expression>
           <Expression id="79">
             <ExpSyntax val="LastClicked()='btnexit'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="81">
+            <ExpSyntax val="{0,1}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="82">
+            <ExpSyntax val="CtrlGoto('CHASSIS_NOFrame',0,0)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="83">
+            <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
