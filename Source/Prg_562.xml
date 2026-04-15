@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="STOCK_IN_PROCESS" ISN_2="1" LastIsn="26" id="562">
-          <LastModified _date="739720" _time="64419" date="14/04/2026" time="17:53:39"/>
+          <LastModified _date="739721" _time="37912" date="15/04/2026" time="10:31:52"/>
           <Public val="Prg_246"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -121,7 +121,7 @@
             <Column id="8" name="Chassis No.">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_NUMERIC" id="1"/>
-                <Picture id="157" valUnicode="7POZ"/>
+                <Picture id="157" valUnicode="7"/>
                 <_Dec id="181"/>
                 <_Whole id="182" val="7"/>
                 <_Negative id="192"/>
@@ -599,7 +599,7 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <Locate MAX="45" MIN="45"/>
+                  <Locate MAX="84" MIN="84"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="N"/>
                   <Modifier val="B"/>
@@ -725,6 +725,9 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_RCMP_INFO>
+                    <v>19</v>
+                  </INT_RCMP_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -2485,26 +2488,6 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <RaiseEvent FlowIsn="775">
-                  <Event>
-                    <EventType val="S"/>
-                    <KeyCombinationID val="8"/>
-                  </Event>
-                  <Wait val="89"/>
-                  <Disabled val="1"/>
-                  <Condition Exp="6"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </RaiseEvent>
-              </LogicLine>
-              <LogicLine>
-                <Evaluate FlowIsn="852">
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Evaluate>
-              </LogicLine>
-              <LogicLine>
                 <Update FlowIsn="689">
                   <FieldID val="1"/>
                   <WithValue val="59"/>
@@ -4263,7 +4246,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="8">
-            <ExpSyntax val="IF(Len(Trim({0,1}))=12,Left ({0,1},4),Left (Left ({0,1},11),8)&amp;' '&amp;Right (Left ({0,1},11),2))"/>
+            <ExpSyntax val="IF(Len(Trim({0,1}))=12,&#xD;&#xA;Left ({0,1},4),&#xD;&#xA;IF({0,11},Left (Left ({0,1},11),8)&amp;' '&amp;Right (Left ({0,1},11),2),&#xD;&#xA;Left (Trim({0,1}),11)))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="9">
@@ -4397,10 +4380,6 @@
           <Expression id="44">
             <ExpSyntax val="{0,100}&lt;>'' OR {0,101}&lt;>'' OR {0,102}&lt;>'' OR {0,103}&lt;>'' OR {0,104}&lt;>'' OR {0,105}&lt;>'' OR {0,106}&lt;>'' OR {0,107}&lt;>'' OR {0,108}&lt;>'' OR {0,109}&lt;>'' OR {0,110}&lt;>''"/>
             <ExpAttribute val="B"/>
-          </Expression>
-          <Expression id="45">
-            <ExpSyntax val="{0,126}"/>
-            <ExpAttribute val="A"/>
           </Expression>
           <Expression id="46">
             <ExpSyntax val="{0,97}='FALSE'LOG AND {0,99}='' AND {0,100}='' AND {0,101}='' AND {0,102}='' AND {0,103}='' AND {0,104}='' AND {0,105}='' AND {0,106}='' AND {0,107}='' AND {0,108}='' AND {0,109}='' AND {0,110}=''"/>
@@ -4541,6 +4520,10 @@
           <Expression id="83">
             <ExpSyntax val="NOT IsFirstRecordCycle(0)"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="84">
+            <ExpSyntax val="{32768,550}"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
@@ -4770,7 +4753,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="FRAME CHECK IN FACTORY" ISN_2="4" LastIsn="26" id="562">
-            <LastModified _date="739716" _time="44728" date="10/04/2026" time="12:25:28"/>
+            <LastModified _date="739721" _time="37912" date="15/04/2026" time="10:31:52"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5469,7 +5452,7 @@
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="3">
-              <ExpSyntax val="CndRange ({1,11},MID ({1,1},9,1))"/>
+              <ExpSyntax val="CndRange ({1,11},IF(Len(Trim({1,1}))=12,'',MID ({1,1},9,1)))"/>
               <ExpAttribute val="A"/>
             </Expression>
             <Expression id="4">
