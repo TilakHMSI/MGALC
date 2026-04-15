@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="STOCK_IN_PROCESS" ISN_2="1" LastIsn="26" id="562">
-          <LastModified _date="739721" _time="37912" date="15/04/2026" time="10:31:52"/>
+          <LastModified _date="739721" _time="52129" date="15/04/2026" time="14:28:49"/>
           <Public val="Prg_246"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -696,7 +696,7 @@
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <Locate MAX="8" MIN="8"/>
+                  <Locate MAX="85" MIN="85"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="N"/>
                   <Modifier val="B"/>
@@ -4199,6 +4199,7 @@
                 <Height id="24" val="29"/>
                 <Data FieldID="1" id="43"/>
                 <ControlName id="46" val="CHASSIS_NOFrame"/>
+                <BindingLevel id="733" val="2"/>
               </PropertyList>
             </Control>
             <Control _test_id="77" id="77">
@@ -4243,6 +4244,10 @@
           </Expression>
           <Expression id="7">
             <ExpSyntax val="''"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="85">
+            <ExpSyntax val="IF(Len(Trim({0,1}))=12,&#xD;&#xA;Left ({0,1},4),&#xD;&#xA;Left (Left ({0,1},11),8)&amp;' '&amp;Right (Left ({0,1},11),2))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="8">

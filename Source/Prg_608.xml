@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VPRDS004(Printing Confir.)120" ISN_2="1" LastIsn="1" id="608">
-          <LastModified _date="739715" _time="51939" date="09/04/2026" time="14:25:39"/>
+        <Header Description="VPRDS004PrintingConfir120" ISN_2="1" LastIsn="1" id="608">
+          <LastModified _date="739721" _time="44304" date="15/04/2026" time="12:18:24"/>
           <Public val="Prg_120_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -24,7 +24,7 @@
             <ParametersAttributes/>
           </ReturnValue>
           <SqlWhereExist val="N"/>
-          <TaskType val="C"/>
+          <TaskType val="W"/>
           <Interactive val="Y"/>
           <External val="N"/>
           <Offline val="N"/>
@@ -140,7 +140,7 @@
             <AllowIndexChange val="Y"/>
             <AllowSorting val="Y"/>
             <AllowIOFiles val="N"/>
-            <TabbingCycle val="R"/>
+            <RecordCycle val="Y"/>
             <AllowEvents val="Y"/>
             <AllowIndexOptimization val="Y"/>
             <AllowLocationInQuery val="Y"/>
@@ -188,7 +188,7 @@
                   </INT_DIT_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -201,7 +201,7 @@
                   <_DitIndexForToolkit val="1"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -219,7 +219,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -234,7 +234,7 @@
                   </INT_DIT_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -252,7 +252,7 @@
                   <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -265,7 +265,7 @@
                   <_DitIndexForToolkit val="7"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -377,6 +377,134 @@
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="8" _last_test_id="8" id="1">
+            <PropertyList model="FORM_WEB_CLIENT">
+              <X id="21"/>
+              <Y id="22"/>
+              <Width id="23" val="178"/>
+              <Height id="24" val="112"/>
+              <FormUnits id="33" val="4"/>
+              <ShowGrid id="37"/>
+              <GridX id="38" val="1"/>
+              <GridY id="39" val="2"/>
+              <_Comment id="218"/>
+              <FormName id="311" valUnicode="VPRDS004PrintingConfir120"/>
+              <_TabbingOrder id="318" val="2"/>
+              <WindowType id="358" val="12"/>
+            </PropertyList>
+            <Control _test_id="1" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="2"/>
+                </Model>
+                <X id="21" val="96"/>
+                <Width id="23" val="20"/>
+                <Height id="24" val="13"/>
+                <Data FieldID="2" id="43"/>
+                <ControlName id="46" val="V_LOCATE_P"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="2" id="2">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="PGM=VPRDS004"/>
+                <X id="21" val="116"/>
+                <Width id="23" val="60"/>
+                <Height id="24" val="13"/>
+                <ControlName id="46" val="Label2"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="3" id="3">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="78"/>
+                <Y id="22" val="13"/>
+                <Width id="23" val="53"/>
+                <Height id="24" val="13"/>
+                <Data Exp="1" id="43"/>
+                <ControlName id="46" val="Edit3"/>
+                <Visible id="61"/>
+                <Format Exp="6" id="82" valUnicode="DD-MM-YYYY"/>
+                <Attribute id="83" val="68"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="4" id="4">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="133"/>
+                <Y id="22" val="13"/>
+                <Width id="23" val="44"/>
+                <Height id="24" val="13"/>
+                <Data Exp="2" id="43"/>
+                <ControlName id="46" val="Edit4"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="HH:MM:SS"/>
+                <Attribute id="83" val="84"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="5" id="5">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="9"/>
+                <Y id="22" val="34"/>
+                <Width id="23" val="160"/>
+                <Height id="24" val="26"/>
+                <Data Exp="5" id="43"/>
+                <ControlName id="46" val="Edit5"/>
+                <Visible id="61"/>
+                <MultiLineEdit id="71" val="Y"/>
+                <Format id="82" valUnicode="64"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="6" id="6">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="READY TO PRINT ?"/>
+                <X id="21" val="49"/>
+                <Y id="22" val="63"/>
+                <Width id="23" val="80"/>
+                <Height id="24" val="13"/>
+                <ControlName id="46" val="Label6"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="7" id="7">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="6"/>
+                </Model>
+                <X id="21" val="23"/>
+                <Y id="22" val="88"/>
+                <Width id="23" val="50"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="6" id="43"/>
+                <ControlName id="46" val="BUTTON_OK"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="OK"/>
+                <ImageFile id="88" val="????"/>
+                <RaiseEvent id="234">
+                  <EventType val="U"/>
+                  <Parent val="32768"/>
+                  <PublicObject comp="-1" obj="1"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="8" id="8">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="108"/>
+                <Y id="22" val="88"/>
+                <Width id="23" val="50"/>
+                <Height id="24" val="20"/>
+                <ControlName id="46" val="btn_Exit"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="NO"/>
+                <ImageFile id="88" val="????"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="14"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
+          </FormEntry>
+        </TaskForms>
+        <TaskForms>
+          <FormEntry _last_isn="8" _last_test_id="8" id="2">
             <PropertyList model="FORM_RICH_CLIENT">
               <X id="21" val="124"/>
               <Y id="22" val="101"/>
