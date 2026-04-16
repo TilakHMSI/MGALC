@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VQMS005_DefectsPicklist" ISN_2="1" LastIsn="4" id="552">
-          <LastModified _date="739706" _time="46245" date="31/03/2026" time="12:50:45"/>
+          <LastModified _date="739722" _time="45686" date="16/04/2026" time="12:41:26"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -363,6 +363,7 @@
               <FormName id="311" valUnicode="DEFECTSPICKLIST"/>
               <_TabbingOrder id="318" val="2"/>
               <WindowType id="358" val="12"/>
+              <ParkFirstOn id="743" valUnicode="vSearch"/>
             </PropertyList>
             <Control PDOD="128" _test_id="12" id="12">
               <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
@@ -429,7 +430,7 @@
         </TaskForms>
         <Expressions>
           <Expression id="3">
-            <ExpSyntax val="'DEFECTDESCRIPTION like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,10}))&amp;'%'&amp;{32768,3}"/>
+            <ExpSyntax val="'DEFECTCODE like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,10}))&amp;'%'&amp;{32768,3} &amp;' OR '&#xD;&#xA;&amp;'DEFECTDESCRIPTION like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,10}))&amp;'%'&amp;{32768,3}"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="4">
@@ -439,7 +440,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="Picklist" ISN_2="4" LastIsn="4" id="552">
-            <LastModified _date="739701" _time="62371" date="26/03/2026" time="17:19:31"/>
+            <LastModified _date="739722" _time="45686" date="16/04/2026" time="12:41:26"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -963,10 +964,6 @@
             </Expression>
             <Expression id="2">
               <ExpSyntax val="{1,1}"/>
-              <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="3">
-              <ExpSyntax val="{1,11}"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
