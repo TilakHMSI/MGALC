@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VQMS005_DefectsPicklist" ISN_2="1" LastIsn="4" id="552">
-          <LastModified _date="739722" _time="48179" date="16/04/2026" time="13:22:59"/>
+          <LastModified _date="739723" _time="53882" date="17/04/2026" time="14:58:02"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -193,6 +193,9 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
+                  <INT_RCMP_INFO>
+                    <v>15</v>
+                  </INT_RCMP_INFO>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -207,6 +210,7 @@
               </LogicLine>
               <LogicLine>
                 <Select FieldID="10" FlowIsn="15" id="10">
+                  <ASS val="6"/>
                   <Column val="3"/>
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
@@ -249,7 +253,7 @@
               <LogicLine>
                 <Update FlowIsn="17">
                   <FieldID val="11"/>
-                  <WithValue val="3"/>
+                  <WithValue val="7"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
                   <Condition val="Y"/>
@@ -531,14 +535,26 @@
             <ExpSyntax val="'DEFECTCODE like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,10}))&amp;'%'&amp;{32768,3} &amp;' OR '&#xD;&#xA;&amp;'DEFECTDESCRIPTION like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,10}))&amp;'%'&amp;{32768,3}"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="7">
+            <ExpSyntax val="'DEFECTCODE like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,2}))&amp;'%'&amp;{32768,3} &amp;' OR '&#xD;&#xA;&amp;'DEFECTDESCRIPTION like '&amp;{32768,3}&amp;'%'&amp;Upper(Trim({0,2}))&amp;'%'&amp;{32768,3}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="4">
             <ExpSyntax val="'Sub1'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="5">
+            <ExpSyntax val="{0,1}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="6">
+            <ExpSyntax val="{0,2}"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="Picklist" ISN_2="4" LastIsn="4" id="552">
-            <LastModified _date="739722" _time="45686" date="16/04/2026" time="12:41:26"/>
+            <LastModified _date="739723" _time="53558" date="17/04/2026" time="14:52:38"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -598,7 +614,7 @@
               <TransactionMode val="N"/>
               <TransactionBegin val="P"/>
               <PreloadView val="N"/>
-              <AllowEmptyDataview val="N"/>
+              <AllowEmptyDataview val="Y"/>
               <KeepCreatedContext val="N"/>
             </TaskProperties>
             <SIDE_WIN>
