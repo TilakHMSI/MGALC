@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VHMSO7624_Reprintentry_HMSI163" ISN_2="1" LastIsn="17" id="598">
-          <LastModified _date="739721" _time="42401" date="15/04/2026" time="11:46:41"/>
+          <LastModified _date="739722" _time="46225" date="16/04/2026" time="12:50:25"/>
           <Public val="Prg_163_RIA_C_XXX"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1300,6 +1300,24 @@
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Disabled val="1"/>
+                  <Condition Exp="14"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="140">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="154"/>
+                  <Lock val="N"/>
+                  <Wait val="Y"/>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
@@ -2647,7 +2665,7 @@
                 <ChoiceColumns id="67" val="2"/>
                 <Multiline id="71"/>
                 <TabOrder id="314" val="2"/>
-                <AllowParking Exp="4" id="315"/>
+                <AllowParking Exp="30" id="315"/>
                 <AllowedDirection id="317" val="1"/>
               </PropertyList>
             </Control>
@@ -2720,6 +2738,10 @@
             <ExpSyntax val="Flow ('P') OR NOT ({0,18})"/>
             <ExpAttribute val="*"/>
           </Expression>
+          <Expression id="30">
+            <ExpSyntax val="NOT ({0,18})"/>
+            <ExpAttribute val="B"/>
+          </Expression>
           <Expression id="5">
             <ExpSyntax val="'TRUE'LOG"/>
             <ExpAttribute val="B"/>
@@ -2757,7 +2779,11 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="14">
-            <ExpSyntax val="{0,11}&lt;>'' AND {0,16}&lt;>'DEL' AND {0,19}='ADDITION' OR {0,11}&lt;>'' AND LastClicked ()&lt;>'DEL' AND {0,19}='ADDITION'"/>
+            <ExpSyntax val="{0,11}&lt;>'' AND {0,16}&lt;>'DEL' AND  {0,19}='ADDITION' OR {0,11}&lt;>''  AND {0,19}='ADDITION'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="29">
+            <ExpSyntax val="{0,11}&lt;>'' AND {0,16}&lt;>'DEL' AND LastClicked ()&lt;>'DEL' AND {0,19}='ADDITION' OR {0,11}&lt;>''  AND {0,19}='ADDITION'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="15">
@@ -9378,7 +9404,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="CONFIRM" ISN_2="12" LastIsn="17" id="598">
-            <LastModified _date="739721" _time="41518" date="15/04/2026" time="11:31:58"/>
+            <LastModified _date="739722" _time="46190" date="16/04/2026" time="12:49:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -9680,6 +9706,54 @@
                   <LastDivider id="260" val="Y"/>
                 </PropertyList>
               </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="11" id="11">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="91"/>
+                  <ControlLayer id="25" val="1"/>
+                  <ControlName id="46" val="Column11"/>
+                  <ColumnTitle id="139" valUnicode="CHASSIS NO."/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="12" id="12">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="34"/>
+                  <ControlLayer id="25" val="2"/>
+                  <ControlName id="46" val="Column12"/>
+                  <ColumnTitle id="139" valUnicode="QTY"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="13" id="13">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="24"/>
+                  <ControlLayer id="25" val="3"/>
+                  <ControlName id="46" val="Column13"/>
+                  <ColumnTitle id="139" valUnicode="EFM"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="14" id="14">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="149"/>
+                  <ControlLayer id="25" val="4"/>
+                  <ControlName id="46" val="Column14"/>
+                  <ColumnTitle id="139" valUnicode="MODEL CODE"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="15" id="15">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="26"/>
+                  <ControlLayer id="25" val="5"/>
+                  <ControlName id="46" val="Column15"/>
+                  <ColumnTitle id="139" valUnicode="REP"/>
+                </PropertyList>
+              </Control>
+              <Control ISN_FATHER="10" PDOD="128" _test_id="16" id="16">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="93"/>
+                  <ControlLayer id="25" val="6"/>
+                  <ControlName id="46" val="Column16"/>
+                  <ColumnTitle id="139" valUnicode="NOTE"/>
+                </PropertyList>
+              </Control>
               <Control ISN_FATHER="6" _test_id="7" id="7">
                 <PropertyList model="CTRL_WEB_CLIENT_LABEL">
                   <X id="21" val="10"/>
@@ -9773,54 +9847,6 @@
                   <Visible id="61"/>
                 </PropertyList>
               </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="11" id="11">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="91"/>
-                  <ControlLayer id="25" val="1"/>
-                  <ControlName id="46" val="Column11"/>
-                  <ColumnTitle id="139" valUnicode="CHASSIS NO."/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="12" id="12">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="34"/>
-                  <ControlLayer id="25" val="2"/>
-                  <ControlName id="46" val="Column12"/>
-                  <ColumnTitle id="139" valUnicode="QTY"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="13" id="13">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="24"/>
-                  <ControlLayer id="25" val="3"/>
-                  <ControlName id="46" val="Column13"/>
-                  <ColumnTitle id="139" valUnicode="EFM"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="14" id="14">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="149"/>
-                  <ControlLayer id="25" val="4"/>
-                  <ControlName id="46" val="Column14"/>
-                  <ColumnTitle id="139" valUnicode="MODEL CODE"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="15" id="15">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="26"/>
-                  <ControlLayer id="25" val="5"/>
-                  <ControlName id="46" val="Column15"/>
-                  <ColumnTitle id="139" valUnicode="REP"/>
-                </PropertyList>
-              </Control>
-              <Control ISN_FATHER="10" PDOD="128" _test_id="16" id="16">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="93"/>
-                  <ControlLayer id="25" val="6"/>
-                  <ControlName id="46" val="Column16"/>
-                  <ColumnTitle id="139" valUnicode="NOTE"/>
-                </PropertyList>
-              </Control>
               <Control _test_id="22" id="22">
                 <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
                   <Model ID="MODEL_WEB_CLIENT" id="1">
@@ -9831,7 +9857,7 @@
                   <Width id="23" val="68"/>
                   <Height id="24" val="24"/>
                   <Data FieldID="1" id="43"/>
-                  <ControlName id="46" val="btn_Exit"/>
+                  <ControlName id="46" val="btn_OK"/>
                   <Visible id="61"/>
                   <RaiseEvent id="234">
                     <EventType val="I"/>
@@ -9849,7 +9875,7 @@
                   <Width id="23" val="68"/>
                   <Height id="24" val="24"/>
                   <Data FieldID="2" id="43"/>
-                  <ControlName id="46" val="btn_Exit"/>
+                  <ControlName id="46" val="btn_No"/>
                   <Visible id="61"/>
                   <RaiseEvent id="234">
                     <EventType val="I"/>
