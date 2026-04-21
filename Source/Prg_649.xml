@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="MAINTAINHRLYPRLDUCTIONAE204" ISN_2="1" LastIsn="8" id="649">
-          <LastModified _date="739727" _time="58437" date="21/04/2026" time="16:13:57"/>
+          <LastModified _date="739727" _time="61869" date="21/04/2026" time="17:11:09"/>
           <Public val="Prg_204_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -466,7 +466,7 @@
             </PropertyList>
             <Control _test_id="1" id="1">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <Text id="19" valUnicode="MAINTAIN HOURLY PRLDUCTION PLAN MASTER AE"/>
+                <Text Exp="5" id="19" valUnicode="MAINTAIN HOURLY PRLDUCTION PLAN MASTER AE"/>
                 <X id="21" val="159"/>
                 <Y id="22" val="15"/>
                 <Width id="23" val="463"/>
@@ -582,10 +582,14 @@
             <ExpSyntax val="'Sub1'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="5">
+            <ExpSyntax val="'MAINTAIN HOURLY PRLDUCTION PLAN MASTER AE'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="PLANENTRY" ISN_2="2" LastIsn="8" id="649">
-            <LastModified _date="739727" _time="57397" date="21/04/2026" time="15:56:37"/>
+            <LastModified _date="739727" _time="61869" date="21/04/2026" time="17:11:09"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -689,7 +693,7 @@
             <EndTaskCondition val="N"/>
             <SkipLockedRecords val="N"/>
             <EvaluateEndCondition val="B"/>
-            <InitialMode val="E"/>
+            <InitialMode val="M"/>
             <Locate Direction="A"/>
             <Range Direction="A"/>
             <VarRange LastIsn="4"/>
@@ -711,7 +715,7 @@
               <AllowOptions val="Y"/>
               <AllowQuery val="Y"/>
               <AllowModify val="Y"/>
-              <AllowCreate val="Y"/>
+              <AllowCreate val="N"/>
               <AllowDelete val="Y"/>
               <AllowLocate val="Y"/>
               <AllowRange val="Y"/>
@@ -770,7 +774,6 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="2" FlowIsn="4" id="2">
-                    <ASS val="7"/>
                     <Column val="2"/>
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
@@ -784,7 +787,6 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="3" FlowIsn="5" id="3">
-                    <ASS val="12"/>
                     <Column val="3"/>
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
@@ -808,9 +810,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>9</v>
-                    </INT_RCMP_INFO>
                     <_DitIndexForToolkit val="12"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
@@ -824,10 +823,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>9</v>
-                      <v>27</v>
-                    </INT_RCMP_INFO>
                     <_DitIndexForToolkit val="13"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
@@ -837,14 +832,10 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="6" FlowIsn="9" id="6">
-                    <ASS val="1"/>
                     <Column val="1"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>22</v>
-                    </INT_RCMP_INFO>
                     <_DitIndexForToolkit val="14"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
@@ -882,9 +873,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>15</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -897,9 +885,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>15</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -908,14 +893,10 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="10" FlowIsn="15" id="10">
-                    <ASS val="2"/>
                     <Column val="3"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>22</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -940,9 +921,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>20</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -955,9 +933,6 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>20</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -966,14 +941,10 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="13" FlowIsn="20" id="13">
-                    <ASS val="3"/>
                     <Column val="4"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <INT_RCMP_INFO>
-                      <v>22</v>
-                    </INT_RCMP_INFO>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -988,7 +959,6 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="14" FlowIsn="22" id="14">
-                    <ASS val="4"/>
                     <Column val="5"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
@@ -1040,7 +1010,6 @@
                 </LogicLine>
                 <LogicLine>
                   <Select FieldID="17" FlowIsn="27" id="17">
-                    <ASS val="9"/>
                     <Column val="6"/>
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
@@ -1227,12 +1196,6 @@
                     <Modifier val="B"/>
                     <Direction val="C"/>
                   </RaiseEvent>
-                </LogicLine>
-                <LogicLine>
-                  <Remark FlowIsn="73">
-                    <Type val="2"/>
-                    <Text val=" "/>
-                  </Remark>
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
@@ -1469,29 +1432,9 @@
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="{0,5}-{0,4}"/>
-              <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="2">
-              <ExpSyntax val="{0,9}-{0,8}"/>
-              <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="3">
-              <ExpSyntax val="{0,12}-{0,11}"/>
-              <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="4">
-              <ExpSyntax val="{0,6}-{0,10}-{0,13}"/>
-              <ExpAttribute val="N"/>
-            </Expression>
             <Expression id="7">
               <ExpSyntax val="{1,1}"/>
               <ExpAttribute val="A"/>
-            </Expression>
-            <Expression id="9">
-              <ExpSyntax val="{0,5}"/>
-              <ExpAttribute val="T"/>
             </Expression>
             <Expression id="12">
               <ExpSyntax val="{1,2}"/>
