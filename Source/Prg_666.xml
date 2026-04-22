@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="PRD HOLD FRAME REPORT240" ISN_2="1" LastIsn="2" id="666">
-          <LastModified _date="739715" _time="58024" date="09/04/2026" time="16:07:04"/>
+        <Header Description="PRDHOLDFRAMEREPORT240" ISN_2="1" LastIsn="2" id="666">
+          <LastModified _date="739727" _time="41834" date="21/04/2026" time="11:37:14"/>
           <Public val="Prg_240_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -24,7 +24,7 @@
             <ParametersAttributes/>
           </ReturnValue>
           <SqlWhereExist val="N"/>
-          <TaskType val="C"/>
+          <TaskType val="W"/>
           <Interactive val="Y"/>
           <External val="N"/>
           <Offline val="N"/>
@@ -112,8 +112,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="O"/>
-            <TransactionBegin val="N"/>
+            <TransactionMode val="N"/>
+            <TransactionBegin val="P"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -129,7 +129,7 @@
             <AllowIndexChange val="Y"/>
             <AllowSorting val="Y"/>
             <AllowIOFiles val="N"/>
-            <TabbingCycle val="R"/>
+            <RecordCycle val="Y"/>
             <AllowEvents val="Y"/>
             <AllowIndexOptimization val="Y"/>
             <AllowLocationInQuery val="Y"/>
@@ -176,7 +176,7 @@
                   <_DitIndexForToolkit val="9"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -199,7 +199,7 @@
                   <_DitIndexForToolkit val="5"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -213,7 +213,7 @@
                   <_DitIndexForToolkit val="7"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -245,7 +245,7 @@
                   <_DitIndexForToolkit val="10"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -265,7 +265,7 @@
                   <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
-                  <Modifier val="S"/>
+                  <Modifier val="B"/>
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
@@ -329,7 +329,7 @@
             <Event>
               <EventType val="S"/>
             </Event>
-            <TXT val="Plan_date To"/>
+            <TXT val="Plan_date_To"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -337,7 +337,7 @@
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="4"/>
                   <Modifier val="B"/>
-                  <Direction val="F"/>
+                  <Direction val="C"/>
                 </STP>
               </LogicLine>
             </LogicLines>
@@ -354,7 +354,7 @@
               <Parent val="32768"/>
               <PublicObject comp="-1" obj="1"/>
             </Event>
-            <TXT val="Button Execute"/>
+            <TXT val="Button_Execute"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -367,6 +367,7 @@
                   <Lock val="Y"/>
                   <Wait val="Y"/>
                   <SyncData val="N"/>
+                  <IsRoute val="N"/>
                   <RetainFocus val="N"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -397,7 +398,7 @@
             <Event>
               <EventType val="S"/>
             </Event>
-            <TXT val="Button Execute"/>
+            <TXT val="Button_Execute"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -405,7 +406,7 @@
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="4"/>
                   <Modifier val="B"/>
-                  <Direction val="B"/>
+                  <Direction val="C"/>
                 </STP>
               </LogicLine>
             </LogicLines>
@@ -413,6 +414,174 @@
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="11" _last_test_id="11" id="1">
+            <PropertyList model="FORM_WEB_CLIENT">
+              <X id="21"/>
+              <Y id="22"/>
+              <Width id="23" val="358"/>
+              <Height id="24" val="211"/>
+              <FormUnits id="33" val="4"/>
+              <VerticalFactor id="34" val="1"/>
+              <HorizontalFactor id="35" val="1"/>
+              <ShowGrid id="37"/>
+              <GridX id="38" val="2"/>
+              <GridY id="39" val="2"/>
+              <_WindowSort id="133"/>
+              <_Comment id="218"/>
+              <FormName id="311" valUnicode="Prd_hold_frameReport"/>
+              <_TabbingOrder id="318" val="2"/>
+              <WindowType id="358" val="12"/>
+            </PropertyList>
+            <Control _test_id="1" id="1">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <X id="21" val="11"/>
+                <Y id="22" val="19"/>
+                <Width id="23" val="332"/>
+                <Height id="24" val="182"/>
+                <ControlName id="46" val="Label1"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="2" id="2">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="RANGE CRITERIA :"/>
+                <X id="21" val="33"/>
+                <Y id="22" val="39"/>
+                <Width id="23" val="136"/>
+                <Height id="24" val="16"/>
+                <ControlName id="46" val="Label2"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="3" id="3">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <X id="21" val="29"/>
+                <Y id="22" val="74"/>
+                <Width id="23" val="280"/>
+                <Height id="24" val="39"/>
+                <ControlName id="46" val="Label3"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="4" id="4">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="From"/>
+                <X id="21" val="51"/>
+                <Y id="22" val="87"/>
+                <Width id="23" val="35"/>
+                <Height id="24" val="15"/>
+                <ControlName id="46" val="Label4"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="5" id="5">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="2"/>
+                </Model>
+                <X id="21" val="100"/>
+                <Y id="22" val="87"/>
+                <Width id="23" val="79"/>
+                <Height id="24" val="16"/>
+                <Data FieldID="2" id="43"/>
+                <ControlName id="46" val="Plan_date_From"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="DD/MM/YYYY"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="6" id="6">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="To"/>
+                <X id="21" val="190"/>
+                <Y id="22" val="87"/>
+                <Width id="23" val="20"/>
+                <Height id="24" val="15"/>
+                <ControlName id="46" val="Label6"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="7" id="7">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="3"/>
+                </Model>
+                <X id="21" val="220"/>
+                <Y id="22" val="87"/>
+                <Width id="23" val="79"/>
+                <Height id="24" val="16"/>
+                <Data FieldID="3" id="43"/>
+                <ControlName id="46" val="Plan_date_To"/>
+                <Visible id="61"/>
+                <Format id="82" valUnicode="DD/MM/YYYY"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="8" id="8">
+              <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                <Text id="19" valUnicode="Path:- C:\Magic\Temp\Hold_frame_list.txt"/>
+                <X id="21" val="29"/>
+                <Y id="22" val="125"/>
+                <Width id="23" val="280"/>
+                <Height id="24" val="15"/>
+                <ControlName id="46" val="Label8"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="9" id="9">
+              <PropertyList model="CTRL_WEB_CLIENT_COMBOBOX">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="1"/>
+                </Model>
+                <X id="21" val="183"/>
+                <Y id="22" val="37"/>
+                <Width id="23" val="122"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="1" id="43"/>
+                <ItemsList id="45" valUnicode="PLAN DATE, INDICATION DATE, HOLD DATE"/>
+                <ControlName id="46" val="Selection"/>
+                <Visible id="61"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="10" id="10">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="4"/>
+                </Model>
+                <X id="21" val="60"/>
+                <Y id="22" val="152"/>
+                <Width id="23" val="96"/>
+                <Height id="24" val="23"/>
+                <Data FieldID="4" id="43"/>
+                <ControlName id="46" val="Button_Execute"/>
+                <Visible id="61"/>
+                <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="34"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
+            <Control _test_id="11" id="11">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="5"/>
+                </Model>
+                <X id="21" val="200"/>
+                <Y id="22" val="152"/>
+                <Width id="23" val="96"/>
+                <Height id="24" val="23"/>
+                <Data FieldID="5" id="43"/>
+                <ControlName id="46" val="Button_Cancel"/>
+                <Visible id="61"/>
+                <ImageFile id="88" val="Button"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="14"/>
+                </RaiseEvent>
+              </PropertyList>
+            </Control>
+          </FormEntry>
+        </TaskForms>
+        <TaskForms>
+          <FormEntry _last_isn="11" _last_test_id="11" id="2">
             <PropertyList model="FORM_RICH_CLIENT">
               <X id="21" val="609"/>
               <Y id="22" val="292"/>
@@ -645,8 +814,8 @@
           </Expression>
         </Expressions>
         <Task MainProgram="N">
-          <Header Description="PRD_HOLD_FRAME" ISN_2="2" id="666">
-            <LastModified _date="739715" _time="58019" date="09/04/2026" time="16:06:59"/>
+          <Header Description="PRD_HOLD_FRAME" ISN_2="2" LastIsn="2" id="666">
+            <LastModified _date="739727" _time="41820" date="21/04/2026" time="11:37:00"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>

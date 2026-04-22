@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="DISPLAYBOARDMONITOR236" ISN_2="1" LastIsn="7" id="664">
-          <LastModified _date="739721" _time="64315" date="15/04/2026" time="17:51:55"/>
+          <LastModified _date="739727" _time="65662" date="21/04/2026" time="18:14:22"/>
           <Public val="Prg_236_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -116,8 +116,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="N"/>
-            <TransactionBegin val="P"/>
+            <TransactionMode val="O"/>
+            <TransactionBegin val="N"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -492,7 +492,6 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="6"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -587,41 +586,6 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
-              <LogicLine>
-                <RaiseEvent FlowIsn="35">
-                  <Event>
-                    <EventType val="I"/>
-                    <InternalEventID val="63"/>
-                  </Event>
-                  <Wait val="78"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </RaiseEvent>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="8" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="VWorkstatione"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="36" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="Please Select Workstationes !!!!" TitleTxt="Error" VR_DISP="B">
-                  <AppendToErrorLog val="Y"/>
-                  <Condition Exp="4"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </STP>
-              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="9" propagate="78">
@@ -663,44 +627,24 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <RaiseEvent FlowIsn="38">
-                  <Event>
-                    <EventType val="I"/>
-                    <InternalEventID val="63"/>
-                  </Event>
-                  <Wait val="78"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </RaiseEvent>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="10" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="VProd"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <CallTask FlowIsn="41">
-                  <OperationType val="T"/>
+                <CallTask FlowIsn="49">
+                  <OperationType val="P"/>
                   <Event>
                     <EventType val="N"/>
                   </Event>
-                  <TaskID comp="-1" obj="4"/>
+                  <TaskID comp="-1" obj="638"/>
                   <Lock val="Y"/>
+                  <Arguments>
+                    <Argument>
+                      <Variable val="2"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
                   <Wait val="Y"/>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -709,16 +653,17 @@
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="11" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
             <EngineDirective val="S"/>
             <ShowMessage val="Y"/>
             <Condition val="89"/>
             <Event>
-              <EventType val="S"/>
+              <EventType val="U"/>
+              <Parent val="32768"/>
+              <PublicObject comp="-1" obj="12"/>
             </Event>
-            <TXT val="VOK"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -883,23 +828,22 @@
                 <Visible id="61"/>
                 <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="42"/>
+                  <EventType val="U"/>
+                  <Parent val="32768"/>
+                  <PublicObject comp="-1" obj="12"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
-            <Control _test_id="9" id="9">
+            <Control PDOD="128" _test_id="9" id="9">
               <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                <Model ID="MODEL_WEB_CLIENT" id="1">
-                  <Var FieldID="24"/>
-                </Model>
                 <X id="21" val="230"/>
                 <Y id="22" val="189"/>
                 <Width id="23" val="111"/>
                 <Height id="24" val="30"/>
-                <Data FieldID="24" id="43"/>
-                <ControlName id="46" val="VExit"/>
+                <Data id="43"/>
+                <ControlName id="46" val="btnexit"/>
                 <Visible id="61"/>
+                <Format id="82" valUnicode="back"/>
                 <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
                   <EventType val="I"/>
@@ -941,7 +885,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="WorkstationePicklist" ISN_2="2" LastIsn="7" id="664">
-            <LastModified _date="739721" _time="63987" date="15/04/2026" time="17:46:27"/>
+            <LastModified _date="739727" _time="63218" date="21/04/2026" time="17:33:38"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -1166,12 +1110,12 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="3" _last_test_id="3" id="1">
+            <FormEntry _last_isn="4" _last_test_id="4" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
-                <Width id="23" val="164"/>
-                <Height id="24" val="200"/>
+                <Width id="23" val="205"/>
+                <Height id="24" val="273"/>
                 <FormUnits id="33" val="4"/>
                 <VerticalFactor id="34" val="1"/>
                 <HorizontalFactor id="35" val="1"/>
@@ -1222,6 +1166,22 @@
                   <Visible id="61"/>
                 </PropertyList>
               </Control>
+              <Control PDOD="128" _test_id="4" id="4">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="116"/>
+                  <Y id="22" val="217"/>
+                  <Width id="23" val="69"/>
+                  <Height id="24" val="30"/>
+                  <ControlName id="46" val="btnexit"/>
+                  <Visible id="61"/>
+                  <Format id="82" valUnicode="back"/>
+                  <ImageFile id="88" val="Button"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="14"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
             </FormEntry>
           </TaskForms>
           <Expressions>
@@ -1233,7 +1193,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PRODUCTINLINEPICKLIST" ISN_2="3" LastIsn="7" id="664">
-            <LastModified _date="739721" _time="64293" date="15/04/2026" time="17:51:33"/>
+            <LastModified _date="739727" _time="63234" date="21/04/2026" time="17:33:54"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -1386,7 +1346,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="2"/>
+                    <_DitIndexForToolkit val="3"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -1458,12 +1418,12 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="3" _last_test_id="3" id="1">
+            <FormEntry _last_isn="4" _last_test_id="4" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
-                <Width id="23" val="173"/>
-                <Height id="24" val="207"/>
+                <Width id="23" val="182"/>
+                <Height id="24" val="279"/>
                 <FormUnits id="33" val="4"/>
                 <VerticalFactor id="34" val="1"/>
                 <HorizontalFactor id="35" val="1"/>
@@ -1490,6 +1450,14 @@
                   <LastDivider id="260" val="Y"/>
                 </PropertyList>
               </Control>
+              <Control ISN_FATHER="1" PDOD="128" _test_id="3" id="3">
+                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
+                  <Width id="23" val="87"/>
+                  <ControlLayer id="25" val="1"/>
+                  <ControlName id="46" val="Column3"/>
+                  <ColumnTitle id="139" valUnicode="Prod. Line"/>
+                </PropertyList>
+              </Control>
               <Control ISN_FATHER="1" _test_id="2" id="2">
                 <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                   <Model ID="MODEL_WEB_CLIENT_TBL" id="1">
@@ -1505,12 +1473,20 @@
                   <Visible id="61"/>
                 </PropertyList>
               </Control>
-              <Control ISN_FATHER="1" PDOD="128" _test_id="3" id="3">
-                <PropertyList model="CTRL_WEB_CLIENT_COLUMN">
-                  <Width id="23" val="87"/>
-                  <ControlLayer id="25" val="1"/>
-                  <ControlName id="46" val="Column3"/>
-                  <ColumnTitle id="139" valUnicode="Prod. Line"/>
+              <Control PDOD="128" _test_id="4" id="4">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="46"/>
+                  <Y id="22" val="221"/>
+                  <Width id="23" val="111"/>
+                  <Height id="24" val="30"/>
+                  <ControlName id="46" val="btnexit"/>
+                  <Visible id="61"/>
+                  <Format id="82" valUnicode="back"/>
+                  <ImageFile id="88" val="Button"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="14"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
             </FormEntry>
@@ -1524,7 +1500,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="TargetProdLine" ISN_2="4" LastIsn="7" id="664">
-            <LastModified _date="739721" _time="64280" date="15/04/2026" time="17:51:20"/>
+            <LastModified _date="739727" _time="65662" date="21/04/2026" time="18:14:22"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1816,13 +1792,13 @@
             <VarRange LastIsn="6"/>
             <TaskProperties>
               <SelectionTable val="N"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
               <CacheStrategy val="D"/>
               <ForceRecordSuffix val="N"/>
-              <TransactionMode val="D"/>
+              <TransactionMode val="N"/>
               <TransactionBegin val="P"/>
               <PreloadView val="N"/>
               <AllowEmptyDataview val="N"/>
@@ -2504,6 +2480,40 @@
                 <EventType val="S"/>
               </Event>
               <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="56">
+                    <OperationType val="T"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="7"/>
+                    <Lock val="N"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+                <LogicLine>
+                  <CallTask FlowIsn="57">
+                    <OperationType val="T"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="5"/>
+                    <Lock val="N"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>
@@ -2520,7 +2530,7 @@
             <LogicUnit id="7" propagate="78">
               <Level val="H"/>
               <Type val="U"/>
-              <Scope val="S"/>
+              <Scope val="T"/>
               <EngineDirective val="S"/>
               <ShowMessage val="Y"/>
               <Condition val="89"/>
@@ -2528,6 +2538,7 @@
                 <EventType val="T"/>
                 <Time val="5"/>
               </Event>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
@@ -2541,6 +2552,24 @@
                     <SyncData val="N"/>
                     <IsRoute val="N"/>
                     <RetainFocus val="N"/>
+                    <Disabled val="1"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+                <LogicLine>
+                  <CallTask FlowIsn="55">
+                    <OperationType val="T"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="5"/>
+                    <Lock val="N"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
@@ -2559,25 +2588,8 @@
                 <EventType val="T"/>
                 <Time val="5"/>
               </Event>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <CallTask FlowIsn="55">
-                    <OperationType val="T"/>
-                    <Event>
-                      <EventType val="N"/>
-                    </Event>
-                    <TaskID comp="-1" obj="5"/>
-                    <Lock val="N"/>
-                    <SyncData val="N"/>
-                    <IsRoute val="N"/>
-                    <RetainFocus val="N"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </CallTask>
-                </LogicLine>
-              </LogicLines>
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
@@ -2692,8 +2704,8 @@
                   <Model ID="MODEL_WEB_CLIENT" id="1">
                     <Var FieldID="45"/>
                   </Model>
-                  <X id="21" val="51"/>
-                  <Y id="22" val="126"/>
+                  <X id="21" val="137"/>
+                  <Y id="22" val="135"/>
                   <Width id="23" val="365"/>
                   <Height id="24" val="35"/>
                   <Data FieldID="45" id="43"/>
