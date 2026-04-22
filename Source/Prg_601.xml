@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB024_RePrintMENU_164" ISN_2="1" LastIsn="6" id="601">
-          <LastModified _date="739721" _time="44213" date="15/04/2026" time="12:16:53"/>
+          <LastModified _date="739728" _time="42370" date="22/04/2026" time="11:46:10"/>
           <Public val="Prg_164_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -731,7 +731,92 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
+          </LogicUnit>
+          <LogicUnit id="7" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="E"/>
+              <Exp val="19"/>
+            </Event>
+            <Disabled val="1"/>
+            <ExecuteOn_ val="O"/>
             <LogicLines>
+              <LogicLine>
+                <CallTask FlowIsn="98">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="621"/>
+                  <Lock val="N"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Disabled val="1"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="8" propagate="78">
+            <Level val="C"/>
+            <Type val="S"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <TXT val="CBX_FINVEHICLE_INSPSHEET_V"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <RaiseEvent FlowIsn="99">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="69"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="9" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="I"/>
+              <InternalEventID val="34"/>
+            </Event>
+            <TXT val="EXEC_BUTTON"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="100">
+                  <FieldID val="6"/>
+                  <WithValue val="10"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="33">
                   <Type val="2"/>
@@ -1554,91 +1639,17 @@
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="7" propagate="78">
-            <Level val="H"/>
-            <Type val="U"/>
-            <Scope val="T"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="E"/>
-              <Exp val="19"/>
-            </Event>
-            <Disabled val="1"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
               <LogicLine>
-                <CallTask FlowIsn="98">
-                  <OperationType val="P"/>
-                  <Event>
-                    <EventType val="N"/>
-                  </Event>
-                  <TaskID comp="-1" obj="621"/>
-                  <Lock val="N"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <RetainFocus val="N"/>
-                  <Disabled val="1"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </CallTask>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="8" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="CBX_FINVEHICLE_INSPSHEET_V"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <RaiseEvent FlowIsn="99">
+                <RaiseEvent FlowIsn="102">
                   <Event>
                     <EventType val="I"/>
-                    <InternalEventID val="69"/>
+                    <InternalEventID val="14"/>
                   </Event>
                   <Wait val="78"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="9" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="EXEC_BUTTON"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="100">
-                  <FieldID val="6"/>
-                  <WithValue val="10"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -3912,7 +3923,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="OldNewFormatForENGINE" ISN_2="6" LastIsn="6" id="601">
-            <LastModified _date="739721" _time="44213" date="15/04/2026" time="12:16:53"/>
+            <LastModified _date="739728" _time="42370" date="22/04/2026" time="11:46:10"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -4393,119 +4404,15 @@
                   <Height id="24" val="24"/>
                   <Data FieldID="3" id="43"/>
                   <ControlName id="46" val="v_4CARD_FORMAT"/>
-                  <Visible Exp="1" id="61"/>
                   <RaiseEvent id="234">
                     <EventType val="I"/>
                     <InternalEventID val="34"/>
                   </RaiseEvent>
-                </PropertyList>
-              </Control>
-            </FormEntry>
-          </TaskForms>
-          <TaskForms>
-            <FormEntry _last_isn="4" _last_test_id="4" id="2">
-              <PropertyList model="FORM_RICH_CLIENT">
-                <X id="21" val="128"/>
-                <Y id="22" val="146"/>
-                <Width id="23" val="303"/>
-                <Height id="24" val="95"/>
-                <SystemMenu id="27"/>
-                <MinimizeButton id="28"/>
-                <MaximizeButton id="29"/>
-                <_Comment id="218"/>
-                <FormName id="311"/>
-                <_TabbingOrder id="318" val="2"/>
-                <WindowType id="358" val="6"/>
-                <PersistentFormState id="493"/>
-              </PropertyList>
-              <Control _test_id="1" id="1">
-                <PropertyList model="CTRL_RICH_CLIENT_LABEL">
-                  <Text id="19" valUnicode="CHOOSE THE FORMAT IN WHICH CARDS ARE TO BE PRINTED"/>
-                  <X id="21" val="8"/>
-                  <Y id="22" val="8"/>
-                  <Width id="23" val="286"/>
-                  <Height id="24" val="10"/>
-                  <Font id="50" val="25"/>
-                  <Visible id="61"/>
-                  <Style id="63" val="7"/>
-                  <HorizontalAlignment id="65" val="2"/>
-                  <_VerticalScroll id="73"/>
-                  <_Orientation id="143"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="2" id="2">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="1"/>
-                  </Model>
-                  <X id="21" val="77"/>
-                  <Y id="22" val="25"/>
-                  <Width id="23" val="148"/>
-                  <Height id="24" val="15"/>
-                  <Data FieldID="1" id="43"/>
-                  <ControlName id="46" val="v. Old_new"/>
-                  <Font id="50" val="55"/>
-                  <Visible id="61"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
-                  </RaiseEvent>
-                  <TabOrder id="314" val="1"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="3" id="3">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="2"/>
-                  </Model>
-                  <X id="21" val="77"/>
-                  <Y id="22" val="48"/>
-                  <Width id="23" val="148"/>
-                  <Height id="24" val="15"/>
-                  <Data FieldID="2" id="43"/>
-                  <ControlName id="46" val="v. New_new"/>
-                  <Font id="50" val="55"/>
-                  <Visible id="61"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
-                  </RaiseEvent>
-                  <TabOrder id="314" val="2"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
-                </PropertyList>
-              </Control>
-              <Control _test_id="4" id="4">
-                <PropertyList model="CTRL_RICH_CLIENT_PUSH_BUTTON">
-                  <Model ID="MODEL_RICH_CLIENT" id="1">
-                    <Var FieldID="3"/>
-                  </Model>
-                  <X id="21" val="77"/>
-                  <Y id="22" val="71"/>
-                  <Width id="23" val="148"/>
-                  <Height id="24" val="15"/>
-                  <Data FieldID="3" id="43"/>
-                  <ControlName id="46" val="v. 4CARD FORMAT"/>
-                  <Font id="50" val="55"/>
-                  <Visible Exp="1" id="61"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
-                  </RaiseEvent>
-                  <TabOrder id="314" val="3"/>
-                  <AllowParking id="315" val="Y"/>
-                  <AllowedDirection id="317" val="1"/>
                 </PropertyList>
               </Control>
             </FormEntry>
           </TaskForms>
           <Expressions>
-            <Expression id="1">
-              <ExpSyntax val="Rights ('{406,-1}'RIGHT)"/>
-              <ExpAttribute val="B"/>
-            </Expression>
             <Expression id="2">
               <ExpSyntax val="' OLD FORMAT'"/>
               <ExpAttribute val="A"/>
