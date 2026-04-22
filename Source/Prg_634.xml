@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="COLORWISEINDICATIOINLIST176" ISN_2="1" LastIsn="3" id="634">
-          <LastModified _date="739727" _time="47257" date="21/04/2026" time="13:07:37"/>
+          <LastModified _date="739728" _time="56893" date="22/04/2026" time="15:48:13"/>
           <Public val="Prg_176_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -462,10 +462,8 @@
             <Condition val="89"/>
             <Event>
               <EventType val="U"/>
-              <Parent val="32768"/>
               <PublicObject comp="-1" obj="1"/>
             </Event>
-            <TXT val="v_Generate"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -474,7 +472,18 @@
                   <WithValue val="13"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="2"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="39">
+                  <FieldID val="10"/>
+                  <WithValue val="15"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="6"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -751,8 +760,8 @@
                 <Format id="82" valUnicode="Generate Report"/>
                 <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="34"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="1"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -956,6 +965,10 @@
             <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_ClrIndLst.XLS'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="15">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_ClrIndLst.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="2">
             <ExpSyntax val="{0,4}='X'"/>
             <ExpAttribute val="B"/>
@@ -997,9 +1010,14 @@
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
+        <EVNT DESC="Task_Generate" FORCE_EXIT="N" id="1">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
         <Task MainProgram="N">
-          <Header Description="Get Data Report" ISN_2="2" LastIsn="3" id="634">
-            <LastModified _date="739721" _time="56980" date="15/04/2026" time="15:49:40"/>
+          <Header Description="Get Data Report" ISN_2="2" LastIsn="2" id="634">
+            <LastModified _date="739728" _time="56893" date="22/04/2026" time="15:48:13"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1033,6 +1051,7 @@
             </DB>
             <IO id="1">
               <Description val="Report"/>
+              <IOExpression val="6"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -1041,8 +1060,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="P"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -1913,6 +1932,10 @@
             </Expression>
             <Expression id="5">
               <ExpSyntax val="{0,6}"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="6">
+              <ExpSyntax val="Trim({1,5})"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>

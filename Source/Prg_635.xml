@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="SHIFTWISE_AF_OFF_REPORT_177" ISN_2="1" LastIsn="4" id="635">
-          <LastModified _date="739727" _time="47141" date="21/04/2026" time="13:05:41"/>
+          <LastModified _date="739728" _time="57264" date="22/04/2026" time="15:54:24"/>
           <Public val="Prg_177_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -977,7 +977,18 @@
                   <WithValue val="23"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="17"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="116">
+                  <FieldID val="22"/>
+                  <WithValue val="25"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="16"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -1565,12 +1576,12 @@
             <ExpSyntax val="Trim ({0,18})"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="19">
-            <ExpSyntax val="'ShiftAf.csv'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="23">
             <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_ShiftAf.csv'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="25">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_ShiftAf.pdf'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="20">
@@ -1596,8 +1607,8 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="Report Generation Preview" ISN_2="2" LastIsn="4" id="635">
-            <LastModified _date="739721" _time="57065" date="15/04/2026" time="15:51:05"/>
+          <Header Description="Report Generation Preview" ISN_2="2" LastIsn="2" id="635">
+            <LastModified _date="739728" _time="57252" date="22/04/2026" time="15:54:12"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -1615,6 +1626,7 @@
           <Resource>
             <IO id="1">
               <Description val="Report"/>
+              <IOExpression val="5"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -1623,8 +1635,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="P"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -2390,11 +2402,15 @@
               <ExpSyntax val="Counter (0)"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="5">
+              <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({1,22})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Report Generation XL" ISN_2="3" LastIsn="4" id="635">
-            <LastModified _date="739727" _time="47141" date="21/04/2026" time="13:05:41"/>
+          <Header Description="Report Generation XL" ISN_2="3" LastIsn="3" id="635">
+            <LastModified _date="739728" _time="57260" date="22/04/2026" time="15:54:20"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -3074,10 +3090,6 @@
             <Expression id="4">
               <ExpSyntax val="Counter (0)"/>
               <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="5">
-              <ExpSyntax val="'C:\magic\temp\ShiftAf.csv'"/>
-              <ExpAttribute val="A"/>
             </Expression>
             <Expression id="6">
               <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({1,22})"/>
