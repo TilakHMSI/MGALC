@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="SANJEEVREPORT173" ISN_2="1" LastIsn="3" id="631">
-          <LastModified _date="739724" _time="45682" date="18/04/2026" time="12:41:22"/>
+          <LastModified _date="739727" _time="53835" date="21/04/2026" time="14:57:15"/>
           <Public val="Prg_173_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="32"/>
+        <ItemIsn val="33"/>
         <Resource>
           <Columns>
             <Column id="1" name="DATE_FLAG_P">
@@ -68,10 +68,14 @@
             </Column>
             <Column id="5" name="OUTPUT FILE NAME_V">
               <PropertyList model="FIELD">
-                <Model attr_obj="FIELD_ALPHA" comp="-1" id="1" obj="331"/>
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="500"/>
                 <CharSet id="172" val="1"/>
                 <StoredAs id="173" val="1"/>
+                <Size id="174" val="500"/>
                 <Definition id="175" val="2"/>
+                <_Flip id="194"/>
+                <_FieldStyle id="276" val="1"/>
               </PropertyList>
             </Column>
             <Column id="6" name="EXEC.STATUS">
@@ -381,6 +385,16 @@
                 <PartOfDataview id="449"/>
               </PropertyList>
             </Column>
+            <Column id="33" name="vSaveFileName">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="500"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="500"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
           </Columns>
         </Resource>
         <Information>
@@ -571,6 +585,7 @@
                   <IsParameter val="N"/>
                   <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="Y"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -980,6 +995,19 @@
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
                   <_DitIndexForToolkit val="10"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="33" FlowIsn="177" id="33">
+                  <Column val="33"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
                   <DIFF_UPDATE val="T"/>
                   <PartOfDataview val="N"/>
                   <Condition val="Y"/>
@@ -1680,10 +1708,26 @@
                 </Update>
               </LogicLine>
               <LogicLine>
-                <Remark FlowIsn="88">
-                  <Type val="2"/>
-                  <Text val=" "/>
-                </Remark>
+                <Update FlowIsn="88">
+                  <FieldID val="33"/>
+                  <WithValue val="31"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="178">
+                  <FieldID val="5"/>
+                  <WithValue val="27"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="89">
@@ -1704,7 +1748,7 @@
               <LogicLine>
                 <Update FlowIsn="129">
                   <FieldID val="30"/>
-                  <WithValue val="28"/>
+                  <WithValue val="33"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
                   <Condition val="Y"/>
@@ -2280,7 +2324,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="27">
-            <ExpSyntax val="Translate('%PRODREPORT%')&amp;'FACTORY_SALES_FNO.TXT'"/>
+            <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({0,33})"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="18">
@@ -2323,6 +2367,10 @@
             <ExpSyntax val="'FACTORY_SALES_FNO.TXT'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="31">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_FACTORY_SALES_FNO.TXT'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="29">
             <ExpSyntax val="File2Blb(Translate('%PRODREPORT%')&amp;Trim({0,30}))"/>
             <ExpAttribute val="O"/>
@@ -2331,6 +2379,14 @@
             <ExpSyntax val="BlobToBase64({0,31})"/>
             <ExpAttribute val="O"/>
           </Expression>
+          <Expression id="32">
+            <ExpSyntax val="{32768,110}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="33">
+            <ExpSyntax val="{0,33}"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="Task_EXEC" FORCE_EXIT="N" id="1">
           <Event>
@@ -2338,7 +2394,7 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="HD OUT" ISN_2="2" LastIsn="3" id="631">
+          <Header Description="HD OUT" ISN_2="2" LastIsn="2" id="631">
             <LastModified _date="739721" _time="50430" date="15/04/2026" time="14:00:30"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
