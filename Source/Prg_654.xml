@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VHMSO7624ReprintentryHMSI210" ISN_2="1" LastIsn="17" id="654">
-          <LastModified _date="739726" _time="65378" date="20/04/2026" time="18:09:38"/>
+          <LastModified _date="739728" _time="60366" date="22/04/2026" time="16:46:06"/>
           <Public val="Prg_210_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -995,6 +995,24 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <CallTask FlowIsn="318">
+                  <OperationType val="T"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="14"/>
+                  <Lock val="N"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
           <LogicUnit id="5" propagate="78">
             <Level val="R"/>
@@ -1020,6 +1038,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ConfirmEntry"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2025,8 +2044,7 @@
                   <Lock val="Y"/>
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
-                  <DestSubformName val="ConfirmEntry"/>
-                  <RetainFocus val="Y"/>
+                  <RetainFocus val="N"/>
                   <Condition Exp="19"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2063,10 +2081,29 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ConfirmEntry"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="319">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="30"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
               </LogicLine>
               <LogicLine>
                 <END_BLK FlowIsn="154"/>
@@ -2133,6 +2170,7 @@
               <EventType val="S"/>
             </Event>
             <TXT val="PRINT_BOTTON_V"/>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -2147,6 +2185,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ConfirmEntry"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2163,6 +2202,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2170,6 +2210,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="137" EndBlockSegment="137" FlowIsn="126" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="6"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2187,6 +2228,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ConfirmEntry"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="19"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2203,6 +2245,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="18"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2219,6 +2262,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="17"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2226,6 +2270,7 @@
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="132" EndBlockSegment="132" FlowIsn="130" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="15"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2234,13 +2279,16 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="131" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                   <AppendToErrorLog val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="16"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="132"/>
+                <END_BLK FlowIsn="132">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="133">
@@ -2253,6 +2301,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2269,6 +2318,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="26"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2285,6 +2335,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="26"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -2301,13 +2352,16 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="137"/>
+                <END_BLK FlowIsn="137">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -2457,7 +2511,7 @@
             </Control>
             <Control _test_id="9" id="9">
               <PropertyList model="CTRL_WEB_CLIENT_LABEL">
-                <Text id="19" valUnicode="PGM=VHMSO7624"/>
+                <Text Exp="31" id="19" valUnicode="PGM=VHMSO7624"/>
                 <X id="21" val="383"/>
                 <Y id="22" val="10"/>
                 <Width id="23" val="66"/>
@@ -2571,7 +2625,8 @@
                 <Height id="24" val="406"/>
                 <ControlName id="46" val="ConfirmEntry"/>
                 <Arguments id="126"/>
-                <ConnectTo id="156" val="4"/>
+                <ConnectTo id="156" val="2"/>
+                <TaskNumber comp="-1" id="183" obj="13"/>
               </PropertyList>
             </Control>
             <Control _test_id="17" id="17">
@@ -2714,6 +2769,14 @@
           <Expression id="29">
             <ExpSyntax val="LastClicked()='btnexit'"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="30">
+            <ExpSyntax val="'ConfirmEntry'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="31">
+            <ExpSyntax val="'PGM=VHMSO7624 : RE-PRINT ENTRY FVIS FE CARD '"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
