@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="AFTARGET_PROD_LINE229" ISN_2="1" LastIsn="4" id="660">
-          <LastModified _date="739721" _time="62995" date="15/04/2026" time="17:29:55"/>
+          <LastModified _date="739729" _time="67364" date="23/04/2026" time="18:42:44"/>
           <Public val="Prg_229_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -90,7 +90,7 @@
           <EndTaskCondition val="N"/>
           <SkipLockedRecords val="N"/>
           <EvaluateEndCondition val="B"/>
-          <InitialMode val="E"/>
+          <InitialMode val="M"/>
           <Locate Direction="A"/>
           <Range Direction="A"/>
           <VarRange/>
@@ -102,8 +102,8 @@
             <LockingStrategy val="M"/>
             <CacheStrategy val="D"/>
             <ForceRecordSuffix val="N"/>
-            <TransactionMode val="N"/>
-            <TransactionBegin val="P"/>
+            <TransactionMode val="O"/>
+            <TransactionBegin val="N"/>
             <PreloadView val="N"/>
             <AllowEmptyDataview val="N"/>
             <KeepCreatedContext val="N"/>
@@ -339,6 +339,20 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
+                <BLOCK EndBlock="25" EndBlockSegment="26" FlowIsn="24" Type="I">
+                  <Condition Exp="10"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <BLOCK EndBlock="25" EndBlockSegment="25" FlowIsn="26" Type="E">
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="19">
                   <OperationType val="P"/>
                   <Event>
@@ -417,6 +431,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="25"/>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -548,10 +565,14 @@
             <ExpSyntax val="'AF'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="10">
+            <ExpSyntax val="LastClicked()='btnexit'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="TargetProdLine" ISN_2="4" LastIsn="4" id="660">
-            <LastModified _date="739721" _time="60815" date="15/04/2026" time="16:53:35"/>
+            <LastModified _date="739729" _time="67364" date="23/04/2026" time="18:42:44"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -597,7 +618,7 @@
             <VarRange LastIsn="6"/>
             <TaskProperties>
               <SelectionTable val="N"/>
-              <ConfirmUpdate CNFU="Y"/>
+              <ConfirmUpdate CNFU="N"/>
               <ConfirmCancel val="N"/>
               <ErrorStrategy val="A"/>
               <LockingStrategy val="M"/>
@@ -792,59 +813,6 @@
                 <EventType val="S"/>
               </Event>
               <ExecuteOn_ val="O"/>
-            </LogicUnit>
-            <LogicUnit id="7" propagate="78">
-              <Level val="H"/>
-              <Type val="U"/>
-              <Scope val="T"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="U"/>
-                <Parent val="32768"/>
-                <PublicObject comp="-1" obj="1"/>
-              </Event>
-              <TXT val="VCancel"/>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="15">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="33"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
-                </LogicLine>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="16">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="32"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
-                </LogicLine>
-                <LogicLine>
-                  <RaiseEvent FlowIsn="17">
-                    <Event>
-                      <EventType val="I"/>
-                      <InternalEventID val="63"/>
-                    </Event>
-                    <Wait val="78"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </RaiseEvent>
-                </LogicLine>
-              </LogicLines>
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
