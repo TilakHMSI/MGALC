@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VEHICLEINDBUTNOAFOFF174" ISN_2="1" LastIsn="5" id="632">
-          <LastModified _date="739727" _time="47360" date="21/04/2026" time="13:09:20"/>
+          <LastModified _date="739728" _time="56354" date="22/04/2026" time="15:39:14"/>
           <Public val="Prg_174_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -507,10 +507,8 @@
             <Condition val="89"/>
             <Event>
               <EventType val="U"/>
-              <Parent val="32768"/>
               <PublicObject comp="-1" obj="1"/>
             </Event>
-            <TXT val="v_Generate"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -605,7 +603,18 @@
                   <WithValue val="24"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="27"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="79">
+                  <FieldID val="11"/>
+                  <WithValue val="26"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="28"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -956,8 +965,8 @@
                 <Format id="82" valUnicode="Generate Report"/>
                 <ImageFile id="88" val="Button"/>
                 <RaiseEvent id="234">
-                  <EventType val="I"/>
-                  <InternalEventID val="34"/>
+                  <EventType val="U"/>
+                  <PublicObject comp="-1" obj="1"/>
                 </RaiseEvent>
               </PropertyList>
             </Control>
@@ -1221,6 +1230,14 @@
             <ExpSyntax val="{0,1}='I' AND {0,4}='X'"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="27">
+            <ExpSyntax val="ExpCalc(11) OR ExpCalc(13)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="28">
+            <ExpSyntax val="ExpCalc(10) OR ExpCalc(12)"/>
+            <ExpAttribute val="B"/>
+          </Expression>
           <Expression id="14">
             <ExpSyntax val="'P'"/>
             <ExpAttribute val="A"/>
@@ -1239,6 +1256,10 @@
           </Expression>
           <Expression id="24">
             <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VehNotAF.XLS'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="26">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VehNotAF.pdf'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="16">
@@ -1270,9 +1291,14 @@
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
+        <EVNT DESC="Task_Generate" FORCE_EXIT="N" id="1">
+          <Event>
+            <EventType val="N"/>
+          </Event>
+        </EVNT>
         <Task MainProgram="N">
           <Header Description="Get Data Planning Date Report" ISN_2="2" LastIsn="5" id="632">
-            <LastModified _date="739721" _time="53551" date="15/04/2026" time="14:52:31"/>
+            <LastModified _date="739728" _time="56341" date="22/04/2026" time="15:39:01"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1298,6 +1324,7 @@
             </DB>
             <IO id="1">
               <Description val="Report"/>
+              <IOExpression val="9"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -1306,8 +1333,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="L"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -2725,13 +2752,17 @@
               <ExpSyntax val="{0,13}+1"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="9">
+              <ExpSyntax val="{1,5}"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
           <VarRangeInfo Mode="F" VarRangeVeeIsn="1" id="1"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="1" id="2"/>
         </Task>
         <Task MainProgram="N">
           <Header Description="Get Data Ind. Date Report" ISN_2="3" LastIsn="5" id="632">
-            <LastModified _date="739721" _time="53551" date="15/04/2026" time="14:52:31"/>
+            <LastModified _date="739728" _time="56354" date="22/04/2026" time="15:39:14"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2757,6 +2788,7 @@
             </DB>
             <IO id="1">
               <Description val="Report"/>
+              <IOExpression val="7"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -2765,8 +2797,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="L"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -3708,6 +3740,10 @@
             <Expression id="6">
               <ExpSyntax val="Page (0,1)"/>
               <ExpAttribute val="N"/>
+            </Expression>
+            <Expression id="7">
+              <ExpSyntax val="{1,5}"/>
+              <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
           <VarRangeInfo Mode="F" VarRangeVeeIsn="1" id="1"/>

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VHMSO7616PRODUCTION_IND_LST161" ISN_2="1" LastIsn="3" id="596">
-          <LastModified _date="739727" _time="48768" date="21/04/2026" time="13:32:48"/>
+          <LastModified _date="739728" _time="55113" date="22/04/2026" time="15:18:33"/>
           <Public val="Prg_161_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -670,7 +670,18 @@
                   <WithValue val="20"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="3"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="85">
+                  <FieldID val="10"/>
+                  <WithValue val="22"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="4"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -726,7 +737,7 @@
                   <WithValue val="21"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="3"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -745,7 +756,7 @@
                   <WithValue val="15"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="3"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -756,7 +767,7 @@
                   <WithValue val="16"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="3"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -1097,12 +1108,12 @@
             <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({0,10})"/>
             <ExpAttribute val="A"/>
           </Expression>
-          <Expression id="14">
-            <ExpSyntax val="'Indication.txt'"/>
-            <ExpAttribute val="A"/>
-          </Expression>
           <Expression id="20">
             <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_Indication.txt'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="22">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_Indication.pdf'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="6">
@@ -1161,7 +1172,7 @@
         </EVNT>
         <Task MainProgram="N">
           <Header Description="Print" ISN_2="2" LastIsn="3" id="596">
-            <LastModified _date="739721" _time="40777" date="15/04/2026" time="11:19:37"/>
+            <LastModified _date="739728" _time="55057" date="22/04/2026" time="15:17:37"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1187,6 +1198,7 @@
             </DB>
             <IO id="1">
               <Description val="PRINTER"/>
+              <IOExpression val="10"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -1195,8 +1207,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="P"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -2118,6 +2130,10 @@
               <ExpSyntax val="Page (0,1)"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="10">
+              <ExpSyntax val="{1,4}"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
           <VarRangeInfo Mode="F" VarRangeVeeIsn="14" id="1"/>
           <VarRangeInfo Mode="T" VarRangeVeeIsn="14" id="2"/>
@@ -2126,7 +2142,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="File" ISN_2="3" LastIsn="3" id="596">
-            <LastModified _date="739721" _time="40777" date="15/04/2026" time="11:19:37"/>
+            <LastModified _date="739728" _time="55041" date="22/04/2026" time="15:17:21"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2158,7 +2174,6 @@
               <Format val="L"/>
               <Media val="S"/>
               <Access val="W"/>
-              <Copies val="1"/>
               <Orientation val="P"/>
               <PrintPreview val="N"/>
               <PDF val="N"/>

@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VEHICLEAFOFF175" ISN_2="1" LastIsn="23" id="633">
-          <LastModified _date="739728" _time="42392" date="22/04/2026" time="11:46:32"/>
+          <LastModified _date="739728" _time="56731" date="22/04/2026" time="15:45:31"/>
           <Public val="Prg_175_RIA_NonInterAlso_C_X"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="31"/>
+        <ItemIsn val="32"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="95"/>
@@ -272,6 +272,16 @@
               </PropertyList>
             </Column>
             <Column id="19" name="vSaveFileName">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="255"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="255"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="20" name="vSavefilePDF">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_ALPHA" id="1"/>
                 <Picture id="157" valUnicode="255"/>
@@ -850,6 +860,19 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="32" FlowIsn="189" id="32">
+                  <Column val="20"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -1302,12 +1325,23 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="190">
+                  <FieldID val="31"/>
+                  <WithValue val="40"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="20"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="119">
                   <FieldID val="8"/>
                   <WithValue val="34"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="16"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -1358,7 +1392,7 @@
                   <WithValue val="38"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="16"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -1366,7 +1400,7 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="87" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
-                  <Condition Exp="16"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
@@ -1377,7 +1411,7 @@
                   <WithValue val="33"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="16"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -1388,7 +1422,7 @@
                   <WithValue val="36"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
-                  <Condition Exp="16"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
@@ -2041,6 +2075,10 @@
             <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VEHAFOFF.CSV'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="40">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VEHAFOFF.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="16">
             <ExpSyntax val="{0,7}='X'"/>
             <ExpAttribute val="B"/>
@@ -2112,7 +2150,7 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="Process" ISN_2="18" LastIsn="18" id="633">
+          <Header Description="Process" ISN_2="18" LastIsn="23" id="633">
             <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -2594,8 +2632,8 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="3" id="6"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="SelectModelCode" ISN_2="21" LastIsn="21" id="633">
-            <LastModified _date="739728" _time="42245" date="22/04/2026" time="11:44:05"/>
+          <Header Description="SelectModelCode" ISN_2="21" LastIsn="23" id="633">
+            <LastModified _date="739728" _time="52817" date="22/04/2026" time="14:40:17"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2826,24 +2864,6 @@
                     <Direction val="C"/>
                   </Update>
                 </LogicLine>
-                <LogicLine>
-                  <CallTask FlowIsn="10">
-                    <OperationType val="T"/>
-                    <Event>
-                      <EventType val="N"/>
-                    </Event>
-                    <TaskID comp="-1" obj="22"/>
-                    <Lock val="N"/>
-                    <Wait val="Y"/>
-                    <SyncData val="N"/>
-                    <IsRoute val="N"/>
-                    <RetainFocus val="N"/>
-                    <Disabled val="1"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </CallTask>
-                </LogicLine>
               </LogicLines>
             </LogicUnit>
             <LogicUnit id="4" propagate="78">
@@ -2869,6 +2889,26 @@
                 <EventType val="S"/>
               </Event>
               <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="10">
+                    <OperationType val="T"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="22"/>
+                    <Lock val="N"/>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <DestSubformName val="Sub1"/>
+                    <RetainFocus val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>
@@ -2891,10 +2931,8 @@
               <Condition val="89"/>
               <Event>
                 <EventType val="U"/>
-                <Parent val="32768"/>
                 <PublicObject comp="-1" obj="1"/>
               </Event>
-              <TXT val="OK"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
@@ -2943,10 +2981,8 @@
               <Condition val="89"/>
               <Event>
                 <EventType val="U"/>
-                <Parent val="32768"/>
-                <PublicObject comp="-1" obj="1"/>
+                <PublicObject comp="-1" obj="2"/>
               </Event>
-              <TXT val="Select_All"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
@@ -3005,8 +3041,8 @@
                     <Wait val="Y"/>
                     <SyncData val="N"/>
                     <IsRoute val="N"/>
+                    <DestSubformName val="Sub1"/>
                     <RetainFocus val="N"/>
-                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
                     <Direction val="C"/>
@@ -3047,10 +3083,8 @@
               <Condition val="89"/>
               <Event>
                 <EventType val="U"/>
-                <Parent val="32768"/>
-                <PublicObject comp="-1" obj="1"/>
+                <PublicObject comp="-1" obj="3"/>
               </Event>
-              <TXT val="DeSelect_All"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
@@ -3109,8 +3143,8 @@
                     <Wait val="Y"/>
                     <SyncData val="N"/>
                     <IsRoute val="N"/>
+                    <DestSubformName val="Sub1"/>
                     <RetainFocus val="N"/>
-                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
                     <Direction val="C"/>
@@ -3161,8 +3195,9 @@
                   <Width id="23" val="143"/>
                   <Height id="24" val="269"/>
                   <ControlName id="46" val="Sub1"/>
-                  <ConnectTo id="156" val="2"/>
-                  <TaskNumber comp="-1" id="183" obj="22"/>
+                  <Arguments id="126"/>
+                  <ConnectTo id="156" val="4"/>
+                  <TaskNumber id="183"/>
                 </PropertyList>
               </Control>
               <Control PDOD="128" _test_id="10" id="10">
@@ -3171,7 +3206,7 @@
                   <Y id="22" val="141"/>
                   <Width id="23" val="41"/>
                   <Height id="24" val="22"/>
-                  <ControlName id="46" val="Button10"/>
+                  <ControlName id="46" val="btnexit"/>
                   <Format id="82" valUnicode="Back"/>
                   <RaiseEvent id="234">
                     <EventType val="I"/>
@@ -3194,8 +3229,8 @@
                   <Format id="82" valUnicode="OK"/>
                   <ImageFile id="88" val="Button"/>
                   <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="1"/>
                   </RaiseEvent>
                 </PropertyList>
               </Control>
@@ -3214,8 +3249,8 @@
                   <Format id="82" valUnicode="Select"/>
                   <ImageFile id="88" val="Button"/>
                   <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="2"/>
                   </RaiseEvent>
                 </PropertyList>
               </Control>
@@ -3234,8 +3269,8 @@
                   <Format id="82" valUnicode="Deselect"/>
                   <ImageFile id="88" val="Button"/>
                   <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="3"/>
                   </RaiseEvent>
                 </PropertyList>
               </Control>
@@ -3335,8 +3370,23 @@
               <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
+          <EVNT DESC="Task_OK" FORCE_EXIT="N" id="1">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="Task_Select" FORCE_EXIT="N" id="2">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="Task_Deselect" FORCE_EXIT="N" id="3">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
           <Task MainProgram="N">
-            <Header Description="ListView" ISN_2="22" LastIsn="22" id="633">
+            <Header Description="ListView" ISN_2="22" LastIsn="23" id="633">
               <LastModified _date="739727" _time="52640" date="21/04/2026" time="14:37:20"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -3925,8 +3975,8 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Route to Print GUI" ISN_2="7" LastIsn="15" id="633">
-            <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+          <Header Description="Route to Print GUI" ISN_2="7" LastIsn="23" id="633">
+            <LastModified _date="739728" _time="56676" date="22/04/2026" time="15:44:36"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -4147,8 +4197,8 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Get data All(SQL)" ISN_2="8" LastIsn="15" id="633">
-              <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+            <Header Description="Get data All(SQL)" ISN_2="8" LastIsn="23" id="633">
+              <LastModified _date="739728" _time="54838" date="22/04/2026" time="15:13:58"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="Y"/>
@@ -4174,6 +4224,7 @@
               </DB>
               <IO id="1">
                 <Description val="Report"/>
+                <IOExpression val="10"/>
                 <OpenPrintDialog val="N"/>
                 <PaperSize val="68"/>
                 <Format val="P"/>
@@ -4181,9 +4232,9 @@
                 <Access val="W"/>
                 <MACH val="PR1/Usual/Landscape"/>
                 <Copies val="1"/>
-                <Orientation val="P"/>
-                <PrintPreview val="Y"/>
-                <PDF val="N"/>
+                <Orientation val="L"/>
+                <PrintPreview val="N"/>
+                <PDF val="Y"/>
                 <PrintingAllowed val="Y"/>
                 <ContentCopyingAllowed val="Y"/>
                 <ChangesAllowed val="Y"/>
@@ -5603,11 +5654,15 @@
                 <ExpSyntax val="Trim (DStr ({1,2},'YYYYMMDD'))&amp;{1,17}"/>
                 <ExpAttribute val="A"/>
               </Expression>
+              <Expression id="10">
+                <ExpSyntax val="Trim ({1,8})"/>
+                <ExpAttribute val="A"/>
+              </Expression>
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="Salect Model" ISN_2="9" LastIsn="15" id="633">
-              <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+            <Header Description="Salect Model" ISN_2="9" LastIsn="23" id="633">
+              <LastModified _date="739728" _time="56676" date="22/04/2026" time="15:44:36"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -5639,7 +5694,6 @@
                 <Format val="L"/>
                 <Media val="S"/>
                 <Access val="W"/>
-                <Copies val="1"/>
                 <Orientation val="P"/>
                 <PrintPreview val="N"/>
                 <PDF val="N"/>
@@ -6042,8 +6096,8 @@
             <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="1"/>
             <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="2"/>
             <Task MainProgram="N">
-              <Header Description="Get data Select(SQL)" ISN_2="10" LastIsn="15" id="633">
-                <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+              <Header Description="Get data Select(SQL)" ISN_2="10" LastIsn="23" id="633">
+                <LastModified _date="739728" _time="56731" date="22/04/2026" time="15:45:31"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
                 <SQL val="Y"/>
@@ -6069,6 +6123,7 @@
                 </DB>
                 <IO id="1">
                   <Description val="Report"/>
+                  <IOExpression val="11"/>
                   <OpenPrintDialog val="N"/>
                   <PaperSize val="68"/>
                   <Format val="P"/>
@@ -6077,8 +6132,8 @@
                   <MACH val="PR1/Usual/Landscape"/>
                   <Copies val="1"/>
                   <Orientation val="P"/>
-                  <PrintPreview val="Y"/>
-                  <PDF val="N"/>
+                  <PrintPreview val="N"/>
+                  <PDF val="Y"/>
                   <PrintingAllowed val="Y"/>
                   <ContentCopyingAllowed val="Y"/>
                   <ChangesAllowed val="Y"/>
@@ -7504,13 +7559,17 @@
                   <ExpSyntax val="Trim (DStr ({1,2},'YYYYMMDD'))&amp;{1,17}"/>
                   <ExpAttribute val="A"/>
                 </Expression>
+                <Expression id="11">
+                  <ExpSyntax val="Trim({1,8})"/>
+                  <ExpAttribute val="A"/>
+                </Expression>
               </Expressions>
             </Task>
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Route to Print EXCEL" ISN_2="11" LastIsn="15" id="633">
-            <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+          <Header Description="Route to Print EXCEL" ISN_2="11" LastIsn="23" id="633">
+            <LastModified _date="739728" _time="53687" date="22/04/2026" time="14:54:47"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -7731,8 +7790,8 @@
             </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="Get data All(SQL)" ISN_2="12" LastIsn="15" id="633">
-              <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
+            <Header Description="Get data All(SQL)" ISN_2="12" LastIsn="23" id="633">
+              <LastModified _date="739728" _time="53687" date="22/04/2026" time="14:54:47"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="Y"/>
@@ -7764,7 +7823,6 @@
                 <Format val="L"/>
                 <Media val="S"/>
                 <Access val="W"/>
-                <Copies val="1"/>
                 <Orientation val="P"/>
                 <PrintPreview val="N"/>
                 <PDF val="N"/>
@@ -9187,7 +9245,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="Salect Model" ISN_2="13" LastIsn="15" id="633">
+            <Header Description="Salect Model" ISN_2="13" LastIsn="23" id="633">
               <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -9644,7 +9702,7 @@
             <VarRangeInfo Mode="F" VarRangeVeeIsn="2" id="1"/>
             <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="2"/>
             <Task MainProgram="N">
-              <Header Description="Get Data Select(SQL)" ISN_2="14" LastIsn="15" id="633">
+              <Header Description="Get Data Select(SQL)" ISN_2="14" LastIsn="23" id="633">
                 <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -10846,7 +10904,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Get Line Data" ISN_2="15" LastIsn="15" id="633">
+          <Header Description="Get Line Data" ISN_2="15" LastIsn="23" id="633">
             <LastModified _date="739721" _time="53756" date="15/04/2026" time="14:55:56"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
