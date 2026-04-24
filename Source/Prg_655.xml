@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB024Re_PrintMENU209" ISN_2="1" LastIsn="6" id="655">
-          <LastModified _date="739729" _time="55580" date="23/04/2026" time="15:26:20"/>
+          <LastModified _date="739730" _time="39294" date="24/04/2026" time="10:54:54"/>
           <Public val="Prg_209_RIA _C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -405,7 +405,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="8"/>
+                  <_DitIndexForToolkit val="9"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -418,7 +418,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="9"/>
+                  <_DitIndexForToolkit val="10"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -431,7 +431,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="10"/>
+                  <_DitIndexForToolkit val="11"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -463,7 +463,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="12"/>
+                  <_DitIndexForToolkit val="13"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -477,7 +477,7 @@
                   <Type val="V"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
-                  <_DitIndexForToolkit val="13"/>
+                  <_DitIndexForToolkit val="14"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
@@ -737,6 +737,61 @@
                   <Type val="2"/>
                   <Text val="// Confirmation OK"/>
                 </Remark>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="8" propagate="78">
+            <Level val="C"/>
+            <Type val="S"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <TXT val="CBX_FINVEHICLE_INSPSHEET_V"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <RaiseEvent FlowIsn="95">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="69"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
+          <LogicUnit id="9" propagate="78">
+            <Level val="H"/>
+            <Type val="U"/>
+            <Scope val="T"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="U"/>
+              <Parent val="32768"/>
+              <PublicObject comp="-1" obj="1"/>
+            </Event>
+            <TXT val="EXEC_BUTTON"/>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="96">
+                  <FieldID val="6"/>
+                  <WithValue val="9"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="92" EndBlockSegment="92" FlowIsn="34" Type="I">
@@ -1509,61 +1564,6 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
-          <LogicUnit id="8" propagate="78">
-            <Level val="C"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <TXT val="CBX_FINVEHICLE_INSPSHEET_V"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <RaiseEvent FlowIsn="95">
-                  <Event>
-                    <EventType val="I"/>
-                    <InternalEventID val="69"/>
-                  </Event>
-                  <Wait val="78"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </RaiseEvent>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
-          <LogicUnit id="9" propagate="78">
-            <Level val="H"/>
-            <Type val="U"/>
-            <Scope val="T"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="U"/>
-              <Parent val="32768"/>
-              <PublicObject comp="-1" obj="1"/>
-            </Event>
-            <TXT val="EXEC_BUTTON"/>
-            <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="96">
-                  <FieldID val="6"/>
-                  <WithValue val="9"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-            </LogicLines>
-          </LogicUnit>
           <LogicUnit id="10" propagate="78">
             <Level val="H"/>
             <Type val="U"/>
@@ -1594,7 +1594,7 @@
           </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="13" _last_test_id="13" id="1">
+          <FormEntry _last_isn="14" _last_test_id="14" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
@@ -1656,6 +1656,20 @@
                 <Visible id="61"/>
                 <Format id="82" valUnicode="HH:MM:SS"/>
                 <Attribute id="83" val="84"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="14" id="14">
+              <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                <X id="21" val="11"/>
+                <Y id="22" val="16"/>
+                <Width id="23" val="41"/>
+                <Height id="24" val="22"/>
+                <ControlName id="46" val="btn_Close"/>
+                <Format id="82" valUnicode="Back"/>
+                <RaiseEvent id="234">
+                  <EventType val="I"/>
+                  <InternalEventID val="13"/>
+                </RaiseEvent>
               </PropertyList>
             </Control>
             <Control _test_id="5" id="5">
@@ -2091,10 +2105,6 @@
             <ExpSyntax val="{0,5}"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="18">
-            <ExpSyntax val="KbGet (1)='Control Hit'EVENT OR KbGet (1)='Window Hit'EVENT"/>
-            <ExpAttribute val="*"/>
-          </Expression>
           <Expression id="19">
             <ExpSyntax val="IF ({0,1}='A','MM-DD-YYYY','DD-MM-YYYY')"/>
             <ExpAttribute val="A"/>
@@ -2347,7 +2357,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="OldNewFormatForFrame" ISN_2="3" LastIsn="6" id="655">
-            <LastModified _date="739726" _time="52737" date="20/04/2026" time="14:38:57"/>
+            <LastModified _date="739730" _time="39204" date="24/04/2026" time="10:53:24"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2488,7 +2498,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="2"/>
+                    <_DitIndexForToolkit val="3"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2508,7 +2518,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="3"/>
+                    <_DitIndexForToolkit val="4"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2707,7 +2717,7 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="3" _last_test_id="3" id="1">
+            <FormEntry _last_isn="4" _last_test_id="4" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
@@ -2728,6 +2738,20 @@
                   <Height id="24" val="16"/>
                   <ControlName id="46" val="Label1"/>
                   <Visible id="61"/>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="4" id="4">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="27"/>
+                  <Y id="22" val="52"/>
+                  <Width id="23" val="41"/>
+                  <Height id="24" val="22"/>
+                  <ControlName id="46" val="btn_Close"/>
+                  <Format id="82" valUnicode="back"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="13"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control _test_id="2" id="2">
@@ -2865,7 +2889,7 @@
           </Expressions>
           <Task MainProgram="N">
             <Header Description="OldFormat" ISN_2="4" LastIsn="6" id="655">
-              <LastModified _date="739726" _time="52715" date="20/04/2026" time="14:38:35"/>
+              <LastModified _date="739730" _time="39185" date="24/04/2026" time="10:53:05"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -3006,7 +3030,7 @@
                       <Type val="V"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="2"/>
+                      <_DitIndexForToolkit val="3"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -3026,7 +3050,7 @@
                       <Type val="V"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="3"/>
+                      <_DitIndexForToolkit val="4"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -3191,7 +3215,7 @@
               </LogicUnit>
             </TaskLogic>
             <TaskForms>
-              <FormEntry _last_isn="3" _last_test_id="3" id="1">
+              <FormEntry _last_isn="4" _last_test_id="4" id="1">
                 <PropertyList model="FORM_WEB_CLIENT">
                   <X id="21"/>
                   <Y id="22"/>
@@ -3212,6 +3236,20 @@
                     <Height id="24" val="16"/>
                     <ControlName id="46" val="Label1"/>
                     <Visible id="61"/>
+                  </PropertyList>
+                </Control>
+                <Control PDOD="128" _test_id="4" id="4">
+                  <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                    <X id="21" val="16"/>
+                    <Y id="22" val="50"/>
+                    <Width id="23" val="41"/>
+                    <Height id="24" val="22"/>
+                    <ControlName id="46" val="btn_Close"/>
+                    <Format id="82" valUnicode="Back"/>
+                    <RaiseEvent id="234">
+                      <EventType val="I"/>
+                      <InternalEventID val="13"/>
+                    </RaiseEvent>
                   </PropertyList>
                 </Control>
                 <Control _test_id="2" id="2">
@@ -3350,7 +3388,7 @@
           </Task>
           <Task MainProgram="N">
             <Header Description="NewFormat" ISN_2="5" LastIsn="6" id="655">
-              <LastModified _date="739726" _time="52715" date="20/04/2026" time="14:38:35"/>
+              <LastModified _date="739730" _time="39161" date="24/04/2026" time="10:52:41"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -3491,7 +3529,7 @@
                       <Type val="V"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="2"/>
+                      <_DitIndexForToolkit val="3"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -3511,7 +3549,7 @@
                       <Type val="V"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="3"/>
+                      <_DitIndexForToolkit val="4"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -3676,7 +3714,7 @@
               </LogicUnit>
             </TaskLogic>
             <TaskForms>
-              <FormEntry _last_isn="3" _last_test_id="3" id="1">
+              <FormEntry _last_isn="4" _last_test_id="4" id="1">
                 <PropertyList model="FORM_WEB_CLIENT">
                   <X id="21"/>
                   <Y id="22"/>
@@ -3697,6 +3735,20 @@
                     <Height id="24" val="16"/>
                     <ControlName id="46" val="Label1"/>
                     <Visible id="61"/>
+                  </PropertyList>
+                </Control>
+                <Control PDOD="128" _test_id="4" id="4">
+                  <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                    <X id="21" val="27"/>
+                    <Y id="22" val="52"/>
+                    <Width id="23" val="41"/>
+                    <Height id="24" val="22"/>
+                    <ControlName id="46" val="btn_Close"/>
+                    <Format id="82" valUnicode="Back"/>
+                    <RaiseEvent id="234">
+                      <EventType val="I"/>
+                      <InternalEventID val="13"/>
+                    </RaiseEvent>
                   </PropertyList>
                 </Control>
                 <Control _test_id="2" id="2">
@@ -3836,7 +3888,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="OldNewFormatForENGINE" ISN_2="6" LastIsn="6" id="655">
-            <LastModified _date="739726" _time="52715" date="20/04/2026" time="14:38:35"/>
+            <LastModified _date="739730" _time="39142" date="24/04/2026" time="10:52:22"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -3977,7 +4029,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="2"/>
+                    <_DitIndexForToolkit val="3"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -3997,7 +4049,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="3"/>
+                    <_DitIndexForToolkit val="4"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -4162,7 +4214,7 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="3" _last_test_id="3" id="1">
+            <FormEntry _last_isn="4" _last_test_id="4" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
@@ -4183,6 +4235,20 @@
                   <Height id="24" val="16"/>
                   <ControlName id="46" val="Label1"/>
                   <Visible id="61"/>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="4" id="4">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="14"/>
+                  <Y id="22" val="50"/>
+                  <Width id="23" val="41"/>
+                  <Height id="24" val="22"/>
+                  <ControlName id="46" val="btn_Close"/>
+                  <Format id="82" valUnicode="Back"/>
+                  <RaiseEvent id="234">
+                    <EventType val="I"/>
+                    <InternalEventID val="13"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control _test_id="2" id="2">

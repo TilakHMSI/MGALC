@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDS004PrintingConfir120" ISN_2="1" LastIsn="1" id="608">
-          <LastModified _date="739727" _time="39677" date="21/04/2026" time="11:01:17"/>
+          <LastModified _date="739730" _time="45930" date="24/04/2026" time="12:45:30"/>
           <Public val="Prg_120_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -331,19 +331,6 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
-            <LogicLines>
-              <LogicLine>
-                <Update FlowIsn="12">
-                  <FieldID val="3"/>
-                  <WithValue val="3"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition val="Y"/>
-                  <Modifier val="B"/>
-                  <Direction val="C"/>
-                </Update>
-              </LogicLine>
-            </LogicLines>
           </LogicUnit>
           <LogicUnit id="7" propagate="78">
             <Level val="H"/>
@@ -360,6 +347,17 @@
             <TXT val="BUTTON_OK"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
+              <LogicLine>
+                <Update FlowIsn="12">
+                  <FieldID val="3"/>
+                  <WithValue val="7"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
               <LogicLine>
                 <RaiseEvent FlowIsn="13">
                   <Event>
@@ -527,6 +525,10 @@
           <Expression id="6">
             <ExpSyntax val="IF ({0,1}='A','MM-DD-YYYY','DD-MM-YYYY')"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="7">
+            <ExpSyntax val="'TRUE'LOG"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
       </Task>

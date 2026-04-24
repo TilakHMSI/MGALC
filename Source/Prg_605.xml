@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB067_R_FIVSRE_PRINT_HMSI_178" ISN_2="1" LastIsn="3" id="605">
-          <LastModified _date="739729" _time="52304" date="23/04/2026" time="14:31:44"/>
+          <LastModified _date="739730" _time="66632" date="24/04/2026" time="18:30:32"/>
           <Public val="Prg_178_RIA_Batch_TaskOpen_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="9"/>
+        <ItemIsn val="14"/>
         <Resource>
           <Columns>
             <Column id="1" name="DATE_FLAG_P">
@@ -116,6 +116,44 @@
             <Column id="9" name="vExit">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_LOGICAL" id="1"/>
+                <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="10" name="vFileName">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="255"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="255"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="11" name="vFilePath">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="1000"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="1000"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="12" name="vBlob">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_BLOB" id="1"/>
+                <Size id="174" val="28"/>
+                <Definition id="175" val="1"/>
+                <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="13" name="vBlobBase64">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_BLOB" id="1"/>
+                <Size id="174" val="28"/>
+                <Definition id="175" val="1"/>
                 <_FieldStyle id="276" val="1"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
@@ -324,6 +362,60 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="10" FlowIsn="24" id="10">
+                  <Column val="10"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <_DitIndexForToolkit val="11"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="11" FlowIsn="25" id="11">
+                  <Column val="11"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="12" FlowIsn="33" id="12">
+                  <Column val="12"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="13" FlowIsn="34" id="13">
+                  <Column val="13"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <_DitIndexForToolkit val="10"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -392,25 +484,7 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
-          </LogicUnit>
-          <LogicUnit id="6" propagate="78">
-            <Level val="R"/>
-            <Type val="S"/>
-            <Scope val="S"/>
-            <EngineDirective val="S"/>
-            <ShowMessage val="Y"/>
-            <Condition val="89"/>
-            <Event>
-              <EventType val="S"/>
-            </Event>
-            <ExecuteOn_ val="O"/>
             <LogicLines>
-              <LogicLine>
-                <Remark FlowIsn="18">
-                  <Type val="2"/>
-                  <Text val=" "/>
-                </Remark>
-              </LogicLine>
               <LogicLine>
                 <CallTask FlowIsn="14">
                   <OperationType val="P"/>
@@ -447,6 +521,28 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="42">
+                  <FieldID val="10"/>
+                  <WithValue val="8"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="7"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="43">
+                  <FieldID val="11"/>
+                  <WithValue val="9"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="7"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="15">
                   <OperationType val="T"/>
                   <Event>
@@ -457,10 +553,32 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
-                  <Condition val="Y"/>
+                  <Condition Exp="7"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="44">
+                  <FieldID val="12"/>
+                  <WithValue val="10"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="7"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="45">
+                  <FieldID val="13"/>
+                  <WithValue val="11"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="7"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <Update FlowIsn="19">
@@ -475,14 +593,34 @@
               </LogicLine>
             </LogicLines>
           </LogicUnit>
+          <LogicUnit id="6" propagate="78">
+            <Level val="R"/>
+            <Type val="S"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Remark FlowIsn="18">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
-          <FormEntry _last_isn="9" _last_test_id="9" id="1">
+          <FormEntry _last_isn="11" _last_test_id="11" id="1">
             <PropertyList model="FORM_WEB_CLIENT">
               <X id="21"/>
               <Y id="22"/>
               <Width id="23" val="178"/>
-              <Height id="24" val="91"/>
+              <Height id="24" val="157"/>
               <FormUnits id="33" val="4"/>
               <_Comment id="218"/>
               <FormName id="311" valUnicode="VPRDB067_RRe_Printcard"/>
@@ -601,6 +739,31 @@
                 <ControlName id="46" val="vPLAN_SEQ_SUFFIX"/>
                 <Visible id="61"/>
                 <MultiLineEdit id="71"/>
+              </PropertyList>
+            </Control>
+            <Control PDOD="128" _test_id="10" id="10">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <X id="21" val="13"/>
+                <Y id="22" val="106"/>
+                <Width id="23" val="34"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="13" id="43"/>
+                <ControlName id="46" val="vBlob64base"/>
+                <MultiLineEdit id="71" val="Y"/>
+                <PasswordEdit id="85"/>
+              </PropertyList>
+            </Control>
+            <Control _test_id="11" id="11">
+              <PropertyList model="CTRL_WEB_CLIENT_EDIT">
+                <Model ID="MODEL_WEB_CLIENT" id="1">
+                  <Var FieldID="10"/>
+                </Model>
+                <X id="21" val="82"/>
+                <Y id="22" val="111"/>
+                <Width id="23" val="34"/>
+                <Height id="24" val="20"/>
+                <Data FieldID="10" id="43"/>
+                <ControlName id="46" val="vFileName"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -808,10 +971,30 @@
             <ExpSyntax val="{0,9}"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="7">
+            <ExpSyntax val="{0,4}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="8">
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VPRDB067_RePrintcard.pdf'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="9">
+            <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({0,10})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="10">
+            <ExpSyntax val="File2Blb(Translate('%PRODREPORT%')&amp;Trim({0,10}))"/>
+            <ExpAttribute val="O"/>
+          </Expression>
+          <Expression id="11">
+            <ExpSyntax val="BlobToBase64({0,12})"/>
+            <ExpAttribute val="O"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="VPRDB067_R(Re_Print/card)" ISN_2="2" LastIsn="3" id="605">
-            <LastModified _date="739721" _time="44548" date="15/04/2026" time="12:22:28"/>
+            <LastModified _date="739730" _time="65486" date="24/04/2026" time="18:11:26"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1584,10 +1767,18 @@
               <ExpSyntax val="{0,5}"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="9">
+              <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_VPRDB067RePrintcard.pdf'"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="10">
+              <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({1,10})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
           <Task MainProgram="N">
             <Header Description="GENERATE FRAME NO./PORT" ISN_2="3" LastIsn="3" id="605">
-              <LastModified _date="739721" _time="44548" date="15/04/2026" time="12:22:28"/>
+              <LastModified _date="739730" _time="46479" date="24/04/2026" time="12:54:39"/>
               <ExecutionRight comp="-1"/>
               <Resident val="Y"/>
               <SQL val="N"/>
@@ -1621,6 +1812,7 @@
               </DB>
               <IO id="1">
                 <Description val="printer"/>
+                <IOExpression val="29"/>
                 <OpenPrintDialog val="N"/>
                 <PaperSize val="68"/>
                 <Format val="P"/>
@@ -1629,8 +1821,8 @@
                 <MACH val="PR2/Usual/Portrait"/>
                 <Copies val="1"/>
                 <Orientation val="P"/>
-                <PrintPreview val="Y"/>
-                <PDF val="N"/>
+                <PrintPreview val="N"/>
+                <PDF val="Y"/>
                 <PrintingAllowed val="Y"/>
                 <ContentCopyingAllowed val="Y"/>
                 <ChangesAllowed val="Y"/>
@@ -5132,6 +5324,10 @@
               </Expression>
               <Expression id="28">
                 <ExpSyntax val="''"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="29">
+                <ExpSyntax val="{1,11}"/>
                 <ExpAttribute val="A"/>
               </Expression>
             </Expressions>
