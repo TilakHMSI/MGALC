@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="PRD003GroupGuide" ISN_2="4" LastIsn="7" id="561">
-          <LastModified _date="739706" _time="45766" date="31/03/2026" time="12:42:46"/>
+          <LastModified _date="739735" _time="59393" date="29/04/2026" time="16:29:53"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -440,7 +440,7 @@
         </Expressions>
         <Task MainProgram="N">
           <Header Description="List" ISN_2="7" LastIsn="7" id="561">
-            <LastModified _date="739706" _time="45766" date="31/03/2026" time="12:42:46"/>
+            <LastModified _date="739735" _time="59393" date="29/04/2026" time="16:29:53"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -615,6 +615,32 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
+            <LogicUnit id="3" propagate="78">
+              <Level val="R"/>
+              <Type val="S"/>
+              <Scope val="S"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="S"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <Update FlowIsn="6">
+                    <Parent val="4"/>
+                    <FieldID val="1"/>
+                    <WithValue val="2"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
           </TaskLogic>
           <TaskForms>
             <FormEntry _last_isn="3" _last_test_id="3" id="2">
@@ -664,6 +690,10 @@
           <Expressions>
             <Expression id="1">
               <ExpSyntax val="Trim({0,6})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="2">
+              <ExpSyntax val="{0,5}"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
