@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="RightsUpdateInToMainProgramVariables" ISN_2="1" LastIsn="1" id="396">
-          <LastModified _date="739716" _time="42984" date="10/04/2026" time="11:56:24"/>
+          <LastModified _date="739740" _time="38885" date="04/05/2026" time="10:48:05"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -6554,6 +6554,18 @@
                   <Direction val="C"/>
                 </Update>
               </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="539">
+                  <Parent val="32768"/>
+                  <FieldID val="552"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="538"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
         </TaskLogic>
@@ -8790,6 +8802,10 @@
           </Expression>
           <Expression id="535">
             <ExpSyntax val="Trim({0,3})='CHARGCAN'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="538">
+            <ExpSyntax val="Trim({0,3})='CHANGEPASS'"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
