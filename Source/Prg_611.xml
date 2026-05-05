@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDB063(INSPECTION SHEET/HPE)105" ISN_2="1" LastIsn="7" id="611">
-          <LastModified _date="739715" _time="52200" date="09/04/2026" time="14:30:00"/>
+          <LastModified _date="739736" _time="45260" date="30/04/2026" time="12:34:20"/>
           <Public val="Prg_105_Batch_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="N"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="10"/>
+        <ItemIsn val="11"/>
         <Resource>
           <Columns>
             <Column id="1" name="TERM ID_P">
@@ -125,6 +125,15 @@
                 <CharSet id="172" val="1"/>
                 <StoredAs id="173" val="1"/>
                 <Definition id="175" val="2"/>
+              </PropertyList>
+            </Column>
+            <Column id="11" name="pFIlePath">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="1000"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="1000"/>
+                <_Flip id="194"/>
               </PropertyList>
             </Column>
           </Columns>
@@ -338,6 +347,18 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="11" FlowIsn="19" id="11">
+                  <Column val="11"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -463,7 +484,7 @@
           </Expression>
         </Expressions>
         <Task MainProgram="N">
-          <Header Description="USE SET" ISN_2="2" id="611">
+          <Header Description="USE SET" ISN_2="2" LastIsn="7" id="611">
             <LastModified _date="739715" _time="52076" date="09/04/2026" time="14:27:56"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -684,7 +705,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="INSPECTION SHEET(MAIN)" ISN_2="3" id="611">
+          <Header Description="INSPECTION SHEET(MAIN)" ISN_2="3" LastIsn="7" id="611">
             <LastModified _date="739715" _time="52166" date="09/04/2026" time="14:29:26"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -711,6 +732,7 @@
             </DB>
             <IO id="1">
               <Description val="PRINTER"/>
+              <IOExpression val="18"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -720,7 +742,7 @@
               <Copies val="1"/>
               <Orientation val="P"/>
               <PrintPreview val="N"/>
-              <PDF val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -1647,9 +1669,13 @@
               <ExpSyntax val="{1,10}"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="18">
+              <ExpSyntax val="Trim({1,11})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
           <Task MainProgram="N">
-            <Header Description="SH40 SONZAI CHECK" ISN_2="4" id="611">
+            <Header Description="SH40 SONZAI CHECK" ISN_2="4" LastIsn="7" id="611">
               <LastModified _date="739715" _time="52087" date="09/04/2026" time="14:28:07"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -1841,8 +1867,8 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="PRINT DATA ARI" ISN_2="5" id="611">
-              <LastModified _date="739715" _time="52166" date="09/04/2026" time="14:29:26"/>
+            <Header Description="PRINT DATA ARI" ISN_2="5" LastIsn="7" id="611">
+              <LastModified _date="739736" _time="45260" date="30/04/2026" time="12:34:20"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -11362,7 +11388,7 @@
             <VarRangeInfo Mode="F" VarRangeVeeIsn="1" id="1"/>
             <VarRangeInfo Mode="T" VarRangeVeeIsn="1" id="2"/>
             <Task MainProgram="N">
-              <Header Description="SPACE PRINT" ISN_2="6" id="611">
+              <Header Description="SPACE PRINT" ISN_2="6" LastIsn="7" id="611">
                 <LastModified _date="739715" _time="52166" date="09/04/2026" time="14:29:26"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -13133,7 +13159,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="PRINT DATA NASI" ISN_2="7" id="611">
+            <Header Description="PRINT DATA NASI" ISN_2="7" LastIsn="7" id="611">
               <LastModified _date="739715" _time="52171" date="09/04/2026" time="14:29:31"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
