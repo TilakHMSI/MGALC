@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="ChangeUserPassword" ISN_2="1" LastIsn="4" id="593">
-          <LastModified _date="739744" _time="38809" date="08/05/2026" time="10:46:49"/>
+          <LastModified _date="739747" _time="54121" date="11/05/2026" time="15:02:01"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -534,7 +534,7 @@
                       <Skip val="N"/>
                     </Argument>
                     <Argument>
-                      <Expression val="17"/>
+                      <Expression val="21"/>
                       <Skip val="N"/>
                     </Argument>
                     <Argument>
@@ -552,7 +552,7 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="82" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="Password must contain at least one uppercase letter, one lowercase letter, and one number." TitleTxt="Error" VR_DISP="B">
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="82" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TXT="Password must contain at least one uppercase letter, one lowercase letter,one special character and one number." TitleTxt="Error" VR_DISP="B">
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="18"/>
                   <Modifier val="B"/>
@@ -1068,7 +1068,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="15">
-            <ExpSyntax val="Len(Trim({0,3}))>8"/>
+            <ExpSyntax val="Len(Trim({0,3}))&lt;8"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="19">
@@ -1086,6 +1086,10 @@
           <Expression id="20">
             <ExpSyntax val="{0,17}"/>
             <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="21">
+            <ExpSyntax val="'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]+$'"/>
+            <ExpAttribute val="A"/>
           </Expression>
         </Expressions>
         <Task MainProgram="N">
