@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="VQMS003_DefectEntryScreen" ISN_2="1" LastIsn="28" id="551">
-          <LastModified _date="739743" _time="48214" date="07/05/2026" time="13:23:34"/>
+        <Header Description="VQMS003_DefectEntryScreen" ISN_2="1" LastIsn="27" id="551">
+          <LastModified _date="739747" _time="51433" date="11/05/2026" time="14:17:13"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -989,6 +989,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="DEFECT_ENTRY_SCREEN"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -1187,6 +1188,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="DEFECT_ENTRY_SCREEN"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="2"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -1244,6 +1246,17 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="249">
+                  <FieldID val="28"/>
+                  <WithValue val="35"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="36"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
                 <RaiseEvent FlowIsn="165">
                   <Event>
                     <EventType val="I"/>
@@ -1256,7 +1269,6 @@
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
-                  <Disabled val="1"/>
                   <Condition Exp="2"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -1272,15 +1284,17 @@
                 </Evaluate>
               </LogicLine>
               <LogicLine>
-                <Update FlowIsn="249">
-                  <FieldID val="28"/>
-                  <WithValue val="35"/>
-                  <Incremental val="N"/>
-                  <ForcedUpdate val="Y"/>
-                  <Condition Exp="36"/>
+                <RaiseEvent FlowIsn="259">
+                  <Event>
+                    <EventType val="S"/>
+                    <KeyCombinationID val="128"/>
+                  </Event>
+                  <Wait val="89"/>
+                  <Disabled val="1"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </Update>
+                </RaiseEvent>
               </LogicLine>
               <LogicLine>
                 <END_BLK FlowIsn="106"/>
@@ -1676,8 +1690,8 @@
                 <Height id="24" val="343"/>
                 <ControlName id="46" val="DEFECT_ENTRY_SCREEN"/>
                 <Arguments id="126"/>
-                <ConnectTo id="156" val="4"/>
-                <TaskNumber id="183"/>
+                <ConnectTo id="156" val="2"/>
+                <TaskNumber comp="-1" id="183" obj="2"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -1821,8 +1835,8 @@
           </Expression>
         </Expressions>
         <Task MainProgram="N">
-          <Header Description="DEFECTENTRYSCREEN" ISN_2="2" LastIsn="28" id="551">
-            <LastModified _date="739743" _time="47725" date="07/05/2026" time="13:15:25"/>
+          <Header Description="DEFECTENTRYSCREEN" ISN_2="2" LastIsn="27" id="551">
+            <LastModified _date="739747" _time="50832" date="11/05/2026" time="14:07:12"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2054,7 +2068,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="11"/>
+                    <_DitIndexForToolkit val="10"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2139,7 +2153,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="10"/>
+                    <_DitIndexForToolkit val="9"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2152,7 +2166,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="12"/>
+                    <_DitIndexForToolkit val="11"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2165,7 +2179,7 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="13"/>
+                    <_DitIndexForToolkit val="12"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2263,7 +2277,6 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="3"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -2763,6 +2776,29 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
+            <LogicUnit id="17" propagate="78">
+              <Level val="C"/>
+              <Type val="P"/>
+              <Scope val="S"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="S"/>
+              </Event>
+              <TXT val="btnDefectCode"/>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="284" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Btn Defect code" TitleTxt="Warning" VR_DISP="B">
+                    <AppendToErrorLog val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </STP>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
           </TaskLogic>
           <TaskForms>
             <FormEntry _last_isn="30" _last_test_id="30" id="1">
@@ -2809,21 +2845,6 @@
                     <EventType val="U"/>
                     <Parent val="32768"/>
                     <PublicObject comp="-1" obj="11"/>
-                  </RaiseEvent>
-                </PropertyList>
-              </Control>
-              <Control PDOD="128" _test_id="20" id="20">
-                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
-                  <X id="21" val="488"/>
-                  <Y id="22" val="43"/>
-                  <Width id="23" val="76"/>
-                  <Height id="24" val="22"/>
-                  <Data FieldID="27" id="43"/>
-                  <ControlName id="46" val="b_save"/>
-                  <Format id="82" valUnicode="Save"/>
-                  <RaiseEvent id="234">
-                    <EventType val="I"/>
-                    <InternalEventID val="34"/>
                   </RaiseEvent>
                 </PropertyList>
               </Control>
@@ -3045,7 +3066,7 @@
             </Event>
           </EVNT>
           <Task MainProgram="N">
-            <Header Description="Delete work table" ISN_2="21" LastIsn="28" id="551">
+            <Header Description="Delete work table" ISN_2="21" LastIsn="27" id="551">
               <LastModified _date="739722" _time="44251" date="16/04/2026" time="12:17:31"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -3301,7 +3322,7 @@
             <VarRangeInfo Mode="E" VarRangeVeeIsn="3" id="3"/>
             <VarRangeInfo Mode="E" VarRangeVeeIsn="4" id="4"/>
             <Task MainProgram="N">
-              <Header Description="Delete main table" ISN_2="27" LastIsn="28" id="551">
+              <Header Description="Delete main table" ISN_2="27" LastIsn="27" id="551">
                 <LastModified _date="739722" _time="44228" date="16/04/2026" time="12:17:08"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -3541,7 +3562,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="CheckDuplicate" ISN_2="18" LastIsn="28" id="551">
+            <Header Description="CheckDuplicate" ISN_2="18" LastIsn="27" id="551">
               <LastModified _date="739722" _time="44949" date="16/04/2026" time="12:29:09"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -3811,7 +3832,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="UPDATE LAST" ISN_2="14" LastIsn="28" id="551">
+            <Header Description="UPDATE LAST" ISN_2="14" LastIsn="27" id="551">
               <LastModified _date="739723" _time="68452" date="17/04/2026" time="19:00:52"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -4980,7 +5001,7 @@
             </Expressions>
           </Task>
           <Task MainProgram="N">
-            <Header Description="UPDATE DETAIL" ISN_2="3" LastIsn="28" id="551">
+            <Header Description="UPDATE DETAIL" ISN_2="3" LastIsn="27" id="551">
               <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -5190,7 +5211,7 @@
               </Expression>
             </Expressions>
             <Task MainProgram="N">
-              <Header Description="UPDATE DETAIL" ISN_2="4" LastIsn="28" id="551">
+              <Header Description="UPDATE DETAIL" ISN_2="4" LastIsn="27" id="551">
                 <LastModified _date="739699" _time="69501" date="24/03/2026" time="19:18:21"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -6648,7 +6669,7 @@
               </Expressions>
             </Task>
             <Task MainProgram="N">
-              <Header Description="DELETE" ISN_2="5" LastIsn="28" id="551">
+              <Header Description="DELETE" ISN_2="5" LastIsn="27" id="551">
                 <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -7536,7 +7557,7 @@
               <VarRangeInfo Mode="T" VarRangeVeeIsn="20" id="8"/>
             </Task>
             <Task MainProgram="N">
-              <Header Description="UPDATE LAST" ISN_2="6" LastIsn="28" id="551">
+              <Header Description="UPDATE LAST" ISN_2="6" LastIsn="27" id="551">
                 <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
                 <ExecutionRight comp="-1"/>
                 <Resident val="N"/>
@@ -8422,7 +8443,7 @@
             </Task>
           </Task>
           <Task MainProgram="N">
-            <Header Description="CheckDefectCodeExist?" ISN_2="15" LastIsn="28" id="551">
+            <Header Description="CheckDefectCodeExist?" ISN_2="15" LastIsn="27" id="551">
               <LastModified _date="739722" _time="41656" date="16/04/2026" time="11:34:16"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
@@ -8609,7 +8630,7 @@
           </Task>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Delete work table" ISN_2="7" LastIsn="28" id="551">
+          <Header Description="Delete work table" ISN_2="7" LastIsn="27" id="551">
             <LastModified _date="739701" _time="59065" date="26/03/2026" time="16:24:25"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -8786,7 +8807,7 @@
           </TaskForms>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Dump Records" ISN_2="8" LastIsn="28" id="551">
+          <Header Description="Dump Records" ISN_2="8" LastIsn="27" id="551">
             <LastModified _date="739723" _time="64008" date="17/04/2026" time="17:46:48"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -9836,7 +9857,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="3" id="6"/>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Shift Count All" ISN_2="9" LastIsn="28" id="551">
+          <Header Description="Shift Count All" ISN_2="9" LastIsn="27" id="551">
             <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -10128,7 +10149,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Shift Count Defect" ISN_2="10" LastIsn="28" id="551">
+          <Header Description="Shift Count Defect" ISN_2="10" LastIsn="27" id="551">
             <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -10420,7 +10441,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="Shift Count DPR" ISN_2="11" LastIsn="28" id="551">
+          <Header Description="Shift Count DPR" ISN_2="11" LastIsn="27" id="551">
             <LastModified _date="739699" _time="54143" date="24/03/2026" time="15:02:23"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
