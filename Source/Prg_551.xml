@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VQMS003_DefectEntryScreen" ISN_2="1" LastIsn="27" id="551">
-          <LastModified _date="739747" _time="51433" date="11/05/2026" time="14:17:13"/>
+          <LastModified _date="739747" _time="60821" date="11/05/2026" time="16:53:41"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="33"/>
+        <ItemIsn val="34"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="5"/>
@@ -165,6 +165,16 @@
                 <Picture id="157" valUnicode="100"/>
                 <StoredAs id="173" val="1"/>
                 <Size id="174" val="100"/>
+                <_Flip id="194"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="12" name="vLastClicked">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Picture id="157" valUnicode="20"/>
+                <StoredAs id="173" val="1"/>
+                <Size id="174" val="20"/>
                 <_Flip id="194"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
@@ -854,6 +864,19 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="34" FlowIsn="297" id="34">
+                  <Column val="12"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="70">
                   <Type val="2"/>
                   <Text val=" "/>
@@ -1023,7 +1046,7 @@
             <Scope val="S"/>
             <EngineDirective val="S"/>
             <ShowMessage val="Y"/>
-            <Condition val="89"/>
+            <Condition val="-36"/>
             <Event>
               <EventType val="S"/>
             </Event>
@@ -1137,6 +1160,15 @@
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="94" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
                   <AppendToErrorLog val="Y"/>
                   <Condition Exp="25"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="275" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Frame" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Disabled val="1"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
@@ -1269,7 +1301,7 @@
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
-                  <Condition Exp="2"/>
+                  <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </RaiseEvent>
@@ -1362,12 +1394,50 @@
                 </Update>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="299">
+                  <FieldID val="34"/>
+                  <WithValue val="38"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Evaluate FlowIsn="269">
+                  <Expression val="34"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Evaluate>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="270">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="29"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+              <LogicLine>
                 <RaiseEvent FlowIsn="217">
                   <Event>
                     <EventType val="I"/>
                     <InternalEventID val="295"/>
                   </Event>
                   <Wait val="78"/>
+                  <Disabled val="1"/>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -1379,6 +1449,17 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </BLOCK>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="342">
+                  <FieldID val="34"/>
+                  <WithValue val="42"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
               </LogicLine>
               <LogicLine>
                 <RaiseEvent FlowIsn="172">
@@ -1794,7 +1875,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="26">
-            <ExpSyntax val="LastClicked() ='btnexit'"/>
+            <ExpSyntax val="{0,34}='btnexit'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="28">
@@ -1833,10 +1914,34 @@
             <ExpSyntax val="Trim({0,2})&lt;>''"/>
             <ExpAttribute val="B"/>
           </Expression>
+          <Expression id="37">
+            <ExpSyntax val="{32768,28}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="38">
+            <ExpSyntax val="'aa'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="39">
+            <ExpSyntax val="LastClicked()"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="40">
+            <ExpSyntax val="{0,28}=1"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="41">
+            <ExpSyntax val="Trim({0,2})"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="42">
+            <ExpSyntax val="'btnexit'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
         </Expressions>
         <Task MainProgram="N">
           <Header Description="DEFECTENTRYSCREEN" ISN_2="2" LastIsn="27" id="551">
-            <LastModified _date="739747" _time="50832" date="11/05/2026" time="14:07:12"/>
+            <LastModified _date="739747" _time="57921" date="11/05/2026" time="16:05:21"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2787,11 +2892,13 @@
                 <EventType val="S"/>
               </Event>
               <TXT val="btnDefectCode"/>
+              <Disabled val="1"/>
               <ExecuteOn_ val="O"/>
               <LogicLines>
                 <LogicLine>
                   <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="284" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TXT="Btn Defect code" TitleTxt="Warning" VR_DISP="B">
                     <AppendToErrorLog val="N"/>
+                    <Disabled val="1"/>
                     <Condition val="Y"/>
                     <Modifier val="B"/>
                     <Direction val="C"/>
