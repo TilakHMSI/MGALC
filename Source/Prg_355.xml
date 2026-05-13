@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VMNUO001_GENERAL_MENU" ISN_2="1" LastIsn="4" id="355">
-          <LastModified _date="739708" _time="44192" date="02/04/2026" time="12:16:32"/>
+          <LastModified _date="739749" _time="61577" date="13/05/2026" time="17:06:17"/>
           <Public val="RIA2"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -858,6 +858,61 @@
               <EventType val="S"/>
             </Event>
             <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <CallTask FlowIsn="104">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="369"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="21"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="105" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="106">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="594"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="23"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Skip val="Y"/>
+                    </Argument>
+                  </Arguments>
+                  <Disabled val="1"/>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
           </LogicUnit>
           <LogicUnit id="5" propagate="78">
             <Level val="R"/>
@@ -871,6 +926,27 @@
             </Event>
             <ExecuteOn_ val="O"/>
             <LogicLines>
+              <LogicLine>
+                <RaiseEvent FlowIsn="120">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="594"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="23"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Skip val="Y"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition Exp="22"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="61" EndBlockSegment="61" FlowIsn="60" Type="I">
                   <Condition Exp="17"/>
@@ -1755,6 +1831,18 @@
           </Expression>
           <Expression id="19">
             <ExpSyntax val="'PGM=VMNUO001'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="21">
+            <ExpSyntax val="'Please change your default password to your own password first.'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="22">
+            <ExpSyntax val="NOT {32768,553}"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="23">
+            <ExpSyntax val="'Home'"/>
             <ExpAttribute val="A"/>
           </Expression>
         </Expressions>

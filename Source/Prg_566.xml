@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="PRD003_GUIDE" ISN_2="9" LastIsn="30" id="566">
-          <LastModified _date="739706" _time="45551" date="31/03/2026" time="12:39:11"/>
+          <LastModified _date="739748" _time="62040" date="12/05/2026" time="17:14:00"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -37,7 +37,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="32"/>
+        <ItemIsn val="34"/>
         <Resource>
           <Columns>
             <Column id="8" name="pENG_TYPE">
@@ -123,6 +123,38 @@
                 <DatabaseInformation id="177"/>
                 <DbColumnName id="178" val="GR"/>
                 <Type id="179" val="CHAR(4)"/>
+                <UserType id="180"/>
+                <_Flip id="194"/>
+                <PartOfDatetime id="244"/>
+                <DefaultStorage id="274"/>
+                <Content id="434"/>
+              </PropertyList>
+            </Column>
+            <Column id="13" name="CHG_REASON_Search">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                <Picture id="157" valUnicode="2"/>
+                <StoredAs id="173" val="1"/>
+                <_Dec id="181"/>
+                <_Whole id="182" val="2"/>
+                <_Negative id="192"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="14" name="CHG_PRV_Search">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_ALPHA" id="1"/>
+                <Range id="98"/>
+                <Picture id="157" valUnicode="20"/>
+                <NullAllowed id="166"/>
+                <NullDefault id="169"/>
+                <CharSet id="172" val="1"/>
+                <StoredAs id="173" val="3"/>
+                <Size id="174" val="20"/>
+                <Definition id="175" val="2"/>
+                <DatabaseInformation id="177"/>
+                <DbColumnName id="178" val="EF_TYP"/>
+                <Type id="179" val="VARCHAR2(11)"/>
                 <UserType id="180"/>
                 <_Flip id="194"/>
                 <PartOfDatetime id="244"/>
@@ -430,6 +462,76 @@
             </Event>
             <ExecuteOn_ val="O"/>
           </LogicUnit>
+          <LogicUnit id="8" propagate="78">
+            <Level val="V"/>
+            <Type val="C"/>
+            <FieldID val="18"/>
+            <Scope val="S"/>
+            <EngineDirective val="S"/>
+            <ShowMessage val="Y"/>
+            <Condition val="89"/>
+            <Event>
+              <EventType val="S"/>
+            </Event>
+            <ExecuteOn_ val="O"/>
+            <LogicLines>
+              <LogicLine>
+                <Select FieldID="33" FlowIsn="34" id="33">
+                  <Column val="13"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="34" FlowIsn="35" id="34">
+                  <Column val="14"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="Y"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="36">
+                  <FieldID val="24"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <RaiseEvent FlowIsn="37">
+                  <Event>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
+                  </Event>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="5"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </RaiseEvent>
+              </LogicLine>
+            </LogicLines>
+          </LogicUnit>
         </TaskLogic>
         <TaskForms>
           <FormEntry _last_isn="21" _last_test_id="21" id="2">
@@ -451,6 +553,7 @@
                 <Height id="24" val="28"/>
                 <Data FieldID="18" id="43"/>
                 <ControlName id="46" val="Search"/>
+                <BindingLevel id="733" val="2"/>
               </PropertyList>
             </Control>
             <Control PDOD="128" _test_id="20" id="20">
