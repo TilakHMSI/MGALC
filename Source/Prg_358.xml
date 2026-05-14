@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO042DISPAF_OFF_ENTRY" ISN_2="1" LastIsn="43" id="358">
-          <LastModified _date="739720" _time="64579" date="14/04/2026" time="17:56:19"/>
+          <LastModified _date="739750" _time="57193" date="14/05/2026" time="15:53:13"/>
           <Public val="RIA234_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -7112,6 +7112,23 @@
                 </BLOCK>
               </LogicLine>
               <LogicLine>
+                <Update FlowIsn="18222">
+                  <FieldID val="121"/>
+                  <WithValue val="89"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="38"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="18223">
+                  <Type val="2"/>
+                  <Text val=" "/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
                 <Update FlowIsn="514">
                   <FieldID val="120"/>
                   <WithValue val="41"/>
@@ -7363,6 +7380,13 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
+                <BLOCK EndBlock="18221" EndBlockSegment="18221" FlowIsn="18220" Type="I">
+                  <Condition Exp="246"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </BLOCK>
+              </LogicLine>
+              <LogicLine>
                 <CallTask FlowIsn="538">
                   <OperationType val="T"/>
                   <Event>
@@ -7534,6 +7558,9 @@
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </Update>
+              </LogicLine>
+              <LogicLine>
+                <END_BLK FlowIsn="18221"/>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="541">
@@ -9479,6 +9506,10 @@
           <Expression id="245">
             <ExpSyntax val="IF({0,15},{0,31},IF({0,16},{0,58},''))"/>
             <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="246">
+            <ExpSyntax val="Len(Trim({0,11}))>0 AND Len(Trim({0,81}))>0"/>
+            <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
         <EVNT DESC="Process" FORCE_EXIT="N" id="1">
@@ -12066,7 +12097,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="UPDATE PRD005(FRM_DATA)" ISN_2="8" LastIsn="43" id="358">
-            <LastModified _date="739631" _time="42311" date="15/01/2026" time="11:45:11"/>
+            <LastModified _date="739750" _time="56294" date="14/05/2026" time="15:38:14"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -13027,6 +13058,12 @@
                 <EventType val="S"/>
               </Event>
               <LogicLines>
+                <LogicLine>
+                  <Remark FlowIsn="261">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
                 <LogicLine>
                   <Update FlowIsn="57">
                     <FieldID val="12"/>
