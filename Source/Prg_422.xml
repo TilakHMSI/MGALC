@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="LoginScreen" ISN_2="1" LastIsn="9" id="422">
-          <LastModified _date="739754" _time="42570" date="18/05/2026" time="11:49:30"/>
+          <LastModified _date="739757" _time="52311" date="21/05/2026" time="14:31:51"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -31,7 +31,7 @@
           <FormType val="N"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="10"/>
+        <ItemIsn val="11"/>
         <Resource>
           <Columns>
             <Column id="1" name="vSuccess?">
@@ -107,6 +107,17 @@
             <Column id="10" name="vPassExpired">
               <PropertyList model="FIELD">
                 <Model attr_obj="FIELD_LOGICAL" id="1"/>
+                <_FieldStyle id="276" val="1"/>
+                <PartOfDataview id="449"/>
+              </PropertyList>
+            </Column>
+            <Column id="11" name="vExpiryDaysCnt">
+              <PropertyList model="FIELD">
+                <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                <Picture id="157" valUnicode="2"/>
+                <_Dec id="181"/>
+                <_Whole id="182" val="2"/>
+                <_Negative id="192"/>
                 <_FieldStyle id="276" val="1"/>
                 <PartOfDataview id="449"/>
               </PropertyList>
@@ -319,6 +330,19 @@
                   <Direction val="C"/>
                 </Select>
               </LogicLine>
+              <LogicLine>
+                <Select FieldID="11" FlowIsn="278" id="11">
+                  <Column val="11"/>
+                  <Type val="V"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
           <LogicUnit id="3" propagate="78">
@@ -461,6 +485,10 @@
                     </Argument>
                     <Argument>
                       <Variable val="10"/>
+                      <Skip val="N"/>
+                    </Argument>
+                    <Argument>
+                      <Variable val="11"/>
                       <Skip val="N"/>
                     </Argument>
                   </Arguments>
@@ -755,6 +783,37 @@
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="262" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
                   <AppendToErrorLog val="N"/>
                   <Condition Exp="31"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
+                <CallTask FlowIsn="279">
+                  <OperationType val="P"/>
+                  <Event>
+                    <EventType val="N"/>
+                  </Event>
+                  <TaskID comp="-1" obj="369"/>
+                  <Lock val="N"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="33"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Wait val="Y"/>
+                  <SyncData val="N"/>
+                  <IsRoute val="N"/>
+                  <RetainFocus val="N"/>
+                  <Condition Exp="34"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </CallTask>
+              </LogicLine>
+              <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="280" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                  <AppendToErrorLog val="N"/>
+                  <Condition Exp="34"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
@@ -1185,6 +1244,14 @@
             <ExpSyntax val="'Please change your default password to your own password first.'"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="33">
+            <ExpSyntax val="'Your password will expire in'&amp;Str({0,11},'2')&amp;' days. Please reset your password.'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="34">
+            <ExpSyntax val="{0,11}&lt;=10 AND {0,11}>0"/>
+            <ExpAttribute val="B"/>
+          </Expression>
         </Expressions>
         <EVNT DESC="Task:Login" FORCE_EXIT="N" id="1">
           <Event>
@@ -1192,18 +1259,19 @@
           </Event>
         </EVNT>
         <Task MainProgram="N">
-          <Header Description="LoginAttempt" ISN_2="7" LastIsn="7" id="422">
-            <LastModified _date="739754" _time="42570" date="18/05/2026" time="11:49:30"/>
+          <Header Description="LoginAttempt" ISN_2="7" LastIsn="9" id="422">
+            <LastModified _date="739757" _time="52044" date="21/05/2026" time="14:27:24"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
             <ReturnValue>
               <ReturnValueAttr/>
-              <TSK_PARAMS val="3"/>
+              <TSK_PARAMS val="4"/>
               <ParametersAttributes>
                 <Attr MgAttr="A"/>
                 <Attr MgAttr="B"/>
                 <Attr MgAttr="B"/>
+                <Attr MgAttr="N"/>
               </ParametersAttributes>
             </ReturnValue>
             <SqlWhereExist val="N"/>
@@ -1212,7 +1280,7 @@
             <FormType val="N"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="19"/>
+          <ItemIsn val="21"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="370"/>
@@ -1268,6 +1336,16 @@
                   <_FieldStyle id="276" val="1"/>
                 </PropertyList>
               </Column>
+              <Column id="6" name="vPassExpiryCount">
+                <PropertyList model="FIELD">
+                  <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                  <Picture id="157" valUnicode="2"/>
+                  <_Dec id="181"/>
+                  <_Whole id="182" val="2"/>
+                  <_Negative id="192"/>
+                  <_FieldStyle id="276" val="1"/>
+                </PropertyList>
+              </Column>
               <Column id="3" name="vLoginAttempt">
                 <PropertyList model="FIELD">
                   <Model attr_obj="FIELD_LOGICAL" id="1"/>
@@ -1277,6 +1355,16 @@
               <Column id="5" name="vPassExpired">
                 <PropertyList model="FIELD">
                   <Model attr_obj="FIELD_LOGICAL" id="1"/>
+                  <_FieldStyle id="276" val="1"/>
+                </PropertyList>
+              </Column>
+              <Column id="7" name="vExpiryDaysCount">
+                <PropertyList model="FIELD">
+                  <Model attr_obj="FIELD_NUMERIC" id="1"/>
+                  <Picture id="157" valUnicode="2"/>
+                  <_Dec id="181"/>
+                  <_Whole id="182" val="2"/>
+                  <_Negative id="192"/>
                   <_FieldStyle id="276" val="1"/>
                 </PropertyList>
               </Column>
@@ -1400,7 +1488,19 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="2" Key="1" Mode="R" SortType="3" VIEW="4" VIEWS="3">
+                  <Select FieldID="20" FlowIsn="72" id="20">
+                    <Column val="6"/>
+                    <Type val="V"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="Y"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="2" Key="1" Mode="R" SortType="3" VIEW="5" VIEWS="3">
                     <DB comp="-1" obj="370"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1470,7 +1570,19 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="16" Key="1" Mode="R" SortType="17" VIEW="9" VIEWS="2">
+                  <Select FieldID="21" FlowIsn="73" id="21">
+                    <Column val="7"/>
+                    <Type val="V"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="Y"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="16" Key="1" Mode="R" SortType="17" VIEW="11" VIEWS="2">
                     <DB comp="-1" obj="371"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1504,7 +1616,7 @@
                   <END_LINK FlowIsn="17"/>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="43" Key="1" Mode="R" SortType="44" VIEW="11" VIEWS="5">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="43" Key="1" Mode="R" SortType="44" VIEW="13" VIEWS="5">
                     <DB comp="-1" obj="373"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1577,7 +1689,7 @@
                   <END_LINK FlowIsn="44"/>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="59" Key="1" Mode="R" SortType="60" VIEW="16" VIEWS="3">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="59" Key="1" Mode="R" SortType="60" VIEW="18" VIEWS="3">
                     <DB comp="-1" obj="372"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1657,6 +1769,17 @@
                     <Direction val="C"/>
                   </Update>
                 </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="74">
+                    <FieldID val="21"/>
+                    <WithValue val="14"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition Exp="15"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
               </LogicLines>
             </LogicUnit>
             <LogicUnit id="3" propagate="78">
@@ -1685,6 +1808,17 @@
                   <Update FlowIsn="33">
                     <FieldID val="9"/>
                     <WithValue val="4"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="75">
+                    <FieldID val="21"/>
+                    <WithValue val="16"/>
                     <Incremental val="N"/>
                     <ForcedUpdate val="Y"/>
                     <Condition val="Y"/>
@@ -1727,6 +1861,17 @@
                     <Direction val="C"/>
                   </Update>
                 </LogicLine>
+                <LogicLine>
+                  <Update FlowIsn="76">
+                    <FieldID val="20"/>
+                    <WithValue val="17"/>
+                    <Incremental val="N"/>
+                    <ForcedUpdate val="Y"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </Update>
+                </LogicLine>
               </LogicLines>
             </LogicUnit>
           </TaskLogic>
@@ -1748,7 +1893,7 @@
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="3">
-              <ExpSyntax val="{0,2}>={0,6}"/>
+              <ExpSyntax val="{0,10}>={0,6}"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="4">
@@ -1779,10 +1924,30 @@
               <ExpSyntax val="{0,12}"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="14">
+              <ExpSyntax val="{0,2}-Date()"/>
+              <ExpAttribute val="N"/>
+            </Expression>
+            <Expression id="15">
+              <ExpSyntax val="{0,19}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="16">
+              <ExpSyntax val="0"/>
+              <ExpAttribute val="N"/>
+            </Expression>
+            <Expression id="17">
+              <ExpSyntax val="{0,21}"/>
+              <ExpAttribute val="N"/>
+            </Expression>
+            <Expression id="18">
+              <ExpSyntax val="Trim(Str({0,21},'2'))"/>
+              <ExpAttribute val="A"/>
+            </Expression>
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="CheckIsUserDeactived" ISN_2="3" LastIsn="7" id="422">
+          <Header Description="CheckIsUserDeactived" ISN_2="3" LastIsn="9" id="422">
             <LastModified _date="739574" _time="59013" date="19/11/2025" time="16:23:33"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -1967,7 +2132,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="AuthonticateUser" ISN_2="4" LastIsn="7" id="422">
+          <Header Description="AuthonticateUser" ISN_2="4" LastIsn="9" id="422">
             <LastModified _date="739749" _time="67003" date="13/05/2026" time="18:36:43"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
@@ -2599,7 +2764,7 @@
           </Expressions>
         </Task>
         <Task MainProgram="N">
-          <Header Description="UpdateAttemptCnt" ISN_2="8" LastIsn="8" id="422">
+          <Header Description="UpdateAttemptCnt" ISN_2="8" LastIsn="9" id="422">
             <LastModified _date="739749" _time="67012" date="13/05/2026" time="18:36:52"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
