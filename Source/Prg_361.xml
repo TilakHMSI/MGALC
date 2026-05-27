@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO066_PDIOFFENTRY" ISN_2="1" LastIsn="47" id="361">
-          <LastModified _date="739726" _time="37187" date="20/04/2026" time="10:19:47"/>
+          <LastModified _date="739763" _time="42371" date="27/05/2026" time="11:46:11"/>
           <Public val="RIA217"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -4683,6 +4683,14 @@
                 </Evaluate>
               </LogicLine>
               <LogicLine>
+                <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="12092" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="B">
+                  <AppendToErrorLog val="Y"/>
+                  <Condition Exp="61"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </STP>
+              </LogicLine>
+              <LogicLine>
                 <END_BLK FlowIsn="5043"/>
               </LogicLine>
             </LogicLines>
@@ -8360,7 +8368,7 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="145">
-            <ExpSyntax val="{0,9}=' ' AND {0,8}='ADDITION'"/>
+            <ExpSyntax val="Trim({0,127})='' AND {0,9}=' ' AND {0,8}='ADDITION'"/>
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="147">
