@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="Free138" ISN_2="1" LastIsn="1" id="708">
-          <LastModified _date="739758" _time="60078" date="22/05/2026" time="16:41:18"/>
+          <LastModified _date="739763" _time="68616" date="27/05/2026" time="19:03:36"/>
           <Public val="Prg_138_RIA_C_TT"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -30,7 +30,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="4"/>
+        <ItemIsn val="5"/>
         <Resource>
           <DB id="1">
             <DataObject comp="-1" obj="356"/>
@@ -142,7 +142,7 @@
                 </Select>
               </LogicLine>
               <LogicLine>
-                <LNK Direction="A" EVL_CND="R" FlowIsn="4" Key="1" Mode="R" SortType="5" VIEW="2" VIEWS="3">
+                <LNK Direction="A" EVL_CND="R" FlowIsn="4" Key="1" Mode="R" SortType="5" VIEW="2" VIEWS="4">
                   <DB comp="-1" obj="356"/>
                   <Condition val="Y"/>
                 </LNK>
@@ -176,6 +176,18 @@
               <LogicLine>
                 <Select FieldID="4" FlowIsn="8" id="4">
                   <Column val="19"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <Condition val="N"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="5" FlowIsn="11" id="5">
+                  <Column val="5"/>
                   <Type val="R"/>
                   <ExposedToRoute val="N"/>
                   <IsParameter val="N"/>
@@ -237,6 +249,17 @@
               <LogicLine>
                 <Update FlowIsn="9">
                   <FieldID val="4"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition val="Y"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="12">
+                  <FieldID val="5"/>
                   <WithValue val="4"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
