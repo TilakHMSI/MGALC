@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO031ENGFRMNOinquiry25" ISN_2="1" LastIsn="4" id="680">
-          <LastModified _date="739730" _time="63987" date="24/04/2026" time="17:46:27"/>
+          <LastModified _date="739764" _time="70255" date="28/05/2026" time="19:30:55"/>
           <Public val="Prg_25_RIA_C_TT"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -373,6 +373,7 @@
             <Event>
               <EventType val="S"/>
             </Event>
+            <Disabled val="1"/>
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
@@ -388,6 +389,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ENGFRM_NO_DETAIL_INQUIRY"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="8"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -406,6 +408,7 @@
                   <IsRoute val="N"/>
                   <DestSubformName val="ENGFRM_NO_DETAIL_INQUIRY"/>
                   <RetainFocus val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="7"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -490,12 +493,18 @@
                 </CallTask>
               </LogicLine>
               <LogicLine>
-                <RaiseEvent FlowIsn="21">
+                <RaiseEvent FlowIsn="27">
                   <Event>
                     <EventType val="I"/>
-                    <InternalEventID val="63"/>
+                    <InternalEventID val="432"/>
                   </Event>
                   <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="10"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
                   <Condition val="Y"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -517,21 +526,22 @@
             <ExecuteOn_ val="O"/>
             <LogicLines>
               <LogicLine>
-                <CallTask FlowIsn="22">
-                  <OperationType val="T"/>
+                <RaiseEvent FlowIsn="28">
                   <Event>
-                    <EventType val="N"/>
+                    <EventType val="I"/>
+                    <InternalEventID val="432"/>
                   </Event>
-                  <TaskID comp="-1" obj="2"/>
-                  <Lock val="Y"/>
-                  <SyncData val="N"/>
-                  <IsRoute val="N"/>
-                  <DestSubformName val="ENGFRM_NO_DETAIL_INQUIRY"/>
-                  <RetainFocus val="Y"/>
-                  <Condition Exp="9"/>
+                  <Wait val="78"/>
+                  <Arguments>
+                    <Argument>
+                      <Expression val="10"/>
+                      <Skip val="N"/>
+                    </Argument>
+                  </Arguments>
+                  <Condition Exp="11"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
-                </CallTask>
+                </RaiseEvent>
               </LogicLine>
             </LogicLines>
           </LogicUnit>
@@ -675,8 +685,8 @@
                 <Height id="24" val="436"/>
                 <ControlName id="46" val="ENGFRM_NO_DETAIL_INQUIRY"/>
                 <Arguments id="126"/>
-                <ConnectTo id="156" val="4"/>
-                <TaskNumber id="183"/>
+                <ConnectTo id="156" val="2"/>
+                <TaskNumber comp="-1" id="183" obj="2"/>
               </PropertyList>
             </Control>
           </FormEntry>
@@ -710,8 +720,12 @@
             <ExpSyntax val="{0,2}&lt;>'HMS'"/>
             <ExpAttribute val="B"/>
           </Expression>
-          <Expression id="9">
-            <ExpSyntax val="{0,3}&lt;>''"/>
+          <Expression id="10">
+            <ExpSyntax val="'ENGFRM_NO_DETAIL_INQUIRY'"/>
+            <ExpAttribute val="A"/>
+          </Expression>
+          <Expression id="11">
+            <ExpSyntax val="{0,6}&lt;>0"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
