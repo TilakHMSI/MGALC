@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VPRDO065_VQON_ENTRY" ISN_2="1" LastIsn="12" id="359">
-          <LastModified _date="739748" _time="65492" date="12/05/2026" time="18:11:32"/>
+          <LastModified _date="739765" _time="64450" date="29/05/2026" time="17:54:10"/>
           <Public val="RIA42_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -1261,6 +1261,10 @@
                     <v>28</v>
                     <v>686</v>
                   </INT_RCMP_INFO>
+                  <INT_DIT_INFO>
+                    <v>12</v>
+                    <v>13</v>
+                  </INT_DIT_INFO>
                   <_DitIndexForToolkit val="23"/>
                   <DIFF_UPDATE val="T"/>
                   <Condition val="Y"/>
@@ -4379,7 +4383,7 @@
                 <Update FlowIsn="2362">
                   <Parent val="32768"/>
                   <FieldID val="540"/>
-                  <WithValue val="128"/>
+                  <WithValue val="142"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
                   <Condition Exp="16"/>
@@ -4979,7 +4983,7 @@
         </TaskForms>
         <Expressions>
           <Expression id="1">
-            <ExpSyntax val="IF({0,10}&lt;>' ',IF(Len(Trim({0,10}))=12,Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7')),&#xD;&#xA;IF({0,46},Trim ({0,75})&amp;' '&amp;Trim (Str ({0,76},'7P0')),Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7P0')))),' ')"/>
+            <ExpSyntax val="IF({0,10}&lt;>' ',IF(InStr(Trim({0,10}),'-')>0,Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7P0')),&#xD;&#xA;IF({0,46},Trim ({0,75})&amp;' '&amp;Trim (Str ({0,76},'7P0')),Trim ({0,103})&amp;' '&amp;Trim (Str ({0,104},'7P0')))),' ')"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="2">
@@ -5135,15 +5139,15 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="42">
-            <ExpSyntax val="IF(Len(Trim({0,10}))=12,Left ({0,10},4),Left ({0,10},11))"/>
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Left (Trim({0,10}),4),Left ({0,10},11))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="43">
-            <ExpSyntax val="IF(Len(Trim({0,10}))=12,Left ({0,10},4),Rep ({0,11},' ',9,1))"/>
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Left (Trim({0,10}),4),Rep ({0,11},' ',9,1))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="44">
-            <ExpSyntax val="IF(Len(Trim({0,10}))=12,Val (Right (Trim({0,10}),7),'7'),IF (Right ({0,10},1)='',Val (MID ({0,10},12,6),'7'),Val (Right ({0,10},7),'7')))"/>
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Val (Right (Left(Trim({0,10}),12),7),'7'),IF (Right ({0,10},1)='',Val (MID ({0,10},12,6),'7'),Val (Right ({0,10},7),'7')))"/>
             <ExpAttribute val="N"/>
           </Expression>
           <Expression id="45">
@@ -5350,6 +5354,10 @@
             <ExpSyntax val="Trim({0,10})"/>
             <ExpAttribute val="A"/>
           </Expression>
+          <Expression id="142">
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Left(Trim({0,10}),12),Trim({0,10}))"/>
+            <ExpAttribute val="A"/>
+          </Expression>
           <Expression id="132">
             <ExpSyntax val="IF(InStr(Trim({0,114}),'00000')>0,'', Trim({0,114}))"/>
             <ExpAttribute val="A"/>
@@ -5359,11 +5367,11 @@
             <ExpAttribute val="B"/>
           </Expression>
           <Expression id="136">
-            <ExpSyntax val="IF(Len(Trim({0,118}))=12,Left ({0,118},4),Left(Trim({0,118}),11))"/>
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Left (Trim({0,118}),4),Left(Trim({0,118}),11))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="137">
-            <ExpSyntax val="Right(Trim({0,118}),6)"/>
+            <ExpSyntax val="IF(InStr(Trim({0,10}),'-')>0,Right(Left(Trim({0,118}),12),7),Right(Trim({0,118}),6))"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="138">
@@ -6667,7 +6675,7 @@
           </Expressions>
           <Task MainProgram="N">
             <Header Description="FLAG =1, ADDITION" ISN_2="5" LastIsn="12" id="359">
-              <LastModified _date="739748" _time="64165" date="12/05/2026" time="17:49:25"/>
+              <LastModified _date="739765" _time="64450" date="29/05/2026" time="17:54:10"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -7307,7 +7315,7 @@
                     <Update FlowIsn="44">
                       <Parent val="1"/>
                       <FieldID val="118"/>
-                      <WithValue val="4"/>
+                      <WithValue val="26"/>
                       <Incremental val="N"/>
                       <ForcedUpdate val="Y"/>
                       <Condition val="Y"/>
@@ -7385,7 +7393,7 @@
                           <Skip val="N"/>
                         </Argument>
                         <Argument>
-                          <Expression val="4"/>
+                          <Expression val="26"/>
                           <Skip val="N"/>
                         </Argument>
                         <Argument>
@@ -7530,6 +7538,10 @@
               </Expression>
               <Expression id="25">
                 <ExpSyntax val="{0,24}"/>
+                <ExpAttribute val="A"/>
+              </Expression>
+              <Expression id="26">
+                <ExpSyntax val="IF(InStr(Trim({1,10}),'-')>0,Left(Trim({1,10}),12),Trim({1,10}))"/>
                 <ExpAttribute val="A"/>
               </Expression>
             </Expressions>
