@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="EVPRG7_BATTERY_SCANNING_ENTRY" ISN_2="1" LastIsn="14" id="524">
-          <LastModified _date="739782" _time="52961" date="15/06/2026" time="14:42:41"/>
+          <LastModified _date="739782" _time="53810" date="15/06/2026" time="14:56:50"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -5457,7 +5457,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="MOTOROFFRESULTENTRYHMSI" ISN_2="5" LastIsn="14" id="524">
-            <LastModified _date="739782" _time="52961" date="15/06/2026" time="14:42:41"/>
+            <LastModified _date="739782" _time="53810" date="15/06/2026" time="14:56:50"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -5601,15 +5601,10 @@
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
                     <Range MAX="2" MIN="2"/>
-                    <INT_RCMP_INFO>
-                      <v>27</v>
-                    </INT_RCMP_INFO>
                     <INT_DIT_INFO>
                       <v>9</v>
                       <v>10</v>
                       <v>11</v>
-                      <v>12</v>
-                      <v>13</v>
                       <v>14</v>
                     </INT_DIT_INFO>
                     <_DitIndexForToolkit val="8"/>
@@ -5918,6 +5913,10 @@
                     <Type val="R"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
+                    <INT_DIT_INFO>
+                      <v>12</v>
+                      <v>13</v>
+                    </INT_DIT_INFO>
                     <_DitIndexForToolkit val="12"/>
                     <DIFF_UPDATE val="T"/>
                     <PartOfDataview val="N"/>
@@ -5988,28 +5987,6 @@
                 <EventType val="S"/>
               </Event>
               <ExecuteOn_ val="O"/>
-            </LogicUnit>
-            <LogicUnit id="5" propagate="78">
-              <Level val="R"/>
-              <Type val="P"/>
-              <Scope val="S"/>
-              <EngineDirective val="S"/>
-              <ShowMessage val="Y"/>
-              <Condition val="89"/>
-              <Event>
-                <EventType val="S"/>
-              </Event>
-              <ExecuteOn_ val="O"/>
-              <LogicLines>
-                <LogicLine>
-                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="10" FlowIsn="38" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
-                    <AppendToErrorLog val="N"/>
-                    <Condition val="Y"/>
-                    <Modifier val="B"/>
-                    <Direction val="C"/>
-                  </STP>
-                </LogicLine>
-              </LogicLines>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
               <Level val="R"/>
@@ -6176,7 +6153,7 @@
                   <ControlLayer id="25" val="4"/>
                   <Data FieldID="28" id="43"/>
                   <ControlName id="46" val="S5_AFOFF_DATE"/>
-                  <Visible Exp="8" id="61"/>
+                  <Visible Exp="11" id="61"/>
                   <Enabled Exp="9" id="62"/>
                   <MultiLineEdit id="71"/>
                 </PropertyList>
@@ -6191,7 +6168,7 @@
                   <ControlLayer id="25" val="5"/>
                   <Data FieldID="29" id="43"/>
                   <ControlName id="46" val="S5_AFOFF_TIME"/>
-                  <Visible Exp="8" id="61"/>
+                  <Visible Exp="11" id="61"/>
                   <Enabled Exp="9" id="62"/>
                   <MultiLineEdit id="71"/>
                 </PropertyList>
@@ -6245,12 +6222,16 @@
               <ExpSyntax val="{0,1}&lt;>''"/>
               <ExpAttribute val="B"/>
             </Expression>
+            <Expression id="11">
+              <ExpSyntax val="NOT ISNULL({0,28})"/>
+              <ExpAttribute val="B"/>
+            </Expression>
             <Expression id="9">
               <ExpSyntax val="'FALSE'LOG"/>
               <ExpAttribute val="B"/>
             </Expression>
             <Expression id="10">
-              <ExpSyntax val="Trim({0,1})&amp;Trim(Str({0,2},'7P0'))"/>
+              <ExpSyntax val="Trim({1,9})&amp;Trim(Str({0,2},'6P0'))"/>
               <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
@@ -6260,7 +6241,7 @@
           <VarRangeInfo Mode="T" VarRangeVeeIsn="2" id="4"/>
           <Task MainProgram="N">
             <Header Description="MOTOROFFRESULTENTRY2" ISN_2="6" LastIsn="14" id="524">
-              <LastModified _date="739782" _time="48826" date="15/06/2026" time="13:33:46"/>
+              <LastModified _date="739782" _time="53763" date="15/06/2026" time="14:56:03"/>
               <ExecutionRight comp="-1"/>
               <Resident val="N"/>
               <SQL val="N"/>
@@ -6275,7 +6256,7 @@
               <FormType val="N"/>
               <DotNetObjectExists val="N"/>
             </Header>
-            <ItemIsn val="11"/>
+            <ItemIsn val="15"/>
             <Resource>
               <DB id="1">
                 <DataObject comp="-1" obj="5"/>
@@ -6283,6 +6264,14 @@
                 <Share val="W"/>
                 <Open val="N"/>
                 <Cache val="N"/>
+                <IdentifyRowModifications val="84"/>
+              </DB>
+              <DB id="2">
+                <DataObject comp="-1" obj="343"/>
+                <Access val="R"/>
+                <Share val="W"/>
+                <Open val="N"/>
+                <Cache val="Y"/>
                 <IdentifyRowModifications val="84"/>
               </DB>
               <Columns>
@@ -6434,6 +6423,9 @@
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
                       <Range MAX="2" MIN="2"/>
+                      <INT_RCMP_INFO>
+                        <v>16</v>
+                      </INT_RCMP_INFO>
                       <_DitIndexForToolkit val="10"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
@@ -6473,7 +6465,6 @@
                       <Type val="R"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="13"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -6486,7 +6477,6 @@
                       <Type val="R"/>
                       <ExposedToRoute val="N"/>
                       <IsParameter val="N"/>
-                      <_DitIndexForToolkit val="14"/>
                       <DIFF_UPDATE val="T"/>
                       <Condition val="Y"/>
                       <Modifier val="S"/>
@@ -6531,6 +6521,57 @@
                       <Modifier val="S"/>
                       <Direction val="C"/>
                     </Select>
+                  </LogicLine>
+                  <LogicLine>
+                    <LNK Direction="A" EVL_CND="R" FlowIsn="16" Key="2" Mode="R" SortType="17" VIEW="10" VIEWS="3">
+                      <DB comp="-1" obj="343"/>
+                      <Condition val="Y"/>
+                    </LNK>
+                  </LogicLine>
+                  <LogicLine>
+                    <Select FieldID="12" FlowIsn="18" id="12">
+                      <Column val="4"/>
+                      <Type val="R"/>
+                      <ExposedToRoute val="N"/>
+                      <IsParameter val="N"/>
+                      <Locate MAX="8" MIN="8"/>
+                      <DIFF_UPDATE val="T"/>
+                      <PartOfDataview val="N"/>
+                      <Condition val="N"/>
+                      <Modifier val="S"/>
+                      <Direction val="C"/>
+                    </Select>
+                  </LogicLine>
+                  <LogicLine>
+                    <Select FieldID="13" FlowIsn="19" id="13">
+                      <Column val="52"/>
+                      <Type val="R"/>
+                      <ExposedToRoute val="N"/>
+                      <IsParameter val="N"/>
+                      <_DitIndexForToolkit val="13"/>
+                      <DIFF_UPDATE val="T"/>
+                      <PartOfDataview val="N"/>
+                      <Condition val="N"/>
+                      <Modifier val="S"/>
+                      <Direction val="C"/>
+                    </Select>
+                  </LogicLine>
+                  <LogicLine>
+                    <Select FieldID="14" FlowIsn="20" id="14">
+                      <Column val="53"/>
+                      <Type val="R"/>
+                      <ExposedToRoute val="N"/>
+                      <IsParameter val="N"/>
+                      <_DitIndexForToolkit val="14"/>
+                      <DIFF_UPDATE val="T"/>
+                      <PartOfDataview val="N"/>
+                      <Condition val="N"/>
+                      <Modifier val="S"/>
+                      <Direction val="C"/>
+                    </Select>
+                  </LogicLine>
+                  <LogicLine>
+                    <END_LINK FlowIsn="17"/>
                   </LogicLine>
                   <LogicLine>
                     <Remark FlowIsn="12">
@@ -6806,32 +6847,34 @@
                 <Control PDOD="128" _test_id="11" id="11">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                     <Model ID="MODEL_WEB_CLIENT" id="1">
-                      <Var FieldID="5"/>
+                      <Var FieldID="13"/>
                     </Model>
                     <X id="21" val="308"/>
                     <Y id="22" val="44"/>
                     <Width id="23" val="76"/>
                     <Height id="24" val="16"/>
-                    <Data FieldID="5" id="43"/>
+                    <Data FieldID="13" id="43"/>
                     <ControlName id="46" val="S5_AFOFF_DATE"/>
                     <Visible Exp="6" id="61"/>
                     <Enabled Exp="7" id="62"/>
+                    <MultiLineEdit id="71"/>
                     <Format Exp="3" id="82" valUnicode="DD-MM-YYYY"/>
                   </PropertyList>
                 </Control>
                 <Control PDOD="128" _test_id="12" id="12">
                   <PropertyList model="CTRL_WEB_CLIENT_EDIT">
                     <Model ID="MODEL_WEB_CLIENT" id="1">
-                      <Var FieldID="6"/>
+                      <Var FieldID="14"/>
                     </Model>
                     <X id="21" val="391"/>
                     <Y id="22" val="44"/>
                     <Width id="23" val="62"/>
                     <Height id="24" val="16"/>
-                    <Data FieldID="6" id="43"/>
+                    <Data FieldID="14" id="43"/>
                     <ControlName id="46" val="S5_AFOFF_TIME"/>
                     <Visible Exp="6" id="61"/>
                     <Enabled Exp="7" id="62"/>
+                    <MultiLineEdit id="71"/>
                   </PropertyList>
                 </Control>
                 <Control _test_id="18" id="18">
@@ -6887,6 +6930,10 @@
               <Expression id="7">
                 <ExpSyntax val="'FALSE'LOG"/>
                 <ExpAttribute val="B"/>
+              </Expression>
+              <Expression id="8">
+                <ExpSyntax val="Trim({1,9})&amp;Trim(Str({0,2},'6P0'))"/>
+                <ExpAttribute val="A"/>
               </Expression>
             </Expressions>
             <VarRangeInfo Mode="F" VarRangeVeeIsn="1" id="1"/>
