@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="H_PRODUCTIONMONITORINGAE183" ISN_2="1" LastIsn="4" id="640">
-          <LastModified _date="739727" _time="46985" date="21/04/2026" time="13:03:05"/>
+          <LastModified _date="739792" _time="38102" date="25/06/2026" time="10:35:02"/>
           <Public val="Prg_183_RIA_C_T"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -970,7 +970,7 @@
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="10">
-            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_AEHRPRDLST.CSV'"/>
+            <ExpSyntax val="Trim({32768,4})&amp;'_'&amp;DStr(Date(),'DDMMYYY')&amp;TStr(Time(),'HHMMSS')&amp;'_AEHRPRDLST.pdf'"/>
             <ExpAttribute val="A"/>
           </Expression>
           <Expression id="11">
@@ -985,7 +985,7 @@
         </EVNT>
         <Task MainProgram="N">
           <Header Description="GET DETAILS FROM PLAN" ISN_2="2" LastIsn="4" id="640">
-            <LastModified _date="739727" _time="46978" date="21/04/2026" time="13:02:58"/>
+            <LastModified _date="739792" _time="38102" date="25/06/2026" time="10:35:02"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1011,6 +1011,7 @@
             </DB>
             <IO id="1">
               <Description val="PREVIEW"/>
+              <IOExpression val="13"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="P"/>
@@ -1019,8 +1020,8 @@
               <MACH val="PR1/Usual/Landscape"/>
               <Copies val="1"/>
               <Orientation val="L"/>
-              <PrintPreview val="Y"/>
-              <PDF val="N"/>
+              <PrintPreview val="N"/>
+              <PDF val="Y"/>
               <PrintingAllowed val="Y"/>
               <ContentCopyingAllowed val="Y"/>
               <ChangesAllowed val="Y"/>
@@ -1030,7 +1031,6 @@
             </IO>
             <IO id="2">
               <Description val="CSV"/>
-              <IOExpression val="13"/>
               <OpenPrintDialog val="N"/>
               <PaperSize val="68"/>
               <Format val="L"/>
@@ -3295,10 +3295,6 @@
             <Expression id="11">
               <ExpSyntax val="0"/>
               <ExpAttribute val="N"/>
-            </Expression>
-            <Expression id="12">
-              <ExpSyntax val="'C:\MAGIC\TEMP\HRPRDLST.CSV'"/>
-              <ExpAttribute val="A"/>
             </Expression>
             <Expression id="13">
               <ExpSyntax val="Translate('%PRODREPORT%')&amp;Trim({1,11})"/>
