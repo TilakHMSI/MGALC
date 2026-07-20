@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VMNUO002_ProdControl" ISN_2="1" LastIsn="12" id="356">
-          <LastModified _date="739735" _time="47656" date="29/04/2026" time="13:14:16"/>
+          <LastModified _date="739813" _time="42575" date="16/07/2026" time="11:49:35"/>
           <Public val="RIA3_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -14471,7 +14471,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PRODRESULTENTRYMENUHMS" ISN_2="11" LastIsn="12" id="356">
-            <LastModified _date="739663" _time="32971" date="16/02/2026" time="09:09:31"/>
+            <LastModified _date="739813" _time="42575" date="16/07/2026" time="11:49:35"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -15849,12 +15849,108 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
+            <LogicUnit id="18" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
+              <Scope val="T"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="1"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="87">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="138"/>
+                    <Lock val="N"/>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
+            <LogicUnit id="19" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
+              <Scope val="T"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="2"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="88">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="139"/>
+                    <Lock val="N"/>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
+            <LogicUnit id="21" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
+              <Scope val="T"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="3"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="89">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="139"/>
+                    <Lock val="N"/>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="21" _last_test_id="21" id="1">
+            <FormEntry _last_isn="24" _last_test_id="24" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
-                <Width id="23" val="560"/>
-                <Height id="24" val="533"/>
+                <Width id="23" val="563"/>
+                <Height id="24" val="637"/>
                 <FormUnits id="33" val="4"/>
                 <ShowGrid id="37"/>
                 <GridX id="38" val="1"/>
@@ -16146,6 +16242,51 @@
                   <RaiseEvent id="234">
                     <EventType val="I"/>
                     <InternalEventID val="34"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="22" id="22">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="168"/>
+                  <Y id="22" val="497"/>
+                  <Width id="23" val="225"/>
+                  <Height id="24" val="33"/>
+                  <ControlName id="46" val="ODOMETER_CATEGORY_MASTER"/>
+                  <Visible Exp="36" id="61"/>
+                  <Format id="82" valUnicode="ODOMETER CATEGORY MASTER"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="1"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="23" id="23">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="168"/>
+                  <Y id="22" val="536"/>
+                  <Width id="23" val="225"/>
+                  <Height id="24" val="33"/>
+                  <ControlName id="46" val="ODOMETER_FRAME_CAPTURE"/>
+                  <Visible Exp="37" id="61"/>
+                  <Format id="82" valUnicode="ODOMETER FRAME CAPTURE"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="2"/>
+                  </RaiseEvent>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="24" id="24">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="168"/>
+                  <Y id="22" val="575"/>
+                  <Width id="23" val="225"/>
+                  <Height id="24" val="33"/>
+                  <ControlName id="46" val="ODOMETER_READING"/>
+                  <Visible Exp="38" id="61"/>
+                  <Format id="82" valUnicode="ODOMETER READING"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="3"/>
                   </RaiseEvent>
                 </PropertyList>
               </Control>
@@ -16626,7 +16767,34 @@
               <ExpSyntax val="{1,17}='4F'"/>
               <ExpAttribute val="B"/>
             </Expression>
+            <Expression id="36">
+              <ExpSyntax val="{32768,556}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="37">
+              <ExpSyntax val="{32768,554}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="38">
+              <ExpSyntax val="{32768,555}"/>
+              <ExpAttribute val="B"/>
+            </Expression>
           </Expressions>
+          <EVNT DESC="ODOMETER CATEGORY MASTER" FORCE_EXIT="N" id="1">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="ODOMETER FRAME CAPTURE" FORCE_EXIT="N" id="2">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="ODOMETER READING" FORCE_EXIT="N" id="3">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
         </Task>
         <Task MainProgram="N">
           <Header Description="MENUSELECT" ISN_2="12" LastIsn="12" id="356">
