@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="VMNUO002_ProdControl" ISN_2="1" LastIsn="12" id="356">
-          <LastModified _date="739813" _time="42575" date="16/07/2026" time="11:49:35"/>
+          <LastModified _date="739838" _time="49754" date="10/08/2026" time="13:49:14"/>
           <Public val="RIA3_OK"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -14471,7 +14471,7 @@
         </Task>
         <Task MainProgram="N">
           <Header Description="PRODRESULTENTRYMENUHMS" ISN_2="11" LastIsn="12" id="356">
-            <LastModified _date="739813" _time="42575" date="16/07/2026" time="11:49:35"/>
+            <LastModified _date="739838" _time="49754" date="10/08/2026" time="13:49:14"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -14907,7 +14907,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="17"/>
+                    <_DitIndexForToolkit val="18"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -14927,7 +14927,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="18"/>
+                    <_DitIndexForToolkit val="19"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -14947,7 +14947,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="19"/>
+                    <_DitIndexForToolkit val="20"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -14961,7 +14961,7 @@
                     <Type val="V"/>
                     <ExposedToRoute val="N"/>
                     <IsParameter val="N"/>
-                    <_DitIndexForToolkit val="20"/>
+                    <_DitIndexForToolkit val="21"/>
                     <DIFF_UPDATE val="T"/>
                     <Condition val="Y"/>
                     <Modifier val="S"/>
@@ -15945,11 +15945,59 @@
                 </LogicLine>
               </LogicLines>
             </LogicUnit>
+            <LogicUnit id="22" propagate="78">
+              <Level val="H"/>
+              <Type val="U"/>
+              <Scope val="T"/>
+              <EngineDirective val="S"/>
+              <ShowMessage val="Y"/>
+              <Condition val="89"/>
+              <Event>
+                <EventType val="U"/>
+                <PublicObject comp="-1" obj="4"/>
+              </Event>
+              <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <CallTask FlowIsn="91">
+                    <OperationType val="P"/>
+                    <Event>
+                      <EventType val="N"/>
+                    </Event>
+                    <TaskID comp="-1" obj="714"/>
+                    <Lock val="N"/>
+                    <Arguments>
+                      <Argument>
+                        <Parent val="1"/>
+                        <Variable val="1"/>
+                        <Skip val="N"/>
+                      </Argument>
+                      <Argument>
+                        <Parent val="1"/>
+                        <Variable val="2"/>
+                        <Skip val="N"/>
+                      </Argument>
+                      <Argument>
+                        <Expression val="18"/>
+                        <Skip val="N"/>
+                      </Argument>
+                    </Arguments>
+                    <Wait val="Y"/>
+                    <SyncData val="N"/>
+                    <IsRoute val="N"/>
+                    <RetainFocus val="N"/>
+                    <Condition Exp="20"/>
+                    <Modifier val="S"/>
+                    <Direction val="F"/>
+                  </CallTask>
+                </LogicLine>
+              </LogicLines>
+            </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="24" _last_test_id="24" id="1">
+            <FormEntry _last_isn="25" _last_test_id="25" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
-                <Width id="23" val="563"/>
+                <Width id="23" val="658"/>
                 <Height id="24" val="637"/>
                 <FormUnits id="33" val="4"/>
                 <ShowGrid id="37"/>
@@ -16172,6 +16220,21 @@
                   <Data FieldID="6" id="43"/>
                   <ControlName id="46" val="PACKING_RESULT_ENTRYVPRDO044"/>
                   <Visible Exp="8" id="61"/>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="25" id="25">
+                <PropertyList model="CTRL_WEB_CLIENT_BUTTON">
+                  <X id="21" val="420"/>
+                  <Y id="22" val="262"/>
+                  <Width id="23" val="225"/>
+                  <Height id="24" val="33"/>
+                  <ControlName id="46" val="PDI_LOG"/>
+                  <Visible id="61"/>
+                  <Format id="82" valUnicode="PDI ENTRY WITH LOGS"/>
+                  <RaiseEvent id="234">
+                    <EventType val="U"/>
+                    <PublicObject comp="-1" obj="4"/>
+                  </RaiseEvent>
                 </PropertyList>
               </Control>
               <Control _test_id="16" id="16">
@@ -16791,6 +16854,11 @@
             </Event>
           </EVNT>
           <EVNT DESC="ODOMETER READING" FORCE_EXIT="N" id="3">
+            <Event>
+              <EventType val="N"/>
+            </Event>
+          </EVNT>
+          <EVNT DESC="PDIERROR_LOG" FORCE_EXIT="N" id="4">
             <Event>
               <EventType val="N"/>
             </Event>
