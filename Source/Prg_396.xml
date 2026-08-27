@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="RightsUpdateInToMainProgramVariables" ISN_2="1" LastIsn="1" id="396">
-          <LastModified _date="739740" _time="38885" date="04/05/2026" time="10:48:05"/>
+          <LastModified _date="739855" _time="65323" date="27/08/2026" time="18:08:43"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -6566,6 +6566,42 @@
                   <Direction val="C"/>
                 </Update>
               </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="540">
+                  <Parent val="32768"/>
+                  <FieldID val="556"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="539"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="541">
+                  <Parent val="32768"/>
+                  <FieldID val="554"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="540"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
+              <LogicLine>
+                <Update FlowIsn="542">
+                  <Parent val="32768"/>
+                  <FieldID val="555"/>
+                  <WithValue val="4"/>
+                  <Incremental val="N"/>
+                  <ForcedUpdate val="Y"/>
+                  <Condition Exp="541"/>
+                  <Modifier val="B"/>
+                  <Direction val="C"/>
+                </Update>
+              </LogicLine>
             </LogicLines>
           </LogicUnit>
         </TaskLogic>
@@ -8806,6 +8842,18 @@
           </Expression>
           <Expression id="538">
             <ExpSyntax val="Trim({0,3})='CHANGEPASS'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="539">
+            <ExpSyntax val="Trim({0,3})='ODOMAST'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="540">
+            <ExpSyntax val="Trim({0,3})='ODOFRMCAP'"/>
+            <ExpAttribute val="B"/>
+          </Expression>
+          <Expression id="541">
+            <ExpSyntax val="Trim({0,3})='ODOREADING'"/>
             <ExpAttribute val="B"/>
           </Expression>
         </Expressions>
