@@ -121182,6 +121182,18 @@
         <_FieldPhysical Name="PLANT" PIC_U="15" Size="15" allowed_null="N" attribute="A" context_cookies="Y" database_definition="2" id="231" storage="3" translate="1"/>
       </PropertyList>
     </Column>
+    <Column id="14" name="FACTORYCD">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Picture id="157" valUnicode="2"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="2"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="FACTORYCD"/>
+        <_Flip id="194"/>
+        <_FieldPhysical Name="FACTORYCD" PIC_U="2" Size="2" allowed_null="N" attribute="A" context_cookies="Y" database_definition="2" id="231" storage="3" translate="1"/>
+      </PropertyList>
+    </Column>
   </Columns>
 
   <Indexes>
@@ -121752,7 +121764,7 @@
   <WebS/>
 
 </DataObject> 
-<DataObject PhysicalName="T_ODOMETER_FRAMES" Resident="N" UniqueISNConvState="12" data_source="PRD" id="380" name="T_ODOMETER_FRAMES">
+<DataObject PhysicalName="T_ODOMETER_FRAMES" Resident="N" UniqueISNConvState="12" data_source="PRDEIN" id="380" name="T_ODOMETER_FRAMES">
 
   <Encrypt val="N"/>
 
@@ -121768,15 +121780,296 @@
 
   <ObjectType val="T"/>
 
+  <Owner val="evsm_hmsi"/>
+
   <Position val="D"/>
 
   <PositionIndex val="-2"/>
 
+  <IndexesLastIsn val="1"/>
+
   <MetaTreeRTIndex val="-1"/>
 
-  <Columns/>
+  <Columns>
+    <Column id="1" name="FRAMENO">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="25"/>
+        <NullAllowed id="166"/>
+        <NullDefault id="169"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="25"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="FRAMENO"/>
+        <Type id="179" val="VARCHAR2(25)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="2" name="MTOC">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="30"/>
+        <NullAllowed id="166"/>
+        <NullDefault id="169"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="30"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="MTOC"/>
+        <Type id="179" val="VARCHAR2(30)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="3" name="POSTING_DATE">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="10"/>
+        <NullAllowed id="166"/>
+        <NullDefault id="169"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="10"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="POSTING_DATE"/>
+        <Type id="179" val="VARCHAR2(10)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="4" name="PLANT">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="5"/>
+        <NullAllowed id="166"/>
+        <NullDefault id="169"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="5"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="PLANT"/>
+        <Type id="179" val="VARCHAR2(5)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="5" name="DEALER_CODE">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="20"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="20"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="DEALER_CODE"/>
+        <Type id="179" val="VARCHAR2(20)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="6" name="DISPATCH_DATE">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_DATE" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="DD/MM/YYYY"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="19"/>
+        <Size id="174" val="8"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="DISPATCH_DATE"/>
+        <Type id="179" val="DATE"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244" val="7"/>
+      </PropertyList>
+    </Column>
+    <Column id="7" name="DISPATCH_DATE_time">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_TIME" id="1"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <StoredAs id="173" val="24"/>
+        <Size id="174" val="6"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="DISPATCH_DATE"/>
+        <PartOfDatetime id="244" val="6"/>
+      </PropertyList>
+    </Column>
+    <Column id="8" name="ACTIVE_FLAGE">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="1"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="1"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="ACTIVE_FLAGE"/>
+        <Type id="179" val="VARCHAR2(1)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="9" name="CREATED_BY">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="20"/>
+        <NullAllowed id="166"/>
+        <NullDefault id="169"/>
+        <DatabaseDefault id="171" valUnicode="'0'"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="20"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="CREATED_BY"/>
+        <Type id="179" val="VARCHAR2(20)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="10" name="CREATED_ON">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_DATE" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="DD/MM/YYYY"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="19"/>
+        <Size id="174" val="8"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="CREATED_ON"/>
+        <Type id="179" val="DATE"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244" val="11"/>
+      </PropertyList>
+    </Column>
+    <Column id="11" name="CREATED_ON_time">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_TIME" id="1"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <StoredAs id="173" val="24"/>
+        <Size id="174" val="6"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="CREATED_ON"/>
+        <PartOfDatetime id="244" val="10"/>
+      </PropertyList>
+    </Column>
+    <Column id="12" name="MODIFIED_BY">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_ALPHA" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="20"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="3"/>
+        <Size id="174" val="20"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="MODIFIED_BY"/>
+        <Type id="179" val="VARCHAR2(20)"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244"/>
+      </PropertyList>
+    </Column>
+    <Column id="13" name="MODIFIED_ON">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_DATE" id="1"/>
+        <Modifiable id="53" val="Y"/>
+        <Range id="98"/>
+        <Picture id="157" valUnicode="DD/MM/YYYY"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <DatabaseDefault id="171"/>
+        <CharSet id="172" val="1"/>
+        <StoredAs id="173" val="19"/>
+        <Size id="174" val="8"/>
+        <Definition id="175" val="2"/>
+        <DatabaseInformation id="177"/>
+        <DbColumnName id="178" val="MODIFIED_ON"/>
+        <Type id="179" val="DATE"/>
+        <UserType id="180"/>
+        <PartOfDatetime id="244" val="14"/>
+      </PropertyList>
+    </Column>
+    <Column id="14" name="MODIFIED_ON_time">
+      <PropertyList model="FIELD">
+        <Model attr_obj="FIELD_TIME" id="1"/>
+        <NullAllowed id="166" val="Y"/>
+        <NullDefault id="169" val="Y"/>
+        <StoredAs id="173" val="24"/>
+        <Size id="174" val="6"/>
+        <Definition id="175" val="2"/>
+        <DbColumnName id="178" val="MODIFIED_ON"/>
+        <PartOfDatetime id="244" val="13"/>
+      </PropertyList>
+    </Column>
+  </Columns>
 
-  <Indexes/>
+  <Indexes>
+    <Index id="1" name="T_ODOMETER_FRAMES_PK">
+      <Mode val="S"/>
+      <Order val="T"/>
+      <Range val="Q"/>
+      <IndexType val="R"/>
+      <PhysicalName val="T_ODOMETER_FRAMES_PK"/>
+      <Info val="SQLOWNER=&quot;EVSM_HMSI&quot;"/>
+      <HasHint val="N"/>
+      <Clustered val="N"/>
+      <DropOnReindex val="Y"/>
+      <Primary val="Y"/>
+      <Segments>
+        <Segment>
+          <Size val="25"/>
+          <Column val="1"/>
+          <Order val="A"/>
+        </Segment>
+      </Segments>
+    </Index>
+  </Indexes>
 
   <ForeignKeys/>
 
