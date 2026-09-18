@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="STOCK_IN_PROCESS" ISN_2="1" LastIsn="26" id="562">
-          <LastModified _date="739868" _time="40169" date="09/09/2026" time="11:09:29"/>
+          <LastModified _date="739877" _time="69318" date="18/09/2026" time="19:15:18"/>
           <Public val="Prg_246"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
@@ -2610,7 +2610,7 @@
               <LogicLine>
                 <LNK Direction="A" EVL_CND="R" FieldID="154" FlowIsn="1698" Key="1" Mode="R" SortType="1699" VIEW="145" VIEWS="3">
                   <DB comp="-1" obj="376"/>
-                  <Condition val="Y"/>
+                  <Condition val="N"/>
                 </LNK>
               </LogicLine>
               <LogicLine>
@@ -3518,11 +3518,18 @@
               <LogicLine>
                 <Remark FlowIsn="1705">
                   <Type val="2"/>
-                  <Text val="Odometer Flag On Check"/>
+                  <Text val="Odometer Flag On Check - 09/09/2026"/>
+                </Remark>
+              </LogicLine>
+              <LogicLine>
+                <Remark FlowIsn="1829">
+                  <Type val="2"/>
+                  <Text val="Disabled code as Odometer Reading can be done even after Logistics in as per Honda Team Communication - 18-09-2026"/>
                 </Remark>
               </LogicLine>
               <LogicLine>
                 <BLOCK EndBlock="1704" EndBlockSegment="1704" FlowIsn="261" Type="I">
+                  <Disabled val="1"/>
                   <Condition Exp="96"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -3549,6 +3556,7 @@
                   <SyncData val="N"/>
                   <IsRoute val="N"/>
                   <RetainFocus val="N"/>
+                  <Disabled val="1"/>
                   <Condition Exp="98"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -3560,6 +3568,7 @@
                   <WithValue val="59"/>
                   <Incremental val="N"/>
                   <ForcedUpdate val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="98"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
@@ -3568,13 +3577,16 @@
               <LogicLine>
                 <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" FlowIsn="1709" IMG_DEF_CHG="N" Image="C" Mode="E" TTL_DEF_CHG="N" TitleTxt="Error" VR_DISP="S">
                   <AppendToErrorLog val="Y"/>
+                  <Disabled val="1"/>
                   <Condition Exp="98"/>
                   <Modifier val="B"/>
                   <Direction val="C"/>
                 </STP>
               </LogicLine>
               <LogicLine>
-                <END_BLK FlowIsn="1704"/>
+                <END_BLK FlowIsn="1704">
+                  <Disabled val="1"/>
+                </END_BLK>
               </LogicLine>
               <LogicLine>
                 <Remark FlowIsn="259">
