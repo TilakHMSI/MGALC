@@ -13,8 +13,8 @@
   <ProgramsRepository>
     <Programs>
       <Task MainProgram="N">
-        <Header Description="OdometerFlagOffDetail" ISN_2="8" LastIsn="42" id="138">
-          <LastModified _date="739862" _time="46418" date="03/09/2026" time="12:53:38"/>
+        <Header Description="OdometerFlagOffDetail" ISN_2="8" LastIsn="40" id="138">
+          <LastModified _date="739881" _time="63960" date="22/09/2026" time="17:46:00"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -34,7 +34,7 @@
           <FormType val="M"/>
           <DotNetObjectExists val="N"/>
         </Header>
-        <ItemIsn val="43"/>
+        <ItemIsn val="45"/>
         <Resource>
           <DB id="5">
             <DataObject comp="-1" obj="376"/>
@@ -417,6 +417,32 @@
                 </Select>
               </LogicLine>
               <LogicLine>
+                <Select FieldID="44" FlowIsn="362" id="44">
+                  <Column val="15"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
+                <Select FieldID="45" FlowIsn="363" id="45">
+                  <Column val="16"/>
+                  <Type val="R"/>
+                  <ExposedToRoute val="N"/>
+                  <IsParameter val="N"/>
+                  <DIFF_UPDATE val="T"/>
+                  <PartOfDataview val="N"/>
+                  <Condition val="Y"/>
+                  <Modifier val="S"/>
+                  <Direction val="C"/>
+                </Select>
+              </LogicLine>
+              <LogicLine>
                 <Remark FlowIsn="41">
                   <Type val="2"/>
                   <Text val=" "/>
@@ -756,8 +782,8 @@
         <VarRangeInfo Mode="E" VarRangeVeeIsn="15" id="4"/>
         <VarRangeInfo Mode="E" VarRangeVeeIsn="43" id="5"/>
         <Task MainProgram="N">
-          <Header Description="CriteriaDetails" ISN_2="40" LastIsn="42" id="138">
-            <LastModified _date="739856" _time="45543" date="28/08/2026" time="12:39:03"/>
+          <Header Description="CriteriaDetails" ISN_2="40" LastIsn="40" id="138">
+            <LastModified _date="739881" _time="63960" date="22/09/2026" time="17:46:00"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1234,7 +1260,7 @@
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
-            <FormEntry _last_isn="37" _last_test_id="37" id="1">
+            <FormEntry _last_isn="39" _last_test_id="39" id="1">
               <PropertyList model="FORM_WEB_CLIENT">
                 <X id="21"/>
                 <Y id="22"/>
@@ -1290,7 +1316,7 @@
                   <X id="21" val="10"/>
                   <Y id="22" val="69"/>
                   <Width id="23" val="1877"/>
-                  <Height id="24" val="360"/>
+                  <Height id="24" val="200"/>
                   <ControlName id="46" val="Table1"/>
                   <Visible id="61"/>
                   <TitleHeight id="79" val="20"/>
@@ -1389,6 +1415,26 @@
                   <ControlName id="46" val="OdoCriteriaMaster_REMARKS"/>
                 </PropertyList>
               </Control>
+              <Control _test_id="38" id="38">
+                <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                  <Text Exp="49" id="19" valUnicode="Text"/>
+                  <X id="21" val="23"/>
+                  <Y id="22" val="284"/>
+                  <Width id="23" val="532"/>
+                  <Height id="24" val="36"/>
+                  <ControlName id="46" val="FLAGERROR"/>
+                </PropertyList>
+              </Control>
+              <Control _test_id="39" id="39">
+                <PropertyList model="CTRL_WEB_CLIENT_LABEL">
+                  <Text Exp="50" id="19" valUnicode="Text"/>
+                  <X id="21" val="25"/>
+                  <Y id="22" val="320"/>
+                  <Width id="23" val="532"/>
+                  <Height id="24" val="42"/>
+                  <ControlName id="46" val="PASSREMARK"/>
+                </PropertyList>
+              </Control>
             </FormEntry>
           </TaskForms>
           <Expressions>
@@ -1415,6 +1461,14 @@
             <Expression id="48">
               <ExpSyntax val="NOT {0,52}"/>
               <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="49">
+              <ExpSyntax val="Trim({8,44})"/>
+              <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="50">
+              <ExpSyntax val="Trim({8,45})"/>
+              <ExpAttribute val="A"/>
             </Expression>
           </Expressions>
           <EVNT DESC="UpdateDetails" FORCE_EXIT="N" id="1">

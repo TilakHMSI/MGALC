@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="OdometerReport" ISN_2="1" LastIsn="31" id="719">
-          <LastModified _date="739877" _time="68078" date="18/09/2026" time="18:54:38"/>
+          <LastModified _date="739881" _time="65114" date="22/09/2026" time="18:05:14"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -1034,7 +1034,7 @@
         </EVNT>
         <Task MainProgram="N">
           <Header Description="OdoReport2" ISN_2="31" LastIsn="31" id="719">
-            <LastModified _date="739870" _time="61232" date="11/09/2026" time="17:00:32"/>
+            <LastModified _date="739881" _time="65114" date="22/09/2026" time="18:05:14"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="Y"/>
@@ -1053,7 +1053,7 @@
             <FormType val="D"/>
             <DotNetObjectExists val="N"/>
           </Header>
-          <ItemIsn val="64"/>
+          <ItemIsn val="66"/>
           <Resource>
             <DB id="1">
               <DataObject comp="-1" obj="375"/>
@@ -1473,7 +1473,7 @@
                   <END_LINK FlowIsn="9"/>
                 </LogicLine>
                 <LogicLine>
-                  <LNK Direction="A" EVL_CND="R" FlowIsn="14" Key="1" Mode="R" SortType="15" VIEW="12" VIEWS="13">
+                  <LNK Direction="A" EVL_CND="R" FlowIsn="14" Key="1" Mode="R" SortType="15" VIEW="12" VIEWS="15">
                     <DB comp="-1" obj="376"/>
                     <Condition val="Y"/>
                   </LNK>
@@ -1649,6 +1649,30 @@
                   </Select>
                 </LogicLine>
                 <LogicLine>
+                  <Select FieldID="65" FlowIsn="65" id="65">
+                    <Column val="15"/>
+                    <Type val="R"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="N"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
+                  <Select FieldID="66" FlowIsn="66" id="66">
+                    <Column val="16"/>
+                    <Type val="R"/>
+                    <ExposedToRoute val="N"/>
+                    <IsParameter val="N"/>
+                    <DIFF_UPDATE val="T"/>
+                    <Condition val="N"/>
+                    <Modifier val="S"/>
+                    <Direction val="C"/>
+                  </Select>
+                </LogicLine>
+                <LogicLine>
                   <END_LINK FlowIsn="15"/>
                 </LogicLine>
               </LogicLines>
@@ -1708,6 +1732,21 @@
                     <Direction val="C"/>
                   </FormIO>
                 </LogicLine>
+                <LogicLine>
+                  <FormIO FlowIsn="68">
+                    <OperationType val="O"/>
+                    <Page val="A"/>
+                    <IODeviceInfo>
+                      <IoDeviceIndex val="2"/>
+                    </IODeviceInfo>
+                    <FormEntryInfo>
+                      <FormEntryIndex val="13"/>
+                    </FormEntryInfo>
+                    <Condition Exp="16"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </FormIO>
+                </LogicLine>
               </LogicLines>
             </LogicUnit>
             <LogicUnit id="6" propagate="78">
@@ -1747,6 +1786,12 @@
                     <Direction val="C"/>
                   </FormIO>
                 </LogicLine>
+                <LogicLine>
+                  <Remark FlowIsn="67">
+                    <Type val="2"/>
+                    <Text val=" "/>
+                  </Remark>
+                </LogicLine>
               </LogicLines>
             </LogicUnit>
           </TaskLogic>
@@ -1769,6 +1814,7 @@
                 <HorizontalFactor id="35" val="100"/>
                 <GridX id="38" val="7"/>
                 <GridY id="39" val="4"/>
+                <Font id="50" val="1"/>
                 <Color id="51" val="6"/>
                 <_Comment id="218"/>
                 <FormName id="311" valUnicode="Header"/>
@@ -1801,6 +1847,7 @@
                 <HorizontalFactor id="35" val="100"/>
                 <GridX id="38" val="7"/>
                 <GridY id="39" val="4"/>
+                <Font id="50" val="1"/>
                 <Color id="51" val="6"/>
                 <_Comment id="218"/>
                 <FormName id="311" valUnicode="GroupHeader"/>
@@ -2038,12 +2085,13 @@
               <PropertyList model="FORM_GUI1">
                 <Area id="17" val="N"/>
                 <Width id="23" val="2300"/>
-                <Height id="24" val="127"/>
+                <Height id="24" val="117"/>
                 <FormUnits id="33" val="2"/>
                 <VerticalFactor id="34" val="100"/>
                 <HorizontalFactor id="35" val="100"/>
                 <GridX id="38" val="7"/>
                 <GridY id="39" val="4"/>
+                <Font id="50" val="1"/>
                 <Color id="51" val="6"/>
                 <_Comment id="218"/>
                 <FormName id="311" valUnicode="Detail"/>
@@ -2154,6 +2202,87 @@
               </Control>
             </FormEntry>
           </TaskForms>
+          <TaskForms>
+            <FormEntry CLSS="1" _last_isn="22" _last_test_id="22" id="13">
+              <PropertyList model="FORM_GUI1">
+                <Area id="17" val="N"/>
+                <Width id="23" val="2300"/>
+                <Height id="24" val="100"/>
+                <FormUnits id="33" val="2"/>
+                <VerticalFactor id="34" val="100"/>
+                <HorizontalFactor id="35" val="100"/>
+                <GridX id="38" val="7"/>
+                <GridY id="39" val="4"/>
+                <Font id="50" val="1"/>
+                <Color id="51" val="6"/>
+                <_Comment id="218"/>
+                <FormName id="311" valUnicode="Error"/>
+              </PropertyList>
+              <Control _test_id="19" id="19">
+                <PropertyList model="CTRL_GUI1_STATIC">
+                  <Text id="19" valUnicode="FLAG ERROR"/>
+                  <X id="21" val="77"/>
+                  <Width id="23" val="368"/>
+                  <Height id="24" val="36"/>
+                  <EnableRTF id="69"/>
+                  <_Orientation id="143"/>
+                </PropertyList>
+              </Control>
+              <Control _test_id="20" id="20">
+                <PropertyList model="CTRL_GUI1_STATIC">
+                  <Text id="19" valUnicode="PASS REMARK"/>
+                  <X id="21" val="1183"/>
+                  <Width id="23" val="368"/>
+                  <Height id="24" val="36"/>
+                  <Visible Exp="15" id="61"/>
+                  <EnableRTF id="69"/>
+                  <_Orientation id="143"/>
+                </PropertyList>
+              </Control>
+              <Control PDOD="128" _test_id="21" id="21">
+                <PropertyList model="CTRL_GUI1_LINE">
+                  <X1 id="21" val="58"/>
+                  <Y1 id="22" val="1"/>
+                  <X2 id="23" val="2024"/>
+                </PropertyList>
+              </Control>
+              <Control _test_id="10" id="10">
+                <PropertyList model="CTRL_GUI1_EDIT">
+                  <Model ID="MODEL_GUI_NI" id="1">
+                    <Var FieldID="65"/>
+                  </Model>
+                  <X id="21" val="74"/>
+                  <Y id="22" val="40"/>
+                  <Width id="23" val="1008"/>
+                  <Height id="24" val="42"/>
+                  <Data FieldID="65" id="43"/>
+                  <Font id="50" val="1"/>
+                  <Color id="51" val="16"/>
+                  <Style id="63" val="1"/>
+                  <MultiLineEdit id="71" val="Y"/>
+                  <_Orientation id="143"/>
+                </PropertyList>
+              </Control>
+              <Control _test_id="9" id="9">
+                <PropertyList model="CTRL_GUI1_EDIT">
+                  <Model ID="MODEL_GUI_NI" id="1">
+                    <Var FieldID="66"/>
+                  </Model>
+                  <X id="21" val="1183"/>
+                  <Y id="22" val="40"/>
+                  <Width id="23" val="902"/>
+                  <Height id="24" val="42"/>
+                  <Data FieldID="66" id="43"/>
+                  <Font id="50" val="1"/>
+                  <Color id="51" val="16"/>
+                  <Visible Exp="15" id="61"/>
+                  <Style id="63" val="1"/>
+                  <MultiLineEdit id="71" val="Y"/>
+                  <_Orientation id="143"/>
+                </PropertyList>
+              </Control>
+            </FormEntry>
+          </TaskForms>
           <Expressions>
             <Expression id="1">
               <ExpSyntax val="Trim({0,44})"/>
@@ -2207,11 +2336,19 @@
               <ExpSyntax val="IF({0,55},13,12)"/>
               <ExpAttribute val="N"/>
             </Expression>
+            <Expression id="15">
+              <ExpSyntax val="Trim({0,53})&lt;>''"/>
+              <ExpAttribute val="B"/>
+            </Expression>
+            <Expression id="16">
+              <ExpSyntax val="Trim({0,65})&lt;>''"/>
+              <ExpAttribute val="B"/>
+            </Expression>
           </Expressions>
         </Task>
         <Task MainProgram="N">
           <Header Description="DETAIL" ISN_2="2" LastIsn="31" id="719">
-            <LastModified _date="739877" _time="68078" date="18/09/2026" time="18:54:38"/>
+            <LastModified _date="739881" _time="55473" date="22/09/2026" time="15:24:33"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -2284,7 +2421,7 @@
             <EndTaskCondition val="N"/>
             <SkipLockedRecords val="N"/>
             <EvaluateEndCondition val="B"/>
-            <InitialMode val="M"/>
+            <InitialMode val="E"/>
             <Locate Direction="A"/>
             <Range Direction="A"/>
             <VarRange LastIsn="8"/>
