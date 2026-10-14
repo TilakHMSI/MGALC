@@ -14,7 +14,7 @@
     <Programs>
       <Task MainProgram="N">
         <Header Description="OdometerFlagOffDetail" ISN_2="8" LastIsn="40" id="138">
-          <LastModified _date="739881" _time="63960" date="22/09/2026" time="17:46:00"/>
+          <LastModified _date="739903" _time="45277" date="14/10/2026" time="12:34:37"/>
           <ExecutionRight comp="-1"/>
           <Resident val="N"/>
           <SQL val="N"/>
@@ -783,7 +783,7 @@
         <VarRangeInfo Mode="E" VarRangeVeeIsn="43" id="5"/>
         <Task MainProgram="N">
           <Header Description="CriteriaDetails" ISN_2="40" LastIsn="40" id="138">
-            <LastModified _date="739881" _time="63960" date="22/09/2026" time="17:46:00"/>
+            <LastModified _date="739903" _time="45277" date="14/10/2026" time="12:34:37"/>
             <ExecutionRight comp="-1"/>
             <Resident val="N"/>
             <SQL val="N"/>
@@ -1257,6 +1257,16 @@
                 <EventType val="S"/>
               </Event>
               <ExecuteOn_ val="O"/>
+              <LogicLines>
+                <LogicLine>
+                  <STP Buttons="O" DefaultButton="1" ERR_LOG_DEF_CHG="N" Exp="49" FlowIsn="296" IMG_DEF_CHG="N" Image="E" Mode="W" TTL_DEF_CHG="N" TitleTxt="Warning" VR_DISP="B">
+                    <AppendToErrorLog val="N"/>
+                    <Condition val="Y"/>
+                    <Modifier val="B"/>
+                    <Direction val="C"/>
+                  </STP>
+                </LogicLine>
+              </LogicLines>
             </LogicUnit>
           </TaskLogic>
           <TaskForms>
@@ -1423,6 +1433,7 @@
                   <Width id="23" val="532"/>
                   <Height id="24" val="36"/>
                   <ControlName id="46" val="FLAGERROR"/>
+                  <Visible Exp="52" id="61"/>
                 </PropertyList>
               </Control>
               <Control _test_id="39" id="39">
@@ -1433,6 +1444,7 @@
                   <Width id="23" val="532"/>
                   <Height id="24" val="42"/>
                   <ControlName id="46" val="PASSREMARK"/>
+                  <Visible Exp="51" id="61"/>
                 </PropertyList>
               </Control>
             </FormEntry>
@@ -1466,9 +1478,17 @@
               <ExpSyntax val="Trim({8,44})"/>
               <ExpAttribute val="A"/>
             </Expression>
+            <Expression id="52">
+              <ExpSyntax val="Trim({8,44})&lt;>''"/>
+              <ExpAttribute val="B"/>
+            </Expression>
             <Expression id="50">
               <ExpSyntax val="Trim({8,45})"/>
               <ExpAttribute val="A"/>
+            </Expression>
+            <Expression id="51">
+              <ExpSyntax val="Trim({8,45})&lt;>''"/>
+              <ExpAttribute val="B"/>
             </Expression>
           </Expressions>
           <EVNT DESC="UpdateDetails" FORCE_EXIT="N" id="1">
